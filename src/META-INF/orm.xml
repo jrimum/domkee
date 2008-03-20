@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" 
+	version="1.0">
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.entity.Pessoa">
+		<inheritance strategy="JOINED"/>
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO"/>
+			</id>
+			<basic name="nome"></basic>
+			<one-to-many name="telefones" mapped-by="pessoa">
+			 	<cascade><cascade-all/></cascade>
+			</one-to-many>
+			<one-to-many name="emails" mapped-by="pessoa">
+				<cascade><cascade-all/></cascade>
+			</one-to-many>
+			<many-to-many name="enderecos">
+				<join-table name="pessoaendereco">
+					<join-column name="idPessoa"/>
+					<inverse-join-column name="idEndereco"/>
+				</join-table>
+				<cascade>
+					<cascade-persist/>
+					<cascade-merge/>
+				</cascade>
+			</many-to-many>
+			<embedded name="cadastroDePessoa"></embedded>
+			<transient name="contasBancarias"/>
+			<transient name="fisica"/>
+			<transient name="juridica"/>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.entity.PessoaFisica">
+		<attributes>
+			<basic name="sexo">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<basic name="estadoCivil"></basic>
+			<one-to-many name="rgs" mapped-by="pessoa">
+				<cascade><cascade-all/></cascade>
+			</one-to-many>
+			<one-to-one name="conjuge">
+				<join-column name="idConjuge"/>
+				<cascade>
+					<cascade-persist/>
+					<cascade-merge/>
+				</cascade>
+			</one-to-one>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.entity.PessoaJuridica">
+		<attributes>
+			<basic name="inscricaoEstadual"></basic>
+			<basic name="inscricaoMunicipal"></basic>
+			<basic name="nomeFantasia"></basic>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.type.TryxTag">
+		<table name="tag"></table>
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO"/>
+			</id>
+			<basic name="value"></basic>
+			<basic name="description"></basic>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.type.Endereco">
+		<pre-persist method-name="preEventGambi"/>
+		<pre-remove method-name="preEventGambi"/>
+		<pre-update method-name="preEventGambi"/>
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO"/>
+			</id>
+			<basic name="numero"></basic>
+			<basic name="complemento"></basic>
+			<basic name="bairro"></basic>
+			<basic name="uf">
+				<enumerated>STRING</enumerated>
+			</basic>
+			<one-to-many name="tags">
+				<join-table name="endereco_tag">
+					<join-column name="idEndereco"/>
+					<inverse-join-column name="idTag"/>
+				</join-table>
+				<cascade><cascade-all/></cascade>
+			</one-to-many>
+			<many-to-many name="pessoas">
+				<join-table name="pessoaendereco">
+					<join-column name="idEndereco"/>
+					<inverse-join-column name="idPessoa"/>
+				</join-table>
+				<cascade>
+					<cascade-persist/>
+					<cascade-merge/>
+				</cascade>
+			</many-to-many>
+			<embedded name="logradouro">
+				<attribute-override name="nome">
+					<column name="logradouro"/>
+				</attribute-override>
+			</embedded>
+			<embedded name="localidade">
+				<attribute-override name="nome">
+					<column name="localidade"/>
+				</attribute-override>
+			</embedded>
+			<embedded name="cep"></embedded>
+			<embedded name="pais"></embedded>
+			<transient name="tags"/>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.type.Email">
+		<pre-persist method-name="preEventGambi"/>
+		<pre-remove method-name="preEventGambi"/>
+		<pre-update method-name="preEventGambi"/>
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO"/>
+			</id>
+			<basic name="email"></basic>
+			<many-to-one name="pessoa">
+				<join-column name="idPessoa"/>
+			</many-to-one>
+			<one-to-many name="tags">
+				<join-table name="email_tag">
+					<join-column name="idEmail"/>
+					<inverse-join-column name="idTag"/>
+				</join-table>
+				<cascade><cascade-all/></cascade>
+			</one-to-many>
+			<transient name="conta"/>
+			<transient name="dominio"/>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.type.Telefone">
+		<pre-persist method-name="preEventGambi"/>
+		<pre-remove method-name="preEventGambi"/>
+		<pre-update method-name="preEventGambi"/>
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO"/>
+			</id>
+			<basic name="telefone"></basic>
+			<many-to-one name="pessoa">
+				<join-column name="idPessoa"/>
+			</many-to-one>
+			<one-to-many name="tags">
+				<join-table name="telefone_tag">
+					<join-column name="idTelefone"/>
+					<inverse-join-column name="idTag"/>
+				</join-table>
+				<cascade><cascade-all/></cascade>
+			</one-to-many>
+			<transient name="ddi"/>
+			<transient name="ddd"/>
+			<transient name="prefixo"/>
+			<transient name="sufixo"/>
+		</attributes>
+	</entity>
+	
+	<entity class="br.com.nordestefomento.jrimum.dominiotryx.type.RG">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO"/>
+			</id>
+			<basic name="numero"></basic>
+			<basic name="orgaoExpedidor"></basic>
+			<basic name="filiacaoMae"></basic>
+			<basic name="filiacaoPai"></basic>
+			<basic name="dataNascimento">
+				<temporal>DATE</temporal>
+			</basic>
+			<many-to-one name="pessoa">
+				<join-column name="idPessoa"/>
+			</many-to-one>
+		</attributes>
+	</entity>
+	
+	<embeddable class="br.com.nordestefomento.jrimum.dominiotryx.type.Logradouro">
+		<attributes>
+			<basic name="nome"></basic>
+			<transient name="tipoLogradouro"/>
+			<transient name="tag"/>
+		</attributes>
+	</embeddable>
+	
+	<embeddable class="br.com.nordestefomento.jrimum.dominiotryx.type.Localidade">
+		<attributes>
+			<basic name="nome"></basic>
+			<transient name="tipoLocalidade"/>
+			<transient name="tag"/>
+		</attributes>
+	</embeddable>
+	
+	<embeddable class="br.com.nordestefomento.jrimum.dominiotryx.type.CEP">
+		<attributes>
+			<basic name="cep"></basic>
+			<transient name="prefixo"/>
+			<transient name="sufixo"/>
+		</attributes>
+	</embeddable>
+	
+	<embeddable class="br.com.nordestefomento.jrimum.dominiotryx.type.Pais">
+		<attributes>
+			<basic name="pais"></basic>
+		</attributes>
+	</embeddable>
+	
+	<embeddable class="br.com.nordestefomento.jrimum.dominiotryx.type.faces.CadastroDePessoa">
+		<attributes>
+			<basic name="codigoFormatado"></basic>
+			<transient name="codigo"/>
+			<transient name="autenticadorCP"/>
+			<transient name="fisica"/>
+			<transient name="juridica"/>
+		</attributes>
+	</embeddable>
+	
+</entity-mappings>
