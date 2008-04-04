@@ -27,15 +27,13 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import java.io.File;
-
-import com.lowagie.text.Image;
+import java.awt.Image;
 
 import br.com.nordestefomento.jrimum.domkee.entity.Banco;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
+
 
 /**
  * 

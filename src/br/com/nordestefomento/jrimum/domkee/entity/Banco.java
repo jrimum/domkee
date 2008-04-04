@@ -27,11 +27,9 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.entity;
 
-
-import com.lowagie.text.Image;
+import java.awt.Image;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;

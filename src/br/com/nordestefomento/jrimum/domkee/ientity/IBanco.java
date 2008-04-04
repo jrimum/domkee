@@ -30,9 +30,9 @@
 
 package br.com.nordestefomento.jrimum.domkee.ientity;
 
-import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
+import java.awt.Image;
 
-import com.lowagie.text.Image;
+import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 
 public interface IBanco {
 
