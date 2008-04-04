@@ -32,7 +32,6 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;
-import br.com.nordestefomento.jrimum.utilix.Util4String;
 import br.com.nordestefomento.jrimum.vallia.AValidator4CadastroDePessoa;
 import br.com.nordestefomento.jrimum.vallia.AValidator4CadastroDePessoa.EnumCadastroDePessoa;
 
@@ -110,14 +109,14 @@ public abstract class ACadastroDePessoa extends ACurbitaObject{
 
 				if (tipoDeCadastro == EnumCadastroDePessoa.CPF) {
 
-					codigo = Util4String.complete_x(cadastroDePessoa, Filler.STR_ZERO_LEFT, 11);
+					codigo = Filler.STR_ZERO_LEFT.fill(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
 				if (tipoDeCadastro == EnumCadastroDePessoa.CNPJ) {
 
-					codigo = Util4String.complete_x(cadastroDePessoa, Filler.STR_ZERO_LEFT, 14);
+					codigo = Filler.STR_ZERO_LEFT.fill(cadastroDePessoa, 14);
 					break switch_Cadastro;
 
 				}
