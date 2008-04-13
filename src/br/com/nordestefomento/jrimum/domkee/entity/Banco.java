@@ -31,11 +31,39 @@ package br.com.nordestefomento.jrimum.domkee.entity;
 
 import java.awt.Image;
 
+import org.apache.commons.lang.StringUtils;
+
+import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 
-public class Banco implements IBanco{
 
+/**
+ * 
+ * <p>
+ * DEFINIÇÃO DA CLASSE
+ * </p>
+ * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO: 
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * 
+ * @since 
+ * 
+ * @version 
+ */
+	
+public class Banco extends ACurbitaObject implements IBanco{
+
+	//TODO garantir consitencia do codigo de compensação.
+	//TODO criar classe para codigo de compensação.
+	
 	private String codigoDeCompensacao;
 
 	private String instituicao;
@@ -51,6 +79,29 @@ public class Banco implements IBanco{
 	 */
 	public Banco() {
 		super();
+	}
+	
+	
+	/**
+	 * @param codigoDeCompensacao
+	 * @param instituicao
+	 */
+	public Banco(String codigoDeCompensacao, String instituicao) {
+		super();
+		this.codigoDeCompensacao = codigoDeCompensacao;
+		this.instituicao = instituicao;
+	}
+
+	/**
+	 * @param codigoDeCompensacao
+	 * @param instituicao
+	 * @param cnpj
+	 */
+	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj) {
+		super();
+		this.codigoDeCompensacao = codigoDeCompensacao;
+		this.instituicao = instituicao;
+		cNPJ = cnpj;
 	}
 
 	/**
@@ -82,6 +133,39 @@ public class Banco implements IBanco{
 		cNPJ = cnpj;
 		this.segmento = segmento;
 		this.imgLogo = imgLogo;
+	}
+
+	/**
+	 * 	 * <p>
+	 * Verifica se o código passdo está ok em relação as regras:
+	 * <ol>
+	 * <li>Não nulo</li>
+	 * <li>Numérico</li>
+	 * <li>Com 3 digitos</li>
+	 * </ol>
+	 * </p>
+	 * 
+	 * @param codigo
+	 * 
+	 * @return se ok
+	 * 
+	 * @throws IllegalArgumentException
+	 * 
+	 * @since 0.2
+	 * 
+	 */		
+	public static boolean isCodigoDeCompensacaoOK(String codigo) throws IllegalArgumentException{
+		boolean ok = false;
+		if(!isNull(codigo, "codigo")){
+			if(StringUtils.isNumeric(codigo))
+				if(codigo.length() == 3)
+					ok = true;
+				else
+					throw new IllegalArgumentException("O codigo e de apenas 3 digitos!");
+			else
+				throw new IllegalArgumentException("O codigo de compensacao deve ser numerico!");
+		}
+		return ok;
 	}
 
 	public String getCodigoDeCompensacao() {
@@ -123,6 +207,5 @@ public class Banco implements IBanco{
 	public void setImgLogo(Image imgLogo) {
 		this.imgLogo = imgLogo;
 	}
-
 	
 }

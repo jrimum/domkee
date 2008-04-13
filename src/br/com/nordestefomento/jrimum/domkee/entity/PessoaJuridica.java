@@ -46,6 +46,9 @@ public class PessoaJuridica extends Pessoa implements IPessoaJuridica {
 	
 	private Long inscricaoMunicipal;
 	
+	/**
+	 *  Título do estabelecimento, diferente do <code>nome</code> (NOME EMPRESARIAL). 
+	 */
 	private String nomeFantasia;
 
 	@Override
