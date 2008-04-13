@@ -109,14 +109,14 @@ public abstract class ACadastroDePessoa extends ACurbitaObject{
 
 				if (tipoDeCadastro == EnumCadastroDePessoa.CPF) {
 
-					codigo = Filler.STR_ZERO_LEFT.fill(cadastroDePessoa, 11);
+					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
 				if (tipoDeCadastro == EnumCadastroDePessoa.CNPJ) {
 
-					codigo = Filler.STR_ZERO_LEFT.fill(cadastroDePessoa, 14);
+					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
 					break switch_Cadastro;
 
 				}
