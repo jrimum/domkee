@@ -38,16 +38,29 @@ import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 // TODO Verificar a necessidade de se criar uma família de classes de
 // ContaBancaria, uma para cada banco, e seus respectivos autenticadores.
 
+
+
 /**
- * Entidade responsável pelo armazenamento de informações relacionadas à uma conta bancária. Esta classe fornece serviços para obtenção de dados de uma conta de forma diferenciada.
- * @author   Gabriel Guimarães
- * @author   <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author   Misael Barreto 
- * @author   Rômulo Augusto
- * @author   <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
- * @since   JMatryx 1.0
- * @version   1.0
+ * 
+ * <p>
+ * DEFINIÇÃO DA CLASSE
+ * </p>
+ * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO: 
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
+	
 public class ContaBancaria {
 
 	private static final long serialVersionUID = 3409504109013559999L;
@@ -58,7 +71,7 @@ public class ContaBancaria {
 	
 	private NumeroDaConta numeroDaConta;
 	
-	private Integer codigoDaCarteira  = 0;
+	private Carteira carteira;
 
 	private Collection<Pessoa> titulares;
 	
@@ -68,13 +81,19 @@ public class ContaBancaria {
 		
 		this.banco = banco;
 	}
-
-	public Integer getCodigoDaCarteira() {
-		return codigoDaCarteira;
+	
+	/**
+	 * @return the carteira
+	 */
+	public Carteira getCarteira() {
+		return carteira;
 	}
 
-	public void setCodigoDaCarteira(Integer codigoDaCarteira) {
-		this.codigoDaCarteira = codigoDaCarteira;
+	/**
+	 * @param carteira the carteira to set
+	 */
+	public void setCarteira(Carteira carteira) {
+		this.carteira = carteira;
 	}
 
 	public IBanco getBanco() {
