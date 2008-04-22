@@ -30,12 +30,17 @@
 package br.com.nordestefomento.jrimum.domkee.entity;
 
 import java.awt.Image;
+import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
+import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
+import br.com.nordestefomento.jrimum.domkee.type.Email;
+import br.com.nordestefomento.jrimum.domkee.type.Endereco;
+import br.com.nordestefomento.jrimum.domkee.type.Telefone;
 
 
 /**
@@ -60,19 +65,21 @@ import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
  */
 	
 public class Banco extends ACurbitaObject implements IBanco{
-
-	//TODO garantir consitencia do codigo de compensação.
-	//TODO criar classe para codigo de compensação.
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6156550582890687779L;
+
 	private String codigoDeCompensacao;
 
 	private String instituicao;
 
-	private CNPJ cNPJ;
-
 	private String segmento;
 
 	private Image imgLogo;
+	
+	private PessoaJuridica pessoaJuridica;
 
 	/**
 	 * 
@@ -90,6 +97,8 @@ public class Banco extends ACurbitaObject implements IBanco{
 		super();
 		this.codigoDeCompensacao = codigoDeCompensacao;
 		this.instituicao = instituicao;
+
+		pessoaJuridica = new PessoaJuridica();
 	}
 
 	/**
@@ -101,7 +110,10 @@ public class Banco extends ACurbitaObject implements IBanco{
 		super();
 		this.codigoDeCompensacao = codigoDeCompensacao;
 		this.instituicao = instituicao;
-		cNPJ = cnpj;
+		
+		pessoaJuridica = new PessoaJuridica();
+		
+		pessoaJuridica.setCadastroDePessoa(cnpj);
 	}
 
 	/**
@@ -115,8 +127,10 @@ public class Banco extends ACurbitaObject implements IBanco{
 		super();
 		this.codigoDeCompensacao = codigoDeCompensacao;
 		this.instituicao = instituicao;
-		cNPJ = cnpj;
 		this.segmento = segmento;
+		
+		pessoaJuridica = new PessoaJuridica();
+		pessoaJuridica.setCadastroDePessoa(cnpj);
 	}
 
 	/**
@@ -130,9 +144,11 @@ public class Banco extends ACurbitaObject implements IBanco{
 		super();
 		this.codigoDeCompensacao = codigoDeCompensacao;
 		this.instituicao = instituicao;
-		cNPJ = cnpj;
 		this.segmento = segmento;
 		this.imgLogo = imgLogo;
+		
+		pessoaJuridica = new PessoaJuridica();
+		pessoaJuridica.setCadastroDePessoa(cnpj);
 	}
 
 	/**
@@ -185,11 +201,11 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	public CNPJ getCNPJ() {
-		return cNPJ;
+		return (CNPJ)pessoaJuridica.getCadastroDePessoa();
 	}
 
 	public void setCNPJ(CNPJ cnpj) {
-		cNPJ = cnpj;
+		pessoaJuridica.setCadastroDePessoa(cnpj);
 	}
 
 	public String getSegmento() {
@@ -206,6 +222,256 @@ public class Banco extends ACurbitaObject implements IBanco{
 
 	public void setImgLogo(Image imgLogo) {
 		this.imgLogo = imgLogo;
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria)
+	 */
+	@Override
+	public void addContaBancaria(ContaBancaria contaBancaria) {
+		
+		pessoaJuridica.addContaBancaria(contaBancaria);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEmail(br.com.nordestefomento.jrimum.domkee.type.Email)
+	 */
+	@Override
+	public void addEmail(Email email) {
+		
+		pessoaJuridica.addEmail(email);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.type.Endereco)
+	 */
+	@Override
+	public void addEndereco(Endereco endereco) {
+		
+		pessoaJuridica.addEndereco(endereco);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.Telefone)
+	 */
+	@Override
+	public void addTelefone(Telefone telefone) {
+		
+		pessoaJuridica.addTelefone(telefone);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getCadastroDePessoa()
+	 */
+	@Override
+	public ACadastroDePessoa getCadastroDePessoa() {
+		
+		return pessoaJuridica.getCadastroDePessoa();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getContasBancarias()
+	 */
+	@Override
+	public Collection<ContaBancaria> getContasBancarias() {
+		
+		return pessoaJuridica.getContasBancarias();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEmails()
+	 */
+	@Override
+	public Collection<Email> getEmails() {
+		
+		return getEmails();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEnderecos()
+	 */
+	@Override
+	public Collection<Endereco> getEnderecos() {
+		
+		return pessoaJuridica.getEnderecos();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getNome()
+	 */
+	@Override
+	public String getNome() {
+		
+		return pessoaJuridica.getNome();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getTelefones()
+	 */
+	@Override
+	public Collection<Telefone> getTelefones() {
+		
+		return pessoaJuridica.getTelefones();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#hasContaBancaria()
+	 */
+	@Override
+	public boolean hasContaBancaria() {
+		
+		return pessoaJuridica.hasContaBancaria();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isFisica()
+	 */
+	@Override
+	public boolean isFisica() {
+		
+		return pessoaJuridica.isFisica();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isJuridica()
+	 */
+	@Override
+	public boolean isJuridica() {
+		
+		return pessoaJuridica.isJuridica();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setCadastroDePessoa(br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa)
+	 */
+	@Override
+	public void setCadastroDePessoa(ACadastroDePessoa cadastroDePessoa) {
+		
+		pessoaJuridica.setCadastroDePessoa(cadastroDePessoa);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setContasBancarias(java.util.Collection)
+	 */
+	@Override
+	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
+		
+		pessoaJuridica.setContasBancarias(contasBancarias);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEmails(java.util.Collection)
+	 */
+	@Override
+	public void setEmails(Collection<Email> emails) {
+		
+		pessoaJuridica.setEmails(emails);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEnderecos(java.util.Collection)
+	 */
+	@Override
+	public void setEnderecos(Collection<Endereco> enderecos) {
+		
+		pessoaJuridica.setEnderecos(enderecos);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setNome(java.lang.String)
+	 */
+	@Override
+	public void setNome(String nome) {
+		
+		pessoaJuridica.setNome(nome);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setTelefones(java.util.Collection)
+	 */
+	@Override
+	public void setTelefones(Collection<Telefone> telefones) {
+		
+		pessoaJuridica.setTelefones(telefones);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getInscricaoEstadual()
+	 */
+	@Override
+	public Long getInscricaoEstadual() {
+		
+		return pessoaJuridica.getInscricaoEstadual();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getInscricaoMunicipal()
+	 */
+	@Override
+	public Long getInscricaoMunicipal() {
+		
+		return pessoaJuridica.getInscricaoMunicipal();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getNomeFantasia()
+	 */
+	@Override
+	public String getNomeFantasia() {
+		
+		return pessoaJuridica.getNome();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setInscricaoEstadual(java.lang.Long)
+	 */
+	@Override
+	public void setInscricaoEstadual(Long inscricaoEstadual) {
+		
+		pessoaJuridica.setInscricaoEstadual(inscricaoEstadual);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setInscricaoMunicipal(java.lang.Long)
+	 */
+	@Override
+	public void setInscricaoMunicipal(Long inscricaoMunicipal) {
+		
+		pessoaJuridica.setInscricaoMunicipal(inscricaoMunicipal);
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setNomeFantasia(java.lang.String)
+	 */
+	@Override
+	public void setNomeFantasia(String nomeFantasia) {
+		
+		pessoaJuridica.setNomeFantasia(nomeFantasia);
 	}
 	
 }

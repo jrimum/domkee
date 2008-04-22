@@ -34,7 +34,7 @@ import java.awt.Image;
 
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 
-public interface IBanco {
+public interface IBanco extends IPessoaJuridica{
 
 	public abstract String getCodigoDeCompensacao();
 	public abstract String getInstituicao();
