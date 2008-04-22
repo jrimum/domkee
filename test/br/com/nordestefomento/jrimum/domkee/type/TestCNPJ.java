@@ -30,7 +30,7 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
+import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 
 import junit.framework.TestCase;
@@ -53,9 +53,9 @@ public class TestCNPJ extends TestCase {
 
 	public void testGetInstanceString() {
 		
-		assertNotNull(ACadastroDePessoa.getInstance("11222333000181"));
+		assertNotNull(ACpfCnpj.getInstance("11222333000181"));
 		
-		assertTrue(ACadastroDePessoa.getInstance("11222333000181") instanceof CNPJ);
+		assertTrue(ACpfCnpj.getInstance("11222333000181") instanceof CNPJ);
 	}
 
 }

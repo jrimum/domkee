@@ -32,8 +32,8 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CadastroDePessoa;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CadastroDePessoa.EnumCadastroDePessoa;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCadastroDePessoa;
 
 
 /**
@@ -51,7 +51,7 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4CadastroDePessoa.EnumCada
  * 
  * @version 1.0
  */
-public abstract class ACadastroDePessoa extends ACurbitaObject{ 
+public abstract class ACpfCnpj extends ACurbitaObject{ 
 
 	/**
 	 * 
@@ -66,10 +66,10 @@ public abstract class ACadastroDePessoa extends ACurbitaObject{
 	/**
 	 * 
 	 */
-	protected AValidator4CadastroDePessoa autenticadorCP;
+	protected AValidator4ACpfCnpj autenticadorCP;
 	
 	
-	public ACadastroDePessoa(){
+	public ACpfCnpj(){
 		log.warn("Cadastro de Pessoa Não Inicializado Corretamente!");
 	}
 
@@ -85,7 +85,7 @@ public abstract class ACadastroDePessoa extends ACurbitaObject{
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public static ACadastroDePessoa getInstance(Long cadastroDePessoa,
+	public static ACpfCnpj getInstance(Long cadastroDePessoa,
 			EnumCadastroDePessoa tipoDeCadastro) throws IllegalArgumentException {
 
 		return getInstance(String.valueOf(cadastroDePessoa),tipoDeCadastro);
@@ -98,12 +98,12 @@ public abstract class ACadastroDePessoa extends ACurbitaObject{
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public static ACadastroDePessoa getInstance(String cadastroDePessoa,
+	public static ACpfCnpj getInstance(String cadastroDePessoa,
 			EnumCadastroDePessoa tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
-		if (AValidator4CadastroDePessoa.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
+		if (AValidator4ACpfCnpj.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
 
 			switch_Cadastro: {
 
@@ -133,16 +133,16 @@ public abstract class ACadastroDePessoa extends ACurbitaObject{
 	 * 
 	 * @param cadastroDePessoa -
 	 *            identificador do cadastro de pessoa.
-	 * @return uma instância de ACadastroDePessoa.
+	 * @return uma instância de ACpfCnpj.
 	 * @throws IllegalArgumentException -
 	 *             caso o parâmetro não esteja em um formatador válido de cadastro
 	 *             de pessoa.
 	 */
-	public static ACadastroDePessoa getInstance(String cadastroDePessoa)
+	public static ACpfCnpj getInstance(String cadastroDePessoa)
 			throws IllegalArgumentException {
 
-		ACadastroDePessoa cp = null;
-		AValidator4CadastroDePessoa autenticadorCP = AValidator4CadastroDePessoa
+		ACpfCnpj cp = null;
+		AValidator4ACpfCnpj autenticadorCP = AValidator4ACpfCnpj
 				.getInstance(cadastroDePessoa);
 
 		if (autenticadorCP.isValido()) {

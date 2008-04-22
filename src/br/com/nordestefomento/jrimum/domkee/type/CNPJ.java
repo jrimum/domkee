@@ -50,7 +50,7 @@ package br.com.nordestefomento.jrimum.domkee.type;
  * 
  * @version 1.0
  */
-public class CNPJ extends ACadastroDePessoa {
+public class CNPJ extends ACpfCnpj {
 
 
 	/**

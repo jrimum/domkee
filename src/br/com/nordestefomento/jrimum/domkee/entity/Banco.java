@@ -36,7 +36,7 @@ import org.apache.commons.lang.StringUtils;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
-import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
+import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
@@ -113,7 +113,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica = new PessoaJuridica();
 		
-		pessoaJuridica.setCadastroDePessoa(cnpj);
+		pessoaJuridica.setACpfCnpj(cnpj);
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.segmento = segmento;
 		
 		pessoaJuridica = new PessoaJuridica();
-		pessoaJuridica.setCadastroDePessoa(cnpj);
+		pessoaJuridica.setACpfCnpj(cnpj);
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.imgLogo = imgLogo;
 		
 		pessoaJuridica = new PessoaJuridica();
-		pessoaJuridica.setCadastroDePessoa(cnpj);
+		pessoaJuridica.setACpfCnpj(cnpj);
 	}
 
 	/**
@@ -201,11 +201,11 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	public CNPJ getCNPJ() {
-		return (CNPJ)pessoaJuridica.getCadastroDePessoa();
+		return (CNPJ)pessoaJuridica.getACpfCnpj();
 	}
 
 	public void setCNPJ(CNPJ cnpj) {
-		pessoaJuridica.setCadastroDePessoa(cnpj);
+		pessoaJuridica.setACpfCnpj(cnpj);
 	}
 
 	public String getSegmento() {
@@ -266,12 +266,12 @@ public class Banco extends ACurbitaObject implements IBanco{
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getCadastroDePessoa()
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getACpfCnpj()
 	 */
 	@Override
-	public ACadastroDePessoa getCadastroDePessoa() {
+	public ACpfCnpj getACpfCnpj() {
 		
-		return pessoaJuridica.getCadastroDePessoa();
+		return pessoaJuridica.getACpfCnpj();
 	}
 
 
@@ -356,12 +356,12 @@ public class Banco extends ACurbitaObject implements IBanco{
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setCadastroDePessoa(br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setACpfCnpj(br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj)
 	 */
 	@Override
-	public void setCadastroDePessoa(ACadastroDePessoa cadastroDePessoa) {
+	public void setACpfCnpj(ACpfCnpj aCpfCnpj) {
 		
-		pessoaJuridica.setCadastroDePessoa(cadastroDePessoa);
+		pessoaJuridica.setACpfCnpj(aCpfCnpj);
 	}
 
 

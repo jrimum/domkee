@@ -32,7 +32,7 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import junit.framework.TestCase;
 
-import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
+import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
 import br.com.nordestefomento.jrimum.domkee.type.CPF;
 
 /**
@@ -54,9 +54,9 @@ public class TestCPF extends TestCase {
 
 	public void testGetInstanceString() {
 
-		assertNotNull(ACadastroDePessoa.getInstance("22233366638"));
+		assertNotNull(ACpfCnpj.getInstance("22233366638"));
 		
-		assertTrue(ACadastroDePessoa.getInstance("22233366638") instanceof CPF);
+		assertTrue(ACpfCnpj.getInstance("22233366638") instanceof CPF);
 	}
 
 }

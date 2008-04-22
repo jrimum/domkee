@@ -30,14 +30,14 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CadastroDePessoa.EnumCadastroDePessoa;
+import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCadastroDePessoa;
 
 import junit.framework.TestCase;
 
 /**
  * 
- * Teste da classe <code>ACadastroDePessoa</code>.
+ * Teste da classe <code>ACpfCnpj</code>.
  * 
  * 
  * @author Gabriel Guimarães
@@ -55,26 +55,26 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
 		
-		ACadastroDePessoa cadastroDePessoa = ACadastroDePessoa.getInstance(208000100L , EnumCadastroDePessoa.CNPJ);
+		ACpfCnpj aCpfCnpj = ACpfCnpj.getInstance(208000100L , EnumCadastroDePessoa.CNPJ);
 		
-		assertNotNull(cadastroDePessoa);
+		assertNotNull(aCpfCnpj);
 		
-		assertFalse(cadastroDePessoa.isFisica());
-		assertTrue(cadastroDePessoa.isJuridica());
+		assertFalse(aCpfCnpj.isFisica());
+		assertTrue(aCpfCnpj.isJuridica());
 		
-		cadastroDePessoa = ACadastroDePessoa.getInstance(22233366638L , EnumCadastroDePessoa.CPF);
+		aCpfCnpj = ACpfCnpj.getInstance(22233366638L , EnumCadastroDePessoa.CPF);
 		
-		assertNotNull(cadastroDePessoa);
+		assertNotNull(aCpfCnpj);
 		
-		assertFalse(cadastroDePessoa.isJuridica());
-		assertTrue(cadastroDePessoa.isFisica());
+		assertFalse(aCpfCnpj.isJuridica());
+		assertTrue(aCpfCnpj.isFisica());
 	
 		
 		try {
 			
 			Long nulo = null;
 			
-			ACadastroDePessoa.getInstance(nulo, null);
+			ACpfCnpj.getInstance(nulo, null);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -90,7 +90,7 @@ public class TestACadastroDePessoa extends TestCase {
 			
 			Long nulo = null;
 			
-			ACadastroDePessoa.getInstance(nulo, EnumCadastroDePessoa.CPF);
+			ACpfCnpj.getInstance(nulo, EnumCadastroDePessoa.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -103,7 +103,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {
 			
-			ACadastroDePessoa.getInstance(12L, null);
+			ACpfCnpj.getInstance(12L, null);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -116,7 +116,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {
 			
-			ACadastroDePessoa.getInstance(123L, EnumCadastroDePessoa.CPF);
+			ACpfCnpj.getInstance(123L, EnumCadastroDePessoa.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -130,7 +130,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {
 			
-			ACadastroDePessoa.getInstance(112223330001L, EnumCadastroDePessoa.CNPJ);
+			ACpfCnpj.getInstance(112223330001L, EnumCadastroDePessoa.CNPJ);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -145,15 +145,15 @@ public class TestACadastroDePessoa extends TestCase {
 
 	public void testGetInstanceString() {
 		
-		assertNotNull(ACadastroDePessoa.getInstance("22233366638"));
-		assertNotNull(ACadastroDePessoa.getInstance("222.333.666-38"));
+		assertNotNull(ACpfCnpj.getInstance("22233366638"));
+		assertNotNull(ACpfCnpj.getInstance("222.333.666-38"));
 		
-		assertNotNull(ACadastroDePessoa.getInstance("11222333000181"));
-		assertNotNull(ACadastroDePessoa.getInstance("11.222.333/0001-81"));
+		assertNotNull(ACpfCnpj.getInstance("11222333000181"));
+		assertNotNull(ACpfCnpj.getInstance("11.222.333/0001-81"));
 		
 		try {
 			
-			ACadastroDePessoa.getInstance("abc123");
+			ACpfCnpj.getInstance("abc123");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -165,7 +165,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {
 			
-			ACadastroDePessoa.getInstance("222333666");
+			ACpfCnpj.getInstance("222333666");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -177,7 +177,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {		
 			
-			ACadastroDePessoa.getInstance("112223330001");
+			ACpfCnpj.getInstance("112223330001");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -190,20 +190,20 @@ public class TestACadastroDePessoa extends TestCase {
 
 	public void testGetCodigoFormatado() {
 		
-		assertTrue(ACadastroDePessoa.getInstance("22233366638").getCodigoFormatado().equals("222.333.666-38"));
-		assertTrue(ACadastroDePessoa.getInstance("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
+		assertTrue(ACpfCnpj.getInstance("22233366638").getCodigoFormatado().equals("222.333.666-38"));
+		assertTrue(ACpfCnpj.getInstance("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
 		
-		assertTrue(ACadastroDePessoa.getInstance("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
-		assertTrue(ACadastroDePessoa.getInstance("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
+		assertTrue(ACpfCnpj.getInstance("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
+		assertTrue(ACpfCnpj.getInstance("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
 	}
 
 	public void testGetCodigo() {
 		
-		assertEquals(ACadastroDePessoa.getInstance("22233366638").getCodigo().longValue(), 22233366638L);
-		assertEquals(ACadastroDePessoa.getInstance("222.333.666-38").getCodigo().longValue(), 22233366638L);
+		assertEquals(ACpfCnpj.getInstance("22233366638").getCodigo().longValue(), 22233366638L);
+		assertEquals(ACpfCnpj.getInstance("222.333.666-38").getCodigo().longValue(), 22233366638L);
 		
-		assertEquals(ACadastroDePessoa.getInstance("11222333000181").getCodigo().longValue(), 11222333000181L);
-		assertEquals(ACadastroDePessoa.getInstance("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
+		assertEquals(ACpfCnpj.getInstance("11222333000181").getCodigo().longValue(), 11222333000181L);
+		assertEquals(ACpfCnpj.getInstance("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
 	}
 
 }

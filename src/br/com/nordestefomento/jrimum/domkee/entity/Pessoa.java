@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
-import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
+import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.Telefone;
@@ -53,7 +53,7 @@ public class Pessoa implements IPessoa {
 	
 	private String nome;
 	
-	private ACadastroDePessoa cadastroDePessoa;
+	private ACpfCnpj aCpfCnpj;
 	
 	private Collection<Telefone> telefones;
 	
@@ -73,7 +73,7 @@ public class Pessoa implements IPessoa {
 	public Pessoa(String nome, String cadastroDePessoa) {
 		
 		this.nome = nome;
-		this.cadastroDePessoa = ACadastroDePessoa.getInstance(cadastroDePessoa);
+		this.aCpfCnpj = ACpfCnpj.getInstance(cadastroDePessoa);
 	}
 
 	@Override
@@ -118,9 +118,9 @@ public class Pessoa implements IPessoa {
 	}
 
 	@Override
-	public ACadastroDePessoa getCadastroDePessoa() {
+	public ACpfCnpj getACpfCnpj() {
 		
-		return cadastroDePessoa;
+		return aCpfCnpj;
 	}
 
 	@Override
@@ -154,9 +154,9 @@ public class Pessoa implements IPessoa {
 	}
 
 	@Override
-	public void setCadastroDePessoa(ACadastroDePessoa cadastroDePessoa) {
+	public void setACpfCnpj(ACpfCnpj aCpfCnpj) {
 		
-		this.cadastroDePessoa = cadastroDePessoa;
+		this.aCpfCnpj = aCpfCnpj;
 	}
 
 	@Override

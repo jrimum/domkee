@@ -34,7 +34,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria;
-import br.com.nordestefomento.jrimum.domkee.type.ACadastroDePessoa;
+import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.Telefone;
@@ -48,9 +48,9 @@ public interface IPessoa extends Serializable {
 
 	public void setNome(String nome);
 
-	public ACadastroDePessoa getCadastroDePessoa();
+	public ACpfCnpj getACpfCnpj();
 
-	public void setCadastroDePessoa(ACadastroDePessoa cadastroDePessoa);
+	public void setACpfCnpj(ACpfCnpj aCpfCnpj);
 
 	public Collection<Telefone> getTelefones();
 
