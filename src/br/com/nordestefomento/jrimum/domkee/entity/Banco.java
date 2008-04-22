@@ -59,9 +59,9 @@ import br.com.nordestefomento.jrimum.domkee.type.Telefone;
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * 
- * @since 
+ * @since 0.2
  * 
- * @version 
+ * @version 0.2
  */
 	
 public class Banco extends ACurbitaObject implements IBanco{
@@ -72,8 +72,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 	private static final long serialVersionUID = -6156550582890687779L;
 
 	private String codigoDeCompensacao;
-
-	private String instituicao;
 
 	private String segmento;
 
@@ -95,10 +93,12 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 */
 	public Banco(String codigoDeCompensacao, String instituicao) {
 		super();
+		
 		this.codigoDeCompensacao = codigoDeCompensacao;
-		this.instituicao = instituicao;
 
 		pessoaJuridica = new PessoaJuridica();
+		pessoaJuridica.setNome(instituicao);
+		pessoaJuridica.setNomeFantasia(instituicao);
 	}
 
 	/**
@@ -108,12 +108,14 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 */
 	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj) {
 		super();
+		
 		this.codigoDeCompensacao = codigoDeCompensacao;
-		this.instituicao = instituicao;
 		
 		pessoaJuridica = new PessoaJuridica();
 		
 		pessoaJuridica.setACpfCnpj(cnpj);
+		pessoaJuridica.setNome(instituicao);
+		pessoaJuridica.setNomeFantasia(instituicao);
 	}
 
 	/**
@@ -125,12 +127,14 @@ public class Banco extends ACurbitaObject implements IBanco{
 	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj,
 			String segmento) {
 		super();
+		
 		this.codigoDeCompensacao = codigoDeCompensacao;
-		this.instituicao = instituicao;
 		this.segmento = segmento;
 		
 		pessoaJuridica = new PessoaJuridica();
 		pessoaJuridica.setACpfCnpj(cnpj);
+		pessoaJuridica.setNome(instituicao);
+		pessoaJuridica.setNomeFantasia(instituicao);
 	}
 
 	/**
@@ -142,8 +146,8 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 */
 	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj,	String segmento, Image imgLogo) {
 		super();
+		
 		this.codigoDeCompensacao = codigoDeCompensacao;
-		this.instituicao = instituicao;
 		this.segmento = segmento;
 		this.imgLogo = imgLogo;
 		
@@ -190,14 +194,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 
 	public void setCodigoDeCompensacao(String codigoDeCompensacao) {
 		this.codigoDeCompensacao = codigoDeCompensacao;
-	}
-
-	public String getInstituicao() {
-		return instituicao;
-	}
-
-	public void setInstituicao(String instituicao) {
-		this.instituicao = instituicao;
 	}
 
 	public CNPJ getCNPJ() {
