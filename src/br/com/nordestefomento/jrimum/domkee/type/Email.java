@@ -30,16 +30,13 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import java.util.Collection;
-
-import br.com.nordestefomento.jrimum.domkee.ATagable;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.ITextStream;
 
 /**
  * @author Romulo
  */
-public class Email extends ATagable<TryxTag> implements ITextStream {
+public class Email implements ITextStream {
 
 	/**
 	 * 
@@ -55,31 +52,12 @@ public class Email extends ATagable<TryxTag> implements ITextStream {
 	private String email;
 	
 	private Pessoa pessoa;
-	
-	private Collection<TryxTag> tagSub;
 
 	public Email() {}
 
 	public Email(String email) {
 		
 		read(email);
-	}
-
-	private void preEventGambi() {
-		
-		tagSub = super.tag;
-	}
-	
-	@Override
-	public void setTags(Collection<TryxTag> tags) {
-		
-		super.setTags(tags);
-	}
-	
-	@Override
-	public Collection<TryxTag> getTags() {
-
-		return super.getTags();
 	}
 
 	public String getConta() {

@@ -33,7 +33,6 @@ package br.com.nordestefomento.jrimum.domkee.type;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import br.com.nordestefomento.jrimum.domkee.ATagable;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 
 /**
@@ -46,7 +45,7 @@ import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
  * @since   JMatryx 1.0
  * @version   1.0
  */
-public class Endereco extends ATagable<TryxTag> {
+public class Endereco {
 
 	private static final long serialVersionUID = -2971929602328106185L;
 	
@@ -70,26 +69,7 @@ public class Endereco extends ATagable<TryxTag> {
 	
 	private Collection<Pessoa> pessoas;
 	
-	private Collection<TryxTag> tagSub;
-	
 	public Endereco() {}
-	
-	private void preEventGambi() {
-		
-		tagSub = super.tag;
-	}
-	
-	@Override
-	public void setTags(Collection<TryxTag> tags) {
-		
-		super.setTags(tags);
-	}
-	
-	@Override
-	public Collection<TryxTag> getTags() {
-
-		return super.getTags();
-	}
 
 	public String getBairro() {
 		return bairro;
