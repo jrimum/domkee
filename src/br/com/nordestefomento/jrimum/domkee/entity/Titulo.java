@@ -117,19 +117,25 @@ public final class Titulo extends ACurbitaObject{
 	 * Dígito verificador do nosso número, caso exista.
 	 */
 	private String digitoDoNossoNumero;
+	
+	/**
+	 * Conta na qual o titulo se encontra, conta do favorecido (Cedente).
+	 */
+	private ContaBancaria contaBancaria;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.type.entity.Cedente
+	 * Cliente que entrega os títulos ao Banco para serem cobrados.
 	 */
 	private Pessoa cedente;
+	
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.type.entity.Sacado
+	 * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
 	 */
 	private Pessoa sacado;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.type.entity.SacadorAvalista
+	 * Cedente original do Título.
 	 */
 	private Pessoa sacadorAvalista;
 
@@ -336,6 +342,20 @@ public final class Titulo extends ACurbitaObject{
 	 */
 	public void setNumeroDoDocumento(String numeroDoDocumento) {
 		this.numeroDoDocumento = numeroDoDocumento;
+	}
+	
+	/**
+	 * @return the contaBancaria
+	 */
+	public ContaBancaria getContaBancaria() {
+		return contaBancaria;
+	}
+
+	/**
+	 * @param contaBancaria the contaBancaria to set
+	 */
+	public void setContaBancaria(ContaBancaria contaBancaria) {
+		this.contaBancaria = contaBancaria;
 	}
 
 	/**
