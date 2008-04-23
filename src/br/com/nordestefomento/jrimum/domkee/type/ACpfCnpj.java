@@ -67,11 +67,6 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 * 
 	 */
 	protected AValidator4ACpfCnpj autenticadorCP;
-	
-	
-	public ACpfCnpj(){
-		log.warn("Cadastro de Pessoa Não Inicializado Corretamente!");
-	}
 
     public abstract String getRaiz();
 	

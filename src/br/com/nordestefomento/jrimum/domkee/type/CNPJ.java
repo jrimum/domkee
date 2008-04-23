@@ -76,23 +76,29 @@ public class CNPJ extends ACpfCnpj {
 	 */
 	public static CNPJ getInstance(String strCNPJ) {
 		
-		StringBuilder codigoFormatado = null;
-		Long codigo = 0L;
-		
-		CNPJ cnpj = new CNPJ();
-				
-		codigo = Long.parseLong(strCNPJ);
-		codigoFormatado = new StringBuilder(strCNPJ);
-		
-		codigoFormatado.insert(2, '.');
-		codigoFormatado.insert(6, '.');
-		codigoFormatado.insert(10, '/');
-		codigoFormatado.insert(15, '-');
-		
-		cnpj.setCodigo(codigo);
-		cnpj.setCodigoFormatado(codigoFormatado.toString());
-		
-		return cnpj;
+		try{
+			
+			StringBuilder codigoFormatado = null;
+			Long codigo = 0L;
+			
+			CNPJ cnpj = new CNPJ();
+					
+			codigo = Long.parseLong(strCNPJ);
+			codigoFormatado = new StringBuilder(strCNPJ);
+			
+			codigoFormatado.insert(2, '.');
+			codigoFormatado.insert(6, '.');
+			codigoFormatado.insert(10, '/');
+			codigoFormatado.insert(15, '-');
+			
+			cnpj.setCodigo(codigo);
+			cnpj.setCodigoFormatado(codigoFormatado.toString());
+			
+			return cnpj;
+			
+		}catch(Exception e){
+			throw new CNPJException(e);
+		}
 	}
 	
 	public boolean isMatriz(){

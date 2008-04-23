@@ -74,22 +74,28 @@ public class CPF extends ACpfCnpj {
 	 */
 	public static CPF getInstance(String cadastroDePessoa) {
 		
-		StringBuilder codigoFormatado = null;
-		Long codigo = 0L;
-		
-		CPF cpf = new CPF();
-				
-		codigo = Long.parseLong(cadastroDePessoa);
-		codigoFormatado = new StringBuilder(cadastroDePessoa);
-		
-		codigoFormatado.insert(3, '.');
-		codigoFormatado.insert(7, '.');
-		codigoFormatado.insert(11, '-');
-		
-		cpf.setCodigo(codigo);
-		cpf.setCodigoFormatado(codigoFormatado.toString());
-		
-		return cpf;
+		try{
+			
+			StringBuilder codigoFormatado = null;
+			Long codigo = 0L;
+			
+			CPF cpf = new CPF();
+					
+			codigo = Long.parseLong(cadastroDePessoa);
+			codigoFormatado = new StringBuilder(cadastroDePessoa);
+			
+			codigoFormatado.insert(3, '.');
+			codigoFormatado.insert(7, '.');
+			codigoFormatado.insert(11, '-');
+			
+			cpf.setCodigo(codigo);
+			cpf.setCodigoFormatado(codigoFormatado.toString());
+			
+			return cpf;
+			
+		}catch(Exception e){
+			throw new CPFException(e);
+		}
 	}
 
 	@Override
