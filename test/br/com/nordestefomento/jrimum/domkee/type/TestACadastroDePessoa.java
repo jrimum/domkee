@@ -31,7 +31,7 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCadastroDePessoa;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
 
 import junit.framework.TestCase;
 
@@ -55,14 +55,14 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
 		
-		ACpfCnpj aCpfCnpj = ACpfCnpj.getInstance(208000100L , EnumCadastroDePessoa.CNPJ);
+		ACpfCnpj aCpfCnpj = ACpfCnpj.getInstance(208000100L , EnumCpfCnpj.CNPJ);
 		
 		assertNotNull(aCpfCnpj);
 		
 		assertFalse(aCpfCnpj.isFisica());
 		assertTrue(aCpfCnpj.isJuridica());
 		
-		aCpfCnpj = ACpfCnpj.getInstance(22233366638L , EnumCadastroDePessoa.CPF);
+		aCpfCnpj = ACpfCnpj.getInstance(22233366638L , EnumCpfCnpj.CPF);
 		
 		assertNotNull(aCpfCnpj);
 		
@@ -90,7 +90,7 @@ public class TestACadastroDePessoa extends TestCase {
 			
 			Long nulo = null;
 			
-			ACpfCnpj.getInstance(nulo, EnumCadastroDePessoa.CPF);
+			ACpfCnpj.getInstance(nulo, EnumCpfCnpj.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -116,7 +116,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {
 			
-			ACpfCnpj.getInstance(123L, EnumCadastroDePessoa.CPF);
+			ACpfCnpj.getInstance(123L, EnumCpfCnpj.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -130,7 +130,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 		try {
 			
-			ACpfCnpj.getInstance(112223330001L, EnumCadastroDePessoa.CNPJ);
+			ACpfCnpj.getInstance(112223330001L, EnumCpfCnpj.CNPJ);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);

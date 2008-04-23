@@ -33,7 +33,7 @@ package br.com.nordestefomento.jrimum.domkee.type;
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCadastroDePessoa;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
 
 
 /**
@@ -68,12 +68,6 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 */
 	protected AValidator4ACpfCnpj autenticadorCP;
 
-    public abstract String getRaiz();
-	
-	public abstract String getSufixo();
-	
-	public abstract String getDigitoVerificador();
-
 	/**
 	 * @param cadastroDePessoa
 	 * @param tipoDeCadastro
@@ -81,7 +75,7 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 * @throws IllegalArgumentException
 	 */
 	public static ACpfCnpj getInstance(Long cadastroDePessoa,
-			EnumCadastroDePessoa tipoDeCadastro) throws IllegalArgumentException {
+			EnumCpfCnpj tipoDeCadastro) throws IllegalArgumentException {
 
 		return getInstance(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 		
@@ -94,7 +88,7 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 * @throws IllegalArgumentException
 	 */
 	public static ACpfCnpj getInstance(String cadastroDePessoa,
-			EnumCadastroDePessoa tipoDeCadastro) throws IllegalArgumentException {
+			EnumCpfCnpj tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
@@ -102,14 +96,14 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 
 			switch_Cadastro: {
 
-				if (tipoDeCadastro == EnumCadastroDePessoa.CPF) {
+				if (tipoDeCadastro == EnumCpfCnpj.CPF) {
 
 					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
-				if (tipoDeCadastro == EnumCadastroDePessoa.CNPJ) {
+				if (tipoDeCadastro == EnumCpfCnpj.CNPJ) {
 
 					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
 					break switch_Cadastro;

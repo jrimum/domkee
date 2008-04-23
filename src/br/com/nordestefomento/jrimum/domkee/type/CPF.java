@@ -27,23 +27,29 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.type;
+
+import br.com.nordestefomento.jrimum.utilix.Filler;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
 
 /**
  * <p>
- * Representa o cadastro de pessoa física (CPF), um número identificador de todo contribuinte 
- * (pessoas físicas brasileiras ou estrangeiras com negócios no Brasil).
+ * Representa o cadastro de pessoa física (CPF), um número identificador de todo
+ * contribuinte (pessoas físicas brasileiras ou estrangeiras com negócios no
+ * Brasil).
  * </p>
  * <p>
- * O formatador do CPF é "###.###.###-XX", onde XX é o dígito verificador do número.
+ * O formatador do CPF é "###.###.###-XX", onde XX é o dígito verificador do
+ * número.
  * </p>
  * 
  * @author Gabriel Guimarães
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author Misael Barreto 
+ * @author Misael Barreto
  * @author Rômulo Augusto
- * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento
+ *         Mercantil</a>
  * 
  * @since JMatryx 1.0
  * 
@@ -55,65 +61,89 @@ public class CPF extends ACpfCnpj {
 	 * 
 	 */
 	private static final long serialVersionUID = 5910970842832308496L;
-	
-	public CPF(){
-		// TODO IMPLEMENTAR
+
+	private CPF() {
 	}
-	
-	public CPF(String strCNPJ){
-		// TODO IMPLEMENTAR
+
+	public CPF(String strCPF) {
+
+		this.autenticadorCP = AValidator4ACpfCnpj.getInstance(strCPF);
+
+		if (autenticadorCP.isValido()) {
+			init(strCPF);
+		} else {
+			throw new CPFException(new IllegalArgumentException(
+					"O cadastro de pessoa [ " + strCPF + " ] não é válido."));
+		}
 	}
-	
-	public CPF(Long numCNPJ){
-		// TODO IMPLEMENTAR
+
+	public CPF(Long numCPF) {
+
+		try {
+
+			if (AValidator4ACpfCnpj.isParametrosValidos(String.valueOf(numCPF),
+					EnumCpfCnpj.CPF)) {
+
+				String strCPF = Filler.ZERO_LEFT.fill(numCPF, 14);
+
+				this.autenticadorCP = AValidator4ACpfCnpj.getInstance(strCPF);
+
+				if (autenticadorCP.isValido())
+					init(strCPF);
+				else
+					throw new IllegalArgumentException(
+							"O cadastro de pessoa [ " + strCPF
+									+ " ] não é válido.");
+
+			}
+
+		} catch (Exception e) {
+			if (!(e instanceof CPFException))
+				throw new CPFException(e);
+		}
 	}
-	
+
 	/**
 	 * @param cadastroDePessoa
 	 * @return
 	 */
-	public static CPF getInstance(String cadastroDePessoa) {
-		
-		try{
-			
-			StringBuilder codigoFormatado = null;
-			Long codigo = 0L;
-			
+	public static CPF getInstance(String strCPF) {
+
+		AValidator4ACpfCnpj autenticadorCP = AValidator4ACpfCnpj
+				.getInstance(strCPF);
+
+		if (autenticadorCP.isValido()) {
+
 			CPF cpf = new CPF();
-					
-			codigo = Long.parseLong(cadastroDePessoa);
-			codigoFormatado = new StringBuilder(cadastroDePessoa);
-			
-			codigoFormatado.insert(3, '.');
-			codigoFormatado.insert(7, '.');
-			codigoFormatado.insert(11, '-');
-			
-			cpf.setCodigo(codigo);
-			cpf.setCodigoFormatado(codigoFormatado.toString());
-			
+			cpf.autenticadorCP = autenticadorCP;
+			cpf.init(strCPF);
+
 			return cpf;
-			
-		}catch(Exception e){
-			throw new CPFException(e);
+
+		} else {
+			throw new CPFException(new IllegalArgumentException(
+					"O cadastro de pessoa [ " + strCPF + " ] não é válido."));
 		}
 	}
 
-	@Override
-	public String getDigitoVerificador() {
-		// TODO IMPLEMENTAR
-		return null;
-	}
+	private void init(String strCPF) {
 
-	@Override
-	public String getRaiz() {
-		// TODO IMPLEMENTAR
-		return null;
-	}
+		try {
 
-	@Override
-	public String getSufixo() {
-		// TODO IMPLEMENTAR
-		return null;
+			StringBuilder codigoFormatado = null;
+
+			codigoFormatado = new StringBuilder(strCPF);
+
+			codigoFormatado.insert(3, '.');
+			codigoFormatado.insert(7, '.');
+			codigoFormatado.insert(11, '-');
+
+			this.setCodigoFormatado(codigoFormatado.toString());
+			this.setCodigo(Long.parseLong(strCPF));
+
+		} catch (Exception e) {
+			throw new CPFException(e);
+		}
 	}
 
 }

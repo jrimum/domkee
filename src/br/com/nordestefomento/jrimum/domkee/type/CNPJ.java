@@ -27,24 +27,31 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.type;
+
+import br.com.nordestefomento.jrimum.utilix.Filler;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
 
 /**
  * 
  * <p>
- * Representa o cadastro nacional de pssoa jurídica (CNPJ), um número identificador de uma pessoa jurídica junto
- * à Receita Federal, necessário para que a pessoa jurídica tenha capacidade de fazer contratos e processar ou ser processada.  
+ * Representa o cadastro nacional de pssoa jurídica (CNPJ), um número
+ * identificador de uma pessoa jurídica junto à Receita Federal, necessário para
+ * que a pessoa jurídica tenha capacidade de fazer contratos e processar ou ser
+ * processada.
  * </p>
  * <p>
- * O formatador do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador do número.
- * </p> 
+ * O formatador do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador
+ * do número.
+ * </p>
  * 
  * @author Gabriel Guimarães
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author Misael Barreto 
+ * @author Misael Barreto
  * @author Rômulo Augusto
- * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento
+ *         Mercantil</a>
  * 
  * @since JMatryx 1.0
  * 
@@ -52,81 +59,96 @@ package br.com.nordestefomento.jrimum.domkee.type;
  */
 public class CNPJ extends ACpfCnpj {
 
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3217977741182481194L;
-	
-	public CNPJ(){
-		// TODO IMPLEMENTAR
+
+	private CNPJ() {
 	}
-	
-	public CNPJ(String strCNPJ){
-		// TODO IMPLEMENTAR
+
+	public CNPJ(String strCNPJ) {
+
+		this.autenticadorCP = AValidator4ACpfCnpj.getInstance(strCNPJ);
+
+		if (autenticadorCP.isValido()) {
+			init(strCNPJ);
+		} else {
+			throw new CNPJException(new IllegalArgumentException(
+					"O cadastro de pessoa [ " + strCNPJ + " ] não é válido."));
+		}
 	}
-	
-	public CNPJ(Long numCNPJ){
-		// TODO IMPLEMENTAR
+
+	public CNPJ(Long numCNPJ) {
+
+		try {
+
+			if (AValidator4ACpfCnpj.isParametrosValidos(
+					String.valueOf(numCNPJ), EnumCpfCnpj.CNPJ)) {
+
+				String strCNPJ = Filler.ZERO_LEFT.fill(numCNPJ, 14);
+
+				this.autenticadorCP = AValidator4ACpfCnpj.getInstance(strCNPJ);
+
+				if (autenticadorCP.isValido())
+					init(strCNPJ);
+				else
+					throw new IllegalArgumentException(
+							"O cadastro de pessoa [ " + strCNPJ
+									+ " ] não é válido.");
+
+			}
+
+		} catch (Exception e) {
+			if (!(e instanceof CNPJException))
+				throw new CNPJException(e);
+		}
+
 	}
-	
+
 	/**
 	 * @param strCNPJ
 	 * @return
 	 */
 	public static CNPJ getInstance(String strCNPJ) {
-		
-		try{
-			
-			StringBuilder codigoFormatado = null;
-			Long codigo = 0L;
-			
+
+		AValidator4ACpfCnpj autenticadorCP = AValidator4ACpfCnpj
+				.getInstance(strCNPJ);
+
+		if (autenticadorCP.isValido()) {
+
 			CNPJ cnpj = new CNPJ();
-					
-			codigo = Long.parseLong(strCNPJ);
+			cnpj.autenticadorCP = autenticadorCP;
+			cnpj.init(strCNPJ);
+
+			return cnpj;
+
+		} else {
+			throw new CNPJException(new IllegalArgumentException(
+					"O cadastro de pessoa [ " + strCNPJ + " ] não é válido."));
+		}
+
+	}
+
+	private void init(String strCNPJ) {
+
+		try {
+
+			StringBuilder codigoFormatado = null;
+
 			codigoFormatado = new StringBuilder(strCNPJ);
-			
+
 			codigoFormatado.insert(2, '.');
 			codigoFormatado.insert(6, '.');
 			codigoFormatado.insert(10, '/');
 			codigoFormatado.insert(15, '-');
-			
-			cnpj.setCodigo(codigo);
-			cnpj.setCodigoFormatado(codigoFormatado.toString());
-			
-			return cnpj;
-			
-		}catch(Exception e){
+
+			this.setCodigoFormatado(codigoFormatado.toString());
+			this.setCodigo(Long.parseLong(strCNPJ));
+
+		} catch (Exception e) {
 			throw new CNPJException(e);
 		}
-	}
-	
-	public boolean isMatriz(){
-		// TODO IMPLEMENTAR
-		return false;
-	}
-	
-	public boolean isFilial(){
-		// TODO IMPLEMENTAR
-		return false;
-	}
-
-	@Override
-	public String getDigitoVerificador() {
-		// TODO IMPLEMENTAR
-		return null;
-	}
-
-	@Override
-	public String getRaiz() {
-		// TODO IMPLEMENTAR
-		return null;
-	}
-
-	@Override
-	public String getSufixo() {
-		// TODO IMPLEMENTAR
-		return null;
 	}
 
 }
