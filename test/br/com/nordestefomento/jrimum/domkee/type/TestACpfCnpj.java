@@ -30,10 +30,15 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+
+import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
 
 /**
  * 
@@ -49,8 +54,9 @@ import junit.framework.TestCase;
  * 
  * @version 1.0
  */
-public class TestACadastroDePessoa extends TestCase {
+public class TestACpfCnpj{
 
+	@Test
 	public void testGetInstanceLong() {
 		
 		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
@@ -143,6 +149,7 @@ public class TestACadastroDePessoa extends TestCase {
 		
 	}
 
+	@Test
 	public void testGetInstanceString() {
 		
 		assertNotNull(ACpfCnpj.getInstance("22233366638"));
@@ -188,6 +195,7 @@ public class TestACadastroDePessoa extends TestCase {
 		}
 	}
 
+	@Test
 	public void testGetCodigoFormatado() {
 		
 		assertTrue(ACpfCnpj.getInstance("22233366638").getCodigoFormatado().equals("222.333.666-38"));
@@ -197,6 +205,7 @@ public class TestACadastroDePessoa extends TestCase {
 		assertTrue(ACpfCnpj.getInstance("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
 	}
 
+	@Test
 	public void testGetCodigo() {
 		
 		assertEquals(ACpfCnpj.getInstance("22233366638").getCodigo().longValue(), 22233366638L);

@@ -30,11 +30,12 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class TestEnumTitulo extends TestCase {
+public class TestEnumTitulo{
 
 	EnumTitulo CH = EnumTitulo.CH_CHEQUE;
 
@@ -98,9 +99,8 @@ public class TestEnumTitulo extends TestCase {
 
 	EnumTitulo outros = EnumTitulo.OUTROS;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Test
+	public void setUp() throws Exception {
 
 		CH = EnumTitulo.CH_CHEQUE;
 		DM = EnumTitulo.DM_DUPLICATA_MERCANTIL;
@@ -136,6 +136,7 @@ public class TestEnumTitulo extends TestCase {
 
 	}
 
+	@Test
 	public void testGetSigla() {
 
 		assertEquals("CH", CH.getSigla());
@@ -173,6 +174,7 @@ public class TestEnumTitulo extends TestCase {
 
 	}
 
+	@Test
 	public void testGetCodigo() {
 
 		assertTrue(CH.getCodigo() == 1);

@@ -30,10 +30,10 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
-import br.com.nordestefomento.jrimum.domkee.type.CPF;
+import org.junit.Test;
 
 /**
  * 
@@ -49,9 +49,9 @@ import br.com.nordestefomento.jrimum.domkee.type.CPF;
  * 
  * @version 1.0
  */
-public class TestCPF extends TestCase {
+public class TestCPF{
 
-
+	@Test
 	public void testGetInstanceString() {
 
 		assertNotNull(ACpfCnpj.getInstance("22233366638"));

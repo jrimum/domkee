@@ -30,12 +30,13 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.domkee.type.EnumMoeda;
+import static org.junit.Assert.assertTrue;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class TestEnumMoeda extends TestCase {
+public class TestEnumMoeda{
 
+	@Test
 	public void testGetCodigo() {
 		
 		int codigo = 2;//primeira moeda:DÓLAR_AMERICANO_COMERCIAL_VENDA;
