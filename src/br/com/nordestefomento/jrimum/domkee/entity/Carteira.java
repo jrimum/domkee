@@ -31,9 +31,9 @@ public class Carteira {
 	/**
 	 *Tipo determinado de cobrança, com registro ou sem registro.
 	 *
-	 * @see EnumCobranca
+	 * @see EnumTipoCobranca
 	 */
-	private EnumCobranca cobranca;
+	private EnumTipoCobranca tipoCobranca;
 
 	/**
 	 * 
@@ -52,24 +52,24 @@ public class Carteira {
 
 	/**
 	 * @param codigo
-	 * @param cobranca
+	 * @param tipoCobranca
 	 */
-	public Carteira(Integer codigo, EnumCobranca cobranca) {
+	public Carteira(Integer codigo, EnumTipoCobranca cobranca) {
 		super();
 		this.codigo = codigo;
-		this.cobranca = cobranca;
+		this.tipoCobranca = cobranca;
 	}
 
 	/**
 	 * @param nome
 	 * @param codigo
-	 * @param cobranca
+	 * @param tipoCobranca
 	 */
-	public Carteira(String nome, Integer codigo, EnumCobranca cobranca) {
+	public Carteira(String nome, Integer codigo, EnumTipoCobranca cobranca) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
-		this.cobranca = cobranca;
+		this.tipoCobranca = cobranca;
 	}
 
 	/**
@@ -101,17 +101,24 @@ public class Carteira {
 	}
 
 	/**
-	 * @return the cobranca
+	 * @return the tipoCobranca
 	 */
-	public EnumCobranca getCobranca() {
-		return cobranca;
+	public EnumTipoCobranca getTipoCobranca() {
+		return tipoCobranca;
 	}
 
 	/**
-	 * @param cobranca the cobranca to set
+	 * @param tipoCobranca the tipoCobranca to set
 	 */
-	public void setCobranca(EnumCobranca cobranca) {
-		this.cobranca = cobranca;
+	public void setTipoCobranca(EnumTipoCobranca cobranca) {
+		this.tipoCobranca = cobranca;
 	}
 	
+	public boolean isComRegistro() {
+		return (this.tipoCobranca == EnumTipoCobranca.COM_REGISTRO);
+	}
+	
+	public boolean isSemRegistro() {
+		return (this.tipoCobranca == EnumTipoCobranca.SEM_REGISTRO);
+	}	
 }

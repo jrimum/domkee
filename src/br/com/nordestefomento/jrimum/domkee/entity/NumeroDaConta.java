@@ -71,4 +71,8 @@ public class NumeroDaConta implements Serializable {
 	public void setDigitoDaConta(String digitoDaConta) {
 		this.digitoDaConta = digitoDaConta;
 	}
+	
+	public void setDigitoDaConta(Integer digitoDaConta) {
+		setDigitoDaConta(digitoDaConta.toString());
+	}	
 }

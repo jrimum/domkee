@@ -50,7 +50,7 @@ package br.com.nordestefomento.jrimum.domkee.entity;
  * @version 0.2
  */
 
-public enum EnumCobranca {
+public enum EnumTipoCobranca {
 	/**
 	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
 	 */
