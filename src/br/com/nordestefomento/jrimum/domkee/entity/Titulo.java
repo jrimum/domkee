@@ -149,7 +149,7 @@ public final class Titulo extends ACurbitaObject{
 	 * <li>'N' = Não Aceite</li>
 	 * </ul>
 	 */
-	public enum E_Aceite {
+	public enum EnumAceite {
 
 		A, N;
 
@@ -171,9 +171,9 @@ public final class Titulo extends ACurbitaObject{
 	/**
 	 * Indicação de aceite.
 	 * 
-	 * @see br.com.nordestefomento.jrimum.type.entity.Titulo.E_Aceite
+	 * @see br.com.nordestefomento.jrimum.type.entity.Titulo.EnumAceite
 	 */
-	private E_Aceite aceite;
+	private EnumAceite aceite;
 
 	private Titulo() {
 		super();
@@ -227,7 +227,7 @@ public final class Titulo extends ACurbitaObject{
 	/**
 	 * @return the aceite
 	 */
-	public E_Aceite getAceite() {
+	public EnumAceite getAceite() {
 		return aceite;
 	}
 
@@ -235,7 +235,7 @@ public final class Titulo extends ACurbitaObject{
 	 * @param aceite
 	 *            the aceite to set
 	 */
-	public void setAceite(E_Aceite aceite) {
+	public void setAceite(EnumAceite aceite) {
 		this.aceite = aceite;
 	}
 
