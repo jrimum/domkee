@@ -408,5 +408,44 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica.setNomeFantasia(nomeFantasia);
 	}
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria)
+	 */
+	@Override
+	public void addContaBancaria(ContaBancaria contaBancaria) {
+		pessoaJuridica.addContaBancaria(contaBancaria);
+		
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getContasBancarias()
+	 */
+	@Override
+	public Collection<ContaBancaria> getContasBancarias() {
+		
+		return pessoaJuridica.getContasBancarias();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#hasContaBancaria()
+	 */
+	@Override
+	public boolean hasContaBancaria() {
+		
+		return pessoaJuridica.hasContaBancaria();
+	}
+
+
+	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setContasBancarias(java.util.Collection)
+	 */
+	@Override
+	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
+		
+		pessoaJuridica.setContasBancarias(contasBancarias);
+	}
 	
 }

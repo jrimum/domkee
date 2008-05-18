@@ -182,7 +182,7 @@ public final class Titulo extends ACurbitaObject{
 	
 	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista)throws IllegalArgumentException{
 		
-		Titulo titulo = null;
+		Titulo titulo = new Titulo();
 		
 		titulo.setSacadorAvalista(sacadorAvalista);
 		titulo = getInstance(contaBancaria, sacado, cedente);
@@ -192,9 +192,8 @@ public final class Titulo extends ACurbitaObject{
 
 	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente)throws IllegalArgumentException{
 		
-		Titulo titulo = null;
+		Titulo titulo = new Titulo();
 						
-		titulo = new Titulo();
 		titulo.setContaBancaria(contaBancaria);
 		titulo.setSacado(sacado);
 		titulo.setCedente(cedente);
@@ -355,7 +354,7 @@ public final class Titulo extends ACurbitaObject{
 	public void setContaBancaria(ContaBancaria contaBancaria)
 			throws JRimumException {
 		
-		if (contaBancaria != null) {
+		if (isNotNull(contaBancaria)) {
 			this.contaBancaria = contaBancaria;
 		} else {
 			throw new JRimumException(new IllegalArgumentException(
@@ -375,7 +374,7 @@ public final class Titulo extends ACurbitaObject{
 	 *            the sacado to set
 	 */
 	public void setSacado(Pessoa sacado) {
-		if (sacado != null) {
+		if (isNotNull(sacado)) {
 			this.sacado = sacado;
 		} else {
 			throw new JRimumException(new IllegalArgumentException(
@@ -395,7 +394,7 @@ public final class Titulo extends ACurbitaObject{
 	 *            the sacadorAvalista to set
 	 */
 	public void setSacadorAvalista(Pessoa sacadorAvalista) {
-		if (sacadorAvalista != null) {
+		if (isNotNull(sacadorAvalista)) {
 			this.sacadorAvalista = sacadorAvalista;
 		} else {
 			throw new JRimumException(new IllegalArgumentException(

@@ -61,7 +61,7 @@ public class Pessoa implements IPessoa {
 	
 	private Collection<Endereco> enderecos;
 	
-	//private Collection<ContaBancaria> contasBancarias;
+	private Collection<ContaBancaria> contasBancarias;
 	
 	public Pessoa() {}
 	
@@ -75,7 +75,7 @@ public class Pessoa implements IPessoa {
 		this.nome = nome;
 		this.abstractCPRF = AbstractCPRF.getInstance(cadastroDePessoa);
 	}
-/*
+
 	@Override
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
@@ -84,11 +84,11 @@ public class Pessoa implements IPessoa {
 		
 		contasBancarias.add(contaBancaria);
 	}
-*/	
-	//@Override
-	//public boolean hasContaBancaria(){
-		//return (getContasBancarias() != null && !getContasBancarias().isEmpty());
-	//}
+	
+	@Override
+	public boolean hasContaBancaria(){
+		return (getContasBancarias() != null && !getContasBancarias().isEmpty());
+	}
 
 	@Override
 	public void addEmail(Email email) {
@@ -122,13 +122,13 @@ public class Pessoa implements IPessoa {
 		
 		return abstractCPRF;
 	}
-/*
+
 	@Override
 	public Collection<ContaBancaria> getContasBancarias() {
 
 		return contasBancarias;
 	}
-*/
+
 	@Override
 	public Collection<Email> getEmails() {
 
@@ -158,13 +158,13 @@ public class Pessoa implements IPessoa {
 		
 		this.abstractCPRF = abstractCPRF;
 	}
-/*
+
 	@Override
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
 		
 		this.contasBancarias = contasBancarias;
 	}
-*/
+
 	@Override
 	public void setEmails(Collection<Email> emails) {
 		
@@ -208,4 +208,5 @@ public class Pessoa implements IPessoa {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 }
