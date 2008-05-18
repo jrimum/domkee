@@ -30,8 +30,8 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF;
+import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
 
 /**
  * <p>
@@ -55,7 +55,7 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
  * 
  * @version 1.0
  */
-public class CPF extends ACpfCnpj {
+public class CPF extends AbstractCPRF {
 
 	/**
 	 * 
@@ -67,7 +67,7 @@ public class CPF extends ACpfCnpj {
 
 	public CPF(String strCPF) {
 
-		this.autenticadorCP = AValidator4ACpfCnpj.getInstance(strCPF);
+		this.autenticadorCP = AValidator4CPRF.getInstance(strCPF);
 
 		if (autenticadorCP.isValido()) {
 			init(strCPF);
@@ -81,12 +81,12 @@ public class CPF extends ACpfCnpj {
 
 		try {
 
-			if (AValidator4ACpfCnpj.isParametrosValidos(String.valueOf(numCPF),
-					EnumCpfCnpj.CPF)) {
+			if (AValidator4CPRF.isParametrosValidos(String.valueOf(numCPF),
+					EnumCPRF.CPF)) {
 
 				String strCPF = Filler.ZERO_LEFT.fill(numCPF, 14);
 
-				this.autenticadorCP = AValidator4ACpfCnpj.getInstance(strCPF);
+				this.autenticadorCP = AValidator4CPRF.getInstance(strCPF);
 
 				if (autenticadorCP.isValido())
 					init(strCPF);
@@ -109,7 +109,7 @@ public class CPF extends ACpfCnpj {
 	 */
 	public static CPF getInstance(String strCPF) {
 
-		AValidator4ACpfCnpj autenticadorCP = AValidator4ACpfCnpj
+		AValidator4CPRF autenticadorCP = AValidator4CPRF
 				.getInstance(strCPF);
 
 		if (autenticadorCP.isValido()) {

@@ -30,9 +30,9 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
-import java.io.Serializable;
+import br.com.nordestefomento.jrimum.ACurbitaObject;
 
-public class NumeroDaConta implements Serializable {
+public class NumeroDaConta extends ACurbitaObject {
 
 	/**
 	 * 
@@ -72,7 +72,4 @@ public class NumeroDaConta implements Serializable {
 		this.digitoDaConta = digitoDaConta;
 	}
 	
-	public void setDigitoDaConta(Integer digitoDaConta) {
-		setDigitoDaConta(digitoDaConta.toString());
-	}	
 }

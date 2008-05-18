@@ -32,26 +32,36 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj;
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF;
+import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
+
+
 
 
 /**
  * 
- * Representa a família dos cadastros de pessoa.
+ * <p>
+ * Classe que representa um <a href="http://www.receita.fazenda.gov.br/Principal/Cadastros.htm">Cadastro de Pessoas na Receita Federal</a>, esse
+ * cadastro pode ser o de pessoas físicas ou jurídicas.
+ * </p>
  * 
+ * <p>
+ *  O cadastro tem a finalidade de identificadar cada pessoa no país, seja ela de natureza física
+ * ou jurídica. O <a href="http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/CPF/default.htm">Cadastro de Pessoa Física é o CPF</a>, já o de <a href="http://www.receita.fazenda.gov.br/PessoaJuridica/cnpj/ConsulSitCadastralCnpj.htm">Pessoa Jurídica é o CNPJ</a>.
+ * </p>
  * 
- * @author Gabriel Guimarães
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author Misael Barreto 
- * @author Rômulo Augusto
- * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * <p>
+ * EXEMPLO:
+ * </p>
  * 
- * @since JMatryx 1.0
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * 
- * @version 1.0
+ * @since 0.2
+ * 
+ * @version 0.2
  */
-public abstract class ACpfCnpj extends ACurbitaObject{ 
+	
+public abstract class AbstractCPRF extends ACurbitaObject{ 
 
 	/**
 	 * 
@@ -66,7 +76,7 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	/**
 	 * 
 	 */
-	protected AValidator4ACpfCnpj autenticadorCP;
+	protected AValidator4CPRF autenticadorCP;
 
 	/**
 	 * @param cadastroDePessoa
@@ -74,8 +84,8 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public static ACpfCnpj getInstance(Long cadastroDePessoa,
-			EnumCpfCnpj tipoDeCadastro) throws IllegalArgumentException {
+	public static AbstractCPRF getInstance(Long cadastroDePessoa,
+			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 
 		return getInstance(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 		
@@ -87,23 +97,23 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public static ACpfCnpj getInstance(String cadastroDePessoa,
-			EnumCpfCnpj tipoDeCadastro) throws IllegalArgumentException {
+	public static AbstractCPRF getInstance(String cadastroDePessoa,
+			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
-		if (AValidator4ACpfCnpj.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
+		if (AValidator4CPRF.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
 
 			switch_Cadastro: {
 
-				if (tipoDeCadastro == EnumCpfCnpj.CPF) {
+				if (tipoDeCadastro == EnumCPRF.CPF) {
 
 					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
-				if (tipoDeCadastro == EnumCpfCnpj.CNPJ) {
+				if (tipoDeCadastro == EnumCPRF.CNPJ) {
 
 					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
 					break switch_Cadastro;
@@ -122,16 +132,16 @@ public abstract class ACpfCnpj extends ACurbitaObject{
 	 * 
 	 * @param cadastroDePessoa -
 	 *            identificador do cadastro de pessoa.
-	 * @return uma instância de ACpfCnpj.
+	 * @return uma instância de AbstractCPRF.
 	 * @throws IllegalArgumentException -
 	 *             caso o parâmetro não esteja em um formatador válido de cadastro
 	 *             de pessoa.
 	 */
-	public static ACpfCnpj getInstance(String cadastroDePessoa)
+	public static AbstractCPRF getInstance(String cadastroDePessoa)
 			throws IllegalArgumentException {
 
-		ACpfCnpj cp = null;
-		AValidator4ACpfCnpj autenticadorCP = AValidator4ACpfCnpj
+		AbstractCPRF cp = null;
+		AValidator4CPRF autenticadorCP = AValidator4CPRF
 				.getInstance(cadastroDePessoa);
 
 		if (autenticadorCP.isValido()) {

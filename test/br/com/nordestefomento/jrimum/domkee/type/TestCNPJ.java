@@ -54,9 +54,9 @@ public class TestCNPJ{
 	@Test
 	public void testGetInstanceString() {
 		
-		assertNotNull(ACpfCnpj.getInstance("11222333000181"));
+		assertNotNull(AbstractCPRF.getInstance("11222333000181"));
 		
-		assertTrue(ACpfCnpj.getInstance("11222333000181") instanceof CNPJ);
+		assertTrue(AbstractCPRF.getInstance("11222333000181") instanceof CNPJ);
 	}
 
 }

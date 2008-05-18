@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
-import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
+import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.Telefone;
@@ -53,7 +53,7 @@ public class Pessoa implements IPessoa {
 	
 	private String nome;
 	
-	private ACpfCnpj aCpfCnpj;
+	private AbstractCPRF abstractCPRF;
 	
 	private Collection<Telefone> telefones;
 	
@@ -61,7 +61,7 @@ public class Pessoa implements IPessoa {
 	
 	private Collection<Endereco> enderecos;
 	
-	private Collection<ContaBancaria> contasBancarias;
+	//private Collection<ContaBancaria> contasBancarias;
 	
 	public Pessoa() {}
 	
@@ -73,9 +73,9 @@ public class Pessoa implements IPessoa {
 	public Pessoa(String nome, String cadastroDePessoa) {
 		
 		this.nome = nome;
-		this.aCpfCnpj = ACpfCnpj.getInstance(cadastroDePessoa);
+		this.abstractCPRF = AbstractCPRF.getInstance(cadastroDePessoa);
 	}
-
+/*
 	@Override
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
@@ -84,11 +84,11 @@ public class Pessoa implements IPessoa {
 		
 		contasBancarias.add(contaBancaria);
 	}
-	
-	@Override
-	public boolean hasContaBancaria(){
-		return (getContasBancarias() != null && !getContasBancarias().isEmpty());
-	}
+*/	
+	//@Override
+	//public boolean hasContaBancaria(){
+		//return (getContasBancarias() != null && !getContasBancarias().isEmpty());
+	//}
 
 	@Override
 	public void addEmail(Email email) {
@@ -118,17 +118,17 @@ public class Pessoa implements IPessoa {
 	}
 
 	@Override
-	public ACpfCnpj getACpfCnpj() {
+	public AbstractCPRF getACpfCnpj() {
 		
-		return aCpfCnpj;
+		return abstractCPRF;
 	}
-
+/*
 	@Override
 	public Collection<ContaBancaria> getContasBancarias() {
 
 		return contasBancarias;
 	}
-
+*/
 	@Override
 	public Collection<Email> getEmails() {
 
@@ -154,17 +154,17 @@ public class Pessoa implements IPessoa {
 	}
 
 	@Override
-	public void setACpfCnpj(ACpfCnpj aCpfCnpj) {
+	public void setACpfCnpj(AbstractCPRF abstractCPRF) {
 		
-		this.aCpfCnpj = aCpfCnpj;
+		this.abstractCPRF = abstractCPRF;
 	}
-
+/*
 	@Override
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
 		
 		this.contasBancarias = contasBancarias;
 	}
-
+*/
 	@Override
 	public void setEmails(Collection<Email> emails) {
 		

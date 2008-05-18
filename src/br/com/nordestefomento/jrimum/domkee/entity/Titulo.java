@@ -35,6 +35,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
+import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.type.EnumMoeda;
 import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
 
@@ -179,33 +180,25 @@ public final class Titulo extends ACurbitaObject{
 		super();
 	}
 	
-	public static Titulo getInstance(Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista)throws IllegalArgumentException{
+	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista)throws IllegalArgumentException{
 		
 		Titulo titulo = null;
 		
-		if(sacadorAvalista != null){
-			
-			titulo = getInstance(sacado, cedente);
-			titulo.setSacadorAvalista(sacadorAvalista);
-		}else
-			throw new IllegalArgumentException("Sacador Avalista NULL!");
+		titulo.setSacadorAvalista(sacadorAvalista);
+		titulo = getInstance(contaBancaria, sacado, cedente);
 		
 		return titulo;
 	}
 
-	public static Titulo getInstance(Pessoa sacado, Pessoa cedente)throws IllegalArgumentException{
+	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente)throws IllegalArgumentException{
 		
 		Titulo titulo = null;
-		
-		if(sacado != null && cedente != null){
+						
+		titulo = new Titulo();
+		titulo.setContaBancaria(contaBancaria);
+		titulo.setSacado(sacado);
+		titulo.setCedente(cedente);
 			
-			titulo = new Titulo();
-			
-			titulo.setSacado(sacado);
-			titulo.setCedente(cedente);
-		}else
-			throw new IllegalArgumentException("Sacado ou Cedente NULL!");
-		
 		return titulo;
 	}
 
@@ -251,7 +244,12 @@ public final class Titulo extends ACurbitaObject{
 	 *            the cedente to set
 	 */
 	public void setCedente(Pessoa cedente) {
-		this.cedente = cedente;
+		if (cedente != null) {
+			this.cedente = cedente;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+					"Cedente não pode ser nulo!"));
+		}
 	}
 
 	/**
@@ -302,7 +300,7 @@ public final class Titulo extends ACurbitaObject{
 	/**
 	 * @return the enumMoeda
 	 */
-	public EnumMoeda getE_Moeda() {
+	public EnumMoeda getEnumMoeda() {
 		return enumMoeda;
 	}
 
@@ -310,7 +308,7 @@ public final class Titulo extends ACurbitaObject{
 	 * @param moeda
 	 *            the enumMoeda to set
 	 */
-	public void setE_Moeda(EnumMoeda moeda) {
+	public void setEnumMoeda(EnumMoeda moeda) {
 		enumMoeda = moeda;
 	}
 
@@ -354,8 +352,15 @@ public final class Titulo extends ACurbitaObject{
 	/**
 	 * @param contaBancaria the contaBancaria to set
 	 */
-	public void setContaBancaria(ContaBancaria contaBancaria) {
-		this.contaBancaria = contaBancaria;
+	public void setContaBancaria(ContaBancaria contaBancaria)
+			throws JRimumException {
+		
+		if (contaBancaria != null) {
+			this.contaBancaria = contaBancaria;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+					"ContaBancaria não pode ser nula!"));
+		}
 	}
 
 	/**
@@ -370,7 +375,12 @@ public final class Titulo extends ACurbitaObject{
 	 *            the sacado to set
 	 */
 	public void setSacado(Pessoa sacado) {
-		this.sacado = sacado;
+		if (sacado != null) {
+			this.sacado = sacado;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+					"Sacado não pode ser nulo!"));
+		}
 	}
 
 	/**
@@ -385,7 +395,12 @@ public final class Titulo extends ACurbitaObject{
 	 *            the sacadorAvalista to set
 	 */
 	public void setSacadorAvalista(Pessoa sacadorAvalista) {
-		this.sacadorAvalista = sacadorAvalista;
+		if (sacadorAvalista != null) {
+			this.sacadorAvalista = sacadorAvalista;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+					"SacadorAvalista não pode ser nulo!"));
+		}
 	}
 
 	/**

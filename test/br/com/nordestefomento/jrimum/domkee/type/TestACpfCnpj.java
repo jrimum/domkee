@@ -38,11 +38,11 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.vallia.AValidator4ACpfCnpj.EnumCpfCnpj;
+import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
 
 /**
  * 
- * Teste da classe <code>ACpfCnpj</code>.
+ * Teste da classe <code>AbstractCPRF</code>.
  * 
  * 
  * @author Gabriel Guimarães
@@ -61,26 +61,26 @@ public class TestACpfCnpj{
 		
 		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
 		
-		ACpfCnpj aCpfCnpj = ACpfCnpj.getInstance(208000100L , EnumCpfCnpj.CNPJ);
+		AbstractCPRF abstractCPRF = AbstractCPRF.getInstance(208000100L , EnumCPRF.CNPJ);
 		
-		assertNotNull(aCpfCnpj);
+		assertNotNull(abstractCPRF);
 		
-		assertFalse(aCpfCnpj.isFisica());
-		assertTrue(aCpfCnpj.isJuridica());
+		assertFalse(abstractCPRF.isFisica());
+		assertTrue(abstractCPRF.isJuridica());
 		
-		aCpfCnpj = ACpfCnpj.getInstance(22233366638L , EnumCpfCnpj.CPF);
+		abstractCPRF = AbstractCPRF.getInstance(22233366638L , EnumCPRF.CPF);
 		
-		assertNotNull(aCpfCnpj);
+		assertNotNull(abstractCPRF);
 		
-		assertFalse(aCpfCnpj.isJuridica());
-		assertTrue(aCpfCnpj.isFisica());
+		assertFalse(abstractCPRF.isJuridica());
+		assertTrue(abstractCPRF.isFisica());
 	
 		
 		try {
 			
 			Long nulo = null;
 			
-			ACpfCnpj.getInstance(nulo, null);
+			AbstractCPRF.getInstance(nulo, null);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -96,7 +96,7 @@ public class TestACpfCnpj{
 			
 			Long nulo = null;
 			
-			ACpfCnpj.getInstance(nulo, EnumCpfCnpj.CPF);
+			AbstractCPRF.getInstance(nulo, EnumCPRF.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -109,7 +109,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			ACpfCnpj.getInstance(12L, null);
+			AbstractCPRF.getInstance(12L, null);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -122,7 +122,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			ACpfCnpj.getInstance(123L, EnumCpfCnpj.CPF);
+			AbstractCPRF.getInstance(123L, EnumCPRF.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -136,7 +136,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			ACpfCnpj.getInstance(112223330001L, EnumCpfCnpj.CNPJ);
+			AbstractCPRF.getInstance(112223330001L, EnumCPRF.CNPJ);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -152,15 +152,15 @@ public class TestACpfCnpj{
 	@Test
 	public void testGetInstanceString() {
 		
-		assertNotNull(ACpfCnpj.getInstance("22233366638"));
-		assertNotNull(ACpfCnpj.getInstance("222.333.666-38"));
+		assertNotNull(AbstractCPRF.getInstance("22233366638"));
+		assertNotNull(AbstractCPRF.getInstance("222.333.666-38"));
 		
-		assertNotNull(ACpfCnpj.getInstance("11222333000181"));
-		assertNotNull(ACpfCnpj.getInstance("11.222.333/0001-81"));
+		assertNotNull(AbstractCPRF.getInstance("11222333000181"));
+		assertNotNull(AbstractCPRF.getInstance("11.222.333/0001-81"));
 		
 		try {
 			
-			ACpfCnpj.getInstance("abc123");
+			AbstractCPRF.getInstance("abc123");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -172,7 +172,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			ACpfCnpj.getInstance("222333666");
+			AbstractCPRF.getInstance("222333666");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -184,7 +184,7 @@ public class TestACpfCnpj{
 		
 		try {		
 			
-			ACpfCnpj.getInstance("112223330001");
+			AbstractCPRF.getInstance("112223330001");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -198,21 +198,21 @@ public class TestACpfCnpj{
 	@Test
 	public void testGetCodigoFormatado() {
 		
-		assertTrue(ACpfCnpj.getInstance("22233366638").getCodigoFormatado().equals("222.333.666-38"));
-		assertTrue(ACpfCnpj.getInstance("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
+		assertTrue(AbstractCPRF.getInstance("22233366638").getCodigoFormatado().equals("222.333.666-38"));
+		assertTrue(AbstractCPRF.getInstance("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
 		
-		assertTrue(ACpfCnpj.getInstance("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
-		assertTrue(ACpfCnpj.getInstance("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
+		assertTrue(AbstractCPRF.getInstance("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
+		assertTrue(AbstractCPRF.getInstance("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
 	}
 
 	@Test
 	public void testGetCodigo() {
 		
-		assertEquals(ACpfCnpj.getInstance("22233366638").getCodigo().longValue(), 22233366638L);
-		assertEquals(ACpfCnpj.getInstance("222.333.666-38").getCodigo().longValue(), 22233366638L);
+		assertEquals(AbstractCPRF.getInstance("22233366638").getCodigo().longValue(), 22233366638L);
+		assertEquals(AbstractCPRF.getInstance("222.333.666-38").getCodigo().longValue(), 22233366638L);
 		
-		assertEquals(ACpfCnpj.getInstance("11222333000181").getCodigo().longValue(), 11222333000181L);
-		assertEquals(ACpfCnpj.getInstance("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
+		assertEquals(AbstractCPRF.getInstance("11222333000181").getCodigo().longValue(), 11222333000181L);
+		assertEquals(AbstractCPRF.getInstance("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
 	}
 
 }

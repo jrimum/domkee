@@ -75,6 +75,8 @@ public class ContaBancaria {
 
 	private Collection<Pessoa> titulares;
 	
+	private Collection<Titulo> titulos;
+	
 	public ContaBancaria() {}
 	
 	public ContaBancaria(IBanco banco) {
@@ -112,8 +114,12 @@ public class ContaBancaria {
 		this.titulares = titulares;
 	}
 	
-	public void addTitular(Pessoa titular) {
+	public Collection<Titulo> getTitulos() {
+		return titulos;
+	}
 
+	public void setTitulos(Collection<Titulo> titulos) {
+		this.titulos = titulos;
 	}
 
 	public Agencia getAgencia() {

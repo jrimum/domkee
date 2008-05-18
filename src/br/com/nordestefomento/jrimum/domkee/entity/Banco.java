@@ -36,7 +36,7 @@ import org.apache.commons.lang.StringUtils;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
-import br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj;
+import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
@@ -220,17 +220,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.imgLogo = imgLogo;
 	}
 
-
-	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria)
-	 */
-	@Override
-	public void addContaBancaria(ContaBancaria contaBancaria) {
-		
-		pessoaJuridica.addContaBancaria(contaBancaria);
-	}
-
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEmail(br.com.nordestefomento.jrimum.domkee.type.Email)
 	 */
@@ -239,7 +228,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica.addEmail(email);
 	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.type.Endereco)
@@ -250,7 +238,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		pessoaJuridica.addEndereco(endereco);
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.Telefone)
 	 */
@@ -260,26 +247,14 @@ public class Banco extends ACurbitaObject implements IBanco{
 		pessoaJuridica.addTelefone(telefone);
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getACpfCnpj()
 	 */
 	@Override
-	public ACpfCnpj getACpfCnpj() {
+	public AbstractCPRF getACpfCnpj() {
 		
 		return pessoaJuridica.getACpfCnpj();
 	}
-
-
-	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getContasBancarias()
-	 */
-	@Override
-	public Collection<ContaBancaria> getContasBancarias() {
-		
-		return pessoaJuridica.getContasBancarias();
-	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEmails()
@@ -290,7 +265,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return getEmails();
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEnderecos()
 	 */
@@ -299,7 +273,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		return pessoaJuridica.getEnderecos();
 	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getNome()
@@ -310,7 +283,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return pessoaJuridica.getNome();
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getTelefones()
 	 */
@@ -319,17 +291,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		return pessoaJuridica.getTelefones();
 	}
-
-
-	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#hasContaBancaria()
-	 */
-	@Override
-	public boolean hasContaBancaria() {
-		
-		return pessoaJuridica.hasContaBancaria();
-	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isFisica()
@@ -340,7 +301,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return pessoaJuridica.isFisica();
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isJuridica()
 	 */
@@ -350,26 +310,14 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return pessoaJuridica.isJuridica();
 	}
 
-
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setACpfCnpj(br.com.nordestefomento.jrimum.domkee.type.ACpfCnpj)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setACpfCnpj(br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF)
 	 */
 	@Override
-	public void setACpfCnpj(ACpfCnpj aCpfCnpj) {
+	public void setACpfCnpj(AbstractCPRF abstractCPRF) {
 		
-		pessoaJuridica.setACpfCnpj(aCpfCnpj);
+		pessoaJuridica.setACpfCnpj(abstractCPRF);
 	}
-
-
-	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setContasBancarias(java.util.Collection)
-	 */
-	@Override
-	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
-		
-		pessoaJuridica.setContasBancarias(contasBancarias);
-	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEmails(java.util.Collection)
@@ -380,7 +328,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		pessoaJuridica.setEmails(emails);
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEnderecos(java.util.Collection)
 	 */
@@ -389,7 +336,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica.setEnderecos(enderecos);
 	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setNome(java.lang.String)
@@ -400,7 +346,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		pessoaJuridica.setNome(nome);
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setTelefones(java.util.Collection)
 	 */
@@ -409,7 +354,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica.setTelefones(telefones);
 	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getInscricaoEstadual()
@@ -420,7 +364,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return pessoaJuridica.getInscricaoEstadual();
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getInscricaoMunicipal()
 	 */
@@ -429,7 +372,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		return pessoaJuridica.getInscricaoMunicipal();
 	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getNomeFantasia()
@@ -440,7 +382,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return pessoaJuridica.getNome();
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setInscricaoEstadual(java.lang.Long)
 	 */
@@ -450,7 +391,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		pessoaJuridica.setInscricaoEstadual(inscricaoEstadual);
 	}
 
-
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setInscricaoMunicipal(java.lang.Long)
 	 */
@@ -459,7 +399,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica.setInscricaoMunicipal(inscricaoMunicipal);
 	}
-
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setNomeFantasia(java.lang.String)
