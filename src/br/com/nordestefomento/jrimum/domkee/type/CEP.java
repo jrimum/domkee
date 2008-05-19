@@ -80,13 +80,12 @@ public class CEP implements ITextStream {
 	
 	@Override
 	public void read(String str) {
-		// TODO Auto-generated method stub
-		
+		//TODO AVALIAR
 	}
 
 	@Override
 	public String write() {
-		// TODO Auto-generated method stub
+		//TODO AVALIAR
 		return null;
 	}
 }

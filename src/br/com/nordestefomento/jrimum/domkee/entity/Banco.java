@@ -176,7 +176,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 */		
 	public static boolean isCodigoDeCompensacaoOK(String codigo) throws IllegalArgumentException{
 		boolean ok = false;
-		if(!isNull(codigo, "codigo")){
+		if(isNotNull(codigo, "codigo")){
 			if(StringUtils.isNumeric(codigo))
 				if(codigo.length() == 3)
 					ok = true;

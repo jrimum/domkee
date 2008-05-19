@@ -61,7 +61,7 @@ public class CNPJException extends JRimumException {
 	 * 
 	 */
 	public CNPJException() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class CNPJException extends JRimumException {
 	 */
 	public CNPJException(String message, Throwable cause) {
 		super(message, cause);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class CNPJException extends JRimumException {
 	 */
 	public CNPJException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class CNPJException extends JRimumException {
 	 */
 	public CNPJException(Throwable cause) {
 		super(cause);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }
