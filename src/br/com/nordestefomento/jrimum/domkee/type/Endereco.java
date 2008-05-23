@@ -33,6 +33,7 @@ package br.com.nordestefomento.jrimum.domkee.type;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 
 /**
@@ -45,7 +46,7 @@ import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
  * @since   JMatryx 1.0
  * @version   1.0
  */
-public class Endereco {
+public class Endereco extends ACurbitaObject{
 
 	private static final long serialVersionUID = -2971929602328106185L;
 	
@@ -151,7 +152,7 @@ public class Endereco {
 	
 	public void addPessoa(Pessoa pessoa) {
 		
-		if(pessoas == null)
+		if(isNull(pessoas))
 			pessoas = new ArrayList<Pessoa>();
 		
 		pessoas.add(pessoa);

@@ -31,6 +31,8 @@
 	
 package br.com.nordestefomento.jrimum.domkee.entity;
 
+import br.com.nordestefomento.jrimum.ICurbitaObject;
+
 
 /**
  * 
@@ -50,7 +52,7 @@ package br.com.nordestefomento.jrimum.domkee.entity;
  * @version 0.2
  */
 
-public enum EnumTipoCobranca {
+public enum EnumTipoCobranca implements ICurbitaObject{
 	/**
 	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
 	 */

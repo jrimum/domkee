@@ -33,6 +33,7 @@ package br.com.nordestefomento.jrimum.domkee.entity;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
@@ -42,7 +43,7 @@ import br.com.nordestefomento.jrimum.domkee.type.Telefone;
 /**
  * @author   Romulo
  */
-public class Pessoa implements IPessoa {
+public class Pessoa extends ACurbitaObject implements IPessoa {
 	
 	/**
 	 * 
@@ -79,7 +80,7 @@ public class Pessoa implements IPessoa {
 	@Override
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
-		if(contasBancarias == null)
+		if(isNull(contasBancarias))
 			contasBancarias = new ArrayList<ContaBancaria>();
 		
 		contasBancarias.add(contaBancaria);
@@ -87,13 +88,13 @@ public class Pessoa implements IPessoa {
 	
 	@Override
 	public boolean hasContaBancaria(){
-		return (getContasBancarias() != null && !getContasBancarias().isEmpty());
+		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
 	}
 
 	@Override
 	public void addEmail(Email email) {
 		
-		if(emails == null)
+		if(isNull(emails))
 			emails = new ArrayList<Email>();
 		
 		emails.add(email);
@@ -102,7 +103,7 @@ public class Pessoa implements IPessoa {
 	@Override
 	public void addEndereco(Endereco endereco) {
 
-		if(enderecos == null)
+		if(isNull(enderecos))
 			enderecos = new ArrayList<Endereco>();
 		
 		enderecos.add(endereco);
@@ -111,7 +112,7 @@ public class Pessoa implements IPessoa {
 	@Override
 	public void addTelefone(Telefone telefone) {
 		
-		if(telefones == null)
+		if(isNull(telefones))
 			telefones = new ArrayList<Telefone>();
 		
 		telefones.add(telefone);

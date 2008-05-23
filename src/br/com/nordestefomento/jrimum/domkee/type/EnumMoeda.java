@@ -30,11 +30,13 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import java.io.Serializable;
+import br.com.nordestefomento.jrimum.ACurbitaObject;
+import br.com.nordestefomento.jrimum.ICurbitaObject;
 
 /**
- * 
+ * <p>
  * Representa as moedas existentes que fazem parte do universo de um título, segundo a FEBRABAN.
+ * </p>
  * 
  * 
  * @author Gabriel Guimarães
@@ -47,98 +49,48 @@ import java.io.Serializable;
  * 
  * @version 1.0
  */
-public enum EnumMoeda implements Serializable {
+public enum EnumMoeda implements ICurbitaObject {
 
 	/**
 	 * Padrão FEBRABAN
 	 */
 	
-	DOLAR_AMERICANO_COMERCIAL_VENDA,
-	DOLAR_AMERICANO_TURISMO_VENDA,
-	ITRD,
-	IDTR,
-	UFIR_DIARIA,
-	UFIR_MENSAL,
-	FAJ_TR,
-	REAL,
-	TR,
-	IGPM,
-	CDI,
-	PERCENTUAL_DO_CDI,
-	EURO;
+	DOLAR_AMERICANO_COMERCIAL_VENDA(2),
+	DOLAR_AMERICANO_TURISMO_VENDA(3),
+	ITRD(4),
+	IDTR(5),
+	UFIR_DIARIA(6),
+	UFIR_MENSAL(7),
+	FAJ_TR(8),
+	REAL(9),
+	TR(10),
+	IGPM(11),
+	CDI(12),
+	PERCENTUAL_DO_CDI(13),
+	EURO(14);
 
+	private int codigo;
 	
+	/**
+	 * @param codigo
+	 */
+	private EnumMoeda(int codigo) {
+		this.codigo = codigo;
+	}
+
 	public int getCodigo() {
 		
-		int codigo = 0;
-		
-		switch (this) {
-		
-		case DOLAR_AMERICANO_COMERCIAL_VENDA:
-			codigo = 2;
-			break;
-			
-		case DOLAR_AMERICANO_TURISMO_VENDA:
-			codigo = 3;
-			break;
-			
-		case ITRD:
-			codigo = 4;
-			break;
-			
-		case IDTR:
-			codigo = 5;
-			break;
-			
-		case UFIR_DIARIA:
-			codigo = 6;
-			break;
-			
-		case UFIR_MENSAL:
-			codigo = 7;
-			break;
-			
-		case FAJ_TR:
-			codigo = 8;
-			break;
-			
-		case REAL:
-			codigo = 9;
-			break;
-			
-		case TR:
-			codigo = 10;
-			break;
-			
-		case IGPM:
-			codigo = 11;
-			break;
-			
-		case CDI:
-			codigo = 12;
-			break;
-			
-		case PERCENTUAL_DO_CDI:
-			codigo = 13 ;
-			break;
-			
-		case EURO:
-			codigo = 14;
-			break;
-			
-		}
-		
-		return codigo;
+		return this.codigo;
 	}
 	
-	public String toString(){
+	public String write(){
 		
 		String s = "";
 		
 		switch (this) {
 			
 		case REAL:
-			s += "R$";
+			s = "R$";
 			break;
 		
 		default:
@@ -147,6 +99,14 @@ public enum EnumMoeda implements Serializable {
 		}
 		
 		return s;
+	}
+	
+	/**
+	 * @see br.com.nordestefomento.jrimum.ACurbitaObject#toString()
+	 * @see java.lang.Enum#toString()
+	 */
+	public String toString(){
+		return ACurbitaObject.toString(this);
 	}
 	
 }

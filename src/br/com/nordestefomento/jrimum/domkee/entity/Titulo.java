@@ -209,7 +209,7 @@ public final class Titulo extends ACurbitaObject{
 		
 		boolean has = false;
 		
-		if(this.sacadorAvalista != null){
+		if(isNotNull(this.sacadorAvalista)){
 			has = true;
 		}
 		
@@ -243,7 +243,7 @@ public final class Titulo extends ACurbitaObject{
 	 *            the cedente to set
 	 */
 	public void setCedente(Pessoa cedente) {
-		if (cedente != null) {
+		if (isNotNull(cedente)) {
 			this.cedente = cedente;
 		} else {
 			throw new JRimumException(new IllegalArgumentException(

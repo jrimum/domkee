@@ -32,31 +32,56 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import java.io.Serializable;
 
-import org.apache.commons.lang.StringUtils;
+import br.com.nordestefomento.jrimum.ACurbitaObject;
+
 
 /**
- * @author   Romulo
+ * 
+ * <p>
+ * DEFINIÇÃO DA CLASSE
+ * </p>
+ * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO: 
+ * </p>
+ * 
+ * @author <a href=http://gilmatryx.googlepages.com/>Gilmar P.S.L.</a>
+ * @author Misael Barreto
+ * @author Rômulo Augusto
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
+	
 public enum EnumSexo implements Serializable {
 
-	F,
-	M;
+	F("Feminino"),
+	M("Masculino");
 	
+	private String nome;
+	
+	/**
+	 * @param nome
+	 */
+	private EnumSexo(String nome) {
+		this.nome = nome;
+	}
+		
 	public String getNome() {
 		
-		String nome = StringUtils.EMPTY;
-		
-		switch (this) {
-			
-			case F:
-				nome = "Feminino";
-				break;
-
-			case M:
-				nome = "Masculino";
-				break;
-		}
-		
 		return nome;
+	}
+	
+	/**
+	 * @see br.com.nordestefomento.jrimum.ACurbitaObject#toString()
+	 * @see java.lang.Enum#toString()
+	 */
+	public String toString(){
+		return ACurbitaObject.toString(this);
 	}
 }

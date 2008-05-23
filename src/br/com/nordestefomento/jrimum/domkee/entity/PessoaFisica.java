@@ -60,7 +60,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	@Override
 	public void addRG(RG rg) {
 		
-		if(rgs == null)
+		if(isNull(rgs))
 			rgs = new ArrayList<RG>();
 		
 		rgs.add(rg);
@@ -95,7 +95,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 		
 		this.conjuge = conjuge;
 		
-		if(conjuge != null && conjuge.getConjuge() == null)
+		if(isNotNull(conjuge) && isNull(conjuge.getConjuge()))
 			conjuge.setConjuge(this);
 	}
 

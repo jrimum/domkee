@@ -30,6 +30,7 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.ICurbitaObject;
 
 /**
@@ -109,4 +110,11 @@ public enum EnumUnidadeFederativa implements ICurbitaObject {
 		return capital;
 	}
 	
+	/**
+	 * @see br.com.nordestefomento.jrimum.ACurbitaObject#toString()
+	 * @see java.lang.Enum#toString()
+	 */
+	public String toString(){
+		return ACurbitaObject.toString(this);
+	}
 }
