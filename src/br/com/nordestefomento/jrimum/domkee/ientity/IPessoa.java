@@ -48,9 +48,9 @@ public interface IPessoa extends Serializable {
 
 	public void setNome(String nome);
 
-	public AbstractCPRF getACpfCnpj();
+	public AbstractCPRF getAbstractCPRF();
 
-	public void setACpfCnpj(AbstractCPRF abstractCPRF);
+	public void setAbstractCPRF(AbstractCPRF abstractCPRF);
 
 	public Collection<Telefone> getTelefones();
 

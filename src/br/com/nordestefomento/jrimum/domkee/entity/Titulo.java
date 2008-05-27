@@ -59,15 +59,15 @@ import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
  * 
  * @see br.com.nordestefomento.jrimum.boleto.EnumTitulo
  * 
- * @author Gabriel Guimarães
+ * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael Barreto 
  * @author Rômulo Augusto
  * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
  * 
- * @since JMatryx 1.0
+ * @since 0.2
  * 
- * @version 1.0
+ * @version 0.2
  */
 public final class Titulo extends ACurbitaObject{
 
@@ -182,10 +182,9 @@ public final class Titulo extends ACurbitaObject{
 	
 	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista)throws IllegalArgumentException{
 		
-		Titulo titulo = new Titulo();
+		Titulo titulo = getInstance(contaBancaria, sacado, cedente);
 		
 		titulo.setSacadorAvalista(sacadorAvalista);
-		titulo = getInstance(contaBancaria, sacado, cedente);
 		
 		return titulo;
 	}
@@ -208,7 +207,7 @@ public final class Titulo extends ACurbitaObject{
 	public boolean hasSacadorAvalista(){
 		
 		boolean has = false;
-		
+
 		if(isNotNull(this.sacadorAvalista)){
 			has = true;
 		}

@@ -37,8 +37,10 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 
 /**
+ * <p>
  * Entidade que encapsula dados do endereço de uma pessoa,  como também facilidades na manipulação dos seus atributos.
- * @author   Gabriel Guimarães
+ * </p>
+ *
  * @author   <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author   Misael Barreto 
  * @author   Rômulo Augusto

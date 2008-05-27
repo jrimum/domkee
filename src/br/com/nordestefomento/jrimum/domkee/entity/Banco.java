@@ -113,7 +113,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica = new PessoaJuridica();
 		
-		pessoaJuridica.setACpfCnpj(cnpj);
+		pessoaJuridica.setAbstractCPRF(cnpj);
 		pessoaJuridica.setNome(instituicao);
 		pessoaJuridica.setNomeFantasia(instituicao);
 	}
@@ -132,7 +132,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.segmento = segmento;
 		
 		pessoaJuridica = new PessoaJuridica();
-		pessoaJuridica.setACpfCnpj(cnpj);
+		pessoaJuridica.setAbstractCPRF(cnpj);
 		pessoaJuridica.setNome(instituicao);
 		pessoaJuridica.setNomeFantasia(instituicao);
 	}
@@ -152,7 +152,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.imgLogo = imgLogo;
 		
 		pessoaJuridica = new PessoaJuridica();
-		pessoaJuridica.setACpfCnpj(cnpj);
+		pessoaJuridica.setAbstractCPRF(cnpj);
 	}
 
 	/**
@@ -197,11 +197,11 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	public CNPJ getCNPJ() {
-		return (CNPJ)pessoaJuridica.getACpfCnpj();
+		return (CNPJ)pessoaJuridica.getAbstractCPRF();
 	}
 
 	public void setCNPJ(CNPJ cnpj) {
-		pessoaJuridica.setACpfCnpj(cnpj);
+		pessoaJuridica.setAbstractCPRF(cnpj);
 	}
 
 	public String getSegmento() {
@@ -248,12 +248,12 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getACpfCnpj()
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getAbstractCPRF()
 	 */
 	@Override
-	public AbstractCPRF getACpfCnpj() {
+	public AbstractCPRF getAbstractCPRF() {
 		
-		return pessoaJuridica.getACpfCnpj();
+		return pessoaJuridica.getAbstractCPRF();
 	}
 
 	/**
@@ -311,12 +311,12 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setACpfCnpj(br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setAbstractCPRF(br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF)
 	 */
 	@Override
-	public void setACpfCnpj(AbstractCPRF abstractCPRF) {
+	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
 		
-		pessoaJuridica.setACpfCnpj(abstractCPRF);
+		pessoaJuridica.setAbstractCPRF(abstractCPRF);
 	}
 
 	/**

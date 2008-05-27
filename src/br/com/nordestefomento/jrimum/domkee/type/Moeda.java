@@ -37,15 +37,15 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
  * Classe que será responsável por encapsular lógica de tratamento de uma
  * unidade monetária específica.
  * 
- * @author Gabriel Guimarães
+ * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael Barreto 
  * @author Rômulo Augusto
  * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
  * 
- * @since JMatryx 1.0
+ * @since 0.2
  * 
- * @version 1.0
+ * @version 0.2
  *
  */
 public class Moeda extends ACurbitaObject {

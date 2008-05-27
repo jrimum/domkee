@@ -119,7 +119,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	}
 
 	@Override
-	public AbstractCPRF getACpfCnpj() {
+	public AbstractCPRF getAbstractCPRF() {
 		
 		return abstractCPRF;
 	}
@@ -155,7 +155,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	}
 
 	@Override
-	public void setACpfCnpj(AbstractCPRF abstractCPRF) {
+	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
 		
 		this.abstractCPRF = abstractCPRF;
 	}
