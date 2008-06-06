@@ -139,6 +139,7 @@ public final class Titulo extends ACurbitaObject{
 	 * Cedente original do Título.
 	 */
 	private Pessoa sacadorAvalista;
+	
 
 	/**
 	 * Identificação de Título Aceito / Não Aceito Código adotado pela FEBRABAN
@@ -176,30 +177,20 @@ public final class Titulo extends ACurbitaObject{
 	 */
 	private EnumAceite aceite;
 
-	private Titulo() {
-		super();
+	/**
+	 * Cria um título sem sacador avalista.
+	 */
+	public Titulo(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente) throws JRimumException {
+		this.setContaBancaria(contaBancaria);
+		this.setSacado(sacado);
+		this.setCedente(cedente);
 	}
 	
-	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista)throws IllegalArgumentException{
-		
-		Titulo titulo = getInstance(contaBancaria, sacado, cedente);
-		
-		titulo.setSacadorAvalista(sacadorAvalista);
-		
-		return titulo;
+	public Titulo(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista) throws JRimumException {
+		this(contaBancaria, sacado, cedente);
+		this.setSacadorAvalista(sacadorAvalista);
 	}
-
-	public static Titulo getInstance(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente)throws IllegalArgumentException{
-		
-		Titulo titulo = new Titulo();
-						
-		titulo.setContaBancaria(contaBancaria);
-		titulo.setSacado(sacado);
-		titulo.setCedente(cedente);
-			
-		return titulo;
-	}
-
+	
 	/**
 	 * 
 	 * @return has

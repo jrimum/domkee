@@ -84,10 +84,10 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF getInstance(Long cadastroDePessoa,
+	public static AbstractCPRF create(Long cadastroDePessoa,
 			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 
-		return getInstance(String.valueOf(cadastroDePessoa),tipoDeCadastro);
+		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 		
 	}
 
@@ -97,7 +97,7 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF getInstance(String cadastroDePessoa,
+	public static AbstractCPRF create(String cadastroDePessoa,
 			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
@@ -124,7 +124,7 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 
 		}
 		
-		return getInstance(codigo);
+		return create(codigo);
 	}
 	
 	/**
@@ -137,23 +137,23 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	 *             caso o parâmetro não esteja em um formatador válido de cadastro
 	 *             de pessoa.
 	 */
-	public static AbstractCPRF getInstance(String cadastroDePessoa)
+	public static AbstractCPRF create(String cadastroDePessoa)
 			throws IllegalArgumentException {
 
 		AbstractCPRF cp = null;
 		AValidator4CPRF autenticadorCP = AValidator4CPRF
-				.getInstance(cadastroDePessoa);
+				.create(cadastroDePessoa);
 
 		if (autenticadorCP.isValido()) {
 
 			if (autenticadorCP.isFisica()) {
 
-				cp = CPF.getInstance(autenticadorCP
+				cp = new CPF(autenticadorCP
 						.getCodigoDoCadastro());
 
 			} else if (autenticadorCP.isJuridica()) {
 
-				cp = CNPJ.getInstance(autenticadorCP
+				cp = new CNPJ(autenticadorCP
 						.getCodigoDoCadastro());
 			}
 

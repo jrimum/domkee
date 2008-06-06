@@ -74,7 +74,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	public Pessoa(String nome, String cadastroDePessoa) {
 		
 		this.nome = nome;
-		this.abstractCPRF = AbstractCPRF.getInstance(cadastroDePessoa);
+		this.abstractCPRF = AbstractCPRF.create(cadastroDePessoa);
 	}
 
 	@Override

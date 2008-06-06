@@ -54,9 +54,9 @@ public class TestCPF{
 	@Test
 	public void testGetInstanceString() {
 
-		assertNotNull(AbstractCPRF.getInstance("22233366638"));
+		assertNotNull(AbstractCPRF.create("22233366638"));
 		
-		assertTrue(AbstractCPRF.getInstance("22233366638") instanceof CPF);
+		assertTrue(AbstractCPRF.create("22233366638") instanceof CPF);
 	}
 
 }

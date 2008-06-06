@@ -64,12 +64,9 @@ public class CNPJ extends AbstractCPRF {
 	 */
 	private static final long serialVersionUID = -3217977741182481194L;
 
-	private CNPJ() {
-	}
-
 	public CNPJ(String strCNPJ) {
 
-		this.autenticadorCP = AValidator4CPRF.getInstance(strCNPJ);
+		this.autenticadorCP = AValidator4CPRF.create(strCNPJ);
 
 		if (autenticadorCP.isValido()) {
 			init(strCNPJ);
@@ -88,7 +85,7 @@ public class CNPJ extends AbstractCPRF {
 
 				String strCNPJ = Filler.ZERO_LEFT.fill(numCNPJ, 14);
 
-				this.autenticadorCP = AValidator4CPRF.getInstance(strCNPJ);
+				this.autenticadorCP = AValidator4CPRF.create(strCNPJ);
 
 				if (autenticadorCP.isValido())
 					init(strCNPJ);
@@ -102,30 +99,6 @@ public class CNPJ extends AbstractCPRF {
 		} catch (Exception e) {
 			if (!(e instanceof CNPJException))
 				throw new CNPJException(e);
-		}
-
-	}
-
-	/**
-	 * @param strCNPJ
-	 * @return
-	 */
-	public static CNPJ getInstance(String strCNPJ) {
-
-		AValidator4CPRF autenticadorCP = AValidator4CPRF
-				.getInstance(strCNPJ);
-
-		if (autenticadorCP.isValido()) {
-
-			CNPJ cnpj = new CNPJ();
-			cnpj.autenticadorCP = autenticadorCP;
-			cnpj.init(strCNPJ);
-
-			return cnpj;
-
-		} else {
-			throw new CNPJException(new IllegalArgumentException(
-					"O cadastro de pessoa [ " + strCNPJ + " ] não é válido."));
 		}
 
 	}

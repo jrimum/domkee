@@ -62,12 +62,9 @@ public class CPF extends AbstractCPRF {
 	 */
 	private static final long serialVersionUID = 5910970842832308496L;
 
-	private CPF() {
-	}
-
 	public CPF(String strCPF) {
 
-		this.autenticadorCP = AValidator4CPRF.getInstance(strCPF);
+		this.autenticadorCP = AValidator4CPRF.create(strCPF);
 
 		if (autenticadorCP.isValido()) {
 			init(strCPF);
@@ -86,7 +83,7 @@ public class CPF extends AbstractCPRF {
 
 				String strCPF = Filler.ZERO_LEFT.fill(numCPF, 14);
 
-				this.autenticadorCP = AValidator4CPRF.getInstance(strCPF);
+				this.autenticadorCP = AValidator4CPRF.create(strCPF);
 
 				if (autenticadorCP.isValido())
 					init(strCPF);
@@ -100,29 +97,6 @@ public class CPF extends AbstractCPRF {
 		} catch (Exception e) {
 			if (!(e instanceof CPFException))
 				throw new CPFException(e);
-		}
-	}
-
-	/**
-	 * @param cadastroDePessoa
-	 * @return
-	 */
-	public static CPF getInstance(String strCPF) {
-
-		AValidator4CPRF autenticadorCP = AValidator4CPRF
-				.getInstance(strCPF);
-
-		if (autenticadorCP.isValido()) {
-
-			CPF cpf = new CPF();
-			cpf.autenticadorCP = autenticadorCP;
-			cpf.init(strCPF);
-
-			return cpf;
-
-		} else {
-			throw new CPFException(new IllegalArgumentException(
-					"O cadastro de pessoa [ " + strCPF + " ] não é válido."));
 		}
 	}
 
