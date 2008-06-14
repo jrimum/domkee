@@ -32,17 +32,53 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.utilix.ITextStream;
 
+/**
+ * 
+ * <p>
+ * DEFINIÇÃO DA CLASSE
+ * </p>
+ * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO:
+ * </p> 
+ * 
+ * @author Romulo
+ * @author Gilmar
+ * @author Misael
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
 public class CEP implements ITextStream {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3573397075779771290L;
-	
+
+	/**
+	 * Primeiros cinco dígitos.
+	 * Exemplo: Para o CEP 59.020-300 o prefixo é o 59020.
+	 */
 	private Integer prefixo;
 	
+	/**
+	 * Últimos dois dígitos.
+	 * Exemplo: Para o CEP 59.020-300 o sufixo é o 300.
+	 */
 	private Integer sufixo;
 	
+	/**
+	 * CEP completo (prefixo+sufixo).
+	 * Exemplo: Para o CEP 59.020-300 o cep pode ser:
+	 * <ul>
+	 * <li>59.020-300<li>
+	 * <li>59020300<li>
+	 * </ul>
+	 */
 	private String cep;
 	
 	public CEP() {}

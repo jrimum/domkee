@@ -27,12 +27,26 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.ientity;
 
 import java.awt.Image;
 
-public interface IBanco extends IPessoaJuridica{
+/**
+ * 
+ * <p>
+ * Interface que define o contrato para a criação de um novo banco.
+ * </p>
+ * 
+ * @author Gilmar
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
+public interface IBanco extends IPessoaJuridica {
 
 	public abstract String getCodigoDeCompensacao();
 	public abstract String getSegmento();

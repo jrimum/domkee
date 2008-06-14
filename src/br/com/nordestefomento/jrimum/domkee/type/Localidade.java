@@ -31,6 +31,36 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 
+/**
+ * 
+ * <p>
+ * Pode representar:
+ * <ul>
+ * <li>Cidade</li>
+ * <li>Município</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO:
+ * <ul>
+ * <li>Natal</li>
+ * </ul>
+ * </p> 
+ * 
+ * @author Romulo
+ * @author Gilmar
+ * @author Misael
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
 public class Localidade {
 
 	/**

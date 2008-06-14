@@ -31,6 +31,35 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 
+/**
+ * 
+ * <p>
+ * Pode representar:
+ * <ul>
+ * <li>Avenida</li>
+ * <li>Rua</li>
+ * <li>Alameda</li>
+ * <li>Dentro outros, para a listagem completa consulte os Correios</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO:
+ * <ul>
+ * <li>Avenida Prudente de Morais</li>
+ * <li>Rua Apodi</li>
+ * </ul>
+ * </p> 
+ * 
+ * @author Romulo
+ * @author Gilmar
+ * @author Misael
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
 public class Logradouro{
 
 	/**

@@ -27,11 +27,26 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.entity;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * <p>
+ *  Para ver o conceito de negócio, consulte o 
+ *  {@link http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario glossário}.
+ * </p>
+ * 
+ * @author Romulo
+ * @author Gilmar
+ * @author Misael
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
 public class Agencia implements Serializable {
 
 	/**

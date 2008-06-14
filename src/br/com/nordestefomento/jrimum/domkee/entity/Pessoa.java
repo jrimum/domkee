@@ -27,7 +27,6 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.entity;
 
 import java.util.ArrayList;
@@ -40,8 +39,29 @@ import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.Telefone;
 
+
 /**
- * @author   Romulo
+ * 
+ * <p>
+ * Representa uma pessoa no negócio de boletos bancários.
+ * Ela pode assumir três papéis diferentes:
+ * <ul>
+ * <li>Cedente</li>
+ * <li>Sacador</li>
+ * <li>Sacador Avalista</li>
+ * </ul>
+ * Veja as definições de cada papel em 
+ * {@link http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario Glossário}
+ * </p>
+ * 
+ * @author Gilmar
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
 public class Pessoa extends ACurbitaObject implements IPessoa {
 	
@@ -54,14 +74,29 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	
 	private String nome;
 	
+	/**
+	 * @see AbstractCPRF
+	 */
 	private AbstractCPRF abstractCPRF;
 	
+	/**
+	 * @see Telefone
+	 */
 	private Collection<Telefone> telefones;
 	
+	/**
+	 * @see Email
+	 */
 	private Collection<Email> emails;
 	
+	/**
+	 * @see Endereco
+	 */
 	private Collection<Endereco> enderecos;
 	
+	/**
+	 * @see ContaBancaria
+	 */
 	private Collection<ContaBancaria> contasBancarias;
 	
 	public Pessoa() {}
@@ -86,6 +121,11 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		contasBancarias.add(contaBancaria);
 	}
 	
+	/** 
+	 * Verifica se esta pessoa tem alguma conta bancária.
+	 * 
+	 * @see ContaBancaria
+	 */
 	@Override
 	public boolean hasContaBancaria(){
 		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
@@ -190,12 +230,22 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		this.telefones = telefones;
 	}
 
+	/** 
+	 * Verifica se esta pessoa é uma instância de <code>PessoaFisica</code>.
+	 * 
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isFisica()
+	 */
 	@Override
 	public boolean isFisica() {
 		
 		return (this instanceof PessoaFisica);
 	}
 
+	/** 
+	 * Verifica se esta pessoa é uma instância de <code>PessoaJuridica</code>.
+	 * 
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isJuridica()
+	 */
 	@Override
 	public boolean isJuridica() {
 		

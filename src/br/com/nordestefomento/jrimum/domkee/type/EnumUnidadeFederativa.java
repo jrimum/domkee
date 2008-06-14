@@ -34,12 +34,13 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.ICurbitaObject;
 
 /**
- * 
+ * Enumera as unidades federativas do Brasil.
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael Barreto 
  * @author Rômulo Augusto
  * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * @author Samuel
  * 
  * @since 0.2
  * 

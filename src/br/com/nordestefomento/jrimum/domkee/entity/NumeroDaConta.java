@@ -32,14 +32,30 @@ package br.com.nordestefomento.jrimum.domkee.entity;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 
+/**
+ * 
+ * <p>
+ * Identifica uma conta bancária e assume os sinônimos:
+ * <ul>
+ * <li>Código do cedente</li>
+ * <li>Convênio</li>
+ * </ul>
+ * </p>
+ * 
+ * @author Romulo
+ * @author Gilmar
+ * @author Misael
+ * @author Samuel
+ * 
+ * @since 0.2 
+ * 
+ * @version 0.2
+ */
 public class NumeroDaConta extends ACurbitaObject {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7807160258460502276L;
 
-	private Integer codigoDaConta  = 0;
+	private Integer codigoDaConta = 0;
 
 	private String digitoDaConta = "";
 	

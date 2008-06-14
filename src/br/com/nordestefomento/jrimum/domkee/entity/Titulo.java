@@ -41,7 +41,6 @@ import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
 
 
 /**
- * 
  * Representa um título em cobrança, tais como:
  * 
  * <br />
@@ -56,6 +55,9 @@ import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
  * <li>Nota de Crédito Industrial</li>
  * <li>Nota de Crédito Rural</li>
  * <li>E outras espécies pagáveis através da rede bancária.</li>
+ * 
+ * Para visualizar o conceito de negócio consulte o 
+ * {@link http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario glossário}.
  * 
  * @see br.com.nordestefomento.jrimum.boleto.EnumTitulo
  * 
@@ -415,6 +417,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * Define o valor arredondando duas casas decimais para baixo.
+	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * @param valor
 	 *            the valor to set
 	 */

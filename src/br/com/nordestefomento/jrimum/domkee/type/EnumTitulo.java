@@ -81,6 +81,7 @@ import br.com.nordestefomento.jrimum.ICurbitaObject;
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael Barreto
  * @author Rômulo Augusto
+ * @author Samuel
  * 
  * @since 0.2
  * 

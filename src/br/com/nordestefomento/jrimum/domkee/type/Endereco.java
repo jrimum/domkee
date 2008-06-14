@@ -38,38 +38,71 @@ import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 
 /**
  * <p>
- * Entidade que encapsula dados do endereço de uma pessoa,  como também facilidades na manipulação dos seus atributos.
+ * Entidade que encapsula dados do endereço de uma pessoa, como também 
+ * facilidades na manipulação dos seus atributos.
  * </p>
  *
  * @author   <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author   Misael Barreto 
  * @author   Rômulo Augusto
  * @author   <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
- * @since   JMatryx 1.0
- * @version   1.0
+ * @author Samuel
+ * 
+ * @since   0.2
+ * @version   0.2
  */
 public class Endereco extends ACurbitaObject{
 
 	private static final long serialVersionUID = -2971929602328106185L;
 	
+	/**
+	 * Identificador único.
+	 */
 	private Long id;
 	
+	/**
+	 * @see Logradouro
+	 */
 	private Logradouro logradouro;
 	
+	/**
+	 * Número que identifica o estabelecimento na rua.
+	 */
 	private String numero;
 	
+	/**
+	 * Informação adicional para identificar o estabelecimento na rua.
+	 */
 	private String complemento;
 	
+	/**
+	 * Cada uma das divisões de uma cidade ou povoação.
+	 */
 	private String bairro;
 	
+	/**
+	 * @see Localidade
+	 */
 	private Localidade localidade;
 	
+	/**
+	 * @see CEP
+	 */
 	private CEP cep;
 	
+	/**
+	 * @see EnumUnidadeFederativa
+	 */
 	private EnumUnidadeFederativa uf;
 	
+	/**
+	 * @see Pais
+	 */
 	private Pais pais;
 	
+	/**
+	 * @see Pessoa
+	 */
 	private Collection<Pessoa> pessoas;
 	
 	public Endereco() {}

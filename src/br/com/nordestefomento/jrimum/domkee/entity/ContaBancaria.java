@@ -27,31 +27,20 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.entity;
 
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 
-
 // TODO Verificar a necessidade de se criar uma família de classes de
 // ContaBancaria, uma para cada banco, e seus respectivos autenticadores.
-
-
 
 /**
  * 
  * <p>
- * DEFINIÇÃO DA CLASSE
- * </p>
- * 
- * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
- * 
- * <p>
- * EXEMPLO: 
+ * É um vínculo entre uma Pessoa e um Banco que agrega a agência, o número da conta
+ * ou o código do cedente e a carteira.
  * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
@@ -59,22 +48,43 @@ import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
  * @since 0.2
  * 
  * @version 0.2
+ * 
+ * @see Pessoa
+ * @see IBanco
+ * @see br.com.nordestefomento.jrimum.bopepo.EnumBancos
  */
-	
 public class ContaBancaria {
 
 	private static final long serialVersionUID = 3409504109013559999L;
 
+	/**
+	 * @see IBanco
+	 */
 	private IBanco banco;
 
+	/**
+	 * @see Agencia
+	 */
 	private Agencia agencia;
 	
+	/**
+	 * @see NumeroDaConta
+	 */
 	private NumeroDaConta numeroDaConta;
 	
+	/**
+	 * @see Carteira
+	 */
 	private Carteira carteira;
 
+	/**
+	 * @see Pessoa
+	 */
 	private Collection<Pessoa> titulares;
 	
+	/**
+	 * @see Titulo
+	 */
 	private Collection<Titulo> titulos;
 	
 	public ContaBancaria() {}
