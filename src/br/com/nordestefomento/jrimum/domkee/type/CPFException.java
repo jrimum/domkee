@@ -50,9 +50,9 @@ import br.com.nordestefomento.jrimum.JRimumException;
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * 
- * @since 
+ * @since 0.2
  * 
- * @version 
+ * @version 0.2
  */
 
 public class CPFException extends JRimumException {

@@ -81,7 +81,7 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	/**
 	 * @param cadastroDePessoa
 	 * @param tipoDeCadastro
-	 * @return
+	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
 	public static AbstractCPRF create(Long cadastroDePessoa,
@@ -94,7 +94,7 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	/**
 	 * @param cadastroDePessoa
 	 * @param tipoDeCadastro
-	 * @return
+	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
 	public static AbstractCPRF create(String cadastroDePessoa,
@@ -169,14 +169,14 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	}
 	
 	/**
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isFisica(){
 		return autenticadorCP.isFisica();
 	}
 	
 	/**
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isJuridica(){
 		return autenticadorCP.isJuridica();

@@ -57,9 +57,9 @@ import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
  * <li>E outras espécies pagáveis através da rede bancária.</li>
  * 
  * Para visualizar o conceito de negócio consulte o 
- * {@link http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario glossário}.
+ * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * 
- * @see br.com.nordestefomento.jrimum.boleto.EnumTitulo
+ * @see EnumTitulo
  * 
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
@@ -96,7 +96,7 @@ public final class Titulo extends ACurbitaObject{
 	private Date dataDoVencimento;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.boleto.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumMoeda
 	 */
 	private EnumMoeda enumMoeda = EnumMoeda.REAL;
 
@@ -106,7 +106,7 @@ public final class Titulo extends ACurbitaObject{
 	private BigDecimal valor;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.boleto.EnumTitulo
+	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumTitulo
 	 */
 	private EnumTitulo tipoDeDocumento;
 
@@ -175,7 +175,7 @@ public final class Titulo extends ACurbitaObject{
 	/**
 	 * Indicação de aceite.
 	 * 
-	 * @see br.com.nordestefomento.jrimum.type.entity.Titulo.EnumAceite
+	 * @see EnumAceite
 	 */
 	private EnumAceite aceite;
 

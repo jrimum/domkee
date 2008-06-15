@@ -49,9 +49,8 @@ import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
  * 
  * @version 0.2
  * 
- * @see Pessoa
+ * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa
  * @see IBanco
- * @see br.com.nordestefomento.jrimum.bopepo.EnumBancos
  */
 public class ContaBancaria {
 

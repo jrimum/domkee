@@ -29,40 +29,47 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
+
+
+
+	
+
 /**
  * 
  * <p>
- *  Representação pela <a href="http://www.febraban.org.br">FEBRABAN</a>, para 
- *  identificar a característica dos títulos dentro das modalidades de cobrança 
- *  existentes no banco.
+ * DEFINIÇÃO DA CLASSE
  * </p>
  * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * <p>
+ * EXEMPLO: 
+ * </p>
+ * 
+ * @author <a href=http://gilmatryx.googlepages.com/>Gilmar P.S.L.</a>
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-
+	
 public class Carteira {
 
 	/**
-	 * Nome da modalidade de cobrança (ou serviços) atribuído a carteira.
+	 * @see #setNome(String)
 	 */
 	private String nome;
 
 	/**
-	 * Código adotado pela <a href="http://www.febraban.org.br">FEBRABAN</a>, para identificar a característica dos
-	 * títulos dentro das modalidades de cobrança existentes no banco.
+	 * 
 	 * 
 	 */
 	private Integer codigo;
 
 	/**
-	 *Tipo determinado de cobrança, com registro ou sem registro.
-	 *
-	 * @see EnumTipoCobranca
+	 * @see #setTipoCobranca(EnumTipoCobranca)
 	 */
 	private EnumTipoCobranca tipoCobranca;
 
@@ -81,9 +88,10 @@ public class Carteira {
 		this.codigo = codigo;
 	}
 
+
 	/**
 	 * @param codigo
-	 * @param tipoCobranca
+	 * @param cobranca
 	 */
 	public Carteira(Integer codigo, EnumTipoCobranca cobranca) {
 		super();
@@ -91,10 +99,11 @@ public class Carteira {
 		this.tipoCobranca = cobranca;
 	}
 
+
 	/**
 	 * @param nome
 	 * @param codigo
-	 * @param tipoCobranca
+	 * @param cobranca
 	 */
 	public Carteira(String nome, Integer codigo, EnumTipoCobranca cobranca) {
 		super();
@@ -104,6 +113,8 @@ public class Carteira {
 	}
 
 	/**
+	 * @see #setNome(String)  
+	 * 
 	 * @return the nome
 	 */
 	public String getNome() {
@@ -111,6 +122,10 @@ public class Carteira {
 	}
 
 	/**
+	 * <p>
+	 * Nome da modalidade de cobrança (ou serviços) atribuído a carteira.
+	 * </p>
+	 * 
 	 * @param nome the nome to set
 	 */
 	public void setNome(String nome) {
@@ -118,6 +133,8 @@ public class Carteira {
 	}
 
 	/**
+	 * @see #setCodigo(Integer)
+	 * 
 	 * @return the codigo
 	 */
 	public Integer getCodigo() {
@@ -125,6 +142,11 @@ public class Carteira {
 	}
 
 	/**
+	 * <p>
+	 * Código adotado pela <a href="http://www.febraban.org.br">FEBRABAN</a>, para identificar a característica dos
+	 * títulos dentro das modalidades de cobrança existentes no banco.
+	 * </p>
+	 * 
 	 * @param codigo the codigo to set
 	 */
 	public void setCodigo(Integer codigo) {
@@ -138,8 +160,17 @@ public class Carteira {
 		return tipoCobranca;
 	}
 
+	
+	
 	/**
-	 * @param tipoCobranca the tipoCobranca to set
+	 * <p>
+	 * Define o tipo de cobrança da carteira (Registrada ou Não-Registrada), 
+	 * em caso de dúvida veja o <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>
+	 * </p>
+	 * 
+	 * @param cobranca
+	 * 
+	 * @since 0.2
 	 */
 	public void setTipoCobranca(EnumTipoCobranca cobranca) {
 		this.tipoCobranca = cobranca;
@@ -149,6 +180,8 @@ public class Carteira {
 	 * <p>
 	 * Indica se é uma carteira registrada.
 	 * </p>
+	 * 
+	 * @retun true se registrada
 	 */
 	public boolean isComRegistro() {
 		return (this.tipoCobranca == EnumTipoCobranca.COM_REGISTRO);
@@ -159,6 +192,7 @@ public class Carteira {
 	 * Indica se é uma carteira não registrada.
 	 * </p>
 	 * 
+	 * @return true se sem registro
 	 */
 	public boolean isSemRegistro() {
 		return (this.tipoCobranca == EnumTipoCobranca.SEM_REGISTRO);

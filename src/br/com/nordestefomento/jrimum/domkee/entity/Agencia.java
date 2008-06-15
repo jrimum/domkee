@@ -35,7 +35,7 @@ import java.io.Serializable;
  * 
  * <p>
  *  Para ver o conceito de negócio, consulte o 
- *  {@link http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario glossário}.
+ *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * </p>
  * 
  * @author Romulo

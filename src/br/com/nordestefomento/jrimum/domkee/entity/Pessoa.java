@@ -51,7 +51,7 @@ import br.com.nordestefomento.jrimum.domkee.type.Telefone;
  * <li>Sacador Avalista</li>
  * </ul>
  * Veja as definições de cada papel em 
- * {@link http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario Glossário}
+ * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>.
  * </p>
  * 
  * @author Gilmar
