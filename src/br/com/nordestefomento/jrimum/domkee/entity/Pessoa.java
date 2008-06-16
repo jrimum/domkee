@@ -54,7 +54,7 @@ import br.com.nordestefomento.jrimum.domkee.type.Telefone;
  * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>.
  * </p>
  * 
- * @author Gilmar
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
  * @author Romulo
  * @author Samuel
@@ -69,8 +69,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * 
 	 */
 	private static final long serialVersionUID = -6969495818430633867L;
-	
-	private Long id;
 	
 	private String nome;
 	
@@ -112,6 +110,9 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		this.abstractCPRF = AbstractCPRF.create(cadastroDePessoa);
 	}
 
+	/**
+	 * @see ContaBancaria
+	 */
 	@Override
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
@@ -130,7 +131,9 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	public boolean hasContaBancaria(){
 		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
 	}
-
+	/**
+	 * @see Email
+	 */
 	@Override
 	public void addEmail(Email email) {
 		
@@ -140,6 +143,9 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		emails.add(email);
 	}
 
+	/**
+	 * @see Endereco
+	 */
 	@Override
 	public void addEndereco(Endereco endereco) {
 
@@ -149,6 +155,9 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		enderecos.add(endereco);
 	}
 
+	/**
+	 * @see Telefone
+	 */
 	@Override
 	public void addTelefone(Telefone telefone) {
 		
@@ -158,24 +167,39 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		telefones.add(telefone);
 	}
 
+	/**
+	 * @see AbstractCPRF
+	 */
 	@Override
 	public AbstractCPRF getAbstractCPRF() {
 		
 		return abstractCPRF;
 	}
 
+	/**
+	 * @see ContaBancaria
+	 * @see Collection
+	 */
 	@Override
 	public Collection<ContaBancaria> getContasBancarias() {
 
 		return contasBancarias;
 	}
 
+	/**
+	 * @see Email
+	 * @see Collection
+	 */
 	@Override
 	public Collection<Email> getEmails() {
 
 		return emails;
 	}
 
+	/**
+	 * @see Endereco
+	 * @see Collection
+	 */
 	@Override
 	public Collection<Endereco> getEnderecos() {
 
@@ -188,30 +212,49 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		return nome;
 	}
 
+	/**
+	 * @see Telefone
+	 * @see Collection
+	 */
 	@Override
 	public Collection<Telefone> getTelefones() {
 		
 		return telefones;
 	}
 
+	/**
+	 * @see AbstractCPRF
+	 */
 	@Override
 	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
 		
 		this.abstractCPRF = abstractCPRF;
 	}
 
+	/**
+	 * @see ContaBancaria
+	 * @see Collection
+	 */
 	@Override
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
 		
 		this.contasBancarias = contasBancarias;
 	}
 
+	/**
+	 * @see Email
+	 * @see Collection
+	 */
 	@Override
 	public void setEmails(Collection<Email> emails) {
 		
 		this.emails = emails;
 	}
 	
+	/**
+	 * @see Endereco
+	 * @see Collection
+	 */
 	@Override
 	public void setEnderecos(Collection<Endereco> enderecos) {
 		
@@ -224,6 +267,10 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		this.nome = nome;
 	}
 
+	/**
+	 * @see Telefone
+	 * @see Collection
+	 */
 	@Override
 	public void setTelefones(Collection<Telefone> telefones) {
 		
@@ -251,13 +298,4 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 		
 		return (this instanceof PessoaJuridica);
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 }

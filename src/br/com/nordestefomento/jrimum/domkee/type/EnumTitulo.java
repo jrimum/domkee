@@ -123,13 +123,17 @@ public enum EnumTitulo implements ICurbitaObject {
 	OUTROS(99,"Outros");
 
 	/**
+	 * <p>
 	 * Código adotado pela FEBRABAN para identificar o tipo de título de
 	 * cobrança.
+	 * </p>
 	 */
 	private int codigo;
 
 	/**
+	 * <p>
 	 * Sigla ou nome compelto de um tipo de título de cobrança.
+	 * </p>
 	 */
 	private String sigla;
 	
@@ -148,9 +152,11 @@ public enum EnumTitulo implements ICurbitaObject {
 	}
 
 	/**
+	 * <p>
 	 * Apesar do nome, este método pode retornar não uma sigla, e sim, um nome
 	 * compelto de uma espécie de título de cobrança. Isto se justifica pelo
 	 * fato de que não há uma sigla determinada pela FEBRABAN para alguns casos.
+	 * </p>
 	 * 
 	 * @return sigla ou descrição completa.
 	 */
@@ -160,8 +166,10 @@ public enum EnumTitulo implements ICurbitaObject {
 	}
 
 	/**
+	 * <p>
 	 * Código adotado pela FEBRABAN para identificar o tipo de título de
 	 * cobrança.
+	 * </p>
 	 * 
 	 * @return código FEBRABAN
 	 */

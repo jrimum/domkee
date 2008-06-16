@@ -42,9 +42,9 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
  * </ul>
  * </p>
  * 
- * @author Romulo
- * @author Gilmar
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
+ * @author Romulo
  * @author Samuel
  * 
  * @since 0.2 
@@ -87,5 +87,4 @@ public class NumeroDaConta extends ACurbitaObject {
 	public void setDigitoDaConta(String digitoDaConta) {
 		this.digitoDaConta = digitoDaConta;
 	}
-	
 }

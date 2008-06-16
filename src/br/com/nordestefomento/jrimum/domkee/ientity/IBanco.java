@@ -31,13 +31,17 @@ package br.com.nordestefomento.jrimum.domkee.ientity;
 
 import java.awt.Image;
 
+import br.com.nordestefomento.jrimum.domkee.entity.CodigoDeCompensacaoBACEN;
+
+
 /**
  * 
  * <p>
- * Interface que define o contrato para a criação de um novo banco.
+ * Interface que define o contrato para a criação de um novo banco (instituição
+ * financeira) supervisionada pelo <a href="http://www.bcb.gov.br/">BACEN</a>.
  * </p>
  * 
- * @author Gilmar
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
  * @author Romulo
  * @author Samuel
@@ -46,13 +50,85 @@ import java.awt.Image;
  * 
  * @version 0.2
  */
+	
 public interface IBanco extends IPessoaJuridica {
 
-	public abstract String getCodigoDeCompensacao();
+	
+	/**
+	  @see #setCodigoDeCompensacaoBACEN(CodigoDeCompensacaoBACEN)
+	 * 
+	 * @return CodigoDeCompensacaoBACEN
+	 * 
+	 * @since 0.2
+	 */
+		
+	public abstract CodigoDeCompensacaoBACEN getCodigoDeCompensacaoBACEN();
+	
+	/**
+	  @see #setSegmento(String)
+	 * 
+	 * @return Segmento
+	 * 
+	 * @since 0.2
+	 */
+		
 	public abstract String getSegmento();
-	public abstract Image getImgLogo();
-	public abstract void setCodigoDeCompensacao(String codigoDeCompensacao);
+	
+	
+
+	/**
+	 * @see #setImgLogo(Image)
+	 * 
+	 * @return Imagem
+	 * 
+	 * @since 0.2
+	 */
+		
+		public abstract Image getImgLogo();
+	
+	
+	/**	 * <p>
+	 * Código de compensação <a href="http://www.bcb.gov.br/">BACEN</a>
+	 * </p>>
+	 * 
+	 * @param codigoDeCompensacaoBACEN
+	 * 
+	 * @since 0.2
+	 */
+		
+	public abstract void setCodigoDeCompensacaoBACEN(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN);
+	
+	/**	 * <p>
+	 * Segmento registrado no <a href="http://www.bcb.gov.br/">BACEN</a>.
+	 * </p>
+	 * 
+	 * <p>
+	 * Exemplos: 
+	 * <ul>
+	 * <li>Banco Comercial Estrangeiro - Filial no país</li>
+	 * <li>Banco Múltiplo</li>
+	 * <li>Banco Comercial</li>
+	 * <li>Banco Múltiplo Cooperativo</li>
+	 * </ul>
+	 * </p>>
+	 * 
+	 * @param segmento
+	 * 
+	 * @since 0.2 
+	 */
+		
 	public abstract void setSegmento(String segmento);
+	
+	/**
+	  <p>
+	 * Imagem da logo-marca do banco.
+	 * </p>>
+	 * 
+	 * @param imgLogo
+	 * 
+	 * @since 0.2 
+	 */
+		
 	public abstract void setImgLogo(Image imgLogo);
 	
 }

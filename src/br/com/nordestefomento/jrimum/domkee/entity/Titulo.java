@@ -79,19 +79,17 @@ public final class Titulo extends ACurbitaObject{
 	private static final long serialVersionUID = -7417116706701988529L;
 
 	/**
-	 * Identificação do Título atribuído pelo esmissor do título, não confundir
-	 * com o nosso número.
+	 * @see #setNumeroDoDocumento(String)
 	 */
 	private String numeroDoDocumento;
 
 	/**
-	 * Data de emissão do documento.
+	 * @see #setDataDoDocumento(Date)
 	 */
 	private Date dataDoDocumento;
 
 	/**
-	 * Data de vencimento nominal do título de cobrança, ou melhor, data limite
-	 * para pagamento do título.
+	 * @see #setDataDoVencimento(Date)
 	 */
 	private Date dataDoVencimento;
 
@@ -101,7 +99,7 @@ public final class Titulo extends ACurbitaObject{
 	private EnumMoeda enumMoeda = EnumMoeda.REAL;
 
 	/**
-	 * Valor original do Título expresso em moeda corrente, utilizar 2 decimais.
+	 * @see #setValor(BigDecimal)
 	 */
 	private BigDecimal valor;
 
@@ -111,47 +109,50 @@ public final class Titulo extends ACurbitaObject{
 	private EnumTitulo tipoDeDocumento;
 
 	/**
-	 * Código fornecido pelo Banco Correspondente para identificação do Título
-	 * de Cobrança.
+	 * @see #setNossoNumero(String)
 	 */
 	private String nossoNumero;
 
 	/**
-	 * Dígito verificador do nosso número, caso exista.
+	 * @see #setDigitoDoNossoNumero(String)
 	 */
 	private String digitoDoNossoNumero;
 	
 	/**
-	 * Conta na qual o titulo se encontra, conta do favorecido (Cedente).
+	 * @see #setContaBancaria(ContaBancaria)
 	 */
 	private ContaBancaria contaBancaria;
 
 	/**
-	 * Cliente que entrega os títulos ao Banco para serem cobrados.
+	 * @see #setCedente(Pessoa)
 	 */
 	private Pessoa cedente;
 	
-
 	/**
-	 * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
+	 * @see #setSacado(Pessoa)
 	 */
 	private Pessoa sacado;
 
 	/**
-	 * Cedente original do Título.
+	 * @see #setSacadorAvalista(Pessoa)
 	 */
 	private Pessoa sacadorAvalista;
 	
 
 	/**
+	 * <p>
 	 * Identificação de Título Aceito / Não Aceito Código adotado pela FEBRABAN
 	 * para identificar se o título de cobrança foi aceito (reconhecimento da
 	 * dívida pelo Sacado). Domínio:
-	 * 
+	 * </p>
 	 * <ul>
 	 * <li>'A' = Aceite</li>
 	 * <li>'N' = Não Aceite</li>
 	 * </ul>
+	 * 
+	 * @since 0.2
+	 * 
+	 * @version 0.2
 	 */
 	public enum EnumAceite {
 
@@ -173,14 +174,16 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
-	 * Indicação de aceite.
+	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.entity.Titulo.EnumAceite)
 	 * 
 	 * @see EnumAceite
 	 */
 	private EnumAceite aceite;
 
 	/**
+	 * <p>
 	 * Cria um título sem sacador avalista.
+	 * </p>
 	 */
 	public Titulo(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente) throws JRimumException {
 		this.setContaBancaria(contaBancaria);
@@ -209,6 +212,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.entity.Titulo.EnumAceite)
+	 * 
 	 * @return the aceite
 	 */
 	public EnumAceite getAceite() {
@@ -216,6 +221,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Indicação de aceite.
+	 * </p>
+	 * 
 	 * @param aceite
 	 *            the aceite to set
 	 */
@@ -224,6 +233,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setCedente(Pessoa)
+	 * 
 	 * @return the cedente
 	 */
 	public Pessoa getCedente() {
@@ -231,6 +242,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Cliente que entrega os títulos ao Banco para serem cobrados.
+	 * </p>
+	 * 
 	 * @param cedente
 	 *            the cedente to set
 	 */
@@ -244,6 +259,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setDataDoDocumento(Date)
+	 * 
 	 * @return the dataDoDocumento
 	 */
 	public Date getDataDoDocumento() {
@@ -251,6 +268,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Data de emissão do documento.
+	 * </p>
+	 * 
 	 * @param dataDoDocumento
 	 *            the dataDoDocumento to set
 	 */
@@ -259,6 +280,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setDataDoVencimento(Date)
+	 * 
 	 * @return the dataDoVencimento
 	 */
 	public Date getDataDoVencimento() {
@@ -266,6 +289,11 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 *  <p>
+	 * Data de vencimento nominal do título de cobrança, ou melhor, data limite
+	 * para pagamento do título.
+	 * </p>
+	 * 
 	 * @param dataDoVencimento
 	 *            the dataDoVencimento to set
 	 */
@@ -274,6 +302,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setDigitoDoNossoNumero(String)
+	 * 
 	 * @return the dígitoDoNossoNúmero
 	 */
 	public String getDigitoDoNossoNumero() {
@@ -281,6 +311,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Dígito verificador do nosso número, caso exista.
+	 * </p>
+	 * 
 	 * @param digitoDoNossoNumero
 	 *            the dígitoDoNossoNúmero to set
 	 */
@@ -289,6 +323,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumMoeda
+	 * 
 	 * @return the enumMoeda
 	 */
 	public EnumMoeda getEnumMoeda() {
@@ -296,6 +332,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumMoeda
+	 * 
 	 * @param moeda
 	 *            the enumMoeda to set
 	 */
@@ -304,6 +342,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setNossoNumero(String)
+	 * 
 	 * @return the nossoNúmero
 	 */
 	public String getNossoNumero() {
@@ -311,6 +351,11 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Código fornecido pelo Banco correspondente para identificação do título
+	 *  ou identificação do título atribuído pelo esmissor do título de cobrança.
+	 * </p>
+	 * 
 	 * @param nossoNumero
 	 *            the nossoNúmero to set
 	 */
@@ -319,6 +364,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setNumeroDoDocumento(String)
+	 * 
 	 * @return the númeroDoDocumento
 	 */
 	public String getNumeroDoDocumento() {
@@ -326,6 +373,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Número de controle do cedente para o referido título. Não confundir com o nosso número.
+	 * </p>
+	 * 
 	 * @param numeroDoDocumento
 	 *            the númeroDoDocumento to set
 	 */
@@ -334,6 +385,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 	
 	/**
+	 * @see #setContaBancaria(ContaBancaria)
+	 * 
 	 * @return the contaBancaria
 	 */
 	public ContaBancaria getContaBancaria() {
@@ -341,6 +394,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Conta na qual o título se encontra, conta do favorecido (Cedente).
+	 * </p>
+	 * 
 	 * @param contaBancaria the contaBancaria to set
 	 */
 	public void setContaBancaria(ContaBancaria contaBancaria)
@@ -355,6 +412,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setSacado(Pessoa)
+	 * 
 	 * @return the sacado
 	 */
 	public Pessoa getSacado() {
@@ -362,6 +421,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
+	 * </p>
+	 * 
 	 * @param sacado
 	 *            the sacado to set
 	 */
@@ -375,6 +438,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setSacadorAvalista(Pessoa)
+	 * 
 	 * @return the sacadorAvalista
 	 */
 	public Pessoa getSacadorAvalista() {
@@ -382,6 +447,10 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * <p>
+	 * Cedente original do Título.
+	 * </p>
+	 * 
 	 * @param sacadorAvalista
 	 *            the sacadorAvalista to set
 	 */
@@ -410,6 +479,8 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
+	 * @see #setValor(BigDecimal)
+	 * 
 	 * @return the valor
 	 */
 	public BigDecimal getValor() {
@@ -417,8 +488,12 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
-	 * Define o valor arredondando duas casas decimais para baixo.
+	 * <p>
+	 * Atribui um valor (original do Título) expresso em moeda corrente e arredondanda em duas casas decimais para baixo.
+	 * </p>
+	 * <p>
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
+	 * </p>
 	 * @param valor
 	 *            the valor to set
 	 */

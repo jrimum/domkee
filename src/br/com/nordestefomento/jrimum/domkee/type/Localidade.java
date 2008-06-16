@@ -42,10 +42,6 @@ package br.com.nordestefomento.jrimum.domkee.type;
  * </p>
  * 
  * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
- * 
- * <p>
  * EXEMPLO:
  * <ul>
  * <li>Natal</li>
@@ -53,7 +49,7 @@ package br.com.nordestefomento.jrimum.domkee.type;
  * </p> 
  * 
  * @author Romulo
- * @author Gilmar
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael
  * @author Samuel
  * 

@@ -34,7 +34,9 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.ICurbitaObject;
 
 /**
+ * <p>
  * Enumera as unidades federativas do Brasil.
+ * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael Barreto 

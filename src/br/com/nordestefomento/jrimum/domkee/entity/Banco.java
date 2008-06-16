@@ -46,15 +46,7 @@ import br.com.nordestefomento.jrimum.domkee.type.Telefone;
 /**
  * 
  * <p>
- * DEFINIÇÃO DA CLASSE
- * </p>
- * 
- * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
- * 
- * <p>
- * EXEMPLO: 
+ * Um Banco (instituição financeira) supervisionada pelo <a href="http://www.bcb.gov.br/">BACEN</a>.
  * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
@@ -71,7 +63,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 */
 	private static final long serialVersionUID = -6156550582890687779L;
 
-	private String codigoDeCompensacao;
+	private CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN;
 
 	private String segmento;
 
@@ -88,13 +80,13 @@ public class Banco extends ACurbitaObject implements IBanco{
 	
 	
 	/**
-	 * @param codigoDeCompensacao
+	 * @param codigoDeCompensacaoBACEN
 	 * @param instituicao
 	 */
-	public Banco(String codigoDeCompensacao, String instituicao) {
+	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao) {
 		super();
 		
-		this.codigoDeCompensacao = codigoDeCompensacao;
+		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
 
 		pessoaJuridica = new PessoaJuridica();
 		pessoaJuridica.setNome(instituicao);
@@ -102,14 +94,14 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @param codigoDeCompensacao
+	 * @param codigoDeCompensacaoBACEN
 	 * @param instituicao
 	 * @param cnpj
 	 */
-	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj) {
+	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj) {
 		super();
 		
-		this.codigoDeCompensacao = codigoDeCompensacao;
+		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
 		
 		pessoaJuridica = new PessoaJuridica();
 		
@@ -119,16 +111,16 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @param codigoDeCompensacao
+	 * @param codigoDeCompensacaoBACEN
 	 * @param instituicao
 	 * @param cnpj
 	 * @param segmento
 	 */
-	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj,
+	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj,
 			String segmento) {
 		super();
 		
-		this.codigoDeCompensacao = codigoDeCompensacao;
+		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
 		this.segmento = segmento;
 		
 		pessoaJuridica = new PessoaJuridica();
@@ -138,16 +130,16 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @param codigoDeCompensacao
+	 * @param codigoDeCompensacaoBACEN
 	 * @param instituicao
 	 * @param cnpj
 	 * @param segmento
 	 * @param imgLogo
 	 */
-	public Banco(String codigoDeCompensacao, String instituicao, CNPJ cnpj,	String segmento, Image imgLogo) {
+	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj,	String segmento, Image imgLogo) {
 		super();
 		
-		this.codigoDeCompensacao = codigoDeCompensacao;
+		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
 		this.segmento = segmento;
 		this.imgLogo = imgLogo;
 		
@@ -188,13 +180,23 @@ public class Banco extends ACurbitaObject implements IBanco{
 		return ok;
 	}
 
-	public String getCodigoDeCompensacao() {
-		return codigoDeCompensacao;
+
+	/**
+	 * @return the codigoDeCompensacaoBACEN
+	 */
+	public CodigoDeCompensacaoBACEN getCodigoDeCompensacaoBACEN() {
+		return codigoDeCompensacaoBACEN;
 	}
 
-	public void setCodigoDeCompensacao(String codigoDeCompensacao) {
-		this.codigoDeCompensacao = codigoDeCompensacao;
+
+	/**
+	 * @param codigoDeCompensacaoBACEN the codigoDeCompensacaoBACEN to set
+	 */
+	public void setCodigoDeCompensacaoBACEN(
+			CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN) {
+		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
 	}
+
 
 	public CNPJ getCNPJ() {
 		return (CNPJ)pessoaJuridica.getAbstractCPRF();

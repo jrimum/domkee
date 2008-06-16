@@ -51,9 +51,9 @@ package br.com.nordestefomento.jrimum.domkee.type;
  * </ul>
  * </p> 
  * 
- * @author Romulo
- * @author Gilmar
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael
+ * @author Romulo
  * @author Samuel
  * 
  * @since 0.2

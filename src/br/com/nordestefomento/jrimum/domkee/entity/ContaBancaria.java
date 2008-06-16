@@ -94,55 +94,89 @@ public class ContaBancaria {
 	}
 	
 	/**
-	 * @return the carteira
+	 * @see Carteira
 	 */
 	public Carteira getCarteira() {
 		return carteira;
 	}
 
 	/**
-	 * @param carteira the carteira to set
+	 * @see Carteira
 	 */
 	public void setCarteira(Carteira carteira) {
 		this.carteira = carteira;
 	}
 
+	/**
+	 * @see IBanco
+	 */
 	public IBanco getBanco() {
 		return banco;
 	}
-
+	
+	/**
+	 * @see IBanco
+	 */
 	public void setBanco(IBanco banco) {
 		this.banco = banco;
 	}
 
+	/**
+	 * @see Pessoa
+	 * @see Collection
+	 */
 	public Collection<Pessoa> getTitulares() {
 		return titulares;
 	}
 
+	/**
+	 * @see Pessoa
+	 * @see Collection
+	 */
 	public void setTitulares(Collection<Pessoa> titulares) {
 		this.titulares = titulares;
 	}
 	
+	/**
+	 * @see Titulo
+	 * @see Collection
+	 */
 	public Collection<Titulo> getTitulos() {
 		return titulos;
 	}
 
+	/**
+	 * @see Titulo
+	 * @see Collection
+	 */
 	public void setTitulos(Collection<Titulo> titulos) {
 		this.titulos = titulos;
 	}
 
+	/**
+	 * @see Agencia
+	 */
 	public Agencia getAgencia() {
 		return agencia;
 	}
 
+	/**
+	 * @see Agencia
+	 */
 	public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
 	}
 
+	/**
+	 * @see NumeroDaConta
+	 */
 	public NumeroDaConta getNumeroDaConta() {
 		return numeroDaConta;
 	}
 
+	/**
+	 * @see NumeroDaConta
+	 */
 	public void setNumeroDaConta(NumeroDaConta numeroDaConta) {
 		this.numeroDaConta = numeroDaConta;
 	}

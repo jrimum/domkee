@@ -37,16 +37,9 @@ package br.com.nordestefomento.jrimum.domkee.entity;
 /**
  * 
  * <p>
- * DEFINIÇÃO DA CLASSE
+ *  Carteira de Cobrança de uma Conta Corrente.
  * </p>
  * 
- * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
- * 
- * <p>
- * EXEMPLO: 
- * </p>
  * 
  * @author <a href=http://gilmatryx.googlepages.com/>Gilmar P.S.L.</a>
  * 
@@ -181,7 +174,7 @@ public class Carteira {
 	 * Indica se é uma carteira registrada.
 	 * </p>
 	 * 
-	 * @retun true se registrada
+	 * @return true se registrada
 	 */
 	public boolean isComRegistro() {
 		return (this.tipoCobranca == EnumTipoCobranca.COM_REGISTRO);
