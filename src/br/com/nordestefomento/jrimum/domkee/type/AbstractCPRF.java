@@ -50,11 +50,10 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
  * ou jurídica. O <a href="http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/CPF/default.htm">Cadastro de Pessoa Física é o CPF</a>, já o de <a href="http://www.receita.fazenda.gov.br/PessoaJuridica/cnpj/ConsulSitCadastralCnpj.htm">Pessoa Jurídica é o CNPJ</a>.
  * </p>
  * 
- * <p>
- * EXEMPLO:
- * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
  * 
  * @since 0.2
  * 

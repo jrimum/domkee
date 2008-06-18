@@ -38,18 +38,10 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 /**
  * 
  * <p>
- * DEFINIÇÃO DA CLASSE
+ * Representação de opções sobre o sexo de um indivíduo.
  * </p>
  * 
- * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
- * 
- * <p>
- * EXEMPLO: 
- * </p>
- * 
- * @author <a href=http://gilmatryx.googlepages.com/>Gilmar P.S.L.</a>
+ * @author <a href="http://gilmatryx.googlepages.com"/>Gilmar P.S.L.</a>
  * @author Misael Barreto
  * @author Rômulo Augusto
  * 

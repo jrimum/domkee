@@ -37,7 +37,19 @@ import br.com.nordestefomento.jrimum.domkee.entity.PessoaFisica;
 
 
 /**
- * @author  Romulo
+ * 
+ * <p>
+ * Representação básica de um Registro Geral (<em>RG</em>).
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
 public class RG implements Serializable {
 
@@ -45,8 +57,6 @@ public class RG implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 3472263281659641113L;
-	
-	private Long id;
 	
 	private Long numero;
 	
@@ -98,14 +108,6 @@ public class RG implements Serializable {
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public PessoaFisica getPessoa() {

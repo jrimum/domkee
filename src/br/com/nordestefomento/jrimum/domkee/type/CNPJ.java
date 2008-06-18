@@ -41,6 +41,7 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
  * que a pessoa jurídica tenha capacidade de fazer contratos e processar ou ser
  * processada.
  * </p>
+ * 
  * <p>
  * O formatador do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador
  * do número.

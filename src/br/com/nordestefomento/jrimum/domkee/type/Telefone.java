@@ -30,11 +30,22 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.ITextStream;
 
 /**
+ * 
+ * <p>
+ * Representação particio
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
  * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
 public class Telefone implements ITextStream {
 
@@ -42,8 +53,6 @@ public class Telefone implements ITextStream {
 	 * 
 	 */
 	private static final long serialVersionUID = -8948441953189653213L;
-
-	private Long id;
 
 	private Integer ddi;
 
@@ -54,22 +63,12 @@ public class Telefone implements ITextStream {
 	private Integer sufixo;
 	
 	private String telefone;
-	
-	private Pessoa pessoa;
 
 	public Telefone() {}
 	
 	public Telefone(String telefone) {
 		
 		read(telefone);
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Integer getDdi() {
@@ -112,23 +111,26 @@ public class Telefone implements ITextStream {
 		this.telefone = telefone;
 	}
 
+	/**
+	 * <p>Lê a string exatamente como é passada, ainda não implementado.</p>
+	 * @see br.com.nordestefomento.jrimum.utilix.IReadWriteStream#read(java.lang.Object)
+	 */
 	@Override
 	public void read(String str) {
 		//TODO AVALIAR
 		setTelefone(str);
 	}
 
+	/** 
+	 * <p>
+	 * Retorna null, ainda não implementado.
+	 * </p>
+	 * @see br.com.nordestefomento.jrimum.utilix.IReadWriteStream#write()
+	 */
 	@Override
 	public String write() {
 		//TODO AVALIAR
 		return null;
 	}
 	
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
-	}
 }

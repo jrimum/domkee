@@ -35,20 +35,12 @@ import br.com.nordestefomento.jrimum.utilix.ITextStream;
 /**
  * 
  * <p>
- * DEFINIÇÃO DA CLASSE
+ * Representação básica de um CEP.
  * </p>
  * 
- * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
- * 
- * <p>
- * EXEMPLO:
- * </p> 
- * 
- * @author Romulo
- * @author Gilmar
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
+ * @author Romulo
  * @author Samuel
  * 
  * @since 0.2

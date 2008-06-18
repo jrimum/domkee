@@ -30,6 +30,21 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+/**
+ * 
+ * <p>
+ * Representação básica de um país.
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
 public class Pais {
 
 	private String pais;

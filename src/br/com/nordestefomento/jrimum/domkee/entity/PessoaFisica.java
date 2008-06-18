@@ -38,8 +38,23 @@ import br.com.nordestefomento.jrimum.domkee.type.EnumSexo;
 import br.com.nordestefomento.jrimum.domkee.type.RG;
 
 /**
- * @author   Romulo
+ * <p>
+ *  Representação básica de uma Pessoa Física.
+ * </p>
+ * 
+ * @see Pessoa
+ * @see br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF
+ * @see br.com.nordestefomento.jrimum.domkee.type.CPF
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
+
 public class PessoaFisica extends Pessoa implements IPessoaFisica {
 
 	/**

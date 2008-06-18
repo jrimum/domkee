@@ -31,7 +31,16 @@
 package br.com.nordestefomento.jrimum.domkee.ientity;
 
 /**
- * @author   Romulo
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * 
+ * @see br.com.nordestefomento.jrimum.domkee.entity.PessoaJuridica
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
 public interface IPessoaJuridica extends IPessoa {
 
