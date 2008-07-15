@@ -34,7 +34,19 @@ import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.ITextStream;
 
 /**
+ * 
+ * <p>
+ * Representação básica de um e-mail.
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
  * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
 public class Email implements ITextStream {
 

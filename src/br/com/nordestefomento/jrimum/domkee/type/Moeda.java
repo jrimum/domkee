@@ -34,9 +34,10 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 
 /**
  * 
+ * <p>
  * Classe que será responsável por encapsular lógica de tratamento de uma
  * unidade monetária específica.
- * 
+ * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author Misael Barreto 

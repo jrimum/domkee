@@ -37,22 +37,17 @@ import br.com.nordestefomento.jrimum.JRimumException;
 /**
  * 
  * <p>
- * DEFINIÇÃO DA CLASSE
+ * Qualquer falha na geração ou operações próprias da classe CNPJ.
  * </p>
  * 
- * <p>
- * OBJETIVO/PROPÓSITO
- * </p>
  * 
- * <p>
- * EXEMPLO: 
- * </p>
- * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
  * 
  * @since 0.2
  * 
- * @version 0.2 
+ * @version 0.2
  */
 
 public class CNPJException extends JRimumException {
