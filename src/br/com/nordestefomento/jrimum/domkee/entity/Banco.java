@@ -173,9 +173,9 @@ public class Banco extends ACurbitaObject implements IBanco{
 				if(codigo.length() == 3)
 					ok = true;
 				else
-					throw new IllegalArgumentException("O codigo e de apenas 3 digitos!");
+					throw new IllegalArgumentException("O código é de apenas 3 digitos!");
 			else
-				throw new IllegalArgumentException("O codigo de compensacao deve ser numerico!");
+				throw new IllegalArgumentException("O código de compensação deve ser numérico!");
 		}
 		return ok;
 	}

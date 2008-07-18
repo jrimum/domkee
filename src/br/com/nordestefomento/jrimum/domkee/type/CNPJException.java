@@ -55,6 +55,11 @@ public class CNPJException extends JRimumException {
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 7253144254681596414L;
+
+	/**
+	 * 
+	 */
 	public CNPJException() {
 		
 	}
