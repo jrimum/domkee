@@ -102,6 +102,11 @@ public final class Titulo extends ACurbitaObject{
 	 * @see #setValor(BigDecimal)
 	 */
 	private BigDecimal valor;
+	
+	/**
+	 * @see #setDesconto(BigDecimal)
+	 */
+	private BigDecimal desconto;
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumTitulo
@@ -500,6 +505,34 @@ public final class Titulo extends ACurbitaObject{
 	public void setValor(BigDecimal valor) {
 		valor = valor.setScale(2, RoundingMode.DOWN);
 		this.valor = valor;
+	}
+	
+	/**
+	 * @see #setDesconto(BigDecimal)
+	 * 
+	 * @return the desconto
+	 */
+	public BigDecimal getDesconto() {
+		return desconto;
+	}
+
+	/**
+	 * <p>
+	 * Atribui um valor de desconto ao valor original do título expresso em moeda 
+	 * corrente e arredondanda em duas casas decimais para baixo.
+	 * </p>
+	 * <p>
+	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
+	 * </p>
+	 * @param desconto
+	 *            the desconto to set
+	 */
+	public void setDesconto(BigDecimal desconto) {
+		
+		if(desconto != null) {
+			desconto = desconto.setScale(2, RoundingMode.DOWN);
+		}
+		this.desconto = desconto;
 	}
 
 }
