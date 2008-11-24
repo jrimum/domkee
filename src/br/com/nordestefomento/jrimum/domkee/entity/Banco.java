@@ -225,7 +225,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEmail(br.com.nordestefomento.jrimum.domkee.type.Email)
 	 */
-	@Override
+	
 	public void addEmail(Email email) {
 		
 		pessoaJuridica.addEmail(email);
@@ -234,7 +234,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.type.Endereco)
 	 */
-	@Override
+	
 	public void addEndereco(Endereco endereco) {
 		
 		pessoaJuridica.addEndereco(endereco);
@@ -243,7 +243,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.Telefone)
 	 */
-	@Override
+	
 	public void addTelefone(Telefone telefone) {
 		
 		pessoaJuridica.addTelefone(telefone);
@@ -252,7 +252,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getAbstractCPRF()
 	 */
-	@Override
+	
 	public AbstractCPRF getAbstractCPRF() {
 		
 		return pessoaJuridica.getAbstractCPRF();
@@ -261,7 +261,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEmails()
 	 */
-	@Override
+	
 	public Collection<Email> getEmails() {
 		
 		return getEmails();
@@ -270,7 +270,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEnderecos()
 	 */
-	@Override
+	
 	public Collection<Endereco> getEnderecos() {
 		
 		return pessoaJuridica.getEnderecos();
@@ -279,7 +279,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getNome()
 	 */
-	@Override
+	
 	public String getNome() {
 		
 		return pessoaJuridica.getNome();
@@ -288,7 +288,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getTelefones()
 	 */
-	@Override
+	
 	public Collection<Telefone> getTelefones() {
 		
 		return pessoaJuridica.getTelefones();
@@ -297,7 +297,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isFisica()
 	 */
-	@Override
+	
 	public boolean isFisica() {
 		
 		return pessoaJuridica.isFisica();
@@ -306,7 +306,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isJuridica()
 	 */
-	@Override
+	
 	public boolean isJuridica() {
 		
 		return pessoaJuridica.isJuridica();
@@ -315,7 +315,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setAbstractCPRF(br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF)
 	 */
-	@Override
+	
 	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
 		
 		pessoaJuridica.setAbstractCPRF(abstractCPRF);
@@ -324,7 +324,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEmails(java.util.Collection)
 	 */
-	@Override
+	
 	public void setEmails(Collection<Email> emails) {
 		
 		pessoaJuridica.setEmails(emails);
@@ -333,7 +333,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEnderecos(java.util.Collection)
 	 */
-	@Override
+	
 	public void setEnderecos(Collection<Endereco> enderecos) {
 		
 		pessoaJuridica.setEnderecos(enderecos);
@@ -342,7 +342,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setNome(java.lang.String)
 	 */
-	@Override
+	
 	public void setNome(String nome) {
 		
 		pessoaJuridica.setNome(nome);
@@ -351,7 +351,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setTelefones(java.util.Collection)
 	 */
-	@Override
+	
 	public void setTelefones(Collection<Telefone> telefones) {
 		
 		pessoaJuridica.setTelefones(telefones);
@@ -360,7 +360,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getInscricaoEstadual()
 	 */
-	@Override
+	
 	public Long getInscricaoEstadual() {
 		
 		return pessoaJuridica.getInscricaoEstadual();
@@ -369,7 +369,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getInscricaoMunicipal()
 	 */
-	@Override
+	
 	public Long getInscricaoMunicipal() {
 		
 		return pessoaJuridica.getInscricaoMunicipal();
@@ -378,7 +378,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#getNomeFantasia()
 	 */
-	@Override
+	
 	public String getNomeFantasia() {
 		
 		return pessoaJuridica.getNome();
@@ -387,7 +387,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setInscricaoEstadual(java.lang.Long)
 	 */
-	@Override
+	
 	public void setInscricaoEstadual(Long inscricaoEstadual) {
 		
 		pessoaJuridica.setInscricaoEstadual(inscricaoEstadual);
@@ -396,7 +396,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setInscricaoMunicipal(java.lang.Long)
 	 */
-	@Override
+	
 	public void setInscricaoMunicipal(Long inscricaoMunicipal) {
 		
 		pessoaJuridica.setInscricaoMunicipal(inscricaoMunicipal);
@@ -405,7 +405,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica#setNomeFantasia(java.lang.String)
 	 */
-	@Override
+	
 	public void setNomeFantasia(String nomeFantasia) {
 		
 		pessoaJuridica.setNomeFantasia(nomeFantasia);
@@ -414,7 +414,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria)
 	 */
-	@Override
+	
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		pessoaJuridica.addContaBancaria(contaBancaria);
 		
@@ -424,7 +424,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getContasBancarias()
 	 */
-	@Override
+	
 	public Collection<ContaBancaria> getContasBancarias() {
 		
 		return pessoaJuridica.getContasBancarias();
@@ -434,7 +434,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#hasContaBancaria()
 	 */
-	@Override
+	
 	public boolean hasContaBancaria() {
 		
 		return pessoaJuridica.hasContaBancaria();
@@ -444,7 +444,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setContasBancarias(java.util.Collection)
 	 */
-	@Override
+	
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
 		
 		pessoaJuridica.setContasBancarias(contasBancarias);

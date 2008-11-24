@@ -72,7 +72,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	
 	public PessoaFisica() {}
 
-	@Override
+	
 	public void addRG(RG rg) {
 		
 		if(isNull(rgs))
@@ -81,31 +81,31 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 		rgs.add(rg);
 	}
 	
-	@Override
+	
 	public PessoaFisica getConjuge() {
 		
 		return conjuge;
 	}
 
-	@Override
+	
 	public String getEstadoCivil() {
 		
 		return estadoCivil;
 	}
 
-	@Override
+	
 	public Collection<RG> getRgs() {
 		
 		return rgs;
 	}
 
-	@Override
+	
 	public EnumSexo getSexo() {
 		
 		return sexo;
 	}
 
-	@Override
+	
 	public void setConjuge(PessoaFisica conjuge) {
 		
 		this.conjuge = conjuge;
@@ -114,19 +114,19 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 			conjuge.setConjuge(this);
 	}
 
-	@Override
+	
 	public void setEstadoCivil(String estadoCivil) {
 		
 		this.estadoCivil = estadoCivil;
 	}
 
-	@Override
+	
 	public void setRgs(Collection<RG> rgs) {
 		
 		this.rgs = rgs;
 	}
 
-	@Override
+	
 	public void setSexo(EnumSexo sexo) {
 		
 		this.sexo = sexo;

@@ -115,7 +115,7 @@ public class Telefone implements ITextStream {
 	 * <p>Lê a string exatamente como é passada, ainda não implementado.</p>
 	 * @see br.com.nordestefomento.jrimum.utilix.IReadWriteStream#read(java.lang.Object)
 	 */
-	@Override
+	
 	public void read(String str) {
 		//TODO AVALIAR
 		setTelefone(str);
@@ -127,7 +127,7 @@ public class Telefone implements ITextStream {
 	 * </p>
 	 * @see br.com.nordestefomento.jrimum.utilix.IReadWriteStream#write()
 	 */
-	@Override
+	
 	public String write() {
 		//TODO AVALIAR
 		return null;

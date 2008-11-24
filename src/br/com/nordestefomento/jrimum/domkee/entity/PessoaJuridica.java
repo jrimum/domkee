@@ -65,37 +65,37 @@ public class PessoaJuridica extends Pessoa implements IPessoaJuridica {
 	 */
 	private String nomeFantasia;
 
-	@Override
+	
 	public Long getInscricaoEstadual() {
 
 		return inscricaoEstadual;
 	}
 
-	@Override
+	
 	public Long getInscricaoMunicipal() {
 
 		return inscricaoMunicipal;
 	}
 
-	@Override
+	
 	public String getNomeFantasia() {
 
 		return nomeFantasia;
 	}
 
-	@Override
+	
 	public void setInscricaoEstadual(Long inscricaoEstadual) {
 
 		this.inscricaoEstadual = inscricaoEstadual;
 	}
 
-	@Override
+	
 	public void setInscricaoMunicipal(Long inscricaoMunicipal) {
 
 		this.inscricaoMunicipal = inscricaoMunicipal;
 	}
 
-	@Override
+	
 	public void setNomeFantasia(String nomeFantasia) {
 
 		this.nomeFantasia = nomeFantasia;

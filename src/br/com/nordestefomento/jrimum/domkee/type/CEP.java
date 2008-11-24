@@ -106,12 +106,12 @@ public class CEP implements ITextStream {
 		this.cep = cep;
 	}
 	
-	@Override
+	
 	public void read(String str) {
 		//TODO AVALIAR
 	}
 
-	@Override
+	
 	public String write() {
 		//TODO AVALIAR
 		return null;

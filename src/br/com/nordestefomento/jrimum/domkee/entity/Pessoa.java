@@ -113,7 +113,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see ContaBancaria
 	 */
-	@Override
+	
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
 		if(isNull(contasBancarias))
@@ -127,14 +127,14 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * 
 	 * @see ContaBancaria
 	 */
-	@Override
+	
 	public boolean hasContaBancaria(){
 		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
 	}
 	/**
 	 * @see Email
 	 */
-	@Override
+	
 	public void addEmail(Email email) {
 		
 		if(isNull(emails))
@@ -146,7 +146,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see Endereco
 	 */
-	@Override
+	
 	public void addEndereco(Endereco endereco) {
 
 		if(isNull(enderecos))
@@ -158,7 +158,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see Telefone
 	 */
-	@Override
+	
 	public void addTelefone(Telefone telefone) {
 		
 		if(isNull(telefones))
@@ -170,7 +170,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see AbstractCPRF
 	 */
-	@Override
+	
 	public AbstractCPRF getAbstractCPRF() {
 		
 		return abstractCPRF;
@@ -180,7 +180,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see ContaBancaria
 	 * @see Collection
 	 */
-	@Override
+	
 	public Collection<ContaBancaria> getContasBancarias() {
 
 		return contasBancarias;
@@ -190,7 +190,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see Email
 	 * @see Collection
 	 */
-	@Override
+	
 	public Collection<Email> getEmails() {
 
 		return emails;
@@ -200,13 +200,13 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see Endereco
 	 * @see Collection
 	 */
-	@Override
+	
 	public Collection<Endereco> getEnderecos() {
 
 		return enderecos;
 	}
 
-	@Override
+	
 	public String getNome() {
 
 		return nome;
@@ -216,7 +216,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see Telefone
 	 * @see Collection
 	 */
-	@Override
+	
 	public Collection<Telefone> getTelefones() {
 		
 		return telefones;
@@ -225,7 +225,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see AbstractCPRF
 	 */
-	@Override
+	
 	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
 		
 		this.abstractCPRF = abstractCPRF;
@@ -235,7 +235,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see ContaBancaria
 	 * @see Collection
 	 */
-	@Override
+	
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
 		
 		this.contasBancarias = contasBancarias;
@@ -245,7 +245,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see Email
 	 * @see Collection
 	 */
-	@Override
+	
 	public void setEmails(Collection<Email> emails) {
 		
 		this.emails = emails;
@@ -255,13 +255,13 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see Endereco
 	 * @see Collection
 	 */
-	@Override
+	
 	public void setEnderecos(Collection<Endereco> enderecos) {
 		
 		this.enderecos = enderecos;
 	}
 
-	@Override
+	
 	public void setNome(String nome) {
 	
 		this.nome = nome;
@@ -271,7 +271,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see Telefone
 	 * @see Collection
 	 */
-	@Override
+	
 	public void setTelefones(Collection<Telefone> telefones) {
 		
 		this.telefones = telefones;
@@ -282,7 +282,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * 
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isFisica()
 	 */
-	@Override
+	
 	public boolean isFisica() {
 		
 		return (this instanceof PessoaFisica);
@@ -293,7 +293,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * 
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isJuridica()
 	 */
-	@Override
+	
 	public boolean isJuridica() {
 		
 		return (this instanceof PessoaJuridica);

@@ -104,14 +104,14 @@ public class Email implements ITextStream {
 		this.id = id;
 	}
 
-	@Override
+	
 	public void read(String str) {
 		//Formatter.parse(str);
 		
 		setEmail(str);
 	}
 
-	@Override
+	
 	public String write() {
 		
 		return null;
