@@ -38,6 +38,7 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.type.EnumMoeda;
 import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
+import br.com.nordestefomento.jrimum.domkee.type.IDadoBancario;
 
 
 /**
@@ -142,6 +143,8 @@ public final class Titulo extends ACurbitaObject{
 	 * @see #setSacadorAvalista(Pessoa)
 	 */
 	private Pessoa sacadorAvalista;
+	
+	private IDadoBancario dadosBancarios;
 	
 
 	/**
@@ -533,6 +536,14 @@ public final class Titulo extends ACurbitaObject{
 			desconto = desconto.setScale(2, RoundingMode.DOWN);
 		}
 		this.desconto = desconto;
+	}
+
+	public IDadoBancario getDadosBancarios() {
+		return dadosBancarios;
+	}
+
+	public void setDadosBancarios(IDadoBancario dadosBancarios) {
+		this.dadosBancarios = dadosBancarios;
 	}
 
 }
