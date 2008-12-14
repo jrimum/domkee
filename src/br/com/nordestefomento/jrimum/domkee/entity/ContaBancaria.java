@@ -86,6 +86,12 @@ public class ContaBancaria {
 	 */
 	private Collection<Titulo> titulos;
 	
+	/**
+	 * @see Modalidade
+	 */
+	private Modalidade modalidade;
+	
+	
 	public ContaBancaria() {}
 	
 	public ContaBancaria(IBanco banco) {
@@ -179,5 +185,13 @@ public class ContaBancaria {
 	 */
 	public void setNumeroDaConta(NumeroDaConta numeroDaConta) {
 		this.numeroDaConta = numeroDaConta;
+	}
+
+	public Modalidade getModalidade() {
+		return modalidade;
+	}
+
+	public void setModalidade(Modalidade modalidade) {
+		this.modalidade = modalidade;
 	}
 }
