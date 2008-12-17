@@ -157,7 +157,7 @@ public class Carteira {
 	
 	/**
 	 * <p>
-	 * Define o tipo de cobrança da carteira (Registrada ou Não-Registrada), 
+	 * Define o tipo de cobrança da carteira (Registrada, não-registrada ou caucionada), 
 	 * em caso de dúvida veja o <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>
 	 * </p>
 	 * 
@@ -189,5 +189,16 @@ public class Carteira {
 	 */
 	public boolean isSemRegistro() {
 		return (this.tipoCobranca == EnumTipoCobranca.SEM_REGISTRO);
+	}	
+	
+	/**
+	 * <p>
+	 * Indica se é uma carteira caucionada.
+	 * </p>
+	 * 
+	 * @return true se sem registro
+	 */
+	public boolean isCaucionada() {
+		return (this.tipoCobranca == EnumTipoCobranca.CAUCIONADA);
 	}	
 }
