@@ -41,7 +41,6 @@ import br.com.nordestefomento.jrimum.ICurbitaObject;
  * <ul>
  * <li>Registrada (ou com registro)</li>
  * <li>Não Registrada (ou sem registro)</li>
- * <li>Caucionada (ou com caução)</li>
  * </ul>
  * </p>
  * 
@@ -64,9 +63,5 @@ public enum EnumTipoCobranca implements ICurbitaObject{
 	/**
 	 * <p>Tipo onde os títulos emitidos só são registrados pelo banco quando são pagos.</p>
 	 */
-	SEM_REGISTRO,
-	/**
-	 * <p>Tipo onde os títulos são dados em caução de uma operação de empréstimo.</p>
-	 */
-	CAUCIONADA;
+	SEM_REGISTRO;
 }
