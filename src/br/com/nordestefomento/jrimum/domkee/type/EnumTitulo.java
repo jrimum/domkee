@@ -29,8 +29,9 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import java.io.Serializable;
+
 import br.com.nordestefomento.jrimum.ACurbitaObject;
-import br.com.nordestefomento.jrimum.ICurbitaObject;
 
 /**
  * 
@@ -88,7 +89,7 @@ import br.com.nordestefomento.jrimum.ICurbitaObject;
  * @version 0.2
  */
 
-public enum EnumTitulo implements ICurbitaObject {
+public enum EnumTitulo implements Serializable {
 
 	CH_CHEQUE(1,"CH"),
 	DM_DUPLICATA_MERCANTIL(2,"DM"), 

@@ -30,6 +30,10 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import java.io.Serializable;
+
+import br.com.nordestefomento.jrimum.ACurbitaObject;
+
 /**
  * 
  * <p>
@@ -45,9 +49,11 @@ package br.com.nordestefomento.jrimum.domkee.type;
  * 
  * @version 0.2
  */
-public class Pais {
+public class Pais implements Serializable {
 
-	private String pais;
+	private static final long serialVersionUID = -1288119657664437883L;
+	
+	private String nome;
 
 	/**
 	 * 
@@ -55,24 +61,28 @@ public class Pais {
 	public Pais() {}
 
 	/**
-	 * @param pais
+	 * @param nome
 	 */
-	public Pais(String pais) {
-		this.pais = pais;
+	public Pais(String nome) {
+		this.nome = nome;
 	}
 
 	/**
 	 * @return the pais
 	 */
-	public String getPais() {
-		return pais;
+	public String getNome() {
+		return nome;
 	}
 
 	/**
-	 * @param pais the pais to set
+	 * @param nome the pais to set
 	 */
-	public void setPais(String pais) {
-		this.pais = pais;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return ACurbitaObject.toString(this);
+	}
 }

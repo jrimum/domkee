@@ -36,11 +36,11 @@ import org.apache.commons.lang.StringUtils;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
-import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
-import br.com.nordestefomento.jrimum.domkee.type.Telefone;
+import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
 
 /**
@@ -105,7 +105,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		
 		pessoaJuridica = new PessoaJuridica();
 		
-		pessoaJuridica.setAbstractCPRF(cnpj);
+		pessoaJuridica.setCPRF(cnpj);
 		pessoaJuridica.setNome(instituicao);
 		pessoaJuridica.setNomeFantasia(instituicao);
 	}
@@ -124,7 +124,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.segmento = segmento;
 		
 		pessoaJuridica = new PessoaJuridica();
-		pessoaJuridica.setAbstractCPRF(cnpj);
+		pessoaJuridica.setCPRF(cnpj);
 		pessoaJuridica.setNome(instituicao);
 		pessoaJuridica.setNomeFantasia(instituicao);
 	}
@@ -144,7 +144,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 		this.imgLogo = imgLogo;
 		
 		pessoaJuridica = new PessoaJuridica();
-		pessoaJuridica.setAbstractCPRF(cnpj);
+		pessoaJuridica.setCPRF(cnpj);
 	}
 
 	/**
@@ -199,11 +199,11 @@ public class Banco extends ACurbitaObject implements IBanco{
 
 
 	public CNPJ getCNPJ() {
-		return (CNPJ)pessoaJuridica.getAbstractCPRF();
+		return (CNPJ)pessoaJuridica.getCPRF();
 	}
 
 	public void setCNPJ(CNPJ cnpj) {
-		pessoaJuridica.setAbstractCPRF(cnpj);
+		pessoaJuridica.setCPRF(cnpj);
 	}
 
 	public String getSegmento() {
@@ -241,21 +241,21 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.Telefone)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone)
 	 */
 	
-	public void addTelefone(Telefone telefone) {
+	public void addTelefone(NumeroDoTelefone telefone) {
 		
 		pessoaJuridica.addTelefone(telefone);
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getAbstractCPRF()
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getCPRF()
 	 */
 	
-	public AbstractCPRF getAbstractCPRF() {
+	public CPRF getCPRF() {
 		
-		return pessoaJuridica.getAbstractCPRF();
+		return pessoaJuridica.getCPRF();
 	}
 
 	/**
@@ -289,7 +289,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getTelefones()
 	 */
 	
-	public Collection<Telefone> getTelefones() {
+	public Collection<NumeroDoTelefone> getTelefones() {
 		
 		return pessoaJuridica.getTelefones();
 	}
@@ -313,12 +313,12 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setAbstractCPRF(br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setCPRF(br.com.nordestefomento.jrimum.domkee.type.CPRF)
 	 */
 	
-	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
+	public void setCPRF(CPRF abstractCPRF) {
 		
-		pessoaJuridica.setAbstractCPRF(abstractCPRF);
+		pessoaJuridica.setCPRF(abstractCPRF);
 	}
 
 	/**
@@ -352,7 +352,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setTelefones(java.util.Collection)
 	 */
 	
-	public void setTelefones(Collection<Telefone> telefones) {
+	public void setTelefones(Collection<NumeroDoTelefone> telefones) {
 		
 		pessoaJuridica.setTelefones(telefones);
 	}

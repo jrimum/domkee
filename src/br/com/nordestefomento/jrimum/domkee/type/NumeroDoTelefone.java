@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:09:00
+ * Created at: 30/03/2008 - 19:10:26
  * 
  * ================================================================================
  * 
@@ -23,7 +23,7 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:09:00
+ * Criado em: 30/03/2008 - 19:10:26
  * 
  */
 
@@ -34,46 +34,82 @@ import java.io.Serializable;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 
-
 /**
  * 
  * <p>
- * Representação de opções sobre o sexo de um indivíduo.
+ * Representação particio
  * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com"/>Gilmar P.S.L.</a>
- * @author Misael Barreto
- * @author Rômulo Augusto
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-	
-public enum EnumSexo implements Serializable {
+public class NumeroDoTelefone implements Serializable {
 
-	F("Feminino"),
-	M("Masculino");
-	
-	private String nome;
-	
 	/**
-	 * @param nome
+	 * 
 	 */
-	private EnumSexo(String nome) {
-		this.nome = nome;
+	private static final long serialVersionUID = -8948441953189653213L;
+
+	private int ddi;
+
+	private int ddd;
+
+	private int prefixo;
+
+	private int sufixo;
+	
+	private String telefone;
+
+	public NumeroDoTelefone() {}
+	
+	public int getDDI() {
+		return ddi;
 	}
-		
-	public String getNome() {
-		
-		return nome;
+
+	public void setDDI(int ddi) {
+		this.ddi = ddi;
+	}
+
+	public int getDDD() {
+		return ddd;
+	}
+
+	public void setDDD(int ddd) {
+		this.ddd = ddd;
+	}
+
+	public int getPrefixo() {
+		return prefixo;
+	}
+
+	public void setPrefixo(int prefixo) {
+		this.prefixo = prefixo;
+	}
+
+	public int getSufixo() {
+		return sufixo;
+	}
+
+	public void setSufixo(int sufixo) {
+		this.sufixo = sufixo;
 	}
 	
-	/**
-	 * @see br.com.nordestefomento.jrimum.ACurbitaObject#toString()
-	 * @see java.lang.Enum#toString()
-	 */
-	public String toString(){
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	@Override
+	public String toString() {
 		return ACurbitaObject.toString(this);
 	}
 }

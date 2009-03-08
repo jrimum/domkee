@@ -55,7 +55,7 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
  * 
  * @version 0.2
  */
-public class CPF extends AbstractCPRF {
+public class CPF extends CPRF {
 
 	/**
 	 * 

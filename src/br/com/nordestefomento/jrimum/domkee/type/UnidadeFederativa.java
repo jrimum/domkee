@@ -1,4 +1,3 @@
-
 /* 
  * Copyright 2008 JRimum Project
  * 
@@ -11,7 +10,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 19/04/2008 - 21:12:40
+ * Created at: 07/03/2009 - 11:53:01
  *
  * ================================================================================
  *
@@ -25,43 +24,71 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 19/04/2008 - 21:12:40
+ * Criado em: 07/03/2009 - 11:53:01
  * 
  */
-	
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.type;
 
-import java.io.Serializable;
+import br.com.nordestefomento.jrimum.domkee.itype.MutableUnidadeFederativa;
 
 
 /**
  * 
  * <p>
- * Representação dos tipos básicos de cobrança:<br />
- * <ul>
- * <li>Registrada (ou com registro)</li>
- * <li>Não Registrada (ou sem registro)</li>
- * </ul>
- * </p>
+ * Representa uma unidade federativa de um país
+ * </p> 
  * 
- * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
- * @author Misael Barreto
- * @author Rômulo Augusto
- * @author Samuel Valerio
+ * @author Rômulo
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
+public class UnidadeFederativa implements MutableUnidadeFederativa {
 
-public enum EnumTipoCobranca implements Serializable {
+	private static final long serialVersionUID = -3140109624933213463L;
+
+	private String nome;
+	
+	private String sigla;
+	
+	private Localidade capital;
+	
+	public UnidadeFederativa() {
+	}
+	
 	/**
-	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
+	 * Instancia uma nova Unidade Federativa a partir dos dados contidos no enum
+	 * 
+	 * @param uf
 	 */
-	COM_REGISTRO, 
-	/**
-	 * <p>Tipo onde os títulos emitidos só são registrados pelo banco quando são pagos.</p>
-	 */
-	SEM_REGISTRO;
+	public UnidadeFederativa(EnumUnidadeFederativa uf) {
+		nome = uf.getNome();
+		sigla = uf.getSigla();
+		capital = uf.getCapital();
+	}
+
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getSigla() {
+		return sigla;
+	}
+	
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+	
+	public Localidade getCapital() {
+		return capital;
+	}
+
+	public void setCapital(Localidade capital) {
+		this.capital = capital;
+	}
 }

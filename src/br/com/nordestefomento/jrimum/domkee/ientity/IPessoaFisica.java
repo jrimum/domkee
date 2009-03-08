@@ -33,7 +33,7 @@ package br.com.nordestefomento.jrimum.domkee.ientity;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.entity.PessoaFisica;
-import br.com.nordestefomento.jrimum.domkee.type.EnumSexo;
+import br.com.nordestefomento.jrimum.domkee.type.EnumGenero;
 import br.com.nordestefomento.jrimum.domkee.type.RG;
 
 
@@ -55,9 +55,9 @@ public interface IPessoaFisica extends IPessoa {
 
 	public void setConjuge(PessoaFisica conjuge);
 	
-	public EnumSexo getSexo();
+	public EnumGenero getGenero();
 
-	public void setSexo(EnumSexo sexo);
+	public void setGenero(EnumGenero genero);
 
 	public String getEstadoCivil();
 

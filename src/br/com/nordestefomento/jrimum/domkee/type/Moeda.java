@@ -30,7 +30,7 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
+import br.com.nordestefomento.jrimum.domkee.itype.MutableMoeda;
 
 /**
  * 
@@ -49,11 +49,27 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
  * @version 0.2
  *
  */
-public class Moeda extends ACurbitaObject {
+public class Moeda implements MutableMoeda {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3327686961698328268L;
+	
+	private int codigo;
 
+	public Moeda() {
+	}
+	
+	public Moeda(EnumMoeda moeda) {
+		this.codigo = moeda.getCodigo();
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
 }

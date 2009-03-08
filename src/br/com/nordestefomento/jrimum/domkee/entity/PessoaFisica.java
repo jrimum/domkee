@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoaFisica;
-import br.com.nordestefomento.jrimum.domkee.type.EnumSexo;
+import br.com.nordestefomento.jrimum.domkee.type.EnumGenero;
 import br.com.nordestefomento.jrimum.domkee.type.RG;
 
 /**
@@ -43,7 +43,7 @@ import br.com.nordestefomento.jrimum.domkee.type.RG;
  * </p>
  * 
  * @see Pessoa
- * @see br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF
+ * @see br.com.nordestefomento.jrimum.domkee.type.CPRF
  * @see br.com.nordestefomento.jrimum.domkee.type.CPF
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
@@ -64,7 +64,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	
 	private PessoaFisica conjuge;
 	
-	private EnumSexo sexo;
+	private EnumGenero genero;
 	
 	private String estadoCivil;
 	
@@ -100,9 +100,9 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	}
 
 	
-	public EnumSexo getSexo() {
+	public EnumGenero getGenero() {
 		
-		return sexo;
+		return genero;
 	}
 
 	
@@ -127,9 +127,9 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	}
 
 	
-	public void setSexo(EnumSexo sexo) {
+	public void setGenero(EnumGenero sexo) {
 		
-		this.sexo = sexo;
+		this.genero = sexo;
 	}
 
 }

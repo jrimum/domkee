@@ -60,7 +60,7 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
  * @version 0.2
  */
 	
-public abstract class AbstractCPRF extends ACurbitaObject{ 
+public abstract class CPRF extends ACurbitaObject{ 
 
 	/**
 	 * 
@@ -83,7 +83,7 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF create(Long cadastroDePessoa,
+	public static CPRF create(Long cadastroDePessoa,
 			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 
 		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
@@ -96,7 +96,7 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF create(String cadastroDePessoa,
+	public static CPRF create(String cadastroDePessoa,
 			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
@@ -136,10 +136,10 @@ public abstract class AbstractCPRF extends ACurbitaObject{
 	 *             caso o parâmetro não esteja em um formatador válido de cadastro
 	 *             de pessoa.
 	 */
-	public static AbstractCPRF create(String cadastroDePessoa)
+	public static CPRF create(String cadastroDePessoa)
 			throws IllegalArgumentException {
 
-		AbstractCPRF cp = null;
+		CPRF cp = null;
 		AValidator4CPRF autenticadorCP = AValidator4CPRF
 				.create(cadastroDePessoa);
 

@@ -34,10 +34,10 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria;
-import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
-import br.com.nordestefomento.jrimum.domkee.type.Telefone;
+import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
 /**
  * 
@@ -57,15 +57,15 @@ public interface IPessoa extends Serializable {
 
 	public void setNome(String nome);
 
-	public AbstractCPRF getAbstractCPRF();
+	public CPRF getCPRF();
 
-	public void setAbstractCPRF(AbstractCPRF abstractCPRF);
+	public void setCPRF(CPRF cprf);
 
-	public Collection<Telefone> getTelefones();
+	public Collection<NumeroDoTelefone> getTelefones();
 
-	public void setTelefones(Collection<Telefone> telefones);
+	public void setTelefones(Collection<NumeroDoTelefone> telefones);
 
-	public void addTelefone(Telefone telefone);
+	public void addTelefone(NumeroDoTelefone telefone);
 
 	public Collection<Email> getEmails();
 

@@ -30,8 +30,10 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import org.apache.commons.lang.StringUtils;
+
 import br.com.nordestefomento.jrimum.ACurbitaObject;
-import br.com.nordestefomento.jrimum.ICurbitaObject;
+import br.com.nordestefomento.jrimum.domkee.itype.ImmutableMoeda;
 
 /**
  * <p>
@@ -49,7 +51,7 @@ import br.com.nordestefomento.jrimum.ICurbitaObject;
  * 
  * @version 0.2
  */
-public enum EnumMoeda implements ICurbitaObject {
+public enum EnumMoeda implements ImmutableMoeda {
 
 	/**
 	 * Padrão FEBRABAN
@@ -85,17 +87,16 @@ public enum EnumMoeda implements ICurbitaObject {
 	
 	public String write(){
 		
-		String s = "";
+		String s = StringUtils.EMPTY;
 		
 		switch (this) {
 			
-		case REAL:
-			s = "R$";
-			break;
+			case REAL:
+				s = "R$";
+				break;
 		
-		default:
-			s += this.getCodigo();
-			
+			default:
+				s += this.getCodigo();
 		}
 		
 		return s;

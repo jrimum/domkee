@@ -58,7 +58,7 @@ public class RG implements Serializable {
 	 */
 	private static final long serialVersionUID = 3472263281659641113L;
 	
-	private Long numero;
+	private long numero;
 	
 	private String orgaoExpedidor;
 	
@@ -70,11 +70,11 @@ public class RG implements Serializable {
 	
 	private PessoaFisica pessoa;
 
-	public Long getNumero() {
+	public long getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Long numero) {
+	public void setNumero(long numero) {
 		this.numero = numero;
 	}
 

@@ -31,7 +31,7 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
-import br.com.nordestefomento.jrimum.ICurbitaObject;
+import br.com.nordestefomento.jrimum.domkee.itype.ImmutableUnidadeFederativa;
 
 /**
  * <p>
@@ -48,45 +48,45 @@ import br.com.nordestefomento.jrimum.ICurbitaObject;
  * 
  * @version 0.2
  */
-public enum EnumUnidadeFederativa implements ICurbitaObject {
+public enum EnumUnidadeFederativa implements ImmutableUnidadeFederativa {
 
-	AM ("Amazonas","AM","Manaus"),
-	PA("Pará","PA","Belém"),
-	MT("Mato Grosso","MT","Cuiabá"),
-	MG("Minas Gerais","MG","Belo Horizonte"),
-	BA("Bahia","BA","Salvador"),
-	MS("Mato Grosso do Sul","MS","Campo Grande"),
-	GO("Goiás","GO","Goiânia"),
-	MA("Maranhão","MA","São Luís"),
-	RS("Rio Grande do Sul","RS","Porto Alegre"),
-	TO("Tocantins","TO","Palmas"),
-	PI("Piauí","PI","Teresina"),
-	SP("São Paulo","SP","São Paulo"),
-	RO("Rondônia","RO","Porto Velho"),
-	RR("Roraima","RR","Boa Vista"),
-	PR("Paraná","PR","Curitiba"),
-	AC("Acre","AC","Rio Branco"),
-	CE("Ceará","CE","Fortaleza"),
-	AP("Amapá","AP","Macapá"),
-	PE("Pernambuco","PE","Recife"),
-	SC("Santa Catarina","SC","Florianópolis"),
-	PB("Paraíba","PB","João Pessoa"),
-	RN("Rio Grande do Norte","RN","Natal"),
-	ES("Espírito Santo","ES","Vitória"),
-	RJ("Riode Janeiro","RJ","Rio de Janeiro"),
-	AL("Alagoas","AL","Maceió"),
-	SE("Sergipe","SE","Aracaju"),
-	DF("Distrito Federal","DF","Brasília"),
+	AM("Amazonas","AM",new Localidade("Manaus")),
+	PA("Pará","PA",new Localidade("Belém")),
+	MT("Mato Grosso","MT",new Localidade("Cuiabá")),
+	MG("Minas Gerais","MG",new Localidade("Belo Horizonte")),
+	BA("Bahia","BA",new Localidade("Salvador")),
+	MS("Mato Grosso do Sul","MS",new Localidade("Campo Grande")),
+	GO("Goiás","GO",new Localidade("Goiânia")),
+	MA("Maranhão","MA",new Localidade("São Luís")),
+	RS("Rio Grande do Sul","RS",new Localidade("Porto Alegre")),
+	TO("Tocantins","TO",new Localidade("Palmas")),
+	PI("Piauí","PI",new Localidade("Teresina")),
+	SP("São Paulo","SP",new Localidade("São Paulo")),
+	RO("Rondônia","RO",new Localidade("Porto Velho")),
+	RR("Roraima","RR",new Localidade("Boa Vista")),
+	PR("Paraná","PR",new Localidade("Curitiba")),
+	AC("Acre","AC",new Localidade("Rio Branco")),
+	CE("Ceará","CE",new Localidade("Fortaleza")),
+	AP("Amapá","AP",new Localidade("Macapá")),
+	PE("Pernambuco","PE",new Localidade("Recife")),
+	SC("Santa Catarina","SC",new Localidade("Florianópolis")),
+	PB("Paraíba","PB",new Localidade("João Pessoa")),
+	RN("Rio Grande do Norte","RN",new Localidade("Natal")),
+	ES("Espírito Santo","ES",new Localidade("Vitória")),
+	RJ("Riode Janeiro","RJ",new Localidade("Rio de Janeiro")),
+	AL("Alagoas","AL",new Localidade("Maceió")),
+	SE("Sergipe","SE",new Localidade("Aracaju")),
+	DF("Distrito Federal","DF",new Localidade("Brasília")),
 	
-	DESCONHECIDO("","","");
+	DESCONHECIDO("","",new Localidade(""));
 	
 	private String nome;
 	
 	private String sigla;
 	
-	private String capital;
+	private Localidade capital;
 	
-	EnumUnidadeFederativa(String nome,String sigla,String capital){
+	EnumUnidadeFederativa(String nome,String sigla,Localidade capital){
 		this.nome = nome;
 		this.sigla = sigla;
 		this.capital = capital;
@@ -109,7 +109,7 @@ public enum EnumUnidadeFederativa implements ICurbitaObject {
 	/**
 	 * @return the capital
 	 */
-	public String getCapital() {
+	public Localidade getCapital() {
 		return capital;
 	}
 	

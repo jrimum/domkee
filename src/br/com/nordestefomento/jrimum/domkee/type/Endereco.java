@@ -30,11 +30,7 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import br.com.nordestefomento.jrimum.ACurbitaObject;
-import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 
 /**
  * <p>
@@ -54,11 +50,6 @@ import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 public class Endereco extends ACurbitaObject{
 
 	private static final long serialVersionUID = -2971929602328106185L;
-	
-	/**
-	 * Identificador único.
-	 */
-	private Long id;
 	
 	/**
 	 * @see Logradouro
@@ -93,18 +84,13 @@ public class Endereco extends ACurbitaObject{
 	/**
 	 * @see EnumUnidadeFederativa
 	 */
-	private EnumUnidadeFederativa uf;
+	private UnidadeFederativa uf;
 	
 	/**
 	 * @see Pais
 	 */
 	private Pais pais;
-	
-	/**
-	 * @see Pessoa
-	 */
-	private Collection<Pessoa> pessoas;
-	
+		
 	public Endereco() {}
 
 	public String getBairro() {
@@ -145,11 +131,11 @@ public class Endereco extends ACurbitaObject{
 		this.numero = numero;
 	}
 
-	public EnumUnidadeFederativa getUf() {
+	public UnidadeFederativa getUF() {
 		return uf;
 	}
 
-	public void setUf(EnumUnidadeFederativa uf) {
+	public void setUF(UnidadeFederativa uf) {
 		this.uf = uf;
 	}
 
@@ -161,36 +147,12 @@ public class Endereco extends ACurbitaObject{
 		this.complemento = complemento;
 	}
 
-	public CEP getCep() {
+	public CEP getCEP() {
 		return cep;
 	}
 
 	public void setCep(CEP cep) {
 		this.cep = cep;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Collection<Pessoa> getPessoas() {
-		return pessoas;
-	}
-
-	public void setPessoas(Collection<Pessoa> pessoas) {
-		this.pessoas = pessoas;
-	}
-	
-	public void addPessoa(Pessoa pessoa) {
-		
-		if(isNull(pessoas))
-			pessoas = new ArrayList<Pessoa>();
-		
-		pessoas.add(pessoa);
 	}
 
 	/**

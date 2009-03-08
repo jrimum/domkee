@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:07:30
+ * Created at: 30/03/2008 - 19:09:00
  * 
  * ================================================================================
  * 
@@ -23,82 +23,57 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:07:30
+ * Criado em: 30/03/2008 - 19:09:00
  * 
  */
 
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.utilix.ITextStream;
+import java.io.Serializable;
+
+import br.com.nordestefomento.jrimum.ACurbitaObject;
+
 
 /**
  * 
  * <p>
- * Representação básica de um e-mail.
+ * Representação de opções sobre o sexo de um indivíduo.
  * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
- * @author Misael
- * @author Romulo
- * @author Samuel
+ * @author <a href="http://gilmatryx.googlepages.com"/>Gilmar P.S.L.</a>
+ * @author Misael Barreto
+ * @author Rômulo Augusto
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-public class Email implements ITextStream {
+	
+public enum EnumGenero implements Serializable {
 
+	F("Feminino"),
+	M("Masculino");
+	
+	private String nome;
+	
 	/**
-	 * 
+	 * @param nome
 	 */
-	private static final long serialVersionUID = 639359687849797249L;
-	
-	private String conta;
-
-	private String dominio;
-	
-	private String email;
-
-	public Email() {}
-
-	public Email(String email) {
+	private EnumGenero(String nome) {
+		this.nome = nome;
+	}
 		
-		read(email);
-	}
-
-	public String getConta() {
-		return conta;
-	}
-
-	public void setConta(String conta) {
-		this.conta = conta;
-	}
-
-	public String getDominio() {
-		return dominio;
-	}
-
-	public void setDominio(String dominio) {
-		this.dominio = dominio;
+	public String getNome() {
+		
+		return nome;
 	}
 	
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void read(String str) {
-		//Formatter.parse(str);
-		
-		setEmail(str);
-	}
-
-	public String write() {
-		
-		return null;
+	/**
+	 * @see br.com.nordestefomento.jrimum.ACurbitaObject#toString()
+	 * @see java.lang.Enum#toString()
+	 */
+	public String toString(){
+		return ACurbitaObject.toString(this);
 	}
 }

@@ -34,10 +34,10 @@ import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
-import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
-import br.com.nordestefomento.jrimum.domkee.type.Telefone;
+import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
 
 /**
@@ -73,14 +73,14 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	private String nome;
 	
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
-	private AbstractCPRF abstractCPRF;
+	private CPRF abstractCPRF;
 	
 	/**
-	 * @see Telefone
+	 * @see NumeroDoTelefone
 	 */
-	private Collection<Telefone> telefones;
+	private Collection<NumeroDoTelefone> telefones;
 	
 	/**
 	 * @see Email
@@ -107,7 +107,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	public Pessoa(String nome, String cadastroDePessoa) {
 		
 		this.nome = nome;
-		this.abstractCPRF = AbstractCPRF.create(cadastroDePessoa);
+		this.abstractCPRF = CPRF.create(cadastroDePessoa);
 	}
 
 	/**
@@ -156,22 +156,22 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	}
 
 	/**
-	 * @see Telefone
+	 * @see NumeroDoTelefone
 	 */
 	
-	public void addTelefone(Telefone telefone) {
+	public void addTelefone(NumeroDoTelefone telefone) {
 		
 		if(isNull(telefones))
-			telefones = new ArrayList<Telefone>();
+			telefones = new ArrayList<NumeroDoTelefone>();
 		
 		telefones.add(telefone);
 	}
 
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
 	
-	public AbstractCPRF getAbstractCPRF() {
+	public CPRF getCPRF() {
 		
 		return abstractCPRF;
 	}
@@ -213,20 +213,20 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	}
 
 	/**
-	 * @see Telefone
+	 * @see NumeroDoTelefone
 	 * @see Collection
 	 */
 	
-	public Collection<Telefone> getTelefones() {
+	public Collection<NumeroDoTelefone> getTelefones() {
 		
 		return telefones;
 	}
 
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
 	
-	public void setAbstractCPRF(AbstractCPRF abstractCPRF) {
+	public void setCPRF(CPRF abstractCPRF) {
 		
 		this.abstractCPRF = abstractCPRF;
 	}
@@ -268,11 +268,11 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	}
 
 	/**
-	 * @see Telefone
+	 * @see NumeroDoTelefone
 	 * @see Collection
 	 */
 	
-	public void setTelefones(Collection<Telefone> telefones) {
+	public void setTelefones(Collection<NumeroDoTelefone> telefones) {
 		
 		this.telefones = telefones;
 	}
