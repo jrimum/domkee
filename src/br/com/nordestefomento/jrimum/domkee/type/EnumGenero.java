@@ -52,8 +52,8 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 	
 public enum EnumGenero implements Serializable {
 
-	F("Feminino"),
-	M("Masculino");
+	FEMININO("Feminino"),
+	MASCULINO("Masculino");
 	
 	private String nome;
 	
