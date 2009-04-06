@@ -1,4 +1,3 @@
-
 /* 
  * Copyright 2008 JRimum Project
  * 
@@ -11,7 +10,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 19/04/2008 - 21:12:40
+ * Created at: 04/04/2009 - 12:31:48
  *
  * ================================================================================
  *
@@ -25,43 +24,62 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 19/04/2008 - 21:12:40
+ * Criado em: 04/04/2009 - 12:31:48
  * 
  */
-	
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import java.io.Serializable;
+import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.InvariantViolationException;
 
 /**
  * 
  * <p>
- * Representação dos tipos básicos de cobrança:<br />
- * <ul>
- * <li>Registrada (ou com registro)</li>
- * <li>Não Registrada (ou sem registro)</li>
- * </ul>
+ * OBJETIVO/PROPÓSITO
  * </p>
  * 
+ * @author Rômulo
  * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
- * @author Misael Barreto
- * @author Rômulo Augusto
- * @author Samuel Valerio
+ * @since 
  * 
- * @since 0.2
- * 
- * @version 0.2
+ * @version 
  */
+public class TestAgencia {
 
-public enum EnumTipoCobranca implements Serializable {
-	/**
-	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
-	 */
-	COM_REGISTRO, 
-	/**
-	 * <p>Tipo onde os títulos emitidos só são registrados pelo banco quando são pagos.</p>
-	 */
-	SEM_REGISTRO;
+	@Test(expected=InvariantViolationException.class)
+	public void testCodigoMenorQueZero() {
+		
+		new Agencia(-1,'x');
+	}
+	
+	@Test(expected=InvariantViolationException.class)
+	public void testCodigoMaiorQueCincoDigitos() {
+		
+		new Agencia(123456,'x');
+	}
+	
+	@Test(expected=InvariantViolationException.class)
+	public void testDigitoCharVazio() {
+		
+		new Agencia(1,' ');
+	}
+	
+	@Test(expected=InvariantViolationException.class)
+	public void testDigitoCharNaoLetra() {
+		
+		new Agencia(1,'-');
+	}
+	
+	@Test(expected=InvariantViolationException.class)
+	public void testDigitoCharDigitoInteiroNaoNatural() {
+		
+		new Agencia(1,(char)-1);
+	}
+	
+	@Test
+	public void testValoresCorretos() {
+		
+		new Agencia(12345,'x');
+	}
 }

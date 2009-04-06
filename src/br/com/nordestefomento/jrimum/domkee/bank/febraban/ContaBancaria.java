@@ -27,10 +27,11 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import java.util.Collection;
 
+import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 
 // TODO Verificar a necessidade de se criar uma família de classes de

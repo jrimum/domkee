@@ -27,11 +27,21 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import java.io.Serializable;
+import br.com.nordestefomento.jrimum.InvariantViolationException;
 
 /**
+ * <p>
+ * Esta classe segue o padrão especificado pela FEBRABAN:
+ * <br/>
+ * Invariantes:
+ * <ul>
+ * <li>Código: deve ser um inteiro natural (incluindo zero) entre 1 e 5 dígitos</li>
+ * <li>Dígito Verificador: alpha-numérico sendo um inteiro natural (incluindo zero)
+ * ou caracter não vazio (' ') com um dígito.</li>
+ * </ul>
+ * </p>
  * 
  * <p>
  *  Para ver o conceito de negócio, consulte o 
@@ -47,44 +57,48 @@ import java.io.Serializable;
  * 
  * @version 0.2
  */
-public class Agencia implements Serializable {
+public final class Agencia implements br.com.nordestefomento.jrimum.domkee.bank.Agencia<Integer, Character> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3512980818455792739L;
 	
-	private Integer codigoDaAgencia = 0;
+	private final Integer codigo;
 
-	private String digitoDaAgencia  = "";
+	private final Character digitoVerificador;
 	
-	public Agencia() {}
-	
-	public Agencia(Integer codigoDaAgencia) {
+	public Agencia(Integer codigo, Character digito) throws InvariantViolationException {
+
+		this.codigo = codigo;
+		this.digitoVerificador = digito;
 		
-		this.codigoDaAgencia = codigoDaAgencia;
+		verify();
 	}
 	
-	public Agencia(Integer codigoDaAgencia, String digitoDaAgencia) {
+	public void verify() throws InvariantViolationException {
+
+		StringBuilder erros = new StringBuilder();
 		
-		this.codigoDaAgencia = codigoDaAgencia;
-		this.digitoDaAgencia = digitoDaAgencia;
+		if(codigo < 0 )
+			erros.append("\n - O código da agência deve ser um inteiro natural (incluindo zero)");
+		
+		if(String.valueOf(codigo).length() > 5)
+			erros.append("\n - O código da agência deve possuir de 1 a 5 dígitos");
+			
+		if(!Character.isLetterOrDigit(digitoVerificador))
+			erros.append("\n - O dígito verificador deve ser letra ou dígito");
+		
+		if(erros.length() > 0) {
+			throw new InvariantViolationException(erros.toString());
+		}
 	}
 
-	public Integer getCodigoDaAgencia() {
-		return codigoDaAgencia;
+	public Integer getCodigo() {
+		return codigo;
 	}
 
-	public void setCodigoDaAgencia(Integer codigoDaAgencia) {
-		this.codigoDaAgencia = codigoDaAgencia;
+	public Character getDigitoVerificador() {
+		return digitoVerificador;
 	}
-
-	public String getDigitoDaAgencia() {
-		return digitoDaAgencia;
-	}
-
-	public void setDigitoDaAgencia(String digitoDaAgencia) {
-		this.digitoDaAgencia = digitoDaAgencia;
-	}
-
 }

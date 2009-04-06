@@ -35,6 +35,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumTitulo;
+
 public class TestEnumTitulo{
 
 	EnumTitulo CH = EnumTitulo.CH_CHEQUE;

@@ -10,7 +10,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 07/03/2009 - 11:53:01
+ * Created at: 04/04/2009 - 16:36:30
  *
  * ================================================================================
  *
@@ -24,71 +24,43 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 07/03/2009 - 11:53:01
+ * Criado em: 04/04/2009 - 16:36:30
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.bank;
 
-import br.com.nordestefomento.jrimum.domkee.itype.MutableUnidadeFederativa;
+import java.io.Serializable;
 
+import br.com.nordestefomento.jrimum.Verifiable;
 
 /**
  * 
  * <p>
- * Representa uma unidade federativa de um país
- * </p> 
+ * Define o contrato para classes Agencia. Esse contrato é baseado na especificação FEBRABAN:
+ * </p>
+ * <p>
+ * Invariantes:
+ * <ul>
+ * <li>Código: deve ser um inteiro natural (incluindo zero) entre 1 e 5 dígitos</li>
+ * <li>Dígito Verificador: alpha-numérico sendo um inteiro natural (incluindo zero)
+ * ou caracter não vazio (' ') com um dígito.</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>
+ *  Para ver o conceito de negócio, consulte o 
+ *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
+ * </p>
  * 
  * @author Rômulo
  * 
- * @since 0.2
+ * @since 
  * 
- * @version 0.2
+ * @version 
  */
-public class UnidadeFederativa implements MutableUnidadeFederativa {
+public interface Agencia<Codigo, Digito> extends Serializable, Verifiable {
 
-	private static final long serialVersionUID = -3140109624933213463L;
-
-	private String nome;
+	public Codigo getCodigo();
 	
-	private String sigla;
-	
-	private Localidade capital;
-	
-	public UnidadeFederativa() {
-	}
-	
-	/**
-	 * Instancia uma nova Unidade Federativa a partir dos dados contidos no enum
-	 * 
-	 * @param uf
-	 */
-	public UnidadeFederativa(EnumUnidadeFederativa uf) {
-		nome = uf.getNome();
-		sigla = uf.getSigla();
-		capital = uf.getCapital();
-	}
-
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public String getSigla() {
-		return sigla;
-	}
-	
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
-	}
-	
-	public Localidade getCapital() {
-		return capital;
-	}
-
-	public void setCapital(Localidade capital) {
-		this.capital = capital;
-	}
+	public Digito getDigitoVerificador();
 }

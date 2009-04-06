@@ -31,7 +31,7 @@ package br.com.nordestefomento.jrimum.domkee.ientity;
 
 import java.awt.Image;
 
-import br.com.nordestefomento.jrimum.domkee.entity.CodigoDeCompensacaoBACEN;
+import br.com.nordestefomento.jrimum.domkee.bank.febraban.CodigoDeCompensacaoBACEN;
 
 
 /**

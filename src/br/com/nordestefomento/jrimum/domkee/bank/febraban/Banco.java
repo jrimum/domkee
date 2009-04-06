@@ -27,7 +27,7 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import java.awt.Image;
 import java.util.Collection;
@@ -35,6 +35,7 @@ import java.util.Collection;
 import org.apache.commons.lang.StringUtils;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
+import br.com.nordestefomento.jrimum.domkee.entity.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
@@ -412,7 +413,7 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.entity.ContaBancaria)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria)
 	 */
 	
 	public void addContaBancaria(ContaBancaria contaBancaria) {

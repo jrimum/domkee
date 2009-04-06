@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:08:53
+ * Created at: 30/03/2008 - 19:09:00
  * 
  * ================================================================================
  * 
@@ -23,83 +23,50 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:08:53
+ * Criado em: 30/03/2008 - 19:09:00
  * 
  */
 
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import org.apache.commons.lang.StringUtils;
+import java.io.Serializable;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
-import br.com.nordestefomento.jrimum.domkee.itype.ImmutableMoeda;
+
 
 /**
+ * 
  * <p>
- * Representa as moedas existentes que fazem parte do universo de um título, segundo a FEBRABAN.
+ * Representação de opções sobre o sexo de um indivíduo.
  * </p>
  * 
- * 
- * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author Misael Barreto 
+ * @author <a href="http://gilmatryx.googlepages.com"/>Gilmar P.S.L.</a>
+ * @author Misael Barreto
  * @author Rômulo Augusto
- * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-public enum EnumMoeda implements ImmutableMoeda {
-
-	/**
-	 * Padrão FEBRABAN
-	 */
 	
-	DOLAR_AMERICANO_COMERCIAL_VENDA(2),
-	DOLAR_AMERICANO_TURISMO_VENDA(3),
-	ITRD(4),
-	IDTR(5),
-	UFIR_DIARIA(6),
-	UFIR_MENSAL(7),
-	FAJ_TR(8),
-	REAL(9),
-	TR(10),
-	IGPM(11),
-	CDI(12),
-	PERCENTUAL_DO_CDI(13),
-	EURO(14);
+public enum Genero implements Serializable {
 
-	private int codigo;
+	FEMININO("Feminino"),
+	MASCULINO("Masculino");
+	
+	private String nome;
 	
 	/**
-	 * @param codigo
+	 * @param nome
 	 */
-	private EnumMoeda(int codigo) {
-		this.codigo = codigo;
+	private Genero(String nome) {
+		this.nome = nome;
 	}
-
-	public int getCodigo() {
 		
-		return this.codigo;
-	}
-	
-	public String write(){
+	public String getNome() {
 		
-		String s = StringUtils.EMPTY;
-		
-		switch (this) {
-			
-			case REAL:
-				s = "R$";
-				break;
-		
-			default:
-				s += this.getCodigo();
-		}
-		
-		return s;
+		return nome;
 	}
 	
 	/**
@@ -109,5 +76,4 @@ public enum EnumMoeda implements ImmutableMoeda {
 	public String toString(){
 		return ACurbitaObject.toString(this);
 	}
-	
 }

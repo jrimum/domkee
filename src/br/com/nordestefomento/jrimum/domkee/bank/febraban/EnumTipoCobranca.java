@@ -1,3 +1,4 @@
+
 /* 
  * Copyright 2008 JRimum Project
  * 
@@ -10,7 +11,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 07/03/2009 - 12:47:53
+ * Created at: 19/04/2008 - 21:12:40
  *
  * ================================================================================
  *
@@ -24,36 +25,43 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 07/03/2009 - 12:47:53
+ * Criado em: 19/04/2008 - 21:12:40
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.itype;
+	
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import java.io.Serializable;
+
 
 /**
  * 
  * <p>
- * Contrato para a realização de uma implemtação de Moeda com valores imutáveis
+ * Representação dos tipos básicos de cobrança:<br />
+ * <ul>
+ * <li>Registrada (ou com registro)</li>
+ * <li>Não Registrada (ou sem registro)</li>
+ * </ul>
  * </p>
  * 
- * @author Rômulo
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * @author Misael Barreto
+ * @author Rômulo Augusto
+ * @author Samuel Valerio
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-public interface ImmutableMoeda extends Serializable {
 
+public enum EnumTipoCobranca implements Serializable {
 	/**
-	 * 
-	 * <p>
-	 * Código da moeda
-	 * </p>
-	 * 
-	 * @return código
-	 * 
-	 * @since 0.2
+	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
 	 */
-	public int getCodigo();
+	COM_REGISTRO, 
+	/**
+	 * <p>Tipo onde os títulos emitidos só são registrados pelo banco quando são pagos.</p>
+	 */
+	SEM_REGISTRO;
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import org.apache.commons.lang.StringUtils;
 

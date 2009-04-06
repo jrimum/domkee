@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:10:10
+ * Created at: 30/03/2008 - 19:08:53
  * 
  * ================================================================================
  * 
@@ -23,66 +23,88 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:10:10
+ * Criado em: 30/03/2008 - 19:08:53
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import java.io.Serializable;
+import org.apache.commons.lang.StringUtils;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 
 /**
- * 
  * <p>
- * Representação básica de um país.
+ * Representa as moedas existentes que fazem parte do universo de um título, segundo a FEBRABAN.
  * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
- * @author Misael
- * @author Romulo
- * @author Samuel
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
+ * @author Misael Barreto 
+ * @author Rômulo Augusto
+ * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-public class Pais implements Serializable {
-
-	private static final long serialVersionUID = -1288119657664437883L;
+public enum EnumMoeda {
 	
-	private String nome;
-
 	/**
-	 * 
+	 * Padrão FEBRABAN
 	 */
-	public Pais() {}
+	
+	DOLAR_AMERICANO_COMERCIAL_VENDA(2),
+	DOLAR_AMERICANO_TURISMO_VENDA(3),
+	ITRD(4),
+	IDTR(5),
+	UFIR_DIARIA(6),
+	UFIR_MENSAL(7),
+	FAJ_TR(8),
+	REAL(9),
+	TR(10),
+	IGPM(11),
+	CDI(12),
+	PERCENTUAL_DO_CDI(13),
+	EURO(14);
 
+	private int codigo;
+	
 	/**
-	 * @param nome
+	 * @param codigo
 	 */
-	public Pais(String nome) {
-		this.nome = nome;
+	private EnumMoeda(int codigo) {
+		this.codigo = codigo;
 	}
 
-	/**
-	 * @return the pais
-	 */
-	public String getNome() {
-		return nome;
+	public int getCodigo() {
+		
+		return this.codigo;
 	}
-
-	/**
-	 * @param nome the pais to set
-	 */
-	public void setNome(String nome) {
-		this.nome = nome;
+	
+	public String write(){
+		
+		String s = StringUtils.EMPTY;
+		
+		switch (this) {
+			
+			case REAL:
+				s = "R$";
+				break;
+		
+			default:
+				s += this.getCodigo();
+		}
+		
+		return s;
 	}
-
-	@Override
-	public String toString() {
+	
+	/**
+	 * @see br.com.nordestefomento.jrimum.ACurbitaObject#toString()
+	 * @see java.lang.Enum#toString()
+	 */
+	public String toString(){
 		return ACurbitaObject.toString(this);
 	}
 }

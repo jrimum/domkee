@@ -28,7 +28,7 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;

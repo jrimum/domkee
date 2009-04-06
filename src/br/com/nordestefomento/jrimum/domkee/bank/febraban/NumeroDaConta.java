@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:10:01
+ * Created at: 30/03/2008 - 18:58:07
  * 
  * ================================================================================
  * 
@@ -23,53 +23,68 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:10:01
+ * Criado em: 30/03/2008 - 18:58:07
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import br.com.nordestefomento.jrimum.domkee.itype.MutableMoeda;
+import br.com.nordestefomento.jrimum.ACurbitaObject;
 
 /**
  * 
  * <p>
- * Classe que será responsável por encapsular lógica de tratamento de uma
- * unidade monetária específica.
+ * Identifica uma conta bancária e assume os sinônimos:
+ * <ul>
+ * <li>Código do cedente</li>
+ * <li>Convênio</li>
+ * </ul>
  * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author Misael Barreto 
- * @author Rômulo Augusto
- * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
  * 
- * @since 0.2
+ * @since 0.2 
  * 
  * @version 0.2
- *
  */
-public class Moeda implements MutableMoeda {
+public class NumeroDaConta extends ACurbitaObject {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3327686961698328268L;
+	private static final long serialVersionUID = 7807160258460502276L;
+
+	private Integer codigoDaConta = 0;
+
+	private String digitoDaConta = "";
 	
-	private int codigo;
-
-	public Moeda() {
+	public NumeroDaConta() {}
+	
+	public NumeroDaConta(Integer codigoDaConta) {
+		
+		this.codigoDaConta = codigoDaConta;
 	}
 	
-	public Moeda(EnumMoeda moeda) {
-		this.codigo = moeda.getCodigo();
+	public NumeroDaConta(Integer codigoDaConta, String digitoDaConta) {
+		
+		this.codigoDaConta = codigoDaConta;
+		this.digitoDaConta = digitoDaConta;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public Integer getCodigoDaConta() {
+		return codigoDaConta;
 	}
 
-	public int getCodigo() {
-		return codigo;
+	public void setCodigoDaConta(Integer codigoDaConta) {
+		this.codigoDaConta = codigoDaConta;
+	}
+
+	public String getDigitoDaConta() {
+		return digitoDaConta;
+	}
+
+	public void setDigitoDaConta(String digitoDaConta) {
+		this.digitoDaConta = digitoDaConta;
 	}
 }

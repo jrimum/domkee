@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoaFisica;
-import br.com.nordestefomento.jrimum.domkee.type.EnumGenero;
+import br.com.nordestefomento.jrimum.domkee.type.Genero;
 import br.com.nordestefomento.jrimum.domkee.type.RG;
 
 /**
@@ -64,7 +64,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	
 	private PessoaFisica conjuge;
 	
-	private EnumGenero genero;
+	private Genero genero;
 	
 	private String estadoCivil;
 	
@@ -100,7 +100,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	}
 
 	
-	public EnumGenero getGenero() {
+	public Genero getGenero() {
 		
 		return genero;
 	}
@@ -127,7 +127,7 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	}
 
 	
-	public void setGenero(EnumGenero sexo) {
+	public void setGenero(Genero sexo) {
 		
 		this.genero = sexo;
 	}

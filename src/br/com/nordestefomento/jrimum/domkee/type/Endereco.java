@@ -54,7 +54,7 @@ public class Endereco extends ACurbitaObject{
 	/**
 	 * @see Logradouro
 	 */
-	private Logradouro logradouro;
+	private String logradouro;
 	
 	/**
 	 * Número que identifica o estabelecimento na rua.
@@ -74,7 +74,7 @@ public class Endereco extends ACurbitaObject{
 	/**
 	 * @see Localidade
 	 */
-	private Localidade localidade;
+	private String localidade;
 	
 	/**
 	 * @see CEP
@@ -84,12 +84,9 @@ public class Endereco extends ACurbitaObject{
 	/**
 	 * @see EnumUnidadeFederativa
 	 */
-	private UnidadeFederativa uf;
+	private EnumUnidadeFederativa uf;
 	
-	/**
-	 * @see Pais
-	 */
-	private Pais pais;
+	private String pais;
 		
 	public Endereco() {}
 
@@ -104,22 +101,22 @@ public class Endereco extends ACurbitaObject{
 	/**
 	 * @return the localidade
 	 */
-	public Localidade getLocalidade() {
+	public String getLocalidade() {
 		return localidade;
 	}
 
 	/**
 	 * @param localidade the localidade to set
 	 */
-	public void setLocalidade(Localidade localidade) {
+	public void setLocalidade(String localidade) {
 		this.localidade = localidade;
 	}
 
-	public Logradouro getLogradouro() {
+	public String getLogradouro() {
 		return logradouro;
 	}
 
-	public void setLogradouro(Logradouro logradouro) {
+	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
 
@@ -131,11 +128,11 @@ public class Endereco extends ACurbitaObject{
 		this.numero = numero;
 	}
 
-	public UnidadeFederativa getUF() {
+	public EnumUnidadeFederativa getUF() {
 		return uf;
 	}
 
-	public void setUF(UnidadeFederativa uf) {
+	public void setUF(EnumUnidadeFederativa uf) {
 		this.uf = uf;
 	}
 
@@ -158,14 +155,14 @@ public class Endereco extends ACurbitaObject{
 	/**
 	 * @return the pais
 	 */
-	public Pais getPais() {
+	public String getPais() {
 		return pais;
 	}
 
 	/**
 	 * @param pais the pais to set
 	 */
-	public void setPais(Pais pais) {
+	public void setPais(String pais) {
 		this.pais = pais;
 	}
 }

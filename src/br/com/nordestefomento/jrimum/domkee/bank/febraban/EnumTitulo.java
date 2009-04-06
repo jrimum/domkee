@@ -27,7 +27,7 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import java.io.Serializable;
 

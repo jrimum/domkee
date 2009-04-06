@@ -34,6 +34,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda;
+
 public class TestEnumMoeda{
 
 	@Test

@@ -28,7 +28,7 @@
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.entity;
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -36,8 +36,7 @@ import java.util.Date;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.JRimumException;
-import br.com.nordestefomento.jrimum.domkee.type.EnumMoeda;
-import br.com.nordestefomento.jrimum.domkee.type.EnumTitulo;
+import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.type.IDadoBancario;
 
 
@@ -95,7 +94,7 @@ public final class Titulo extends ACurbitaObject{
 	private Date dataDoVencimento;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda
 	 */
 	private EnumMoeda enumMoeda = EnumMoeda.REAL;
 
@@ -110,7 +109,7 @@ public final class Titulo extends ACurbitaObject{
 	private BigDecimal desconto;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumTitulo
+	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumTitulo
 	 */
 	private EnumTitulo tipoDeDocumento;
 
@@ -182,7 +181,7 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
-	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.entity.Titulo.EnumAceite)
+	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.bank.febraban.Titulo.EnumAceite)
 	 * 
 	 * @see EnumAceite
 	 */
@@ -220,7 +219,7 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
-	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.entity.Titulo.EnumAceite)
+	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.bank.febraban.Titulo.EnumAceite)
 	 * 
 	 * @return the aceite
 	 */
@@ -331,7 +330,7 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda
 	 * 
 	 * @return the enumMoeda
 	 */
@@ -340,7 +339,7 @@ public final class Titulo extends ACurbitaObject{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.type.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda
 	 * 
 	 * @param moeda
 	 *            the enumMoeda to set

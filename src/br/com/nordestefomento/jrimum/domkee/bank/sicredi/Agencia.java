@@ -10,7 +10,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 07/03/2009 - 12:22:06
+ * Created at: 04/04/2009 - 16:12:19
  *
  * ================================================================================
  *
@@ -24,30 +24,58 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 07/03/2009 - 12:22:06
+ * Criado em: 04/04/2009 - 16:12:19
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.itype;
+package br.com.nordestefomento.jrimum.domkee.bank.sicredi;
 
-import br.com.nordestefomento.jrimum.domkee.type.Localidade;
+import br.com.nordestefomento.jrimum.InvariantViolationException;
 
 /**
  * 
  * <p>
- * Contrato para a realização de uma implemtação de Unidade Federativa com valores mutáveis
+ * DEFINIÇÃO DA CLASSE
  * </p>
+ * 
+ * <p>
+ * OBJETIVO/PROPÓSITO
+ * </p>
+ * 
+ * <p>
+ * EXEMPLO:
+ * </p> 
  * 
  * @author Rômulo
  * 
- * @since 0.2
+ * @since 
  * 
- * @version 0.2
+ * @version 
  */
-public interface MutableUnidadeFederativa extends ImmutableUnidadeFederativa {
+public final class Agencia implements br.com.nordestefomento.jrimum.domkee.bank.Agencia<Integer, String> {
 
-	public void setNome(String nome);
+	private static final long serialVersionUID = -6866018918638469469L;
+	
+	private final int codigo;
+	
+	private final String digitoVerificador;
+	
+	public Agencia(Integer codigo, String digitoVerificador) {
+		this.codigo = codigo;
+		this.digitoVerificador = digitoVerificador;
+		
+		verify();
+	}
 
-	public void setSigla(String sigla);
+	public Integer getCodigo() {
+		return codigo;
+	}
 
-	public void setCapital(Localidade capital);
+	public String getDigitoVerificador() {
+		return digitoVerificador;
+	}
+
+	public void verify() throws InvariantViolationException {
+		
+	}
+
 }

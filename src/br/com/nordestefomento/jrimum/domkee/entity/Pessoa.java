@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.ACurbitaObject;
+import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Email;
@@ -75,7 +76,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see CPRF
 	 */
-	private CPRF abstractCPRF;
+	private CPRF cprf;
 	
 	/**
 	 * @see NumeroDoTelefone
@@ -107,7 +108,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	public Pessoa(String nome, String cadastroDePessoa) {
 		
 		this.nome = nome;
-		this.abstractCPRF = CPRF.create(cadastroDePessoa);
+		this.cprf = CPRF.create(cadastroDePessoa);
 	}
 
 	/**
@@ -173,7 +174,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	
 	public CPRF getCPRF() {
 		
-		return abstractCPRF;
+		return cprf;
 	}
 
 	/**
@@ -228,7 +229,7 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	
 	public void setCPRF(CPRF abstractCPRF) {
 		
-		this.abstractCPRF = abstractCPRF;
+		this.cprf = abstractCPRF;
 	}
 
 	/**

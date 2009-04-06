@@ -27,12 +27,7 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.entity;
-
-
-
-
-	
+package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 /**
  * 
