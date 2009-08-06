@@ -62,7 +62,7 @@ public interface IBanco extends IPessoaJuridica {
 	 * @since 0.2
 	 */
 		
-	public abstract CodigoDeCompensacaoBACEN getCodigoDeCompensacaoBACEN();
+	CodigoDeCompensacaoBACEN getCodigoDeCompensacaoBACEN();
 	
 	/**
 	  @see #setSegmento(String)
@@ -72,7 +72,7 @@ public interface IBanco extends IPessoaJuridica {
 	 * @since 0.2
 	 */
 		
-	public abstract String getSegmento();
+	String getSegmento();
 	
 	
 
@@ -84,7 +84,7 @@ public interface IBanco extends IPessoaJuridica {
 	 * @since 0.2
 	 */
 		
-		public abstract Image getImgLogo();
+	Image getImgLogo();
 	
 	
 	/**	 * <p>
@@ -96,7 +96,7 @@ public interface IBanco extends IPessoaJuridica {
 	 * @since 0.2
 	 */
 		
-	public abstract void setCodigoDeCompensacaoBACEN(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN);
+	void setCodigoDeCompensacaoBACEN(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN);
 	
 	/**	 * <p>
 	 * Segmento registrado no <a href="http://www.bcb.gov.br/">BACEN</a>.
@@ -117,7 +117,7 @@ public interface IBanco extends IPessoaJuridica {
 	 * @since 0.2 
 	 */
 		
-	public abstract void setSegmento(String segmento);
+	void setSegmento(String segmento);
 	
 	/**
 	  <p>
@@ -129,6 +129,5 @@ public interface IBanco extends IPessoaJuridica {
 	 * @since 0.2 
 	 */
 		
-	public abstract void setImgLogo(Image imgLogo);
-	
+	void setImgLogo(Image imgLogo);
 }
