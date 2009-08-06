@@ -30,7 +30,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoaFisica;
@@ -69,27 +68,15 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	
 	public PessoaFisica() {}
 
-	
-	public void addRG(RG rg) {
-		
-		if(isNull(rgs))
-			rgs = new ArrayList<RG>();
-		
-		rgs.add(rg);
-	}
-	
-	
 	public PessoaFisica getConjuge() {
 		
 		return conjuge;
 	}
-
 	
 	public String getEstadoCivil() {
 		
 		return estadoCivil;
 	}
-
 	
 	public Collection<RG> getRgs() {
 		

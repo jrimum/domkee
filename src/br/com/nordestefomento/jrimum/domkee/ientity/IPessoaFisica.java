@@ -61,6 +61,4 @@ public interface IPessoaFisica extends IPessoa {
 	public Collection<RG> getRgs();
 	
 	public void setRgs(Collection<RG> rgs);
-	
-	public void addRG(RG rg);
 }
