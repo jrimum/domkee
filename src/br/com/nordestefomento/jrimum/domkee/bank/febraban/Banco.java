@@ -37,9 +37,8 @@ import org.apache.commons.lang.StringUtils;
 import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.entity.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
-import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
-import br.com.nordestefomento.jrimum.domkee.type.Email;
+import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
@@ -224,15 +223,6 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEmail(br.com.nordestefomento.jrimum.domkee.type.Email)
-	 */
-	
-	public void addEmail(Email email) {
-		
-		pessoaJuridica.addEmail(email);
-	}
-
-	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.type.Endereco)
 	 */
 	
@@ -260,18 +250,8 @@ public class Banco extends ACurbitaObject implements IBanco{
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEmails()
-	 */
-	
-	public Collection<Email> getEmails() {
-		
-		return getEmails();
-	}
-
-	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getEnderecos()
 	 */
-	
 	public Collection<Endereco> getEnderecos() {
 		
 		return pessoaJuridica.getEnderecos();
@@ -322,19 +302,10 @@ public class Banco extends ACurbitaObject implements IBanco{
 		pessoaJuridica.setCPRF(abstractCPRF);
 	}
 
-	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEmails(java.util.Collection)
-	 */
-	
-	public void setEmails(Collection<Email> emails) {
-		
-		pessoaJuridica.setEmails(emails);
-	}
 
 	/**
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setEnderecos(java.util.Collection)
 	 */
-	
 	public void setEnderecos(Collection<Endereco> enderecos) {
 		
 		pessoaJuridica.setEnderecos(enderecos);

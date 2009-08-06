@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoaFisica;
-import br.com.nordestefomento.jrimum.domkee.type.Genero;
 import br.com.nordestefomento.jrimum.domkee.type.RG;
 
 /**
@@ -63,8 +62,6 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 	private static final long serialVersionUID = -5722593135877031688L;
 	
 	private PessoaFisica conjuge;
-	
-	private Genero genero;
 	
 	private String estadoCivil;
 	
@@ -99,13 +96,6 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 		return rgs;
 	}
 
-	
-	public Genero getGenero() {
-		
-		return genero;
-	}
-
-	
 	public void setConjuge(PessoaFisica conjuge) {
 		
 		this.conjuge = conjuge;
@@ -114,22 +104,14 @@ public class PessoaFisica extends Pessoa implements IPessoaFisica {
 			conjuge.setConjuge(this);
 	}
 
-	
 	public void setEstadoCivil(String estadoCivil) {
 		
 		this.estadoCivil = estadoCivil;
 	}
 
-	
 	public void setRgs(Collection<RG> rgs) {
 		
 		this.rgs = rgs;
-	}
-
-	
-	public void setGenero(Genero sexo) {
-		
-		this.genero = sexo;
 	}
 
 }

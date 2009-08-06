@@ -35,7 +35,6 @@ import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.type.CPRF;
-import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
@@ -66,12 +65,6 @@ public interface IPessoa extends Serializable {
 	public void setTelefones(Collection<NumeroDoTelefone> telefones);
 
 	public void addTelefone(NumeroDoTelefone telefone);
-
-	public Collection<Email> getEmails();
-
-	public void setEmails(Collection<Email> emails);
-
-	public void addEmail(Email email);
 
 	public Collection<Endereco> getEnderecos();
 

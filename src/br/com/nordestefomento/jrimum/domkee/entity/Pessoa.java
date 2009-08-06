@@ -36,7 +36,6 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.CPRF;
-import br.com.nordestefomento.jrimum.domkee.type.Email;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
@@ -84,11 +83,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	private Collection<NumeroDoTelefone> telefones;
 	
 	/**
-	 * @see Email
-	 */
-	private Collection<Email> emails;
-	
-	/**
 	 * @see Endereco
 	 */
 	private Collection<Endereco> enderecos;
@@ -132,22 +126,10 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	public boolean hasContaBancaria(){
 		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
 	}
-	/**
-	 * @see Email
-	 */
 	
-	public void addEmail(Email email) {
-		
-		if(isNull(emails))
-			emails = new ArrayList<Email>();
-		
-		emails.add(email);
-	}
-
 	/**
 	 * @see Endereco
 	 */
-	
 	public void addEndereco(Endereco endereco) {
 
 		if(isNull(enderecos))
@@ -159,7 +141,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see NumeroDoTelefone
 	 */
-	
 	public void addTelefone(NumeroDoTelefone telefone) {
 		
 		if(isNull(telefones))
@@ -188,25 +169,13 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	}
 
 	/**
-	 * @see Email
-	 * @see Collection
-	 */
-	
-	public Collection<Email> getEmails() {
-
-		return emails;
-	}
-
-	/**
 	 * @see Endereco
 	 * @see Collection
 	 */
-	
 	public Collection<Endereco> getEnderecos() {
 
 		return enderecos;
 	}
-
 	
 	public String getNome() {
 
@@ -217,7 +186,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see NumeroDoTelefone
 	 * @see Collection
 	 */
-	
 	public Collection<NumeroDoTelefone> getTelefones() {
 		
 		return telefones;
@@ -226,7 +194,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	/**
 	 * @see CPRF
 	 */
-	
 	public void setCPRF(CPRF abstractCPRF) {
 		
 		this.cprf = abstractCPRF;
@@ -236,33 +203,20 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see ContaBancaria
 	 * @see Collection
 	 */
-	
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
 		
 		this.contasBancarias = contasBancarias;
 	}
 
 	/**
-	 * @see Email
-	 * @see Collection
-	 */
-	
-	public void setEmails(Collection<Email> emails) {
-		
-		this.emails = emails;
-	}
-	
-	/**
 	 * @see Endereco
 	 * @see Collection
 	 */
-	
 	public void setEnderecos(Collection<Endereco> enderecos) {
 		
 		this.enderecos = enderecos;
 	}
 
-	
 	public void setNome(String nome) {
 	
 		this.nome = nome;
@@ -272,7 +226,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * @see NumeroDoTelefone
 	 * @see Collection
 	 */
-	
 	public void setTelefones(Collection<NumeroDoTelefone> telefones) {
 		
 		this.telefones = telefones;
@@ -283,7 +236,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * 
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isFisica()
 	 */
-	
 	public boolean isFisica() {
 		
 		return (this instanceof PessoaFisica);
@@ -294,7 +246,6 @@ public class Pessoa extends ACurbitaObject implements IPessoa {
 	 * 
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#isJuridica()
 	 */
-	
 	public boolean isJuridica() {
 		
 		return (this instanceof PessoaJuridica);

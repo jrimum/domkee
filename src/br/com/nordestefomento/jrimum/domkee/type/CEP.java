@@ -30,7 +30,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.utilix.ITextStream;
 
 /**
  * 
@@ -47,7 +46,7 @@ import br.com.nordestefomento.jrimum.utilix.ITextStream;
  * 
  * @version 0.2
  */
-public class CEP implements ITextStream {
+public class CEP {
 
 	private static final long serialVersionUID = -3573397075779771290L;
 
@@ -78,8 +77,6 @@ public class CEP implements ITextStream {
 	public CEP(String cep) {
 		
 		this.cep = cep;
-		
-		read(cep);
 	}
 
 	public Integer getPrefixo() {
@@ -104,16 +101,5 @@ public class CEP implements ITextStream {
 
 	public void setCep(String cep) {
 		this.cep = cep;
-	}
-	
-	
-	public void read(String str) {
-		//TODO AVALIAR
-	}
-
-	
-	public String write() {
-		//TODO AVALIAR
-		return null;
 	}
 }
