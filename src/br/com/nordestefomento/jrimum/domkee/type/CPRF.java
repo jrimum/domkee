@@ -65,6 +65,11 @@ public abstract class CPRF extends ACurbitaObject{
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 659667618386631640L;
+
+	/**
+	 * 
+	 */
 	private String codigoFormatado;
 
 	/**
@@ -83,11 +88,9 @@ public abstract class CPRF extends ACurbitaObject{
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static CPRF create(Long cadastroDePessoa,
-			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static CPRF create(Long cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 
 		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
-		
 	}
 
 	/**
@@ -96,8 +99,7 @@ public abstract class CPRF extends ACurbitaObject{
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static CPRF create(String cadastroDePessoa,
-			EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static CPRF create(String cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
@@ -140,8 +142,7 @@ public abstract class CPRF extends ACurbitaObject{
 			throws IllegalArgumentException {
 
 		CPRF cp = null;
-		AValidator4CPRF autenticadorCP = AValidator4CPRF
-				.create(cadastroDePessoa);
+		AValidator4CPRF autenticadorCP = AValidator4CPRF.create(cadastroDePessoa);
 
 		if (autenticadorCP.isValido()) {
 
