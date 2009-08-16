@@ -72,7 +72,7 @@ public enum EnumUnidadeFederativa {
 	PB("Paraíba","PB","João Pessoa"),
 	RN("Rio Grande do Norte","RN","Natal"),
 	ES("Espírito Santo","ES","Vitória"),
-	RJ("Riode Janeiro","RJ","Rio de Janeiro"),
+	RJ("Rio de Janeiro","RJ","Rio de Janeiro"),
 	AL("Alagoas","AL","Maceió"),
 	SE("Sergipe","SE","Aracaju"),
 	DF("Distrito Federal","DF","Brasília"),
