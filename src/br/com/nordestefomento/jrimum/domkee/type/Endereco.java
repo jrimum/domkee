@@ -151,6 +151,10 @@ public class Endereco extends ACurbitaObject{
 	public void setCep(CEP cep) {
 		this.cep = cep;
 	}
+	
+	public void setCep(String cep) {
+		setCep(new CEP(cep));
+	}
 
 	/**
 	 * @return the pais
