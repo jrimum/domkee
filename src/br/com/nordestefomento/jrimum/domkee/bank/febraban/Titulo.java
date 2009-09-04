@@ -38,7 +38,7 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.type.IDadoBancario;
-import br.com.nordestefomento.jrimum.utilix.Util4Date;
+import br.com.nordestefomento.jrimum.utilix.DateUtil;
 
 
 /**
@@ -288,7 +288,7 @@ public final class Titulo extends ACurbitaObject{
 	}
 	
 	public void setDataDoDocumento(String dataDoDocumento) {
-		  setDataDoDocumento(Util4Date.parse(dataDoDocumento));
+		  setDataDoDocumento(DateUtil.parse(dataDoDocumento));
 	}
 
 	/**
@@ -314,7 +314,7 @@ public final class Titulo extends ACurbitaObject{
 	}
 	
 	public void setDataDoVencimento(String dataDoVencimento) {
-		setDataDoVencimento(Util4Date.parse(dataDoVencimento));
+		setDataDoVencimento(DateUtil.parse(dataDoVencimento));
 	}
 
 	/**
