@@ -29,7 +29,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import br.com.nordestefomento.jrimum.InvariantViolationException;
 
 /**
  * <p>
@@ -68,7 +67,7 @@ public final class Agencia implements br.com.nordestefomento.jrimum.domkee.bank.
 
 	private final Character digitoVerificador;
 	
-	public Agencia(Integer codigo, Character digito) throws InvariantViolationException {
+	public Agencia(Integer codigo, Character digito) {
 
 		this.codigo = codigo;
 		this.digitoVerificador = digito;
@@ -76,21 +75,20 @@ public final class Agencia implements br.com.nordestefomento.jrimum.domkee.bank.
 		verify();
 	}
 	
-	public void verify() throws InvariantViolationException {
+	public void verify() {
 
 		StringBuilder erros = new StringBuilder();
 		
-		if(codigo < 0 )
+		if (codigo < 0 ) {
 			erros.append("\n - O código da agência deve ser um inteiro natural (incluindo zero)");
+		}
 		
-		if(String.valueOf(codigo).length() > 5)
+		if (String.valueOf(codigo).length() > 5) {
 			erros.append("\n - O código da agência deve possuir de 1 a 5 dígitos");
+		}
 			
-		if(!Character.isLetterOrDigit(digitoVerificador))
+		if (!Character.isLetterOrDigit(digitoVerificador)) {
 			erros.append("\n - O dígito verificador deve ser letra ou dígito");
-		
-		if(erros.length() > 0) {
-			throw new InvariantViolationException(erros.toString());
 		}
 	}
 

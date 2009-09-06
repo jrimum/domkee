@@ -31,8 +31,6 @@ package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.InvariantViolationException;
-
 /**
  * 
  * <p>
@@ -47,31 +45,31 @@ import br.com.nordestefomento.jrimum.InvariantViolationException;
  */
 public class TestAgencia {
 
-	@Test(expected=InvariantViolationException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testCodigoMenorQueZero() {
 		
 		new Agencia(-1,'x');
 	}
 	
-	@Test(expected=InvariantViolationException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testCodigoMaiorQueCincoDigitos() {
 		
 		new Agencia(123456,'x');
 	}
 	
-	@Test(expected=InvariantViolationException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testDigitoCharVazio() {
 		
 		new Agencia(1,' ');
 	}
 	
-	@Test(expected=InvariantViolationException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testDigitoCharNaoLetra() {
 		
 		new Agencia(1,'-');
 	}
 	
-	@Test(expected=InvariantViolationException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testDigitoCharDigitoInteiroNaoNatural() {
 		
 		new Agencia(1,(char)-1);

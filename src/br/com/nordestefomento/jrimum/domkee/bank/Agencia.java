@@ -31,8 +31,6 @@ package br.com.nordestefomento.jrimum.domkee.bank;
 
 import java.io.Serializable;
 
-import br.com.nordestefomento.jrimum.Verifiable;
-
 /**
  * 
  * <p>
@@ -58,7 +56,7 @@ import br.com.nordestefomento.jrimum.Verifiable;
  * 
  * @version 
  */
-public interface Agencia<Codigo, Digito> extends Serializable, Verifiable {
+public interface Agencia<Codigo, Digito> extends Serializable {
 
 	public Codigo getCodigo();
 	
