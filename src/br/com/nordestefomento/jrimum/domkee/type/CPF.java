@@ -30,8 +30,8 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
 
 /**
  * <p>
@@ -64,7 +64,7 @@ public class CPF extends CPRF {
 
 	public CPF(String strCPF) {
 
-		this.autenticadorCP = AValidator4CPRF.create(strCPF);
+		this.autenticadorCP = AbstractCPRFValidator.create(strCPF);
 
 		if (autenticadorCP.isValido()) {
 			init(strCPF);
@@ -78,12 +78,12 @@ public class CPF extends CPRF {
 
 		try {
 
-			if (AValidator4CPRF.isParametrosValidos(String.valueOf(numCPF),
+			if (AbstractCPRFValidator.isParametrosValidos(String.valueOf(numCPF),
 					EnumCPRF.CPF)) {
 
 				String strCPF = Filler.ZERO_LEFT.fill(numCPF, 14);
 
-				this.autenticadorCP = AValidator4CPRF.create(strCPF);
+				this.autenticadorCP = AbstractCPRFValidator.create(strCPF);
 
 				if (autenticadorCP.isValido())
 					init(strCPF);

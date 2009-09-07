@@ -32,7 +32,7 @@ package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
-import br.com.nordestefomento.jrimum.vallia.digitoverificador.DV4CodigoDeCompensacaoBancosBACEN;
+import br.com.nordestefomento.jrimum.vallia.digitoverificador.CodigoDeCompensacaoBancosBACENDV;
 
 /**
  * <p>
@@ -53,7 +53,7 @@ public class CodigoDeCompensacaoBACEN {
 	 */
 	private static final long serialVersionUID = -6989699931272805790L;
 
-	private static final DV4CodigoDeCompensacaoBancosBACEN dv4Compensacao = new DV4CodigoDeCompensacaoBancosBACEN();
+	private static final CodigoDeCompensacaoBancosBACENDV dv4Compensacao = new CodigoDeCompensacaoBancosBACENDV();
 	
 	private Integer codigo;
 

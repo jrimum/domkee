@@ -38,7 +38,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
 
 /**
  * 

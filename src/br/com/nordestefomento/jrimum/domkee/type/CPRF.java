@@ -31,8 +31,8 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF;
-import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
 
 
 /**
@@ -77,7 +77,7 @@ public abstract class CPRF {
 	/**
 	 * 
 	 */
-	protected AValidator4CPRF autenticadorCP;
+	protected AbstractCPRFValidator autenticadorCP;
 
 	/**
 	 * @param cadastroDePessoa
@@ -100,7 +100,7 @@ public abstract class CPRF {
 		
 		String codigo = null;
 		
-		if (AValidator4CPRF.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
+		if (AbstractCPRFValidator.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
 
 			switch_Cadastro: {
 
@@ -139,7 +139,7 @@ public abstract class CPRF {
 			throws IllegalArgumentException {
 
 		CPRF cp = null;
-		AValidator4CPRF autenticadorCP = AValidator4CPRF.create(cadastroDePessoa);
+		AbstractCPRFValidator autenticadorCP = AbstractCPRFValidator.create(cadastroDePessoa);
 
 		if (autenticadorCP.isValido()) {
 
