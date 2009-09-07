@@ -54,21 +54,21 @@ import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
  * 
  * @version 1.0
  */
-public class TestACpfCnpj{
+public class TestAbstractCPRF{
 
 	@Test
 	public void testGetInstanceLong() {
 		
 		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
 		
-		CPRF abstractCPRF = CPRF.create(208000100L , EnumCPRF.CNPJ);
+		AbstractCPRF abstractCPRF = AbstractCPRF.create(208000100L , EnumCPRF.CNPJ);
 		
 		assertNotNull(abstractCPRF);
 		
 		assertFalse(abstractCPRF.isFisica());
 		assertTrue(abstractCPRF.isJuridica());
 		
-		abstractCPRF = CPRF.create(22233366638L , EnumCPRF.CPF);
+		abstractCPRF = AbstractCPRF.create(22233366638L , EnumCPRF.CPF);
 		
 		assertNotNull(abstractCPRF);
 		
@@ -80,7 +80,7 @@ public class TestACpfCnpj{
 			
 			Long nulo = null;
 			
-			CPRF.create(nulo, null);
+			AbstractCPRF.create(nulo, null);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -96,7 +96,7 @@ public class TestACpfCnpj{
 			
 			Long nulo = null;
 			
-			CPRF.create(nulo, EnumCPRF.CPF);
+			AbstractCPRF.create(nulo, EnumCPRF.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -109,7 +109,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			CPRF.create(12L, null);
+			AbstractCPRF.create(12L, null);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -122,7 +122,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			CPRF.create(123L, EnumCPRF.CPF);
+			AbstractCPRF.create(123L, EnumCPRF.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -136,7 +136,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			CPRF.create(112223330001L, EnumCPRF.CNPJ);
+			AbstractCPRF.create(112223330001L, EnumCPRF.CNPJ);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -152,15 +152,15 @@ public class TestACpfCnpj{
 	@Test
 	public void testGetInstanceString() {
 		
-		assertNotNull(CPRF.create("22233366638"));
-		assertNotNull(CPRF.create("222.333.666-38"));
+		assertNotNull(AbstractCPRF.create("22233366638"));
+		assertNotNull(AbstractCPRF.create("222.333.666-38"));
 		
-		assertNotNull(CPRF.create("11222333000181"));
-		assertNotNull(CPRF.create("11.222.333/0001-81"));
+		assertNotNull(AbstractCPRF.create("11222333000181"));
+		assertNotNull(AbstractCPRF.create("11.222.333/0001-81"));
 		
 		try {
 			
-			CPRF.create("abc123");
+			AbstractCPRF.create("abc123");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -172,7 +172,7 @@ public class TestACpfCnpj{
 		
 		try {
 			
-			CPRF.create("222333666");
+			AbstractCPRF.create("222333666");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -184,7 +184,7 @@ public class TestACpfCnpj{
 		
 		try {		
 			
-			CPRF.create("112223330001");
+			AbstractCPRF.create("112223330001");
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -198,21 +198,21 @@ public class TestACpfCnpj{
 	@Test
 	public void testGetCodigoFormatado() {
 		
-		assertTrue(CPRF.create("22233366638").getCodigoFormatado().equals("222.333.666-38"));
-		assertTrue(CPRF.create("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
+		assertTrue(AbstractCPRF.create("22233366638").getCodigoFormatado().equals("222.333.666-38"));
+		assertTrue(AbstractCPRF.create("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
 		
-		assertTrue(CPRF.create("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
-		assertTrue(CPRF.create("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
+		assertTrue(AbstractCPRF.create("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
+		assertTrue(AbstractCPRF.create("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
 	}
 
 	@Test
 	public void testGetCodigo() {
 		
-		assertEquals(CPRF.create("22233366638").getCodigo().longValue(), 22233366638L);
-		assertEquals(CPRF.create("222.333.666-38").getCodigo().longValue(), 22233366638L);
+		assertEquals(AbstractCPRF.create("22233366638").getCodigo().longValue(), 22233366638L);
+		assertEquals(AbstractCPRF.create("222.333.666-38").getCodigo().longValue(), 22233366638L);
 		
-		assertEquals(CPRF.create("11222333000181").getCodigo().longValue(), 11222333000181L);
-		assertEquals(CPRF.create("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
+		assertEquals(AbstractCPRF.create("11222333000181").getCodigo().longValue(), 11222333000181L);
+		assertEquals(AbstractCPRF.create("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
 	}
 
 }

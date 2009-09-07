@@ -37,7 +37,7 @@ import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
-import br.com.nordestefomento.jrimum.domkee.type.CPRF;
+import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
@@ -76,9 +76,9 @@ public class Pessoa implements IPessoa {
 	private String nome;
 	
 	/**
-	 * @see CPRF
+	 * @see AbstractCPRF
 	 */
-	private CPRF cprf;
+	private AbstractCPRF cprf;
 	
 	/**
 	 * @see NumeroDoTelefone
@@ -105,7 +105,7 @@ public class Pessoa implements IPessoa {
 	public Pessoa(String nome, String cadastroDePessoa) {
 		
 		this.nome = nome;
-		this.cprf = CPRF.create(cadastroDePessoa);
+		this.cprf = AbstractCPRF.create(cadastroDePessoa);
 	}
 
 	/**
@@ -153,10 +153,10 @@ public class Pessoa implements IPessoa {
 	}
 
 	/**
-	 * @see CPRF
+	 * @see AbstractCPRF
 	 */
 	
-	public CPRF getCPRF() {
+	public AbstractCPRF getCPRF() {
 		
 		return cprf;
 	}
@@ -195,9 +195,9 @@ public class Pessoa implements IPessoa {
 	}
 
 	/**
-	 * @see CPRF
+	 * @see AbstractCPRF
 	 */
-	public void setCPRF(CPRF abstractCPRF) {
+	public void setCPRF(AbstractCPRF abstractCPRF) {
 		
 		this.cprf = abstractCPRF;
 	}

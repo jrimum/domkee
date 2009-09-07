@@ -44,7 +44,7 @@ import br.com.nordestefomento.jrimum.domkee.type.RG;
  * </p>
  * 
  * @see Pessoa
- * @see br.com.nordestefomento.jrimum.domkee.type.CPRF
+ * @see br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF
  * @see br.com.nordestefomento.jrimum.domkee.type.CPF
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>

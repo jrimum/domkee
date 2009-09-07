@@ -57,7 +57,7 @@ import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
  * @version 0.2
  */
 	
-public abstract class CPRF { 
+public abstract class AbstractCPRF { 
 
 	/**
 	 * 
@@ -85,7 +85,7 @@ public abstract class CPRF {
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static CPRF create(Long cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static AbstractCPRF create(Long cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 
 		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 	}
@@ -96,7 +96,7 @@ public abstract class CPRF {
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static CPRF create(String cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static AbstractCPRF create(String cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
@@ -135,10 +135,10 @@ public abstract class CPRF {
 	 *             caso o parâmetro não esteja em um formatador válido de cadastro
 	 *             de pessoa.
 	 */
-	public static CPRF create(String cadastroDePessoa)
+	public static AbstractCPRF create(String cadastroDePessoa)
 			throws IllegalArgumentException {
 
-		CPRF cp = null;
+		AbstractCPRF cp = null;
 		AbstractCPRFValidator autenticadorCP = AbstractCPRFValidator.create(cadastroDePessoa);
 
 		if (autenticadorCP.isValido()) {

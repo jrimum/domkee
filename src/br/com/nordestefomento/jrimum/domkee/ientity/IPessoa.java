@@ -34,7 +34,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
-import br.com.nordestefomento.jrimum.domkee.type.CPRF;
+import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
@@ -56,9 +56,9 @@ public interface IPessoa extends Serializable {
 
 	public void setNome(String nome);
 
-	public CPRF getCPRF();
+	public AbstractCPRF getCPRF();
 
-	public void setCPRF(CPRF cprf);
+	public void setCPRF(AbstractCPRF cprf);
 
 	public Collection<NumeroDoTelefone> getTelefones();
 

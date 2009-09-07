@@ -33,7 +33,7 @@ package br.com.nordestefomento.jrimum.domkee;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import br.com.nordestefomento.jrimum.domkee.type.TestACpfCnpj;
+import br.com.nordestefomento.jrimum.domkee.type.TestAbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.TestCNPJ;
 import br.com.nordestefomento.jrimum.domkee.type.TestCPF;
 import br.com.nordestefomento.jrimum.domkee.type.TestEnumMoeda;
@@ -43,7 +43,7 @@ import br.com.nordestefomento.jrimum.domkee.type.TestEnumTitulo;
 @Suite.SuiteClasses
 ( 
 		{ 
-			TestACpfCnpj.class,
+			TestAbstractCPRF.class,
 			TestCNPJ.class,
 			TestCPF.class,
 			TestEnumMoeda.class,

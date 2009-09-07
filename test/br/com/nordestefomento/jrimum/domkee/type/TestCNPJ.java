@@ -54,9 +54,9 @@ public class TestCNPJ{
 	@Test
 	public void testGetInstanceString() {
 		
-		assertNotNull(CPRF.create("11222333000181"));
+		assertNotNull(AbstractCPRF.create("11222333000181"));
 		
-		assertTrue(CPRF.create("11222333000181") instanceof CNPJ);
+		assertTrue(AbstractCPRF.create("11222333000181") instanceof CNPJ);
 	}
 
 }

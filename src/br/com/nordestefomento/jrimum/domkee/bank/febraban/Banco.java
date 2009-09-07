@@ -40,7 +40,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import br.com.nordestefomento.jrimum.domkee.entity.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
-import br.com.nordestefomento.jrimum.domkee.type.CPRF;
+import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
 
@@ -246,7 +246,7 @@ public class Banco implements IBanco {
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getCPRF()
 	 */
 	
-	public CPRF getCPRF() {
+	public AbstractCPRF getCPRF() {
 		
 		return pessoaJuridica.getCPRF();
 	}
@@ -296,10 +296,10 @@ public class Banco implements IBanco {
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setCPRF(br.com.nordestefomento.jrimum.domkee.type.CPRF)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setCPRF(br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF)
 	 */
 	
-	public void setCPRF(CPRF abstractCPRF) {
+	public void setCPRF(AbstractCPRF abstractCPRF) {
 		
 		pessoaJuridica.setCPRF(abstractCPRF);
 	}

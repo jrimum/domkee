@@ -38,7 +38,7 @@ import br.com.nordestefomento.jrimum.domkee.ientity.IPessoaJuridica;
  * </p>
  * 
  * @see Pessoa
- * @see br.com.nordestefomento.jrimum.domkee.type.CPRF
+ * @see br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF
  * @see br.com.nordestefomento.jrimum.domkee.type.CNPJ
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
