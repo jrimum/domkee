@@ -30,7 +30,7 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -40,6 +40,7 @@ import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.type.IDadoBancario;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 
 /**
@@ -555,4 +556,8 @@ public final class Titulo {
 		this.dadosBancarios = dadosBancarios;
 	}
 
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}
 }

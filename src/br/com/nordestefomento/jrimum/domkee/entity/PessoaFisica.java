@@ -30,8 +30,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
-import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
-import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNull;
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNull;
 
 import java.util.Collection;
 

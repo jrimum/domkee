@@ -5,6 +5,8 @@ package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import org.apache.commons.lang.StringUtils;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * @author misael
@@ -12,10 +14,9 @@ import org.apache.commons.lang.StringUtils;
  */
 public class Modalidade {
 
-	
 	private String codigo;
-	private String nome;
 	
+	private String nome;
 	
 	public Modalidade() {
 	}
@@ -43,29 +44,33 @@ public class Modalidade {
 	}
 
 	public Integer getCodigoAsInteger() {
-		if (StringUtils.isNumeric(codigo))
+		
+		if (StringUtils.isNumeric(codigo)) {
 			return Integer.parseInt(codigo);
-		else
+			
+		} else {
 			return null;
+		}
 	}
-	
 	
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+
 	public void setCodigo(Integer codigo) {
 		this.codigo = String.valueOf(codigo);
 	}
+	
 	public String getNome() {
 		return nome;
 	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}	
 }

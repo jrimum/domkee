@@ -31,7 +31,7 @@ package br.com.nordestefomento.jrimum.domkee.type;
 
 import java.io.Serializable;
 
-import br.com.nordestefomento.jrimum.utilix.ACurbitaObject;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 /**
  * 
@@ -109,6 +109,6 @@ public class NumeroDoTelefone implements Serializable {
 
 	@Override
 	public String toString() {
-		return ACurbitaObject.toString(this);
+		return ObjectUtil.toString(this);
 	}
 }

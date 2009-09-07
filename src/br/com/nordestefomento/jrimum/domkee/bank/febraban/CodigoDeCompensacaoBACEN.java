@@ -31,6 +31,7 @@
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 import br.com.nordestefomento.jrimum.vallia.digitoverificador.DV4CodigoDeCompensacaoBancosBACEN;
 
 /**
@@ -125,5 +126,9 @@ public class CodigoDeCompensacaoBACEN {
 	public Integer getDigito() {
 		return digito;
 	}
-	
+
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}
 }

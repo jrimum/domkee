@@ -31,7 +31,7 @@ package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import java.io.Serializable;
 
-import br.com.nordestefomento.jrimum.utilix.ACurbitaObject;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 /**
  * 
@@ -180,10 +180,10 @@ public enum EnumTitulo implements Serializable {
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.utilix.ACurbitaObject#toString()
+	 * @see br.com.nordestefomento.jrimum.utilix.ObjectUtil#toString()
 	 * @see java.lang.Enum#toString()
 	 */
 	public String toString() {
-		return ACurbitaObject.toString(this);
+		return ObjectUtil.toString(this);
 	}
 }

@@ -30,6 +30,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * <p>
@@ -167,5 +169,10 @@ public class Endereco {
 	 */
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

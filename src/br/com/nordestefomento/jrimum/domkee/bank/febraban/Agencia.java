@@ -29,6 +29,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * <p>
@@ -98,5 +100,10 @@ public final class Agencia implements br.com.nordestefomento.jrimum.domkee.bank.
 
 	public Character getDigitoVerificador() {
 		return digitoVerificador;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

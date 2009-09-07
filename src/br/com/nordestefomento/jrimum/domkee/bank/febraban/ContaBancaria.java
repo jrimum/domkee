@@ -33,6 +33,7 @@ import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 // TODO Verificar a necessidade de se criar uma família de classes de
 // ContaBancaria, uma para cada banco, e seus respectivos autenticadores.
@@ -194,5 +195,10 @@ public class ContaBancaria {
 
 	public void setModalidade(Modalidade modalidade) {
 		this.modalidade = modalidade;
+	}
+
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

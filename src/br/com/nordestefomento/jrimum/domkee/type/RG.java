@@ -34,6 +34,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.domkee.entity.PessoaFisica;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 
 /**
@@ -116,5 +117,10 @@ public class RG implements Serializable {
 
 	public void setPessoa(PessoaFisica pessoa) {
 		this.pessoa = pessoa;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

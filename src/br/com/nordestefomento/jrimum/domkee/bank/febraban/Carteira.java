@@ -29,6 +29,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 /**
  * 
  * <p>
@@ -185,5 +187,9 @@ public class Carteira {
 	public boolean isSemRegistro() {
 		return (this.tipoCobranca == EnumTipoCobranca.SEM_REGISTRO);
 	}	
-	
+
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}
 }

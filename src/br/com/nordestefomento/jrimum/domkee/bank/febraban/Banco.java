@@ -29,12 +29,13 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
 
 import java.awt.Image;
 import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 import br.com.nordestefomento.jrimum.domkee.entity.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
@@ -422,5 +423,15 @@ public class Banco implements IBanco {
 		
 		pessoaJuridica.setContasBancarias(contasBancarias);
 	}
-	
+
+	@Override
+	public String toString() {
+		
+		ToStringBuilder tb = new ToStringBuilder(this);
+		tb.append(codigoDeCompensacaoBACEN);
+		tb.append(segmento);
+		tb.append(pessoaJuridica);
+		
+		return tb.toString();
+	}
 }

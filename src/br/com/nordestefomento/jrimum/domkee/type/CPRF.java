@@ -30,6 +30,7 @@
 package br.com.nordestefomento.jrimum.domkee.type;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF;
 import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
 
@@ -195,5 +196,9 @@ public abstract class CPRF {
 	public Long getCodigo() {
 		return codigo;
 	}
-	
+
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}
 }

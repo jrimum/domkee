@@ -30,6 +30,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * 
@@ -101,5 +103,10 @@ public class CEP {
 
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

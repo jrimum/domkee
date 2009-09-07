@@ -30,6 +30,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * 
@@ -85,5 +87,10 @@ public class NumeroDaConta {
 
 	public void setDigitoDaConta(String digitoDaConta) {
 		this.digitoDaConta = digitoDaConta;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

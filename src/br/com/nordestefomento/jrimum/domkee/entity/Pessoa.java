@@ -29,8 +29,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
-import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
-import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNull;
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,6 +40,7 @@ import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.CPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 
 /**
@@ -251,5 +252,10 @@ public class Pessoa implements IPessoa {
 	public boolean isJuridica() {
 		
 		return (this instanceof PessoaJuridica);
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }

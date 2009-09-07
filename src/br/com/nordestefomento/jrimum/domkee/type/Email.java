@@ -30,6 +30,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * 
@@ -67,5 +69,10 @@ public class Email {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
 	}
 }
