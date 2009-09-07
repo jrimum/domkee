@@ -30,7 +30,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 
 /**
  * 
@@ -51,7 +50,7 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
  * 
  * @version 0.2
  */
-public class NumeroDaConta extends ACurbitaObject {
+public class NumeroDaConta {
 
 	private static final long serialVersionUID = 7807160258460502276L;
 

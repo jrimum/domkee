@@ -29,10 +29,12 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
+import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
+import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNull;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.CPRF;
@@ -63,7 +65,7 @@ import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
  * 
  * @version 0.2
  */
-public class Pessoa extends ACurbitaObject implements IPessoa {
+public class Pessoa implements IPessoa {
 	
 	/**
 	 * 

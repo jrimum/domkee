@@ -29,12 +29,13 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
+import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
+
 import java.awt.Image;
 import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.domkee.entity.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
@@ -56,7 +57,7 @@ import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
  * @version 0.2
  */
 	
-public class Banco extends ACurbitaObject implements IBanco{
+public class Banco implements IBanco {
 	
 	/**
 	 * 

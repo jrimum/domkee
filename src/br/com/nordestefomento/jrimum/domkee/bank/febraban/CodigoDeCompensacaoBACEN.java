@@ -30,7 +30,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.vallia.digitoverificador.DV4CodigoDeCompensacaoBancosBACEN;
 
@@ -46,7 +45,7 @@ import br.com.nordestefomento.jrimum.vallia.digitoverificador.DV4CodigoDeCompens
  * 
  * @version 0.2
  */
-public class CodigoDeCompensacaoBACEN extends ACurbitaObject {
+public class CodigoDeCompensacaoBACEN {
 
 	/**
 	 * 

@@ -30,11 +30,12 @@
 
 package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
+import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Date;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.type.IDadoBancario;
@@ -72,7 +73,7 @@ import br.com.nordestefomento.jrimum.utilix.DateUtil;
  * 
  * @version 0.2
  */
-public final class Titulo extends ACurbitaObject{
+public final class Titulo {
 
 	/**
 	 * 

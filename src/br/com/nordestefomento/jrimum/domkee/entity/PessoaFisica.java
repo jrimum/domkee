@@ -30,6 +30,9 @@
 
 package br.com.nordestefomento.jrimum.domkee.entity;
 
+import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNotNull;
+import static br.com.nordestefomento.jrimum.utilix.ACurbitaObject.isNull;
+
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoaFisica;

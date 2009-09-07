@@ -27,12 +27,11 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.type;
 
 import java.io.Serializable;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
+import br.com.nordestefomento.jrimum.utilix.ACurbitaObject;
 
 /**
  * 

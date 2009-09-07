@@ -27,15 +27,11 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF;
 import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
-
-
 
 
 /**
@@ -60,7 +56,7 @@ import br.com.nordestefomento.jrimum.vallia.AValidator4CPRF.EnumCPRF;
  * @version 0.2
  */
 	
-public abstract class CPRF extends ACurbitaObject{ 
+public abstract class CPRF { 
 
 	/**
 	 * 

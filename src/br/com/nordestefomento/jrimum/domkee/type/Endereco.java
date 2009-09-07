@@ -30,7 +30,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.type;
 
-import br.com.nordestefomento.jrimum.ACurbitaObject;
 
 /**
  * <p>
@@ -47,7 +46,7 @@ import br.com.nordestefomento.jrimum.ACurbitaObject;
  * @since   0.2
  * @version   0.2
  */
-public class Endereco extends ACurbitaObject{
+public class Endereco {
 
 	private static final long serialVersionUID = -2971929602328106185L;
 	
