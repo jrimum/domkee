@@ -35,7 +35,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumTitulo;
+import br.com.nordestefomento.jrimum.domkee.banco.febraban.EnumTitulo;
 
 public class TestEnumTitulo{
 

@@ -1,4 +1,4 @@
-package br.com.nordestefomento.jrimum.domkee.bank;
+package br.com.nordestefomento.jrimum.domkee.banco;
 
 
 /**

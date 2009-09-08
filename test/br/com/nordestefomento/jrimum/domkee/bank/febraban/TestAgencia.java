@@ -31,6 +31,8 @@ package br.com.nordestefomento.jrimum.domkee.bank.febraban;
 
 import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.domkee.banco.febraban.Agencia;
+
 /**
  * 
  * <p>

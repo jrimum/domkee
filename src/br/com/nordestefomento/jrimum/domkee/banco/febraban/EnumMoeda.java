@@ -28,7 +28,7 @@
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+package br.com.nordestefomento.jrimum.domkee.banco.febraban;
 
 import org.apache.commons.lang.StringUtils;
 

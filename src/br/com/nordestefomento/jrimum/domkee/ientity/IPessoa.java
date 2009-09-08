@@ -33,7 +33,7 @@ package br.com.nordestefomento.jrimum.domkee.ientity;
 import java.io.Serializable;
 import java.util.Collection;
 
-import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
+import br.com.nordestefomento.jrimum.domkee.banco.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
 import br.com.nordestefomento.jrimum.domkee.type.NumeroDeTelefone;

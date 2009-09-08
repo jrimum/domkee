@@ -28,7 +28,7 @@
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+package br.com.nordestefomento.jrimum.domkee.banco.febraban;
 
 import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
 
@@ -37,7 +37,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.JRimumException;
-import br.com.nordestefomento.jrimum.domkee.bank.DadoBancario;
+import br.com.nordestefomento.jrimum.domkee.banco.DadoBancario;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
@@ -97,7 +97,7 @@ public final class Titulo {
 	private Date dataDoVencimento;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.banco.febraban.EnumMoeda
 	 */
 	private EnumMoeda enumMoeda = EnumMoeda.REAL;
 
@@ -112,7 +112,7 @@ public final class Titulo {
 	private BigDecimal desconto;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumTitulo
+	 * @see br.com.nordestefomento.jrimum.domkee.banco.febraban.EnumTitulo
 	 */
 	private EnumTitulo tipoDeDocumento;
 
@@ -184,7 +184,7 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.bank.febraban.Titulo.EnumAceite)
+	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.banco.febraban.Titulo.EnumAceite)
 	 * 
 	 * @see EnumAceite
 	 */
@@ -222,7 +222,7 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.bank.febraban.Titulo.EnumAceite)
+	 * @see #setAceite(br.com.nordestefomento.jrimum.domkee.banco.febraban.Titulo.EnumAceite)
 	 * 
 	 * @return the aceite
 	 */
@@ -341,7 +341,7 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.banco.febraban.EnumMoeda
 	 * 
 	 * @return the enumMoeda
 	 */
@@ -350,7 +350,7 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.banco.febraban.EnumMoeda
 	 * 
 	 * @param moeda
 	 *            the enumMoeda to set

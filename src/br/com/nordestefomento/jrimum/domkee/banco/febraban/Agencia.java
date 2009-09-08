@@ -27,7 +27,7 @@
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+package br.com.nordestefomento.jrimum.domkee.banco.febraban;
 
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
@@ -58,7 +58,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  */
-public final class Agencia implements br.com.nordestefomento.jrimum.domkee.bank.Agencia<Integer, Character> {
+public final class Agencia implements br.com.nordestefomento.jrimum.domkee.banco.Agencia<Integer, Character> {
 
 	/**
 	 * 

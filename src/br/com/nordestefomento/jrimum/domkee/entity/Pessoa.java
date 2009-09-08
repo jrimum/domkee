@@ -35,7 +35,7 @@ import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNull;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
+import br.com.nordestefomento.jrimum.domkee.banco.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;

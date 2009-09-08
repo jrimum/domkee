@@ -27,7 +27,7 @@
  * Criado em: 04/04/2009 - 16:36:30
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.bank;
+package br.com.nordestefomento.jrimum.domkee.banco;
 
 import java.io.Serializable;
 
