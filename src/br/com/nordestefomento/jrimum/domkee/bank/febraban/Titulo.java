@@ -37,7 +37,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.JRimumException;
-import br.com.nordestefomento.jrimum.domkee.bank.IDadoBancario;
+import br.com.nordestefomento.jrimum.domkee.bank.DadoBancario;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
@@ -146,7 +146,7 @@ public final class Titulo {
 	 */
 	private Pessoa sacadorAvalista;
 	
-	private IDadoBancario dadosBancarios;
+	private DadoBancario dadosBancarios;
 	
 
 	/**
@@ -548,11 +548,11 @@ public final class Titulo {
 		this.desconto = desconto;
 	}
 
-	public IDadoBancario getDadosBancarios() {
+	public DadoBancario getDadosBancarios() {
 		return dadosBancarios;
 	}
 
-	public void setDadosBancarios(IDadoBancario dadosBancarios) {
+	public void setDadosBancarios(DadoBancario dadosBancarios) {
 		this.dadosBancarios = dadosBancarios;
 	}
 

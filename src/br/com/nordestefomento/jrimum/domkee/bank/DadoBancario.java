@@ -21,7 +21,7 @@ package br.com.nordestefomento.jrimum.domkee.bank;
  * 
  * @version 
  */
-public interface IDadoBancario {
+public interface DadoBancario {
 	/*
 	 * INFORMANDO MAIS DADOS BANCÁRIOS A UM TÍTULO, QUANDO NECESSÁRIO.
 	 * Dependendo do banco, talvez seja necessário informar mais dados além de: 
