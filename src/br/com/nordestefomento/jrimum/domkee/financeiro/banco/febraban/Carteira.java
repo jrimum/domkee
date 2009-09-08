@@ -59,9 +59,9 @@ public class Carteira {
 	private Integer codigo;
 
 	/**
-	 * @see #setTipoCobranca(EnumTipoCobranca)
+	 * @see #setTipoCobranca(TipoDeCobranca)
 	 */
-	private EnumTipoCobranca tipoCobranca;
+	private TipoDeCobranca tipoDeCobranca;
 
 	/**
 	 * 
@@ -83,10 +83,10 @@ public class Carteira {
 	 * @param codigo
 	 * @param cobranca
 	 */
-	public Carteira(Integer codigo, EnumTipoCobranca cobranca) {
+	public Carteira(Integer codigo, TipoDeCobranca cobranca) {
 		super();
 		this.codigo = codigo;
-		this.tipoCobranca = cobranca;
+		this.tipoDeCobranca = cobranca;
 	}
 
 
@@ -95,11 +95,11 @@ public class Carteira {
 	 * @param codigo
 	 * @param cobranca
 	 */
-	public Carteira(String nome, Integer codigo, EnumTipoCobranca cobranca) {
+	public Carteira(String nome, Integer codigo, TipoDeCobranca cobranca) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
-		this.tipoCobranca = cobranca;
+		this.tipoDeCobranca = cobranca;
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class Carteira {
 	/**
 	 * @return the tipoCobranca
 	 */
-	public EnumTipoCobranca getTipoCobranca() {
-		return tipoCobranca;
+	public TipoDeCobranca getTipoCobranca() {
+		return tipoDeCobranca;
 	}
 
 	
@@ -162,8 +162,8 @@ public class Carteira {
 	 * 
 	 * @since 0.2
 	 */
-	public void setTipoCobranca(EnumTipoCobranca cobranca) {
-		this.tipoCobranca = cobranca;
+	public void setTipoCobranca(TipoDeCobranca cobranca) {
+		this.tipoDeCobranca = cobranca;
 	}
 	
 	/**
@@ -174,7 +174,7 @@ public class Carteira {
 	 * @return true se registrada
 	 */
 	public boolean isComRegistro() {
-		return (this.tipoCobranca == EnumTipoCobranca.COM_REGISTRO);
+		return (this.tipoDeCobranca == TipoDeCobranca.COM_REGISTRO);
 	}
 	
 	/**
@@ -185,7 +185,7 @@ public class Carteira {
 	 * @return true se sem registro
 	 */
 	public boolean isSemRegistro() {
-		return (this.tipoCobranca == EnumTipoCobranca.SEM_REGISTRO);
+		return (this.tipoDeCobranca == TipoDeCobranca.SEM_REGISTRO);
 	}	
 
 	@Override

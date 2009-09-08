@@ -83,9 +83,9 @@ public class Endereco {
 	private CEP cep;
 	
 	/**
-	 * @see EnumUnidadeFederativa
+	 * @see UnidadeFederativa
 	 */
-	private EnumUnidadeFederativa uf;
+	private UnidadeFederativa uf;
 	
 	private String pais;
 		
@@ -129,11 +129,11 @@ public class Endereco {
 		this.numero = numero;
 	}
 
-	public EnumUnidadeFederativa getUF() {
+	public UnidadeFederativa getUF() {
 		return uf;
 	}
 
-	public void setUF(EnumUnidadeFederativa uf) {
+	public void setUF(UnidadeFederativa uf) {
 		this.uf = uf;
 	}
 

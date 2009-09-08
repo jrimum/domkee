@@ -89,7 +89,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * @version 0.2
  */
 
-public enum EnumTitulo implements Serializable {
+public enum TipoDeTitulo implements Serializable {
 
 	CH_CHEQUE(1,"CH"),
 	DM_DUPLICATA_MERCANTIL(2,"DM"), 
@@ -147,7 +147,7 @@ public enum EnumTitulo implements Serializable {
 	 * @param codigo
 	 * @param sigla
 	 */
-	private EnumTitulo(int codigo, String sigla) {
+	private TipoDeTitulo(int codigo, String sigla) {
 		this.codigo = codigo;
 		this.sigla = sigla;
 	}

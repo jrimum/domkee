@@ -49,7 +49,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  */
-public enum EnumMoeda {
+public enum TipoDeMoeda {
 	
 	/**
 	 * Padrão FEBRABAN
@@ -74,7 +74,7 @@ public enum EnumMoeda {
 	/**
 	 * @param codigo
 	 */
-	private EnumMoeda(int codigo) {
+	private TipoDeMoeda(int codigo) {
 		this.codigo = codigo;
 	}
 

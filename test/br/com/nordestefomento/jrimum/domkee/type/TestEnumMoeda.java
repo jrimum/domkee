@@ -34,7 +34,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumMoeda;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda;
 
 public class TestEnumMoeda{
 
@@ -43,9 +43,9 @@ public class TestEnumMoeda{
 		
 		int codigo = 2;//primeira moeda:DÓLAR_AMERICANO_COMERCIAL_VENDA;
 		
-		for(EnumMoeda moeda: EnumMoeda.values()){
+		for(TipoDeMoeda tipoDeMoeda: TipoDeMoeda.values()){
 			
-			assertTrue(moeda.getCodigo() == codigo);
+			assertTrue(tipoDeMoeda.getCodigo() == codigo);
 			codigo++;//próxima moeda
 		}
 			

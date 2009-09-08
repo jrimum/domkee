@@ -55,7 +55,7 @@ import java.io.Serializable;
  * @version 0.2
  */
 
-public enum EnumTipoCobranca implements Serializable {
+public enum TipoDeCobranca implements Serializable {
 	/**
 	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
 	 */

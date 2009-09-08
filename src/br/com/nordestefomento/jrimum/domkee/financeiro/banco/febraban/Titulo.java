@@ -62,7 +62,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * Para visualizar o conceito de negócio consulte o 
  * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * 
- * @see EnumTitulo
+ * @see TipoDeTitulo
  * 
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
@@ -97,9 +97,9 @@ public final class Titulo {
 	private Date dataDoVencimento;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda
 	 */
-	private EnumMoeda enumMoeda = EnumMoeda.REAL;
+	private TipoDeMoeda tipoDeMoeda = TipoDeMoeda.REAL;
 
 	/**
 	 * @see #setValor(BigDecimal)
@@ -112,9 +112,9 @@ public final class Titulo {
 	private BigDecimal desconto;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumTitulo
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeTitulo
 	 */
-	private EnumTitulo tipoDeDocumento;
+	private TipoDeTitulo tipoDeDocumento;
 
 	/**
 	 * @see #setNossoNumero(String)
@@ -341,22 +341,22 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda
 	 * 
 	 * @return the enumMoeda
 	 */
-	public EnumMoeda getEnumMoeda() {
-		return enumMoeda;
+	public TipoDeMoeda getEnumMoeda() {
+		return tipoDeMoeda;
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumMoeda
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda
 	 * 
-	 * @param moeda
+	 * @param tipoDeMoeda
 	 *            the enumMoeda to set
 	 */
-	public void setEnumMoeda(EnumMoeda moeda) {
-		enumMoeda = moeda;
+	public void setEnumMoeda(TipoDeMoeda tipoDeMoeda) {
+		this.tipoDeMoeda = tipoDeMoeda;
 	}
 
 	/**
@@ -484,7 +484,7 @@ public final class Titulo {
 	/**
 	 * @return the tipoDeDocumento
 	 */
-	public EnumTitulo getTipoDeDocumento() {
+	public TipoDeTitulo getTipoDeDocumento() {
 		return tipoDeDocumento;
 	}
 
@@ -492,7 +492,7 @@ public final class Titulo {
 	 * @param tipoDeDocumento
 	 *            the tipoDeDocumento to set
 	 */
-	public void setTipoDeDocumento(EnumTitulo tipoDeDocumento) {
+	public void setTipoDeDocumento(TipoDeTitulo tipoDeDocumento) {
 		this.tipoDeDocumento = tipoDeDocumento;
 	}
 

@@ -47,7 +47,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  */
-public enum EnumUnidadeFederativa {
+public enum UnidadeFederativa {
 
 	AM("Amazonas","AM","Manaus"),
 	PA("Pará","PA","Belém"),
@@ -84,7 +84,7 @@ public enum EnumUnidadeFederativa {
 	
 	private String capital;
 	
-	EnumUnidadeFederativa(String nome,String sigla,String capital){
+	UnidadeFederativa(String nome,String sigla,String capital){
 		this.nome = nome;
 		this.sigla = sigla;
 		this.capital = capital;
