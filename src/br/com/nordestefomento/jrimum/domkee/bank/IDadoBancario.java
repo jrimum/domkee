@@ -1,4 +1,4 @@
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.bank;
 
 
 /**

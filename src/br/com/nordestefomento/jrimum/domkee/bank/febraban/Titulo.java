@@ -37,8 +37,8 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.JRimumException;
+import br.com.nordestefomento.jrimum.domkee.bank.IDadoBancario;
 import br.com.nordestefomento.jrimum.domkee.entity.Pessoa;
-import br.com.nordestefomento.jrimum.domkee.type.IDadoBancario;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 

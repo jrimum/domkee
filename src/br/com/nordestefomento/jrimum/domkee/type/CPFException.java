@@ -53,6 +53,11 @@ import br.com.nordestefomento.jrimum.JRimumException;
 public class CPFException extends JRimumException {
 
 	/**
+	 *
+	 */
+	private static final long serialVersionUID = -3614884453255335650L;
+
+	/**
 	 * 
 	 */
 	public CPFException() {
