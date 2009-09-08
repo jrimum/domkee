@@ -42,7 +42,7 @@ import br.com.nordestefomento.jrimum.domkee.ientity.IBanco;
 import br.com.nordestefomento.jrimum.domkee.type.CNPJ;
 import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
-import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
+import br.com.nordestefomento.jrimum.domkee.type.NumeroDeTelefone;
 
 
 /**
@@ -234,10 +234,10 @@ public class Banco implements IBanco {
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone)
+	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.type.NumeroDeTelefone)
 	 */
 	
-	public void addTelefone(NumeroDoTelefone telefone) {
+	public void addTelefone(NumeroDeTelefone telefone) {
 		
 		pessoaJuridica.addTelefone(telefone);
 	}
@@ -272,7 +272,7 @@ public class Banco implements IBanco {
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#getTelefones()
 	 */
 	
-	public Collection<NumeroDoTelefone> getTelefones() {
+	public Collection<NumeroDeTelefone> getTelefones() {
 		
 		return pessoaJuridica.getTelefones();
 	}
@@ -326,7 +326,7 @@ public class Banco implements IBanco {
 	 * @see br.com.nordestefomento.jrimum.domkee.ientity.IPessoa#setTelefones(java.util.Collection)
 	 */
 	
-	public void setTelefones(Collection<NumeroDoTelefone> telefones) {
+	public void setTelefones(Collection<NumeroDeTelefone> telefones) {
 		
 		pessoaJuridica.setTelefones(telefones);
 	}

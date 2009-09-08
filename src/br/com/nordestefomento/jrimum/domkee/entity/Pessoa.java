@@ -39,7 +39,7 @@ import br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria;
 import br.com.nordestefomento.jrimum.domkee.ientity.IPessoa;
 import br.com.nordestefomento.jrimum.domkee.type.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.Endereco;
-import br.com.nordestefomento.jrimum.domkee.type.NumeroDoTelefone;
+import br.com.nordestefomento.jrimum.domkee.type.NumeroDeTelefone;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 
@@ -81,9 +81,9 @@ public class Pessoa implements IPessoa {
 	private AbstractCPRF cprf;
 	
 	/**
-	 * @see NumeroDoTelefone
+	 * @see NumeroDeTelefone
 	 */
-	private Collection<NumeroDoTelefone> telefones;
+	private Collection<NumeroDeTelefone> telefones;
 	
 	/**
 	 * @see Endereco
@@ -142,12 +142,12 @@ public class Pessoa implements IPessoa {
 	}
 
 	/**
-	 * @see NumeroDoTelefone
+	 * @see NumeroDeTelefone
 	 */
-	public void addTelefone(NumeroDoTelefone telefone) {
+	public void addTelefone(NumeroDeTelefone telefone) {
 		
 		if(isNull(telefones))
-			telefones = new ArrayList<NumeroDoTelefone>();
+			telefones = new ArrayList<NumeroDeTelefone>();
 		
 		telefones.add(telefone);
 	}
@@ -186,10 +186,10 @@ public class Pessoa implements IPessoa {
 	}
 
 	/**
-	 * @see NumeroDoTelefone
+	 * @see NumeroDeTelefone
 	 * @see Collection
 	 */
-	public Collection<NumeroDoTelefone> getTelefones() {
+	public Collection<NumeroDeTelefone> getTelefones() {
 		
 		return telefones;
 	}
@@ -226,10 +226,10 @@ public class Pessoa implements IPessoa {
 	}
 
 	/**
-	 * @see NumeroDoTelefone
+	 * @see NumeroDeTelefone
 	 * @see Collection
 	 */
-	public void setTelefones(Collection<NumeroDoTelefone> telefones) {
+	public void setTelefones(Collection<NumeroDeTelefone> telefones) {
 		
 		this.telefones = telefones;
 	}
