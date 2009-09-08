@@ -31,7 +31,7 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco;
 
 import java.awt.Image;
 
-import br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.CodigoDeCompensacaoBACEN;
 
 
@@ -52,7 +52,7 @@ import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.CodigoDeCo
  * @version 0.2
  */
 	
-public interface Banco extends IPessoaJuridica {
+public interface Banco extends PessoaJuridica {
 
 	
 	/**

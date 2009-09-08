@@ -31,8 +31,8 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
 import java.util.Collection;
 
-import br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.Banco;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 // TODO Verificar a necessidade de se criar uma família de classes de
@@ -51,7 +51,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  * 
- * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa
+ * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa
  * @see Banco
  */
 public class ContaBancaria {

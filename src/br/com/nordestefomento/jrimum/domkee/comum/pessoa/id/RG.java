@@ -33,7 +33,7 @@ package br.com.nordestefomento.jrimum.domkee.comum.pessoa.id;
 import java.io.Serializable;
 import java.util.Date;
 
-import br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaFisica;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.PessoaFisica;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 

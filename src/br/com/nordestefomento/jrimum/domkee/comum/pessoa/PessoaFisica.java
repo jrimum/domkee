@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 18:58:20
+ * Created at: 30/03/2008 - 18:59:31
  * 
  * ================================================================================
  * 
@@ -23,84 +23,41 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 18:58:20
+ * Criado em: 30/03/2008 - 18:59:31
  * 
  */
 
 
 package br.com.nordestefomento.jrimum.domkee.comum.pessoa;
 
-import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
-import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNull;
-
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.RG;
 
+
 /**
- * <p>
- *  Representação básica de uma Pessoa Física.
- * </p>
- * 
- * @see Pessoa
- * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF
- * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CPF
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
  * @author Romulo
  * 
+ * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.PessoaFisica
+ * 
  * @since 0.2
  * 
  * @version 0.2
  */
-
-public class PessoaFisica extends Pessoa implements IPessoaFisica {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5722593135877031688L;
+public interface PessoaFisica extends Pessoa {
 	
-	private PessoaFisica conjuge;
-	
-	private String estadoCivil;
-	
-	private Collection<RG> rgs;
-	
-	public PessoaFisica() {}
+	public PessoaFisica getConjuge();
 
-	public PessoaFisica getConjuge() {
-		
-		return conjuge;
-	}
+	public void setConjuge(PessoaFisica conjuge);
+
+	public String getEstadoCivil();
+
+	public void setEstadoCivil(String estadoCivil);
 	
-	public String getEstadoCivil() {
-		
-		return estadoCivil;
-	}
+	public Collection<RG> getRgs();
 	
-	public Collection<RG> getRgs() {
-		
-		return rgs;
-	}
-
-	public void setConjuge(PessoaFisica conjuge) {
-		
-		this.conjuge = conjuge;
-		
-		if(isNotNull(conjuge) && isNull(conjuge.getConjuge()))
-			conjuge.setConjuge(this);
-	}
-
-	public void setEstadoCivil(String estadoCivil) {
-		
-		this.estadoCivil = estadoCivil;
-	}
-
-	public void setRgs(Collection<RG> rgs) {
-		
-		this.rgs = rgs;
-	}
-
+	public void setRgs(Collection<RG> rgs);
 }

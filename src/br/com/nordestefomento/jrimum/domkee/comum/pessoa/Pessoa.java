@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 18:58:13
+ * Created at: 30/03/2008 - 18:59:24
  * 
  * ================================================================================
  * 
@@ -23,238 +23,64 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 18:58:13
+ * Criado em: 30/03/2008 - 18:59:24
  * 
  */
 
+
 package br.com.nordestefomento.jrimum.domkee.comum.pessoa;
 
-import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
-import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNull;
-
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
-import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
-
 
 /**
- * 
- * <p>
- * Representa uma pessoa no negócio de boletos bancários.
- * Ela pode assumir três papéis diferentes:
- * <ul>
- * <li>Cedente</li>
- * <li>Sacador</li>
- * <li>Sacador Avalista</li>
- * </ul>
- * Veja as definições de cada papel em 
- * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>.
- * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
  * @author Romulo
- * @author Samuel
+ * 
+ * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa
  * 
  * @since 0.2
  * 
  * @version 0.2
  */
-public class Pessoa implements IPessoa {
+public interface Pessoa extends Serializable {
+
+	public String getNome();
+
+	public void setNome(String nome);
+
+	public AbstractCPRF getCPRF();
+
+	public void setCPRF(AbstractCPRF cprf);
+
+	public Collection<NumeroDeTelefone> getTelefones();
+
+	public void setTelefones(Collection<NumeroDeTelefone> telefones);
+
+	public void addTelefone(NumeroDeTelefone telefone);
+
+	public Collection<Endereco> getEnderecos();
+
+	public void setEnderecos(Collection<Endereco> enderecos);
+
+	public void addEndereco(Endereco endereco);
+
+	public Collection<ContaBancaria> getContasBancarias();
+
+	public void setContasBancarias(Collection<ContaBancaria> contasBancarias);
+
+	public void addContaBancaria(ContaBancaria contaBancaria);
+
+	public boolean isFisica();
+
+	public boolean isJuridica();
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6969495818430633867L;
-	
-	private String nome;
-	
-	/**
-	 * @see AbstractCPRF
-	 */
-	private AbstractCPRF cprf;
-	
-	/**
-	 * @see NumeroDeTelefone
-	 */
-	private Collection<NumeroDeTelefone> telefones;
-	
-	/**
-	 * @see Endereco
-	 */
-	private Collection<Endereco> enderecos;
-	
-	/**
-	 * @see ContaBancaria
-	 */
-	private Collection<ContaBancaria> contasBancarias;
-	
-	public Pessoa() {}
-	
-	public Pessoa(String nome) {
-		
-		this.nome = nome;
-	}
-
-	public Pessoa(String nome, String cadastroDePessoa) {
-		
-		this.nome = nome;
-		this.cprf = AbstractCPRF.create(cadastroDePessoa);
-	}
-
-	/**
-	 * @see ContaBancaria
-	 */
-	
-	public void addContaBancaria(ContaBancaria contaBancaria) {
-		
-		if(isNull(contasBancarias))
-			contasBancarias = new ArrayList<ContaBancaria>();
-		
-		contasBancarias.add(contaBancaria);
-	}
-	
-	/** 
-	 * Verifica se esta pessoa tem alguma conta bancária.
-	 * 
-	 * @see ContaBancaria
-	 */
-	
-	public boolean hasContaBancaria(){
-		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
-	}
-	
-	/**
-	 * @see Endereco
-	 */
-	public void addEndereco(Endereco endereco) {
-
-		if(isNull(enderecos))
-			enderecos = new ArrayList<Endereco>();
-		
-		enderecos.add(endereco);
-	}
-
-	/**
-	 * @see NumeroDeTelefone
-	 */
-	public void addTelefone(NumeroDeTelefone telefone) {
-		
-		if(isNull(telefones))
-			telefones = new ArrayList<NumeroDeTelefone>();
-		
-		telefones.add(telefone);
-	}
-
-	/**
-	 * @see AbstractCPRF
-	 */
-	
-	public AbstractCPRF getCPRF() {
-		
-		return cprf;
-	}
-
-	/**
-	 * @see ContaBancaria
-	 * @see Collection
-	 */
-	
-	public Collection<ContaBancaria> getContasBancarias() {
-
-		return contasBancarias;
-	}
-
-	/**
-	 * @see Endereco
-	 * @see Collection
-	 */
-	public Collection<Endereco> getEnderecos() {
-
-		return enderecos;
-	}
-	
-	public String getNome() {
-
-		return nome;
-	}
-
-	/**
-	 * @see NumeroDeTelefone
-	 * @see Collection
-	 */
-	public Collection<NumeroDeTelefone> getTelefones() {
-		
-		return telefones;
-	}
-
-	/**
-	 * @see AbstractCPRF
-	 */
-	public void setCPRF(AbstractCPRF abstractCPRF) {
-		
-		this.cprf = abstractCPRF;
-	}
-
-	/**
-	 * @see ContaBancaria
-	 * @see Collection
-	 */
-	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
-		
-		this.contasBancarias = contasBancarias;
-	}
-
-	/**
-	 * @see Endereco
-	 * @see Collection
-	 */
-	public void setEnderecos(Collection<Endereco> enderecos) {
-		
-		this.enderecos = enderecos;
-	}
-
-	public void setNome(String nome) {
-	
-		this.nome = nome;
-	}
-
-	/**
-	 * @see NumeroDeTelefone
-	 * @see Collection
-	 */
-	public void setTelefones(Collection<NumeroDeTelefone> telefones) {
-		
-		this.telefones = telefones;
-	}
-
-	/** 
-	 * Verifica se esta pessoa é uma instância de <code>PessoaFisica</code>.
-	 * 
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#isFisica()
-	 */
-	public boolean isFisica() {
-		
-		return (this instanceof PessoaFisica);
-	}
-
-	/** 
-	 * Verifica se esta pessoa é uma instância de <code>PessoaJuridica</code>.
-	 * 
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#isJuridica()
-	 */
-	public boolean isJuridica() {
-		
-		return (this instanceof PessoaJuridica);
-	}
-	
-	@Override
-	public String toString() {
-		return ObjectUtil.toString(this);
-	}
+	public boolean hasContaBancaria();
 }

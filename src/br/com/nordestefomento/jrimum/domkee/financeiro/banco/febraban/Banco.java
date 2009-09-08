@@ -37,11 +37,11 @@ import java.util.Collection;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-import br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.PessoaJuridica;
 
 
 /**
@@ -224,7 +224,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco)
 	 */
 	
 	public void addEndereco(Endereco endereco) {
@@ -233,7 +233,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone)
 	 */
 	
 	public void addTelefone(NumeroDeTelefone telefone) {
@@ -242,7 +242,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#getCPRF()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#getCPRF()
 	 */
 	
 	public AbstractCPRF getCPRF() {
@@ -251,7 +251,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#getEnderecos()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#getEnderecos()
 	 */
 	public Collection<Endereco> getEnderecos() {
 		
@@ -259,7 +259,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#getNome()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#getNome()
 	 */
 	
 	public String getNome() {
@@ -268,7 +268,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#getTelefones()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#getTelefones()
 	 */
 	
 	public Collection<NumeroDeTelefone> getTelefones() {
@@ -277,7 +277,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#isFisica()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#isFisica()
 	 */
 	
 	public boolean isFisica() {
@@ -286,7 +286,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#isJuridica()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#isJuridica()
 	 */
 	
 	public boolean isJuridica() {
@@ -295,7 +295,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#setCPRF(br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#setCPRF(br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF)
 	 */
 	
 	public void setCPRF(AbstractCPRF abstractCPRF) {
@@ -305,7 +305,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#setEnderecos(java.util.Collection)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#setEnderecos(java.util.Collection)
 	 */
 	public void setEnderecos(Collection<Endereco> enderecos) {
 		
@@ -313,7 +313,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#setNome(java.lang.String)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#setNome(java.lang.String)
 	 */
 	
 	public void setNome(String nome) {
@@ -322,7 +322,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#setTelefones(java.util.Collection)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#setTelefones(java.util.Collection)
 	 */
 	
 	public void setTelefones(Collection<NumeroDeTelefone> telefones) {
@@ -331,7 +331,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica#getInscricaoEstadual()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica#getInscricaoEstadual()
 	 */
 	
 	public Long getInscricaoEstadual() {
@@ -340,7 +340,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica#getInscricaoMunicipal()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica#getInscricaoMunicipal()
 	 */
 	
 	public Long getInscricaoMunicipal() {
@@ -349,7 +349,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica#getNomeFantasia()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica#getNomeFantasia()
 	 */
 	
 	public String getNomeFantasia() {
@@ -358,7 +358,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica#setInscricaoEstadual(java.lang.Long)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica#setInscricaoEstadual(java.lang.Long)
 	 */
 	
 	public void setInscricaoEstadual(Long inscricaoEstadual) {
@@ -367,7 +367,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica#setInscricaoMunicipal(java.lang.Long)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica#setInscricaoMunicipal(java.lang.Long)
 	 */
 	
 	public void setInscricaoMunicipal(Long inscricaoMunicipal) {
@@ -376,7 +376,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoaJuridica#setNomeFantasia(java.lang.String)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica#setNomeFantasia(java.lang.String)
 	 */
 	
 	public void setNomeFantasia(String nomeFantasia) {
@@ -385,7 +385,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria)
 	 */
 	
 	public void addContaBancaria(ContaBancaria contaBancaria) {
@@ -395,7 +395,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#getContasBancarias()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#getContasBancarias()
 	 */
 	
 	public Collection<ContaBancaria> getContasBancarias() {
@@ -405,7 +405,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#hasContaBancaria()
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#hasContaBancaria()
 	 */
 	
 	public boolean hasContaBancaria() {
@@ -415,7 +415,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#setContasBancarias(java.util.Collection)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#setContasBancarias(java.util.Collection)
 	 */
 	
 	public void setContasBancarias(Collection<ContaBancaria> contasBancarias) {
