@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:10:26
+ * Created at: 30/03/2008 - 19:07:30
  * 
  * ================================================================================
  * 
@@ -23,20 +23,20 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:10:26
+ * Criado em: 30/03/2008 - 19:07:30
  * 
  */
 
-package br.com.nordestefomento.jrimum.domkee.comum;
 
-import java.io.Serializable;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato;
 
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 
 /**
  * 
  * <p>
- * Representação particio
+ * Representação básica de um e-mail.
  * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
@@ -48,65 +48,29 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  */
-public class NumeroDeTelefone implements Serializable {
+public class Email {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8948441953189653213L;
+	private static final long serialVersionUID = 639359687849797249L;
+		
+	private String email;
 
-	private int ddi;
+	public Email() {}
 
-	private int ddd;
-
-	private int prefixo;
-
-	private int sufixo;
-	
-	private String telefone;
-
-	public NumeroDeTelefone() {}
-	
-	public int getDDI() {
-		return ddi;
-	}
-
-	public void setDDI(int ddi) {
-		this.ddi = ddi;
-	}
-
-	public int getDDD() {
-		return ddd;
-	}
-
-	public void setDDD(int ddd) {
-		this.ddd = ddd;
-	}
-
-	public int getPrefixo() {
-		return prefixo;
-	}
-
-	public void setPrefixo(int prefixo) {
-		this.prefixo = prefixo;
-	}
-
-	public int getSufixo() {
-		return sufixo;
-	}
-
-	public void setSufixo(int sufixo) {
-		this.sufixo = sufixo;
+	public Email(String email) {
+		this.email = email;
 	}
 	
-	public String getTelefone() {
-		return telefone;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
+	
 	@Override
 	public String toString() {
 		return ObjectUtil.toString(this);

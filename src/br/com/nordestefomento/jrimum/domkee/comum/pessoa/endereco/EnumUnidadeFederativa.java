@@ -28,7 +28,7 @@
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.comum.endereco;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco;
 
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 

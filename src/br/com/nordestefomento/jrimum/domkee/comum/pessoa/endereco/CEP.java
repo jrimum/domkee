@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:07:30
+ * Created at: 30/03/2008 - 19:07:05
  * 
  * ================================================================================
  * 
@@ -23,12 +23,12 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:07:30
+ * Criado em: 30/03/2008 - 19:07:05
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.comum;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco;
 
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
@@ -36,7 +36,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 /**
  * 
  * <p>
- * Representação básica de um e-mail.
+ * Representação básica de um CEP.
  * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
@@ -48,29 +48,63 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  */
-public class Email {
+public class CEP {
+
+	private static final long serialVersionUID = -3573397075779771290L;
 
 	/**
-	 * 
+	 * Primeiros cinco dígitos.
+	 * Exemplo: Para o CEP 59.020-300 o prefixo é o 59020.
 	 */
-	private static final long serialVersionUID = 639359687849797249L;
+	private Integer prefixo;
+	
+	/**
+	 * Últimos dois dígitos.
+	 * Exemplo: Para o CEP 59.020-300 o sufixo é o 300.
+	 */
+	private Integer sufixo;
+	
+	/**
+	 * CEP completo (prefixo+sufixo).
+	 * Exemplo: Para o CEP 59.020-300 o cep pode ser:
+	 * <ul>
+	 * <li>59.020-300<li>
+	 * <li>59020300<li>
+	 * </ul>
+	 */
+	private String cep;
+	
+	public CEP() {}
+	
+	public CEP(String cep) {
 		
-	private String email;
-
-	public Email() {}
-
-	public Email(String email) {
-		this.email = email;
-	}
-	
-	public String getEmail() {
-		return email;
+		this.cep = cep;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public Integer getPrefixo() {
+		return prefixo;
 	}
-	
+
+	public void setPrefixo(Integer prefixo) {
+		this.prefixo = prefixo;
+	}
+
+	public Integer getSufixo() {
+		return sufixo;
+	}
+
+	public void setSufixo(Integer sufixo) {
+		this.sufixo = sufixo;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
 	@Override
 	public String toString() {
 		return ObjectUtil.toString(this);

@@ -37,9 +37,9 @@ import java.util.Collection;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-import br.com.nordestefomento.jrimum.domkee.comum.NumeroDeTelefone;
-import br.com.nordestefomento.jrimum.domkee.comum.endereco.Endereco;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaJuridica;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
 
@@ -224,7 +224,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.comum.endereco.Endereco)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addEndereco(br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco)
 	 */
 	
 	public void addEndereco(Endereco endereco) {
@@ -233,7 +233,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.comum.NumeroDeTelefone)
+	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.IPessoa#addTelefone(br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone)
 	 */
 	
 	public void addTelefone(NumeroDeTelefone telefone) {
