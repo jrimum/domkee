@@ -38,6 +38,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
 
 /**

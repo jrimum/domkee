@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:11:40
+ * Created at: 30/03/2008 - 18:59:31
  * 
  * ================================================================================
  * 
@@ -23,33 +23,41 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:11:40
+ * Criado em: 30/03/2008 - 18:59:31
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa;
 
-import static org.junit.Assert.assertTrue;
+import java.util.Collection;
 
-import org.junit.Test;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.RG;
 
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumMoeda;
 
-public class TestEnumMoeda{
+/**
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * 
+ * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.PessoaFisica
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
+public interface IPessoaFisica extends IPessoa {
+	
+	public PessoaFisica getConjuge();
 
-	@Test
-	public void testGetCodigo() {
-		
-		int codigo = 2;//primeira moeda:DÓLAR_AMERICANO_COMERCIAL_VENDA;
-		
-		for(EnumMoeda moeda: EnumMoeda.values()){
-			
-			assertTrue(moeda.getCodigo() == codigo);
-			codigo++;//próxima moeda
-		}
-			
-		
-	}
+	public void setConjuge(PessoaFisica conjuge);
 
+	public String getEstadoCivil();
+
+	public void setEstadoCivil(String estadoCivil);
+	
+	public Collection<RG> getRgs();
+	
+	public void setRgs(Collection<RG> rgs);
 }

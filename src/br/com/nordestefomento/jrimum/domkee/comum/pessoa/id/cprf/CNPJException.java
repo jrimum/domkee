@@ -1,3 +1,4 @@
+
 /* 
  * Copyright 2008 JRimum Project
  * 
@@ -10,7 +11,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 04/04/2009 - 12:31:48
+ * Created at: 23/04/2008 - 01:06:14
  *
  * ================================================================================
  *
@@ -24,62 +25,68 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 04/04/2009 - 12:31:48
+ * Criado em: 23/04/2008 - 01:06:14
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+	
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf;
 
-import org.junit.Test;
+import br.com.nordestefomento.jrimum.JRimumException;
 
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.Agencia;
 
 /**
  * 
  * <p>
- * OBJETIVO/PROPÓSITO
+ * Qualquer falha na geração ou operações próprias da classe CNPJ.
  * </p>
  * 
- * @author Rômulo
  * 
- * @since 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
  * 
- * @version 
+ * @since 0.2
+ * 
+ * @version 0.2
  */
-public class TestAgencia {
 
-	@Test(expected = IllegalArgumentException.class)
-	public void testCodigoMenorQueZero() {
+public class CNPJException extends JRimumException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7253144254681596414L;
+
+	/**
+	 * 
+	 */
+	public CNPJException() {
 		
-		new Agencia(-1,'x');
 	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCodigoMaiorQueCincoDigitos() {
+
+	/**
+	 * @param message
+	 * @param cause
+	 */
+	public CNPJException(String message, Throwable cause) {
+		super(message, cause);
 		
-		new Agencia(123456,'x');
 	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharVazio() {
+
+	/**
+	 * @param message
+	 */
+	public CNPJException(String message) {
+		super(message);
 		
-		new Agencia(1,' ');
 	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharNaoLetra() {
+
+	/**
+	 * @param cause
+	 */
+	public CNPJException(Throwable cause) {
+		super(cause);
 		
-		new Agencia(1,'-');
 	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharDigitoInteiroNaoNatural() {
-		
-		new Agencia(1,(char)-1);
-	}
-	
-	@Test
-	public void testValoresCorretos() {
-		
-		new Agencia(12345,'x');
-	}
+
 }

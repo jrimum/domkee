@@ -35,6 +35,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
+
 /**
  * 
  * Teste da classe <code>CadastroDePessoaJurídica</code>

@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:11:40
+ * Created at: 30/03/2008 - 19:07:30
  * 
  * ================================================================================
  * 
@@ -23,33 +23,56 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:11:40
+ * Criado em: 30/03/2008 - 19:07:30
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee.type;
+package br.com.nordestefomento.jrimum.domkee.comum;
 
-import static org.junit.Assert.assertTrue;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
-import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.EnumMoeda;
+/**
+ * 
+ * <p>
+ * Representação básica de um e-mail.
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
+public class Email {
 
-public class TestEnumMoeda{
-
-	@Test
-	public void testGetCodigo() {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 639359687849797249L;
 		
-		int codigo = 2;//primeira moeda:DÓLAR_AMERICANO_COMERCIAL_VENDA;
-		
-		for(EnumMoeda moeda: EnumMoeda.values()){
-			
-			assertTrue(moeda.getCodigo() == codigo);
-			codigo++;//próxima moeda
-		}
-			
-		
+	private String email;
+
+	public Email() {}
+
+	public Email(String email) {
+		this.email = email;
+	}
+	
+	public String getEmail() {
+		return email;
 	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}
 }
