@@ -32,8 +32,6 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
 import org.apache.commons.lang.StringUtils;
 
-import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
-
 /**
  * <p>
  * Representa as moedas existentes que fazem parte do universo de um título, segundo a FEBRABAN.
@@ -98,13 +96,5 @@ public enum TipoDeMoeda {
 		}
 		
 		return s;
-	}
-	
-	/**
-	 * @see br.com.nordestefomento.jrimum.utilix.ObjectUtil#toString()
-	 * @see java.lang.Enum#toString()
-	 */
-	public String toString(){
-		return ObjectUtil.toString(this);
 	}
 }

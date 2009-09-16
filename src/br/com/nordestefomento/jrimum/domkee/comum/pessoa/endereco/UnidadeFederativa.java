@@ -30,7 +30,6 @@
 
 package br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco;
 
-import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 /**
  * <p>
@@ -109,13 +108,5 @@ public enum UnidadeFederativa {
 	 */
 	public String getCapital() {
 		return capital;
-	}
-	
-	/**
-	 * @see br.com.nordestefomento.jrimum.utilix.ObjectUtil#toString()
-	 * @see java.lang.Enum#toString()
-	 */
-	public String toString(){
-		return ObjectUtil.toString(this);
 	}
 }

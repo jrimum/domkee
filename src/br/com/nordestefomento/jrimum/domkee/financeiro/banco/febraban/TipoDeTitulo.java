@@ -31,8 +31,6 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
 import java.io.Serializable;
 
-import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
-
 /**
  * 
  * <p>
@@ -177,13 +175,5 @@ public enum TipoDeTitulo implements Serializable {
 	public int getCodigo() {
 		
 		return codigo;
-	}
-
-	/**
-	 * @see br.com.nordestefomento.jrimum.utilix.ObjectUtil#toString()
-	 * @see java.lang.Enum#toString()
-	 */
-	public String toString() {
-		return ObjectUtil.toString(this);
 	}
 }
