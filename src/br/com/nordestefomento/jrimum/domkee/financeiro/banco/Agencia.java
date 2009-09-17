@@ -50,11 +50,9 @@ import java.io.Serializable;
  *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * </p>
  * 
- * @author Rômulo
+ * @author Rômulo Augusto
  * 
- * @since 
- * 
- * @version 
+ * @version 0.2
  */
 public interface Agencia<Codigo, Digito> extends Serializable {
 

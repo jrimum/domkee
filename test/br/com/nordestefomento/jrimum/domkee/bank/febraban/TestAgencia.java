@@ -39,11 +39,9 @@ import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.Agencia;
  * OBJETIVO/PROPÓSITO
  * </p>
  * 
- * @author Rômulo
+ * @author Rômulo Augusto
  * 
- * @since 
- * 
- * @version 
+ * @version 0.2
  */
 public class TestAgencia {
 

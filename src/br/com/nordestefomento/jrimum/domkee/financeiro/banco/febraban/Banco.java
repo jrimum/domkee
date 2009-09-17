@@ -41,6 +41,7 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefon
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa;
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.PessoaJuridica;
 
 
@@ -385,9 +386,8 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#addContaBancaria(br.com.nordestefomento.jrimum.domkee.bank.febraban.ContaBancaria)
+	 * @see Pessoa#addContaBancaria(ContaBancaria)
 	 */
-	
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		pessoaJuridica.addContaBancaria(contaBancaria);
 		
@@ -395,7 +395,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#getContasBancarias()
+	 * @see Pessoa#getContasBancarias()
 	 */
 	
 	public Collection<ContaBancaria> getContasBancarias() {
@@ -403,11 +403,9 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 		return pessoaJuridica.getContasBancarias();
 	}
 
-
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.comum.pessoa.Pessoa#hasContaBancaria()
+	 * @see Pessoa#hasContaBancaria()
 	 */
-	
 	public boolean hasContaBancaria() {
 		
 		return pessoaJuridica.hasContaBancaria();

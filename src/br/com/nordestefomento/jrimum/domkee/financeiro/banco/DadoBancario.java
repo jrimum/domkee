@@ -17,9 +17,7 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco;
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * 
- * @since 
- * 
- * @version 
+ * @version 0.2
  */
 public interface DadoBancario {
 	/*
