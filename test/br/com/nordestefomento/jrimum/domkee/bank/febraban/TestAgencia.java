@@ -50,36 +50,36 @@ public class TestAgencia {
 	@Test(expected = IllegalArgumentException.class)
 	public void testCodigoMenorQueZero() {
 		
-		new Agencia(-1,'x');
+		new Agencia(-1, "x");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCodigoMaiorQueCincoDigitos() {
 		
-		new Agencia(123456,'x');
+		new Agencia(123456, "x");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testDigitoCharVazio() {
 		
-		new Agencia(1,' ');
+		new Agencia(1, " ");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testDigitoCharNaoLetra() {
 		
-		new Agencia(1,'-');
+		new Agencia(1, "-");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testDigitoCharDigitoInteiroNaoNatural() {
 		
-		new Agencia(1,(char)-1);
+		new Agencia(1, "-1");
 	}
 	
 	@Test
 	public void testValoresCorretos() {
 		
-		new Agencia(12345,'x');
+		new Agencia(12345, "x");
 	}
 }

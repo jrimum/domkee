@@ -29,6 +29,8 @@
 
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
+import org.apache.commons.lang.StringUtils;
+
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
 
@@ -58,7 +60,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * @version 0.2
  */
-public final class Agencia implements br.com.nordestefomento.jrimum.domkee.financeiro.banco.Agencia<Integer, Character> {
+public final class Agencia implements br.com.nordestefomento.jrimum.domkee.financeiro.banco.Agencia<Integer, String> {
 
 	/**
 	 * 
@@ -67,9 +69,9 @@ public final class Agencia implements br.com.nordestefomento.jrimum.domkee.finan
 	
 	private final Integer codigo;
 
-	private final Character digitoVerificador;
+	private final String digitoVerificador;
 	
-	public Agencia(Integer codigo, Character digito) {
+	public Agencia(Integer codigo, String digito) {
 
 		this.codigo = codigo;
 		this.digitoVerificador = digito;
@@ -79,18 +81,24 @@ public final class Agencia implements br.com.nordestefomento.jrimum.domkee.finan
 	
 	public void verify() {
 
-		StringBuilder erros = new StringBuilder();
-		
 		if (codigo < 0 ) {
-			erros.append("\n - O código da agência deve ser um inteiro natural (incluindo zero)");
+			throw new IllegalArgumentException("O código da agência deve ser um inteiro natural (incluindo zero)");
 		}
 		
 		if (String.valueOf(codigo).length() > 5) {
-			erros.append("\n - O código da agência deve possuir de 1 a 5 dígitos");
+			throw new IllegalArgumentException("O código da agência deve possuir de 1 a 5 dígitos");
+		}
+		
+		if (StringUtils.isBlank(digitoVerificador)) {
+			throw new IllegalArgumentException("O dígito verificador da agência não pode ser null ou apenas espaços em branco");
+		}
+		
+		if (digitoVerificador.length() > 1) {
+			throw new IllegalArgumentException("O dígito verificador da agência deve possuir apenas um dígito");
 		}
 			
-		if (!Character.isLetterOrDigit(digitoVerificador)) {
-			erros.append("\n - O dígito verificador deve ser letra ou dígito");
+		if (!StringUtils.isAlphanumeric(digitoVerificador)) {
+			throw new IllegalArgumentException("O dígito verificador da agência deve ser letra ou dígito");
 		}
 	}
 
@@ -98,7 +106,7 @@ public final class Agencia implements br.com.nordestefomento.jrimum.domkee.finan
 		return codigo;
 	}
 
-	public Character getDigitoVerificador() {
+	public String getDigitoVerificador() {
 		return digitoVerificador;
 	}
 	
