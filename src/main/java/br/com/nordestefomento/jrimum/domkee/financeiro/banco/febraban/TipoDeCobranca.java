@@ -1,3 +1,4 @@
+
 /* 
  * Copyright 2008 JRimum Project
  * 
@@ -10,7 +11,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 04/04/2009 - 12:31:48
+ * Created at: 19/04/2008 - 21:12:40
  *
  * ================================================================================
  *
@@ -24,60 +25,43 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 04/04/2009 - 12:31:48
+ * Criado em: 19/04/2008 - 21:12:40
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+	
+package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
-import org.junit.Test;
+import java.io.Serializable;
 
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.Agencia;
 
 /**
  * 
  * <p>
- * OBJETIVO/PROPÓSITO
+ * Representação dos tipos básicos de cobrança:<br />
+ * <ul>
+ * <li>Registrada (ou com registro)</li>
+ * <li>Não Registrada (ou sem registro)</li>
+ * </ul>
  * </p>
  * 
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
+ * @author Misael Barreto
  * @author Rômulo Augusto
+ * @author Samuel Valerio
+ * 
+ * @since 0.2
  * 
  * @version 0.2
  */
-public class TestAgencia {
 
-	@Test(expected = IllegalArgumentException.class)
-	public void testCodigoMenorQueZero() {
-		
-		new Agencia(-1, "x");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCodigoMaiorQueCincoDigitos() {
-		
-		new Agencia(123456, "x");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharVazio() {
-		
-		new Agencia(1, " ");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharNaoLetra() {
-		
-		new Agencia(1, "-");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharDigitoInteiroNaoNatural() {
-		
-		new Agencia(1, "-1");
-	}
-	
-	@Test
-	public void testValoresCorretos() {
-		
-		new Agencia(12345, "x");
-	}
+public enum TipoDeCobranca implements Serializable {
+	/**
+	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
+	 */
+	COM_REGISTRO, 
+	/**
+	 * <p>Tipo onde os títulos emitidos só são registrados pelo banco quando são pagos.</p>
+	 */
+	SEM_REGISTRO;
 }

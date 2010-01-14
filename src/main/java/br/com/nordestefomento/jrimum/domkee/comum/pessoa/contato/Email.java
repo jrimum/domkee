@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:10:51
+ * Created at: 30/03/2008 - 19:07:30
  * 
  * ================================================================================
  * 
@@ -23,37 +23,56 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:10:51
+ * Criado em: 30/03/2008 - 19:07:30
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
-import br.com.nordestefomento.jrimum.domkee.type.TestAbstractCPRF;
-import br.com.nordestefomento.jrimum.domkee.type.TestCNPJ;
-import br.com.nordestefomento.jrimum.domkee.type.TestCPF;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumMoeda;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumTitulo;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses
-( 
-		{ 
-			TestAbstractCPRF.class,
-			TestCNPJ.class,
-			TestCPF.class,
-			TestEnumMoeda.class,
-			TestEnumTitulo.class
-		}
-)
-public class TestSuiteDomkee {
+/**
+ * 
+ * <p>
+ * Representação básica de um e-mail.
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * @author Samuel
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
+public class Email {
 
-	/*
-	 * The class remains completely empty, being used only as a holder for the
-	 * above annotations
+	/**
+	 * 
 	 */
+	private static final long serialVersionUID = 639359687849797249L;
+		
+	private String email;
+
+	public Email() {}
+
+	public Email(String email) {
+		this.email = email;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	@Override
+	public String toString() {
+		return ObjectUtil.toString(this);
+	}
 }

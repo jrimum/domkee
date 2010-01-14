@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:10:51
+ * Created at: 30/03/2008 - 18:59:31
  * 
  * ================================================================================
  * 
@@ -23,37 +23,41 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:10:51
+ * Criado em: 30/03/2008 - 18:59:31
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import java.util.Collection;
 
-import br.com.nordestefomento.jrimum.domkee.type.TestAbstractCPRF;
-import br.com.nordestefomento.jrimum.domkee.type.TestCNPJ;
-import br.com.nordestefomento.jrimum.domkee.type.TestCPF;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumMoeda;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumTitulo;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.RG;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses
-( 
-		{ 
-			TestAbstractCPRF.class,
-			TestCNPJ.class,
-			TestCPF.class,
-			TestEnumMoeda.class,
-			TestEnumTitulo.class
-		}
-)
-public class TestSuiteDomkee {
 
-	/*
-	 * The class remains completely empty, being used only as a holder for the
-	 * above annotations
-	 */
+/**
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * 
+ * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.PessoaFisica
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
+public interface PessoaFisica extends Pessoa {
+	
+	public PessoaFisica getConjuge();
+
+	public void setConjuge(PessoaFisica conjuge);
+
+	public String getEstadoCivil();
+
+	public void setEstadoCivil(String estadoCivil);
+	
+	public Collection<RG> getRgs();
+	
+	public void setRgs(Collection<RG> rgs);
 }

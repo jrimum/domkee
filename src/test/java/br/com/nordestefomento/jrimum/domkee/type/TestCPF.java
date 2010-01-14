@@ -35,6 +35,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CPF;
+
 /**
  * 
  * Teste da classe <code>CadastroDePessoaFísica</code>
@@ -54,9 +57,9 @@ public class TestCPF{
 	@Test
 	public void testGetInstanceString() {
 
-		assertNotNull(CPRF.create("22233366638"));
+		assertNotNull(AbstractCPRF.create("22233366638"));
 		
-		assertTrue(CPRF.create("22233366638") instanceof CPF);
+		assertTrue(AbstractCPRF.create("22233366638") instanceof CPF);
 	}
 
 }

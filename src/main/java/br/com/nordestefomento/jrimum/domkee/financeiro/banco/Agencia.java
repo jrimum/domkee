@@ -10,7 +10,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  * 
- * Created at: 04/04/2009 - 12:31:48
+ * Created at: 04/04/2009 - 16:36:30
  *
  * ================================================================================
  *
@@ -24,60 +24,39 @@
  * expressas ou tácitas. Veja a LICENÇA para a redação específica a reger permissões 
  * e limitações sob esta LICENÇA.
  * 
- * Criado em: 04/04/2009 - 12:31:48
+ * Criado em: 04/04/2009 - 16:36:30
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+package br.com.nordestefomento.jrimum.domkee.financeiro.banco;
 
-import org.junit.Test;
-
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.Agencia;
+import java.io.Serializable;
 
 /**
  * 
  * <p>
- * OBJETIVO/PROPÓSITO
+ * Define o contrato para classes Agencia. Esse contrato é baseado na especificação FEBRABAN:
+ * </p>
+ * <p>
+ * Invariantes:
+ * <ul>
+ * <li>Código: deve ser um inteiro natural (incluindo zero) entre 1 e 5 dígitos</li>
+ * <li>Dígito Verificador: alpha-numérico sendo um inteiro natural (incluindo zero)
+ * ou caracter não vazio (' ') com um dígito.</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>
+ *  Para ver o conceito de negócio, consulte o 
+ *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * </p>
  * 
  * @author Rômulo Augusto
  * 
  * @version 0.2
  */
-public class TestAgencia {
+public interface Agencia<Codigo, Digito> extends Serializable {
 
-	@Test(expected = IllegalArgumentException.class)
-	public void testCodigoMenorQueZero() {
-		
-		new Agencia(-1, "x");
-	}
+	public Codigo getCodigo();
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCodigoMaiorQueCincoDigitos() {
-		
-		new Agencia(123456, "x");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharVazio() {
-		
-		new Agencia(1, " ");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharNaoLetra() {
-		
-		new Agencia(1, "-");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDigitoCharDigitoInteiroNaoNatural() {
-		
-		new Agencia(1, "-1");
-	}
-	
-	@Test
-	public void testValoresCorretos() {
-		
-		new Agencia(12345, "x");
-	}
+	public Digito getDigitoVerificador();
 }

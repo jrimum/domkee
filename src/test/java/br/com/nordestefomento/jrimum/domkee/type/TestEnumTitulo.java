@@ -35,106 +35,106 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import br.com.nordestefomento.jrimum.domkee.bank.febraban.EnumTitulo;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeTitulo;
 
 public class TestEnumTitulo{
 
-	EnumTitulo CH = EnumTitulo.CH_CHEQUE;
+	TipoDeTitulo CH = TipoDeTitulo.CH_CHEQUE;
 
-	EnumTitulo DM = EnumTitulo.DM_DUPLICATA_MERCANTIL;
+	TipoDeTitulo DM = TipoDeTitulo.DM_DUPLICATA_MERCANTIL;
 
-	EnumTitulo DMI = EnumTitulo.DMI_DUPLICATA_MERCANTIL_PARA_INDICACAO;
+	TipoDeTitulo DMI = TipoDeTitulo.DMI_DUPLICATA_MERCANTIL_PARA_INDICACAO;
 
-	EnumTitulo DS = EnumTitulo.DS_DUPLICATA_DE_SERVICO;
+	TipoDeTitulo DS = TipoDeTitulo.DS_DUPLICATA_DE_SERVICO;
 
-	EnumTitulo DSI = EnumTitulo.DSI_DUPLICATA_DE_SERVICO_PARA_INDICACAO;
+	TipoDeTitulo DSI = TipoDeTitulo.DSI_DUPLICATA_DE_SERVICO_PARA_INDICACAO;
 
-	EnumTitulo DR = EnumTitulo.DR_DUPLICATA_RURAL;
+	TipoDeTitulo DR = TipoDeTitulo.DR_DUPLICATA_RURAL;
 
-	EnumTitulo LC = EnumTitulo.LC_LETRA_DE_CAMBIO;
+	TipoDeTitulo LC = TipoDeTitulo.LC_LETRA_DE_CAMBIO;
 
-	EnumTitulo NCC = EnumTitulo.NCC_NOTA_DE_CREDITO_COMERCIAL;
+	TipoDeTitulo NCC = TipoDeTitulo.NCC_NOTA_DE_CREDITO_COMERCIAL;
 
-	EnumTitulo NCE = EnumTitulo.NCE_NOTA_DE_CREDITO_A_EXPORTACAO;
+	TipoDeTitulo NCE = TipoDeTitulo.NCE_NOTA_DE_CREDITO_A_EXPORTACAO;
 
-	EnumTitulo NCI = EnumTitulo.NCI_NOTA_DE_CREDITO_INDUSTRIAL;
+	TipoDeTitulo NCI = TipoDeTitulo.NCI_NOTA_DE_CREDITO_INDUSTRIAL;
 
-	EnumTitulo NCR = EnumTitulo.NCR_NOTA_DE_CREDITO_RURAL;
+	TipoDeTitulo NCR = TipoDeTitulo.NCR_NOTA_DE_CREDITO_RURAL;
 
-	EnumTitulo NP = EnumTitulo.NP_NOTA_PROMISSORIA;
+	TipoDeTitulo NP = TipoDeTitulo.NP_NOTA_PROMISSORIA;
 
-	EnumTitulo NPR = EnumTitulo.NPR_NOTA_PROMISSORIA_RURAL;
+	TipoDeTitulo NPR = TipoDeTitulo.NPR_NOTA_PROMISSORIA_RURAL;
 
-	EnumTitulo TM = EnumTitulo.TM_TRIPLICATA_MERCANTIL;
+	TipoDeTitulo TM = TipoDeTitulo.TM_TRIPLICATA_MERCANTIL;
 
-	EnumTitulo TS = EnumTitulo.TS_TRIPLICATA_DE_SERVICO;
+	TipoDeTitulo TS = TipoDeTitulo.TS_TRIPLICATA_DE_SERVICO;
 
-	EnumTitulo NS = EnumTitulo.NS_NOTA_DE_SEGURO;
+	TipoDeTitulo NS = TipoDeTitulo.NS_NOTA_DE_SEGURO;
 
-	EnumTitulo RC = EnumTitulo.RC_RECIBO;
+	TipoDeTitulo RC = TipoDeTitulo.RC_RECIBO;
 
-	EnumTitulo FAT = EnumTitulo.FAT_FATURA;
+	TipoDeTitulo FAT = TipoDeTitulo.FAT_FATURA;
 
-	EnumTitulo ND = EnumTitulo.ND_NOTA_DE_DEBITO;
+	TipoDeTitulo ND = TipoDeTitulo.ND_NOTA_DE_DEBITO;
 
-	EnumTitulo AP = EnumTitulo.AP_APOLICE_DE_SEGURO;
+	TipoDeTitulo AP = TipoDeTitulo.AP_APOLICE_DE_SEGURO;
 
-	EnumTitulo ME = EnumTitulo.ME_MENSALIDADE_ESCOLAR;
+	TipoDeTitulo ME = TipoDeTitulo.ME_MENSALIDADE_ESCOLAR;
 
-	EnumTitulo PC = EnumTitulo.PC_PARCELA_DE_CONSORCIO;
+	TipoDeTitulo PC = TipoDeTitulo.PC_PARCELA_DE_CONSORCIO;
 
-	EnumTitulo NF = EnumTitulo.NF_NOTA_FISCAL;
+	TipoDeTitulo NF = TipoDeTitulo.NF_NOTA_FISCAL;
 
-	EnumTitulo DD = EnumTitulo.DD_DOCUMENTO_DE_DIVIDA;
+	TipoDeTitulo DD = TipoDeTitulo.DD_DOCUMENTO_DE_DIVIDA;
 
-	EnumTitulo cedulaDeProdutoRural = EnumTitulo.CEDULA_DE_PRODUTO_RURAL;
+	TipoDeTitulo cedulaDeProdutoRural = TipoDeTitulo.CEDULA_DE_PRODUTO_RURAL;
 
-	EnumTitulo warrant = EnumTitulo.WARRANT;
+	TipoDeTitulo warrant = TipoDeTitulo.WARRANT;
 
-	EnumTitulo dividaAtivaDeEstado = EnumTitulo.DIVIDA_ATIVA_DE_ESTADO;
+	TipoDeTitulo dividaAtivaDeEstado = TipoDeTitulo.DIVIDA_ATIVA_DE_ESTADO;
 
-	EnumTitulo dividaAtivaDeMunicipio = EnumTitulo.DIVIDA_ATIVA_DE_MUNICIPIO;
+	TipoDeTitulo dividaAtivaDeMunicipio = TipoDeTitulo.DIVIDA_ATIVA_DE_MUNICIPIO;
 
-	EnumTitulo dividaAtivaDaUniao = EnumTitulo.DIVIDA_ATIVA_DA_UNIAO;
+	TipoDeTitulo dividaAtivaDaUniao = TipoDeTitulo.DIVIDA_ATIVA_DA_UNIAO;
 
-	EnumTitulo cotaCondominial = EnumTitulo.COTA_CONDOMINIAL;
+	TipoDeTitulo cotaCondominial = TipoDeTitulo.COTA_CONDOMINIAL;
 
-	EnumTitulo outros = EnumTitulo.OUTROS;
+	TipoDeTitulo outros = TipoDeTitulo.OUTROS;
 
 	@Test
 	public void setUp() throws Exception {
 
-		CH = EnumTitulo.CH_CHEQUE;
-		DM = EnumTitulo.DM_DUPLICATA_MERCANTIL;
-		DMI = EnumTitulo.DMI_DUPLICATA_MERCANTIL_PARA_INDICACAO;
-		DS = EnumTitulo.DS_DUPLICATA_DE_SERVICO;
-		DSI = EnumTitulo.DSI_DUPLICATA_DE_SERVICO_PARA_INDICACAO;
-		DR = EnumTitulo.DR_DUPLICATA_RURAL;
-		LC = EnumTitulo.LC_LETRA_DE_CAMBIO;
-		NCC = EnumTitulo.NCC_NOTA_DE_CREDITO_COMERCIAL;
-		NCE = EnumTitulo.NCE_NOTA_DE_CREDITO_A_EXPORTACAO;
-		NCI = EnumTitulo.NCI_NOTA_DE_CREDITO_INDUSTRIAL;
-		NCR = EnumTitulo.NCR_NOTA_DE_CREDITO_RURAL;
-		NP = EnumTitulo.NP_NOTA_PROMISSORIA;
-		NPR = EnumTitulo.NPR_NOTA_PROMISSORIA_RURAL;
-		TM = EnumTitulo.TM_TRIPLICATA_MERCANTIL;
-		TS = EnumTitulo.TS_TRIPLICATA_DE_SERVICO;
-		NS = EnumTitulo.NS_NOTA_DE_SEGURO;
-		RC = EnumTitulo.RC_RECIBO;
-		FAT = EnumTitulo.FAT_FATURA;
-		ND = EnumTitulo.ND_NOTA_DE_DEBITO;
-		AP = EnumTitulo.AP_APOLICE_DE_SEGURO;
-		ME = EnumTitulo.ME_MENSALIDADE_ESCOLAR;
-		PC = EnumTitulo.PC_PARCELA_DE_CONSORCIO;
-		NF = EnumTitulo.NF_NOTA_FISCAL;
-		DD = EnumTitulo.DD_DOCUMENTO_DE_DIVIDA;
-		cedulaDeProdutoRural = EnumTitulo.CEDULA_DE_PRODUTO_RURAL;
-		warrant = EnumTitulo.WARRANT;
-		dividaAtivaDeEstado = EnumTitulo.DIVIDA_ATIVA_DE_ESTADO;
-		dividaAtivaDeMunicipio = EnumTitulo.DIVIDA_ATIVA_DE_MUNICIPIO;
-		dividaAtivaDaUniao = EnumTitulo.DIVIDA_ATIVA_DA_UNIAO;
-		cotaCondominial = EnumTitulo.COTA_CONDOMINIAL;
-		outros = EnumTitulo.OUTROS;
+		CH = TipoDeTitulo.CH_CHEQUE;
+		DM = TipoDeTitulo.DM_DUPLICATA_MERCANTIL;
+		DMI = TipoDeTitulo.DMI_DUPLICATA_MERCANTIL_PARA_INDICACAO;
+		DS = TipoDeTitulo.DS_DUPLICATA_DE_SERVICO;
+		DSI = TipoDeTitulo.DSI_DUPLICATA_DE_SERVICO_PARA_INDICACAO;
+		DR = TipoDeTitulo.DR_DUPLICATA_RURAL;
+		LC = TipoDeTitulo.LC_LETRA_DE_CAMBIO;
+		NCC = TipoDeTitulo.NCC_NOTA_DE_CREDITO_COMERCIAL;
+		NCE = TipoDeTitulo.NCE_NOTA_DE_CREDITO_A_EXPORTACAO;
+		NCI = TipoDeTitulo.NCI_NOTA_DE_CREDITO_INDUSTRIAL;
+		NCR = TipoDeTitulo.NCR_NOTA_DE_CREDITO_RURAL;
+		NP = TipoDeTitulo.NP_NOTA_PROMISSORIA;
+		NPR = TipoDeTitulo.NPR_NOTA_PROMISSORIA_RURAL;
+		TM = TipoDeTitulo.TM_TRIPLICATA_MERCANTIL;
+		TS = TipoDeTitulo.TS_TRIPLICATA_DE_SERVICO;
+		NS = TipoDeTitulo.NS_NOTA_DE_SEGURO;
+		RC = TipoDeTitulo.RC_RECIBO;
+		FAT = TipoDeTitulo.FAT_FATURA;
+		ND = TipoDeTitulo.ND_NOTA_DE_DEBITO;
+		AP = TipoDeTitulo.AP_APOLICE_DE_SEGURO;
+		ME = TipoDeTitulo.ME_MENSALIDADE_ESCOLAR;
+		PC = TipoDeTitulo.PC_PARCELA_DE_CONSORCIO;
+		NF = TipoDeTitulo.NF_NOTA_FISCAL;
+		DD = TipoDeTitulo.DD_DOCUMENTO_DE_DIVIDA;
+		cedulaDeProdutoRural = TipoDeTitulo.CEDULA_DE_PRODUTO_RURAL;
+		warrant = TipoDeTitulo.WARRANT;
+		dividaAtivaDeEstado = TipoDeTitulo.DIVIDA_ATIVA_DE_ESTADO;
+		dividaAtivaDeMunicipio = TipoDeTitulo.DIVIDA_ATIVA_DE_MUNICIPIO;
+		dividaAtivaDaUniao = TipoDeTitulo.DIVIDA_ATIVA_DA_UNIAO;
+		cotaCondominial = TipoDeTitulo.COTA_CONDOMINIAL;
+		outros = TipoDeTitulo.OUTROS;
 
 	}
 

@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: 30/03/2008 - 19:10:51
+ * Created at: 30/03/2008 - 18:59:41
  * 
  * ================================================================================
  * 
@@ -23,37 +23,37 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: 30/03/2008 - 19:10:51
+ * Criado em: 30/03/2008 - 18:59:41
  * 
  */
 
 
-package br.com.nordestefomento.jrimum.domkee;
+package br.com.nordestefomento.jrimum.domkee.comum.pessoa;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 
-import br.com.nordestefomento.jrimum.domkee.type.TestAbstractCPRF;
-import br.com.nordestefomento.jrimum.domkee.type.TestCNPJ;
-import br.com.nordestefomento.jrimum.domkee.type.TestCPF;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumMoeda;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumTitulo;
+/**
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
+ * @author Misael
+ * @author Romulo
+ * 
+ * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.PessoaJuridica
+ * 
+ * @since 0.2
+ * 
+ * @version 0.2
+ */
+public interface PessoaJuridica extends Pessoa {
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses
-( 
-		{ 
-			TestAbstractCPRF.class,
-			TestCNPJ.class,
-			TestCPF.class,
-			TestEnumMoeda.class,
-			TestEnumTitulo.class
-		}
-)
-public class TestSuiteDomkee {
+	public String getNomeFantasia();
 
-	/*
-	 * The class remains completely empty, being used only as a holder for the
-	 * above annotations
-	 */
+	public void setNomeFantasia(String nomeFantasia);
+
+	public Long getInscricaoEstadual();
+
+	public void setInscricaoEstadual(Long inscricaoEstadual);
+
+	public Long getInscricaoMunicipal();
+
+	public void setInscricaoMunicipal(Long inscricaoMunicipal);
 }
