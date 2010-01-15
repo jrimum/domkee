@@ -36,7 +36,7 @@ import org.junit.Test;
 
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda;
 
-public class TestEnumMoeda{
+public class TestTipoDeMoeda{
 
 	@Test
 	public void testGetCodigo() {

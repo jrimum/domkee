@@ -37,7 +37,7 @@ import org.junit.Test;
 
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeTitulo;
 
-public class TestEnumTitulo{
+public class TestTipoDeTitulo{
 
 	TipoDeTitulo CH = TipoDeTitulo.CH_CHEQUE;
 

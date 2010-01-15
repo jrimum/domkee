@@ -36,8 +36,8 @@ import org.junit.runners.Suite;
 import br.com.nordestefomento.jrimum.domkee.type.TestAbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.type.TestCNPJ;
 import br.com.nordestefomento.jrimum.domkee.type.TestCPF;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumMoeda;
-import br.com.nordestefomento.jrimum.domkee.type.TestEnumTitulo;
+import br.com.nordestefomento.jrimum.domkee.type.TestTipoDeMoeda;
+import br.com.nordestefomento.jrimum.domkee.type.TestTipoDeTitulo;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses
@@ -46,8 +46,8 @@ import br.com.nordestefomento.jrimum.domkee.type.TestEnumTitulo;
 			TestAbstractCPRF.class,
 			TestCNPJ.class,
 			TestCPF.class,
-			TestEnumMoeda.class,
-			TestEnumTitulo.class
+			TestTipoDeMoeda.class,
+			TestTipoDeTitulo.class
 		}
 )
 public class TestSuiteDomkee {
