@@ -48,7 +48,7 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
  * @author Misael Barreto
  * @author Rômulo Augusto
  * 
- * @since JMatryx 1.0
+ * @since JRimum 1.0
  * 
  * @version 1.0
  */

@@ -51,7 +51,7 @@ import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
  * @author Misael Barreto
  * @author Rômulo Augusto
  * 
- * @since JMatryx 1.0
+ * @since JRimum 1.0
  * 
  * @version 1.0
  */
