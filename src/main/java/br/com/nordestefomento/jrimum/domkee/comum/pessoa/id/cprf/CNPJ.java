@@ -31,7 +31,7 @@ package br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf;
 
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator;
-import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 
 /**
  * 
@@ -82,7 +82,7 @@ public class CNPJ extends AbstractCPRF {
 		try {
 
 			if (AbstractCPRFValidator.isParametrosValidos(
-					String.valueOf(numCNPJ), EnumCPRF.CNPJ)) {
+					String.valueOf(numCNPJ), TipoDeCPRF.CNPJ)) {
 
 				String strCNPJ = Filler.ZERO_LEFT.fill(numCNPJ, 14);
 

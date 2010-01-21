@@ -32,7 +32,7 @@ package br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf;
 import br.com.nordestefomento.jrimum.utilix.Filler;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator;
-import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 
 
 /**
@@ -85,7 +85,7 @@ public abstract class AbstractCPRF {
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF create(Long cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static AbstractCPRF create(Long cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 
 		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 	}
@@ -96,7 +96,7 @@ public abstract class AbstractCPRF {
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF create(String cadastroDePessoa, EnumCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static AbstractCPRF create(String cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
@@ -104,14 +104,14 @@ public abstract class AbstractCPRF {
 
 			switch_Cadastro: {
 
-				if (tipoDeCadastro == EnumCPRF.CPF) {
+				if (tipoDeCadastro == TipoDeCPRF.CPF) {
 
 					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
-				if (tipoDeCadastro == EnumCPRF.CNPJ) {
+				if (tipoDeCadastro == TipoDeCPRF.CNPJ) {
 
 					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
 					break switch_Cadastro;

@@ -39,7 +39,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
-import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.EnumCPRF;
+import br.com.nordestefomento.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 
 /**
  * 
@@ -62,14 +62,14 @@ public class TestAbstractCPRF{
 		
 		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
 		
-		AbstractCPRF abstractCPRF = AbstractCPRF.create(208000100L , EnumCPRF.CNPJ);
+		AbstractCPRF abstractCPRF = AbstractCPRF.create(208000100L , TipoDeCPRF.CNPJ);
 		
 		assertNotNull(abstractCPRF);
 		
 		assertFalse(abstractCPRF.isFisica());
 		assertTrue(abstractCPRF.isJuridica());
 		
-		abstractCPRF = AbstractCPRF.create(22233366638L , EnumCPRF.CPF);
+		abstractCPRF = AbstractCPRF.create(22233366638L , TipoDeCPRF.CPF);
 		
 		assertNotNull(abstractCPRF);
 		
@@ -97,7 +97,7 @@ public class TestAbstractCPRF{
 			
 			Long nulo = null;
 			
-			AbstractCPRF.create(nulo, EnumCPRF.CPF);
+			AbstractCPRF.create(nulo, TipoDeCPRF.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -123,7 +123,7 @@ public class TestAbstractCPRF{
 		
 		try {
 			
-			AbstractCPRF.create(123L, EnumCPRF.CPF);
+			AbstractCPRF.create(123L, TipoDeCPRF.CPF);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
@@ -137,7 +137,7 @@ public class TestAbstractCPRF{
 		
 		try {
 			
-			AbstractCPRF.create(112223330001L, EnumCPRF.CNPJ);
+			AbstractCPRF.create(112223330001L, TipoDeCPRF.CNPJ);
 			
 			fail("IllegalArgumentException esperado não ocorreu.");
 			assertTrue(false);
