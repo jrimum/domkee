@@ -106,11 +106,16 @@ public class Pessoa implements br.com.nordestefomento.jrimum.domkee.comum.pessoa
 		this.nome = nome;
 		this.cprf = AbstractCPRF.create(cadastroDePessoa);
 	}
+	
+	public Pessoa(String nome, AbstractCPRF cadastroDePessoa) {
+		
+		this.nome = nome;
+		this.cprf = cadastroDePessoa;
+	}
 
 	/**
 	 * @see ContaBancaria
 	 */
-	
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
 		if(isNull(contasBancarias))
