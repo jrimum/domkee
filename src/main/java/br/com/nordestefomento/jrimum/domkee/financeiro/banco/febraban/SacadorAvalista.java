@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: Jan 26, 2010 - 1:27:20 PM
+ * Created at: Jan 28, 2010 - 1:43:30 PM
  * 
  * ================================================================================
  * 
@@ -23,18 +23,18 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: Jan 26, 2010 - 1:27:20 PM
+ * Criado em: Jan 28, 2010 - 1:43:30 PM
  * 
  */
-
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 
 /**
  * <p>
- * Representa um Sacado no modelo de negócio financeiro, que é 
- * aquele que emite um título de crédito a favor de alguém.
+ * Representa um Sacador Avalista no modelo de negócio financeiro, que é o co-responsável
+ * pelo título emitido pelo avalizado (Sacado), ou seja, caso a dívida não seja liquidada pelo Sacado,
+ * cabe ao Sacador Avalista liquidá-la.
  * </p>
  * 
  * @author Rômulo
@@ -43,23 +43,22 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * 
  * @version 0.2
  */
-public class Sacado extends EntidadeDeCobranca {
+public class SacadorAvalista extends EntidadeDeCobranca {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2508919801939225018L;
-	
-	public Sacado(String nome) {
+	private static final long serialVersionUID = 6730172100461560481L;
+
+	public SacadorAvalista(String nome) {
 		super(nome);
 	}
 	
-	public Sacado(String nome, String cadastroDePessoa) {
+	public SacadorAvalista(String nome, String cadastroDePessoa) {
 		super(nome, cadastroDePessoa);
 	}
 	
-	public Sacado(String nome, AbstractCPRF cadastroDePessoa) {
+	public SacadorAvalista(String nome, AbstractCPRF cadastroDePessoa) {
 		super(nome, cadastroDePessoa);
 	}
-	
 }
