@@ -36,6 +36,9 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * Representa um Sacado no modelo de negócio financeiro, que é 
  * aquele que emite um título de crédito a favor de alguém.
  * </p>
+ * <p>
+ * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
+ * </p>
  * 
  * @author Rômulo
  * 

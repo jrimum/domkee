@@ -36,6 +36,9 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * pelo título emitido pelo avalizado (Sacado), ou seja, caso a dívida não seja liquidada pelo Sacado,
  * cabe ao Sacador Avalista liquidá-la.
  * </p>
+ * <p>
+ * Cedente original do Título.
+ * </p>
  * 
  * @author Rômulo
  * 

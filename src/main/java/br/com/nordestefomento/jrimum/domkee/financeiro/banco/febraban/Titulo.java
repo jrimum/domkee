@@ -38,7 +38,6 @@ import java.util.Date;
 
 import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.DadoBancario;
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
@@ -132,19 +131,19 @@ public final class Titulo {
 	private ContaBancaria contaBancaria;
 
 	/**
-	 * @see #setCedente(Pessoa)
+	 * @see #setCedente(Cedente)
 	 */
-	private Pessoa cedente;
+	private Cedente cedente;
 	
 	/**
-	 * @see #setSacado(Pessoa)
+	 * @see #setSacado(Sacado)
 	 */
-	private Pessoa sacado;
+	private Sacado sacado;
 
 	/**
-	 * @see #setSacadorAvalista(Pessoa)
+	 * @see #setSacadorAvalista(SacadorAvalista)
 	 */
-	private Pessoa sacadorAvalista;
+	private SacadorAvalista sacadorAvalista;
 	
 	private DadoBancario dadosBancarios;
 	
@@ -195,13 +194,13 @@ public final class Titulo {
 	 * Cria um título sem sacador avalista.
 	 * </p>
 	 */
-	public Titulo(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente) throws JRimumException {
+	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente) throws JRimumException {
 		this.setContaBancaria(contaBancaria);
 		this.setSacado(sacado);
 		this.setCedente(cedente);
 	}
 	
-	public Titulo(ContaBancaria contaBancaria, Pessoa sacado, Pessoa cedente, Pessoa sacadorAvalista) throws JRimumException {
+	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente, SacadorAvalista sacadorAvalista) throws JRimumException {
 		this(contaBancaria, sacado, cedente);
 		this.setSacadorAvalista(sacadorAvalista);
 	}
@@ -240,32 +239,6 @@ public final class Titulo {
 	 */
 	public void setAceite(EnumAceite aceite) {
 		this.aceite = aceite;
-	}
-
-	/**
-	 * @see #setCedente(Pessoa)
-	 * 
-	 * @return the cedente
-	 */
-	public Pessoa getCedente() {
-		return cedente;
-	}
-
-	/**
-	 * <p>
-	 * Cliente que entrega os títulos ao Banco para serem cobrados.
-	 * </p>
-	 * 
-	 * @param cedente
-	 *            the cedente to set
-	 */
-	public void setCedente(Pessoa cedente) {
-		if (isNotNull(cedente)) {
-			this.cedente = cedente;
-		} else {
-			throw new JRimumException(new IllegalArgumentException(
-					"Cedente não pode ser nulo!"));
-		}
 	}
 
 	/**
@@ -428,13 +401,39 @@ public final class Titulo {
 					"ContaBancaria não pode ser nula!"));
 		}
 	}
+	
+	/**
+	 * @see #setCedente(Cedente)
+	 * 
+	 * @return the cedente
+	 */
+	public Cedente getCedente() {
+		return cedente;
+	}
 
 	/**
-	 * @see #setSacado(Pessoa)
+	 * <p>
+	 * Cliente que entrega os títulos ao Banco para serem cobrados.
+	 * </p>
+	 * 
+	 * @param cedente
+	 *            the cedente to set
+	 */
+	public void setCedente(Cedente cedente) {
+		if (isNotNull(cedente)) {
+			this.cedente = cedente;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+					"Cedente não pode ser nulo!"));
+		}
+	}
+
+	/**
+	 * @see #setSacado(Sacado)
 	 * 
 	 * @return the sacado
 	 */
-	public Pessoa getSacado() {
+	public Sacado getSacado() {
 		return sacado;
 	}
 
@@ -446,7 +445,7 @@ public final class Titulo {
 	 * @param sacado
 	 *            the sacado to set
 	 */
-	public void setSacado(Pessoa sacado) {
+	public void setSacado(Sacado sacado) {
 		if (isNotNull(sacado)) {
 			this.sacado = sacado;
 		} else {
@@ -456,11 +455,11 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see #setSacadorAvalista(Pessoa)
+	 * @see #setSacadorAvalista(SacadorAvalista)
 	 * 
 	 * @return the sacadorAvalista
 	 */
-	public Pessoa getSacadorAvalista() {
+	public SacadorAvalista getSacadorAvalista() {
 		return sacadorAvalista;
 	}
 
@@ -472,7 +471,7 @@ public final class Titulo {
 	 * @param sacadorAvalista
 	 *            the sacadorAvalista to set
 	 */
-	public void setSacadorAvalista(Pessoa sacadorAvalista) {
+	public void setSacadorAvalista(SacadorAvalista sacadorAvalista) {
 		if (isNotNull(sacadorAvalista)) {
 			this.sacadorAvalista = sacadorAvalista;
 		} else {

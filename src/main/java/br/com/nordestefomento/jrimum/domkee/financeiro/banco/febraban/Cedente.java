@@ -35,6 +35,9 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * Representa um Cedente no modelo de negócio financeiro, que é 
  * aquele que realiza a cobrança do título.
  * </p>
+ * <p>
+ * Cliente que entrega os títulos ao Banco para serem cobrados.
+ * </p>
  * 
  * @author Rômulo
  * 
