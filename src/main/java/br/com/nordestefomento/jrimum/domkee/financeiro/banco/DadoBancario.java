@@ -29,46 +29,48 @@
 
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco;
 
-
 /**
- * 
  * <p>
- * DEFINIÇÃO DA CLASSE
+ * Um dado bancário qualquer para condições específicas de determinados bancos
+ * ou implementações de campos livre.
  * </p>
  * 
  * <p>
- * OBJETIVO/PROPÓSITO
+ * Mais dados bancários podem ser necessários a um título para gerar um boleto,
+ * por exemplo. Assim, dependendo do banco, talvez seja necessário informar mais
+ * dados além de:
  * </p>
  * 
+ * <ul>
+ * <li>Valor do título;</li>
+ * <li>Vencimento;</li>
+ * <li>Nosso número;</li>
+ * <li>Código do banco;</li>
+ * <li>Data de vencimento;</li>
+ * <li>Agência/Código do cedente</li>;
+ * <li>Código da carteira;</li>
+ * <li>Código da moeda;</li>
+ * </ul>
+ * 
  * <p>
- * EXEMPLO: 
+ * Definidos como padrão pela FEBRABAN.
  * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * 
  * @version 0.2
+ * @since 0.2
  */
-public interface DadoBancario {
-	/*
-	 * INFORMANDO MAIS DADOS BANCÁRIOS A UM TÍTULO, QUANDO NECESSÁRIO.
-	 * Dependendo do banco, talvez seja necessário informar mais dados além de: 
+public interface DadoBancario<D> {
+
+	/**
+	 * <p>
+	 * Retorna um dado bancário encapsulado pela interface.
+	 * </p>
 	 * 
-	 * > Valor do título; 
-	 * > Vencimento; 
-	 * > Nosso número; 
-	 * > Código do banco 
-	 * > Data de vencimento; 
-	 * > Agência/Código do cedente; 
-	 * > Código da carteira; 
-	 * > Código da moeda;
+	 * @return
 	 * 
-	 * Definidos como padrão pela FEBRABAN.
-	 * Verifique na documentação.
-	 * 
-	 * Um exemplo é o do banco Santander, este banco utiliza um campo de IOF no campo livre da seguinte maneira:
-	 * 
-	 * Posição 21, tamanho 1: 
-	 * IOF – Seguradoras (Se 7% informar 7.  Limitado a 9%) 
-	 * Demais clientes usar 0 (zero)
+	 * @since 0.2
 	 */
+	public D getDado();
 }

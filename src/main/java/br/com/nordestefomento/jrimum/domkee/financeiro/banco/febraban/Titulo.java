@@ -27,7 +27,6 @@
  * 
  */
 
-
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
 import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
@@ -41,7 +40,6 @@ import br.com.nordestefomento.jrimum.domkee.financeiro.banco.DadoBancario;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
-
 /**
  * Representa um título em cobrança, tais como:
  * 
@@ -49,7 +47,7 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * 
  * <ul>
  * <li>Cheque</li>
- * <li>Duplicata Mercantil </li>
+ * <li>Duplicata Mercantil</li>
  * <li>Duplicata de Serviço</li>
  * <li>Duplicata Rural</li>
  * <li>Letra de Câmbio</li>
@@ -58,16 +56,18 @@ import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
  * <li>Nota de Crédito Rural</li>
  * <li>E outras espécies pagáveis através da rede bancária.</li>
  * 
- * Para visualizar o conceito de negócio consulte o 
- * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
+ * Para visualizar o conceito de negócio consulte o <a
+ * href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"
+ * >glossário</a>.
  * 
  * @see TipoDeTitulo
  * 
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * @author Misael Barreto 
+ * @author Misael Barreto
  * @author Rômulo Augusto
- * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * @author <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento
+ *         Mercantil</a>
  * 
  * @since 0.2
  * 
@@ -104,7 +104,7 @@ public final class Titulo {
 	 * @see #setValor(BigDecimal)
 	 */
 	private BigDecimal valor;
-	
+
 	/**
 	 * @see #setDesconto(BigDecimal)
 	 */
@@ -124,7 +124,7 @@ public final class Titulo {
 	 * @see #setDigitoDoNossoNumero(String)
 	 */
 	private String digitoDoNossoNumero;
-	
+
 	/**
 	 * @see #setContaBancaria(ContaBancaria)
 	 */
@@ -134,7 +134,7 @@ public final class Titulo {
 	 * @see #setCedente(Cedente)
 	 */
 	private Cedente cedente;
-	
+
 	/**
 	 * @see #setSacado(Sacado)
 	 */
@@ -144,9 +144,11 @@ public final class Titulo {
 	 * @see #setSacadorAvalista(SacadorAvalista)
 	 */
 	private SacadorAvalista sacadorAvalista;
-	
-	private DadoBancario dadosBancarios;
-	
+
+	/**
+	 *@see #setDadoBancario(DadoBancario)
+	 */
+	private DadoBancario<?> dadoBancario;
 
 	/**
 	 * <p>
@@ -191,32 +193,93 @@ public final class Titulo {
 
 	/**
 	 * <p>
-	 * Cria um título sem sacador avalista.
+	 * Cria uma instância de título.
 	 * </p>
+	 * 
+	 * @param contaBancaria
+	 * @param sacado
+	 * @param cedente
+	 * @throws JRimumException
 	 */
-	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente) throws JRimumException {
+	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente)
+			throws JRimumException {
 		this.setContaBancaria(contaBancaria);
 		this.setSacado(sacado);
 		this.setCedente(cedente);
 	}
-	
-	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente, SacadorAvalista sacadorAvalista) throws JRimumException {
+
+	/**
+	 * <p>
+	 * Cria uma instância de título com sacador avalista.
+	 * </p>
+	 * 
+	 * @param contaBancaria
+	 * @param sacado
+	 * @param cedente
+	 * @param sacadorAvalista
+	 * @throws JRimumException
+	 */
+	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
+			SacadorAvalista sacadorAvalista) throws JRimumException {
 		this(contaBancaria, sacado, cedente);
 		this.setSacadorAvalista(sacadorAvalista);
 	}
-	
+
 	/**
+	 * <p>
+	 * Cria uma instância de título acrescentado outros dados bancários ao
+	 * mesmo.
+	 * </p>
 	 * 
-	 * @return has
+	 * @param contaBancaria
+	 * @param sacado
+	 * @param cedente
+	 * @param dadoBancario
+	 * @throws JRimumException
 	 */
-	public boolean hasSacadorAvalista(){
-		
+	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
+			DadoBancario<?> dadoBancario) throws JRimumException {
+		this.setContaBancaria(contaBancaria);
+		this.setSacado(sacado);
+		this.setCedente(cedente);
+		this.setDadoBancario(dadoBancario);
+	}
+
+	/**
+	 * <p>
+	 * Cria uma instância de título com sacador avalista e acrescentado outros
+	 * dados bancários além do título.
+	 * </p>
+	 * 
+	 * @param contaBancaria
+	 * @param sacado
+	 * @param cedente
+	 * @param dadoBancario
+	 * @param sacadorAvalista
+	 * @throws JRimumException
+	 */
+	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
+			DadoBancario<?> dadoBancario, SacadorAvalista sacadorAvalista)
+			throws JRimumException {
+		this(contaBancaria, sacado, cedente, dadoBancario);
+		this.setSacadorAvalista(sacadorAvalista);
+	}
+
+	/**
+	 * <p>
+	 * Indica se o título possuem sacador avalista na instância
+	 * </p>
+	 * 
+	 * @return true se tem
+	 */
+	public boolean hasSacadorAvalista() {
+
 		boolean has = false;
 
-		if(isNotNull(this.sacadorAvalista)){
+		if (isNotNull(this.sacadorAvalista)) {
 			has = true;
 		}
-		
+
 		return has;
 	}
 
@@ -261,9 +324,9 @@ public final class Titulo {
 	public void setDataDoDocumento(Date dataDoDocumento) {
 		this.dataDoDocumento = dataDoDocumento;
 	}
-	
+
 	public void setDataDoDocumento(String dataDoDocumento) {
-		  setDataDoDocumento(DateUtil.parse(dataDoDocumento));
+		setDataDoDocumento(DateUtil.parse(dataDoDocumento));
 	}
 
 	/**
@@ -276,7 +339,7 @@ public final class Titulo {
 	}
 
 	/**
-	 *  <p>
+	 * <p>
 	 * Data de vencimento nominal do título de cobrança, ou melhor, data limite
 	 * para pagamento do título.
 	 * </p>
@@ -287,7 +350,7 @@ public final class Titulo {
 	public void setDataDoVencimento(Date dataDoVencimento) {
 		this.dataDoVencimento = dataDoVencimento;
 	}
-	
+
 	public void setDataDoVencimento(String dataDoVencimento) {
 		setDataDoVencimento(DateUtil.parse(dataDoVencimento));
 	}
@@ -344,7 +407,7 @@ public final class Titulo {
 	/**
 	 * <p>
 	 * Código fornecido pelo Banco correspondente para identificação do título
-	 *  ou identificação do título atribuído pelo esmissor do título de cobrança.
+	 * ou identificação do título atribuído pelo esmissor do título de cobrança.
 	 * </p>
 	 * 
 	 * @param nossoNumero
@@ -365,7 +428,8 @@ public final class Titulo {
 
 	/**
 	 * <p>
-	 * Número de controle do cedente para o referido título. Não confundir com o nosso número.
+	 * Número de controle do cedente para o referido título. Não confundir com o
+	 * nosso número.
 	 * </p>
 	 * 
 	 * @param numeroDoDocumento
@@ -374,7 +438,7 @@ public final class Titulo {
 	public void setNumeroDoDocumento(String numeroDoDocumento) {
 		this.numeroDoDocumento = numeroDoDocumento;
 	}
-	
+
 	/**
 	 * @see #setContaBancaria(ContaBancaria)
 	 * 
@@ -389,11 +453,12 @@ public final class Titulo {
 	 * Conta na qual o título se encontra, conta do favorecido (Cedente).
 	 * </p>
 	 * 
-	 * @param contaBancaria the contaBancaria to set
+	 * @param contaBancaria
+	 *            the contaBancaria to set
 	 */
 	public void setContaBancaria(ContaBancaria contaBancaria)
 			throws JRimumException {
-		
+
 		if (isNotNull(contaBancaria)) {
 			this.contaBancaria = contaBancaria;
 		} else {
@@ -401,7 +466,7 @@ public final class Titulo {
 					"ContaBancaria não pode ser nula!"));
 		}
 	}
-	
+
 	/**
 	 * @see #setCedente(Cedente)
 	 * 
@@ -439,7 +504,8 @@ public final class Titulo {
 
 	/**
 	 * <p>
-	 * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
+	 * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o
+	 * cliente do Cedente.
 	 * </p>
 	 * 
 	 * @param sacado
@@ -506,11 +572,13 @@ public final class Titulo {
 
 	/**
 	 * <p>
-	 * Atribui um valor (original do Título) expresso em moeda corrente e arredondanda em duas casas decimais para baixo.
+	 * Atribui um valor (original do Título) expresso em moeda corrente e
+	 * arredondanda em duas casas decimais para baixo.
 	 * </p>
 	 * <p>
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
+	 * 
 	 * @param valor
 	 *            the valor to set
 	 */
@@ -518,7 +586,7 @@ public final class Titulo {
 		valor = valor.setScale(2, RoundingMode.DOWN);
 		this.valor = valor;
 	}
-	
+
 	/**
 	 * @see #setDesconto(BigDecimal)
 	 * 
@@ -530,29 +598,52 @@ public final class Titulo {
 
 	/**
 	 * <p>
-	 * Atribui um valor de desconto ao valor original do título expresso em moeda 
-	 * corrente e arredondanda em duas casas decimais para baixo.
+	 * Atribui um valor de desconto ao valor original do título expresso em
+	 * moeda corrente e arredondanda em duas casas decimais para baixo.
 	 * </p>
 	 * <p>
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
+	 * 
 	 * @param desconto
 	 *            the desconto to set
 	 */
 	public void setDesconto(BigDecimal desconto) {
-		
-		if(desconto != null) {
+
+		if (desconto != null) {
 			desconto = desconto.setScale(2, RoundingMode.DOWN);
 		}
 		this.desconto = desconto;
 	}
 
-	public DadoBancario getDadosBancarios() {
-		return dadosBancarios;
+	public DadoBancario<?> getDadoBancario() {
+		return dadoBancario;
 	}
 
-	public void setDadosBancarios(DadoBancario dadosBancarios) {
-		this.dadosBancarios = dadosBancarios;
+	/**
+	 * <p>
+	 * Atribui um dado bancário a mais ao título.
+	 * </p>
+	 * 
+	 * <p>
+	 * Em certo casos, quando se deseja implementar um campo livre ou banco
+	 * ainda não suportado este campo deve ser utilizado. Ou simplesmente quando
+	 * um
+	 * </p>
+	 * 
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.DadoBancario
+	 *      <D>
+	 * @see br.com.nordestefomento.jrimum.bopepo.campolivre.CampoLivre
+	 * @see br.com.nordestefomento.jrimum.bopepo.BancoSuportado
+	 * 
+	 * @param dadoBancario
+	 * 
+	 * 
+	 * @since 0.2
+	 */
+
+	public void setDadoBancario(DadoBancario<?> dadoBancario) {
+		this.dadoBancario = dadoBancario;
 	}
 
 	@Override
