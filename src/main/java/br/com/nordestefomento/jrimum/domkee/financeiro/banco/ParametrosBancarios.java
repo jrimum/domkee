@@ -29,6 +29,13 @@
 
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
+
 /**
  * <p>
  * Um dado bancário qualquer para condições específicas de determinados bancos
@@ -61,16 +68,115 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco;
  * @version 0.2
  * @since 0.2
  */
-public interface DadoBancario<D> {
+public final class ParametrosBancarios {
 
-	/**
-	 * <p>
-	 * Retorna um dado bancário encapsulado pela interface.
-	 * </p>
-	 * 
-	 * @return
-	 * 
-	 * @since 0.2
-	 */
-	public D getDado();
+	private Map<String, Object> dadosMap;
+
+	public ParametrosBancarios() {
+		getInstance();
+	}
+
+	public ParametrosBancarios(String nome, Object valor) {
+
+		add(nome, valor);
+	}
+
+	public boolean contemComNome(String nome) {
+
+		isNomeValido(nome);
+
+		return dadosMap.containsKey(nome);
+	}
+
+	public boolean contemComValor(Object valor) {
+
+		isValorValido(valor);
+
+		return dadosMap.containsValue(valor);
+	}
+
+	@SuppressWarnings("unchecked")
+	public <V> V getValor(String nome) {
+
+		isNomeValido(nome);
+
+		return (V) dadosMap.get(nome);
+	}
+
+	public boolean isVazio() {
+
+		return dadosMap.isEmpty();
+	}
+
+	public Set<String> nomes() {
+
+		return dadosMap.keySet();
+	}
+
+	public Collection<?> valores() {
+
+		return dadosMap.values();
+	}
+
+	public Set<java.util.Map.Entry<String, Object>> entradas() {
+
+		return dadosMap.entrySet();
+	}
+
+	public ParametrosBancarios add(String nome, Object valor) {
+
+		isNomeValido(nome);
+		isValorValido(valor);
+
+		getInstance();
+
+		dadosMap.put(nome, valor);
+
+		return this;
+	}
+
+	public ParametrosBancarios addTodos(ParametrosBancarios dados) {
+
+		ObjectUtil.isNotNull(dados, "dados");
+
+		this.dadosMap.putAll(dados.dadosMap);
+
+		return this;
+	}
+
+	@SuppressWarnings("unchecked")
+	public <V> V remover(String nome) {
+
+		isNomeValido(nome);
+
+		return (V) dadosMap.remove(nome);
+	}
+
+	public void limpar() {
+
+		dadosMap.clear();
+	}
+
+	public int quantidade() {
+
+		return dadosMap.size();
+	}
+
+	private void getInstance() {
+
+		if (dadosMap == null) {
+			dadosMap = new HashMap<String, Object>();
+		}
+	}
+
+	private boolean isNomeValido(String nome) {
+
+		return ObjectUtil.isNotNull(nome, "nome");
+	}
+
+	private boolean isValorValido(Object valor) {
+
+		return ObjectUtil.isNotNull(valor, "valor");
+	}
+
 }

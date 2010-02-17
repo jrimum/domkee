@@ -36,7 +36,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.JRimumException;
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.DadoBancario;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.ParametrosBancarios;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
@@ -146,9 +146,9 @@ public final class Titulo {
 	private SacadorAvalista sacadorAvalista;
 
 	/**
-	 *@see #setDadoBancario(DadoBancario)
+	 *@see #setDadoBancario(ParametrosBancarios)
 	 */
-	private DadoBancario<?> dadoBancario;
+	private ParametrosBancarios parametrosBancarios;
 
 	/**
 	 * <p>
@@ -234,15 +234,15 @@ public final class Titulo {
 	 * @param contaBancaria
 	 * @param sacado
 	 * @param cedente
-	 * @param dadoBancario
+	 * @param parametrosBancarios
 	 * @throws JRimumException
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
-			DadoBancario<?> dadoBancario) throws JRimumException {
+			ParametrosBancarios parametrosBancarios) throws JRimumException {
 		this.setContaBancaria(contaBancaria);
 		this.setSacado(sacado);
 		this.setCedente(cedente);
-		this.setDadoBancario(dadoBancario);
+		this.setDadoBancario(parametrosBancarios);
 	}
 
 	/**
@@ -254,14 +254,14 @@ public final class Titulo {
 	 * @param contaBancaria
 	 * @param sacado
 	 * @param cedente
-	 * @param dadoBancario
+	 * @param parametrosBancarios
 	 * @param sacadorAvalista
 	 * @throws JRimumException
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
-			DadoBancario<?> dadoBancario, SacadorAvalista sacadorAvalista)
+			ParametrosBancarios parametrosBancarios, SacadorAvalista sacadorAvalista)
 			throws JRimumException {
-		this(contaBancaria, sacado, cedente, dadoBancario);
+		this(contaBancaria, sacado, cedente, parametrosBancarios);
 		this.setSacadorAvalista(sacadorAvalista);
 	}
 
@@ -616,8 +616,8 @@ public final class Titulo {
 		this.desconto = desconto;
 	}
 
-	public DadoBancario<?> getDadoBancario() {
-		return dadoBancario;
+	public ParametrosBancarios getDadoBancario() {
+		return parametrosBancarios;
 	}
 
 	/**
@@ -631,19 +631,19 @@ public final class Titulo {
 	 * um
 	 * </p>
 	 * 
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.DadoBancario
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.ParametrosBancarios
 	 *      <D>
 	 * @see br.com.nordestefomento.jrimum.bopepo.campolivre.CampoLivre
 	 * @see br.com.nordestefomento.jrimum.bopepo.BancoSuportado
 	 * 
-	 * @param dadoBancario
+	 * @param parametrosBancarios
 	 * 
 	 * 
 	 * @since 0.2
 	 */
 
-	public void setDadoBancario(DadoBancario<?> dadoBancario) {
-		this.dadoBancario = dadoBancario;
+	public void setDadoBancario(ParametrosBancarios parametrosBancarios) {
+		this.parametrosBancarios = parametrosBancarios;
 	}
 
 	@Override
