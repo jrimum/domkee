@@ -36,7 +36,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.JRimumException;
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.ParametrosBancarios;
+import br.com.nordestefomento.jrimum.domkee.financeiro.banco.ParametrosBancariosMap;
 import br.com.nordestefomento.jrimum.utilix.DateUtil;
 import br.com.nordestefomento.jrimum.utilix.ObjectUtil;
 
@@ -146,9 +146,9 @@ public final class Titulo {
 	private SacadorAvalista sacadorAvalista;
 
 	/**
-	 *@see #setDadoBancario(ParametrosBancarios)
+	 *@see #setParametrosBancarios(ParametrosBancariosMap)
 	 */
-	private ParametrosBancarios parametrosBancarios;
+	private ParametrosBancariosMap parametrosBancariosMap;
 
 	/**
 	 * <p>
@@ -234,15 +234,15 @@ public final class Titulo {
 	 * @param contaBancaria
 	 * @param sacado
 	 * @param cedente
-	 * @param parametrosBancarios
+	 * @param parametrosBancariosMap
 	 * @throws JRimumException
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
-			ParametrosBancarios parametrosBancarios) throws JRimumException {
+			ParametrosBancariosMap parametrosBancariosMap) throws JRimumException {
 		this.setContaBancaria(contaBancaria);
 		this.setSacado(sacado);
 		this.setCedente(cedente);
-		this.setDadoBancario(parametrosBancarios);
+		this.setParametrosBancarios(parametrosBancariosMap);
 	}
 
 	/**
@@ -254,14 +254,14 @@ public final class Titulo {
 	 * @param contaBancaria
 	 * @param sacado
 	 * @param cedente
-	 * @param parametrosBancarios
+	 * @param parametrosBancariosMap
 	 * @param sacadorAvalista
 	 * @throws JRimumException
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
-			ParametrosBancarios parametrosBancarios, SacadorAvalista sacadorAvalista)
-			throws JRimumException {
-		this(contaBancaria, sacado, cedente, parametrosBancarios);
+			ParametrosBancariosMap parametrosBancariosMap,
+			SacadorAvalista sacadorAvalista) throws JRimumException {
+		this(contaBancaria, sacado, cedente, parametrosBancariosMap);
 		this.setSacadorAvalista(sacadorAvalista);
 	}
 
@@ -616,34 +616,46 @@ public final class Titulo {
 		this.desconto = desconto;
 	}
 
-	public ParametrosBancarios getDadoBancario() {
-		return parametrosBancarios;
+	/**
+	 * <p>
+	 * Retorna os parâmetros bancários usados no título.
+	 * </p>
+	 * 
+	 * @return parametrosBancarios
+	 * 
+	 * @see #setParametrosBancarios(ParametrosBancariosMap)
+	 * 
+	 * @since 0.2
+	 */
+
+	public ParametrosBancariosMap getParametrosBancarios() {
+		return parametrosBancariosMap;
 	}
 
 	/**
 	 * <p>
-	 * Atribui um dado bancário a mais ao título.
+	 * Atribui Parâmetros bancários necessários ao título.
 	 * </p>
 	 * 
 	 * <p>
-	 * Em certo casos, quando se deseja implementar um campo livre ou banco
-	 * ainda não suportado este campo deve ser utilizado. Ou simplesmente quando
-	 * um
+	 * Em alguns casos, talvez seja necessário utilizar este campo para fornecer
+	 * mais informações a um título. Seja para simplesmente gerar um boleto ou
+	 * quando se desejar implementar um campo livre ou banco ainda não
+	 * suportado.
 	 * </p>
 	 * 
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.ParametrosBancarios
-	 *      <D>
+	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.ParametrosBancariosMap
 	 * @see br.com.nordestefomento.jrimum.bopepo.campolivre.CampoLivre
 	 * @see br.com.nordestefomento.jrimum.bopepo.BancoSuportado
 	 * 
-	 * @param parametrosBancarios
+	 * @param parametrosBancariosMap
 	 * 
 	 * 
 	 * @since 0.2
 	 */
 
-	public void setDadoBancario(ParametrosBancarios parametrosBancarios) {
-		this.parametrosBancarios = parametrosBancarios;
+	public void setParametrosBancarios(ParametrosBancariosMap parametrosBancariosMap) {
+		this.parametrosBancariosMap = parametrosBancariosMap;
 	}
 
 	@Override
