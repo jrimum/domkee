@@ -36,6 +36,7 @@ import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.log4j.Logger;
 
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.endereco.Endereco;
@@ -64,6 +65,8 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	 * 
 	 */
 	private static final long serialVersionUID = -6156550582890687779L;
+	
+	private static Logger log = Logger.getLogger(Banco.class);
 
 	private CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN;
 
@@ -118,8 +121,8 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	 * @param cnpj
 	 * @param segmento
 	 */
-	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj,
-			String segmento) {
+	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj, String segmento) {
+		
 		super();
 		
 		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
@@ -139,6 +142,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	 * @param imgLogo
 	 */
 	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj,	String segmento, Image imgLogo) {
+		
 		super();
 		
 		this.codigoDeCompensacaoBACEN = codigoDeCompensacaoBACEN;
@@ -150,8 +154,8 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	}
 
 	/**
-	 * 	 * <p>
-	 * Verifica se o código passdo está ok em relação as regras:
+	 * <p>
+	 * Verifica se o código passado está ok em relação as regras:
 	 * <ol>
 	 * <li>Não nulo</li>
 	 * <li>Numérico</li>
@@ -159,7 +163,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	 * </ol>
 	 * </p>
 	 * 
-	 * @param codigo
+	 * @param codigo - Código de compensação BACEN do banco
 	 * 
 	 * @return se ok
 	 * 
@@ -168,17 +172,27 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	 * @since 0.2
 	 * 
 	 */		
-	public static boolean isCodigoDeCompensacaoOK(String codigo) throws IllegalArgumentException{
+	public static boolean isCodigoDeCompensacaoOK(String codigo) {
+		
 		boolean ok = false;
-		if(isNotNull(codigo, "codigo")){
-			if(StringUtils.isNumeric(codigo))
-				if(codigo.length() == 3)
+		
+		if (isNotNull(codigo)) {
+			
+			if (StringUtils.isNumeric(codigo)) {
+				
+				if (codigo.length() == 3) {
+				
 					ok = true;
-				else
-					throw new IllegalArgumentException("O código é de apenas 3 digitos!");
-			else
-				throw new IllegalArgumentException("O código de compensação deve ser numérico!");
+				
+				} else {
+					log.warn("O código é de apenas 3 digitos!");
+				}
+				
+			} else {
+				log.warn("O código de compensação deve ser numérico!");
+			}
 		}
+		
 		return ok;
 	}
 

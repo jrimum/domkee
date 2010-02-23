@@ -27,7 +27,7 @@
  * Criado em: 04/04/2009 - 12:31:48
  * 
  */
-package br.com.nordestefomento.jrimum.domkee.bank.febraban;
+package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban;
 
 import org.junit.Test;
 
