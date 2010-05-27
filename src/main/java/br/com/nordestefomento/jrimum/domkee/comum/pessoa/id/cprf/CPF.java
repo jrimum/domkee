@@ -107,12 +107,12 @@ public class CPF extends AbstractCPRF {
 			StringBuilder codigoFormatado = null;
 
 			codigoFormatado = new StringBuilder(strCPF);
-
 			codigoFormatado.insert(3, '.');
 			codigoFormatado.insert(7, '.');
 			codigoFormatado.insert(11, '-');
 
 			this.setCodigoFormatado(codigoFormatado.toString());
+			this.setCodigoFormatadoSemPontuacao(strCPF);
 			this.setCodigo(Long.parseLong(strCPF));
 
 		} catch (Exception e) {

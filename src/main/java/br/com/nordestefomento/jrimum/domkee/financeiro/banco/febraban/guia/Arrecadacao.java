@@ -22,6 +22,8 @@ public class Arrecadacao implements Serializable {
 	private static final long serialVersionUID = -466289033349771721L;
 
 	
+	private static IdentificacaoProduto identificacaoProduto = IdentificacaoProduto.ARRECADACAO;
+	
 	/**
 	 * @see #setNumeroDoDocumento(String)
 	 */
@@ -38,15 +40,15 @@ public class Arrecadacao implements Serializable {
 	private Date dataDoVencimento;
 
 	/**
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda
-	 */
-	private TipoDeMoeda tipoDeMoeda = TipoDeMoeda.REAL;
-
-	/**
 	 * @see #setValor(BigDecimal)
 	 */
 	private BigDecimal valor;
 
+	/**
+	 * @see #setIdentificacaoValorReferencia(IdentificacaoValorReferencia identificacaoValorReferencia)
+	 */
+	private IdentificacaoValorReferencia identificacaoValorReferencia;
+	
 	/**
 	 * @see #setDesconto(BigDecimal)
 	 */
@@ -137,20 +139,6 @@ public class Arrecadacao implements Serializable {
 	}
 
 	/**
-	 * @return the tipoDeMoeda
-	 */
-	public TipoDeMoeda getTipoDeMoeda() {
-		return tipoDeMoeda;
-	}
-
-	/**
-	 * @param tipoDeMoeda the tipoDeMoeda to set
-	 */
-	public void setTipoDeMoeda(TipoDeMoeda tipoDeMoeda) {
-		this.tipoDeMoeda = tipoDeMoeda;
-	}
-
-	/**
 	 * @return the valor
 	 */
 	public BigDecimal getValor() {
@@ -232,6 +220,28 @@ public class Arrecadacao implements Serializable {
 	 */
 	public void setContribuinte(Contribuinte contribuinte) {
 		this.contribuinte = contribuinte;
+	}
+
+	/**
+	 * @return the identificacaoproduto
+	 */
+	public static final IdentificacaoProduto getIdentificacaoProduto() {
+		return identificacaoProduto;
+	}	
+
+	/**
+	 * @return the identificacaoValorReferencia
+	 */
+	public IdentificacaoValorReferencia getIdentificacaoValorReferencia() {
+		return identificacaoValorReferencia;
+	}
+
+	/**
+	 * @param identificacaoValorReferencia the identificacaoValorReferencia to set
+	 */
+	public void setIdentificacaoValorReferencia(
+			IdentificacaoValorReferencia identificacaoValorReferencia) {
+		this.identificacaoValorReferencia = identificacaoValorReferencia;
 	}
 	
 }

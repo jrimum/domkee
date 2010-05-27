@@ -4,6 +4,7 @@
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
 
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CPF;
 
 /**
  * @author misael
@@ -18,20 +19,20 @@ public class Contribuinte extends EntidadeDeCobranca {
 
 	/**
 	 * @param nome
-	 * @param cadastroDePessoa
+	 * @param cpf
 	 */
-	public Contribuinte(String nome, AbstractCPRF cadastroDePessoa) {
-		super(nome, cadastroDePessoa);
+	public Contribuinte(String nome, CPF cpf) {
+		super(nome, cpf);
 		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @param nome
-	 * @param cadastroDePessoa
-	 */
-	public Contribuinte(String nome, String cadastroDePessoa) {
-		super(nome, cadastroDePessoa);
-		// TODO Auto-generated constructor stub
+	 * @param cpf
+	 */	
+	public Contribuinte(String nome, String cpf) {
+		CPF cPF = new CPF(cpf);
+		new Contribuinte (nome, cPF);
 	}
 
 	/**
@@ -40,6 +41,23 @@ public class Contribuinte extends EntidadeDeCobranca {
 	public Contribuinte(String nome) {
 		super(nome);
 		// TODO Auto-generated constructor stub
+	}
+	
+	
+	/**
+	 * @return CPF
+	 * @see #getCPF()
+	 */
+	public CPF getCPF() {
+		return (CPF)pessoa.getCPRF();
+	}
+
+	/**
+	 * @param abstractCPRF
+	 * @see # setCPF(CPF cpf)
+	 */
+	public void setCPF(CPF cpf) {
+		pessoa.setCPRF(cpf);
 	}
 	
 }

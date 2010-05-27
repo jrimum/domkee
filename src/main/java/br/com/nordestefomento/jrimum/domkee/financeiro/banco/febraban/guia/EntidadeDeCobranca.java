@@ -13,7 +13,7 @@ import br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa;
  * @author misael
  *
  */
-public class EntidadeDeCobranca implements Serializable{
+public abstract class EntidadeDeCobranca implements Serializable{
 
 	/**
 	 * 
@@ -24,27 +24,19 @@ public class EntidadeDeCobranca implements Serializable{
 	/**
 	 * Utilizado como composição
 	 */	
-	private Pessoa pessoa;
+	protected Pessoa pessoa;
 	
 	
-	public EntidadeDeCobranca(String nome) {
+	protected EntidadeDeCobranca() {
+		
+	}
+	
+	protected EntidadeDeCobranca(String nome) {
 		pessoa = new Pessoa(nome);
 	}
 	
-	public EntidadeDeCobranca(String nome, String cadastroDePessoa) {
+	protected EntidadeDeCobranca(String nome, AbstractCPRF cadastroDePessoa) {
 		pessoa = new Pessoa(nome, cadastroDePessoa);
-	}
-	
-	public EntidadeDeCobranca(String nome, AbstractCPRF cadastroDePessoa) {
-		pessoa = new Pessoa(nome, cadastroDePessoa);
-	}
-
-	/**
-	 * @return
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa#getCPRF()
-	 */
-	public AbstractCPRF getCPRF() {
-		return pessoa.getCPRF();
 	}
 
 	/**
@@ -56,14 +48,6 @@ public class EntidadeDeCobranca implements Serializable{
 	}
 
 	/**
-	 * @param abstractCPRF
-	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa#setCPRF(br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF)
-	 */
-	public void setCPRF(AbstractCPRF abstractCPRF) {
-		pessoa.setCPRF(abstractCPRF);
-	}
-
-	/**
 	 * @param nome
 	 * @see br.com.nordestefomento.jrimum.domkee.financeiro.banco.Pessoa#setNome(java.lang.String)
 	 */
@@ -71,5 +55,4 @@ public class EntidadeDeCobranca implements Serializable{
 		pessoa.setNome(nome);
 	}
 
-	
 }

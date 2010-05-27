@@ -72,6 +72,11 @@ public abstract class AbstractCPRF {
 	/**
 	 * 
 	 */
+	private String codigoFormatadoSemPontuacao;
+	
+	/**
+	 * 
+	 */
 	private Long codigo;
 
 	/**
@@ -86,7 +91,6 @@ public abstract class AbstractCPRF {
 	 * @throws IllegalArgumentException
 	 */
 	public static AbstractCPRF create(Long cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
-
 		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 	}
 
@@ -98,22 +102,21 @@ public abstract class AbstractCPRF {
 	 */
 	public static AbstractCPRF create(String cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
-		String codigo = null;
+		String codigoSemFormatacao = null;
 		
 		if (AbstractCPRFValidator.isParametrosValidos(cadastroDePessoa, tipoDeCadastro)) {
 
 			switch_Cadastro: {
 
 				if (tipoDeCadastro == TipoDeCPRF.CPF) {
-
-					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
+					codigoSemFormatacao = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
 				if (tipoDeCadastro == TipoDeCPRF.CNPJ) {
 
-					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
+					codigoSemFormatacao = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
 					break switch_Cadastro;
 
 				}
@@ -122,7 +125,7 @@ public abstract class AbstractCPRF {
 
 		}
 		
-		return create(codigo);
+		return create(codigoSemFormatacao);
 	}
 	
 	/**
@@ -197,6 +200,20 @@ public abstract class AbstractCPRF {
 		return codigo;
 	}
 
+	/**
+	 * @return the codigoNaoFormatado
+	 */
+	public String getCodigoFormatadoSemPontuacao() {
+		return codigoFormatadoSemPontuacao;
+	}
+
+	/**
+	 * @param codigoNaoFormatado the codigoNaoFormatado to set
+	 */
+	protected void setCodigoFormatadoSemPontuacao(String codigoFormatadoSemPontuacao) {
+		this.codigoFormatadoSemPontuacao = codigoFormatadoSemPontuacao;
+	}	
+	
 	@Override
 	public String toString() {
 		return ObjectUtil.toString(this);

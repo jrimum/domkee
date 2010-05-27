@@ -3,7 +3,7 @@
  */
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
 
-import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
 
 /**
  * @author misael
@@ -14,24 +14,24 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	 * 
 	 */
 	private static final long serialVersionUID = 8761667660640466620L;
-	private IdentificacaoSeguimento tipoSeguimento;
+	private IdentificacaoSeguimento identificacaoSeguimento;
 	
 	/**
 	 * @param nome
 	 * @param cadastroDePessoa
 	 */
-	public OrgaoRecebedor(String nome, AbstractCPRF cadastroDePessoa, IdentificacaoSeguimento tipoSeguimento) {
-		super(nome, cadastroDePessoa);
-		setTipoSeguimento(tipoSeguimento);
+	public OrgaoRecebedor(String nome, CNPJ cnpj, IdentificacaoSeguimento tipoSeguimento) {
+		super(nome, cnpj);
+		setIdentificacaoSeguimento(tipoSeguimento);
 	}
 
 	/**
 	 * @param nome
 	 * @param cadastroDePessoa
 	 */
-	public OrgaoRecebedor(String nome, String cadastroDePessoa, IdentificacaoSeguimento tipoSeguimento) {
-		super(nome, cadastroDePessoa);
-		setTipoSeguimento(tipoSeguimento);
+	public OrgaoRecebedor(String nome, String cnpj, IdentificacaoSeguimento tipoSeguimento) {
+		CNPJ cNPJ = new CNPJ(cnpj);
+		new OrgaoRecebedor(nome, cNPJ, tipoSeguimento);
 	}
 
 	/**
@@ -39,21 +39,36 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	 */
 	public OrgaoRecebedor(String nome, IdentificacaoSeguimento tipoSeguimento) {
 		super(nome);
-		setTipoSeguimento(tipoSeguimento);
+		setIdentificacaoSeguimento(tipoSeguimento);
 	}
 	
 	/**
 	 * @return the tipoSeguimento
 	 */
-	public IdentificacaoSeguimento getTipoSeguimento() {
-		return tipoSeguimento;
+	public IdentificacaoSeguimento getIdentificacaoSeguimento() {
+		return identificacaoSeguimento;
 	}
 
 	/**
 	 * @param tipoSeguimento the tipoSeguimento to set
 	 */
-	public void setTipoSeguimento(IdentificacaoSeguimento tipoSeguimento) {
-		this.tipoSeguimento = tipoSeguimento;
-	}
+	public void setIdentificacaoSeguimento(IdentificacaoSeguimento tipoSeguimento) {
+		this.identificacaoSeguimento = tipoSeguimento;
+	}	
 	
+	/**
+	 * @return CNPJ
+	 * @see #getCNPJ()
+	 */
+	public CNPJ getCNPJ() {
+		return (CNPJ) pessoa.getCPRF();
+	}
+
+	/**
+	 * @param abstractCNPJ
+	 * @see # setCPF(CNPJ cnpj)
+	 */
+	public void setCPF(CNPJ cnpj) {
+		pessoa.setCPRF(cnpj);
+	}	
 }

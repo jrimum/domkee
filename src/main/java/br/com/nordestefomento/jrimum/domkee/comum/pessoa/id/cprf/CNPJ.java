@@ -118,6 +118,7 @@ public class CNPJ extends AbstractCPRF {
 			codigoFormatado.insert(15, '-');
 
 			this.setCodigoFormatado(codigoFormatado.toString());
+			this.setCodigoFormatadoSemPontuacao(strCNPJ);
 			this.setCodigo(Long.parseLong(strCNPJ));
 
 		} catch (Exception e) {
