@@ -13,11 +13,11 @@ import br.com.nordestefomento.jrimum.vallia.digitoverificador.TipoDeModulo;
 public enum IdentificacaoValorReferencia {
 
 	
-	VALOR_COBRANDO_EM_REAL_COM_DV_MODULO_10(6, new Modulo(TipoDeModulo.MODULO10)),
+	VALOR_COBRADO_EM_REAL_COM_DV_MODULO_10(6, new Modulo(TipoDeModulo.MODULO10)),
 	
 	QUANTIDADE_DE_MOEDA_COM_DV_MODULO_10(7, new Modulo(TipoDeModulo.MODULO10)),
 	
-	VALOR_COBRANDO_EM_REAL_COM_DV_MODULO_11(8, new Modulo(TipoDeModulo.MODULO11)),
+	VALOR_COBRADO_EM_REAL_COM_DV_MODULO_11(8, new Modulo(TipoDeModulo.MODULO11)),
 	
 	QUANTIDADE_DE_MOEDA_COM_DV_MODULO_11(9, new Modulo(TipoDeModulo.MODULO11));
 	

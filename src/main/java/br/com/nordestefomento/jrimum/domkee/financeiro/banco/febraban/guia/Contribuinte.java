@@ -3,7 +3,6 @@
  */
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
 
-import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CPF;
 
 /**
@@ -31,8 +30,12 @@ public class Contribuinte extends EntidadeDeCobranca {
 	 * @param cpf
 	 */	
 	public Contribuinte(String nome, String cpf) {
+		super();
+		
+		setNome(nome);
+		
 		CPF cPF = new CPF(cpf);
-		new Contribuinte (nome, cPF);
+		setCPF(cPF);
 	}
 
 	/**

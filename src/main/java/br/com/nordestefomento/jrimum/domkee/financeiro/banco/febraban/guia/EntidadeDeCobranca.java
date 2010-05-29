@@ -28,7 +28,7 @@ public abstract class EntidadeDeCobranca implements Serializable{
 	
 	
 	protected EntidadeDeCobranca() {
-		
+		pessoa = new Pessoa();
 	}
 	
 	protected EntidadeDeCobranca(String nome) {

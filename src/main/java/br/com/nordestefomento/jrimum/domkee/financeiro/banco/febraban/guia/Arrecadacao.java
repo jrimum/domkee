@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
-import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.TipoDeMoeda;
 
 /**
  * @author misael
@@ -24,6 +23,10 @@ public class Arrecadacao implements Serializable {
 	
 	private static IdentificacaoProduto identificacaoProduto = IdentificacaoProduto.ARRECADACAO;
 	
+	private String titulo;
+	
+	private String descricao;
+
 	/**
 	 * @see #setNumeroDoDocumento(String)
 	 */
@@ -74,15 +77,7 @@ public class Arrecadacao implements Serializable {
 	 * @see #setContribuinte(Contribuinte)
 	 */
 	private Contribuinte contribuinte;
-
-	/**
-	 * @param orgaoRecebedor
-	 * @param contribuinte
-	 */
-	public Arrecadacao(OrgaoRecebedor orgaoRecebedor, Contribuinte contribuinte) {
-		this.orgaoRecebedor = orgaoRecebedor;
-		this.contribuinte = contribuinte;
-	}
+	
 
 	/**
 	 * @param convenio
@@ -96,6 +91,34 @@ public class Arrecadacao implements Serializable {
 		this.contribuinte = contribuinte;
 	}
 
+	/**
+	 * @return the titulo
+	 */
+	public String getTitulo() {
+		return titulo;
+	}
+
+	/**
+	 * @param titulo the titulo to set
+	 */
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
+	/**
+	 * @return the descricao
+	 */
+	public String getDescricao() {
+		return descricao;
+	}
+
+	/**
+	 * @param descricao the descricao to set
+	 */
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}	
+	
 	/**
 	 * @return the numeroDoDocumento
 	 */

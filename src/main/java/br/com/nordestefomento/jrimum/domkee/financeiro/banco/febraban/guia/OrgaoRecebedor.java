@@ -30,8 +30,14 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	 * @param cadastroDePessoa
 	 */
 	public OrgaoRecebedor(String nome, String cnpj, IdentificacaoSeguimento tipoSeguimento) {
+		super();
+		
+		setNome(nome);
+		
 		CNPJ cNPJ = new CNPJ(cnpj);
-		new OrgaoRecebedor(nome, cNPJ, tipoSeguimento);
+		setCNPJ(cNPJ);
+		
+		setIdentificacaoSeguimento(tipoSeguimento);
 	}
 
 	/**
@@ -66,9 +72,9 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 
 	/**
 	 * @param abstractCNPJ
-	 * @see # setCPF(CNPJ cnpj)
+	 * @see # setCNPJ(CNPJ cnpj)
 	 */
-	public void setCPF(CNPJ cnpj) {
+	public void setCNPJ(CNPJ cnpj) {
 		pessoa.setCPRF(cnpj);
 	}	
 }
