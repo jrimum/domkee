@@ -43,9 +43,9 @@ public class Arrecadacao implements Serializable {
 	private Date dataDoVencimento;
 
 	/**
-	 * @see #setValor(BigDecimal)
+	 * @see #setValorDocumento(BigDecimal)
 	 */
-	private BigDecimal valor;
+	private BigDecimal valorDocumento;
 
 	/**
 	 * @see #setTipoValorReferencia(TipoValorReferencia tipoValorReferencia)
@@ -53,9 +53,9 @@ public class Arrecadacao implements Serializable {
 	private TipoValorReferencia tipoValorReferencia;
 	
 	/**
-	 * @see #setDesconto(BigDecimal)
+	 * @see #setValorDesconto(BigDecimal)
 	 */
-	private BigDecimal desconto;
+	private BigDecimal valorDesconto;
 
 	/**
 	 * @see #setNossoNumero(String)
@@ -162,31 +162,31 @@ public class Arrecadacao implements Serializable {
 	}
 
 	/**
-	 * @return the valor
+	 * @return the valorDocumento
 	 */
-	public BigDecimal getValor() {
-		return valor;
+	public BigDecimal getValorDocumento() {
+		return valorDocumento;
 	}
 
 	/**
-	 * @param valor the valor to set
+	 * @param valorDocumento the valorDocumento to set
 	 */
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
+	public void setValorDocumento(BigDecimal valorDocumento) {
+		this.valorDocumento = valorDocumento;
 	}
 
 	/**
-	 * @return the desconto
+	 * @return the valorDesconto
 	 */
-	public BigDecimal getDesconto() {
-		return desconto;
+	public BigDecimal getValorDesconto() {
+		return valorDesconto;
 	}
 
 	/**
-	 * @param desconto the desconto to set
+	 * @param valorDesconto the valorDesconto to set
 	 */
-	public void setDesconto(BigDecimal desconto) {
-		this.desconto = desconto;
+	public void setValorDesconto(BigDecimal valorDesconto) {
+		this.valorDesconto = valorDesconto;
 	}
 
 	/**

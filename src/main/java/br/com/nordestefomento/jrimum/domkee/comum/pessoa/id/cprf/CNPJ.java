@@ -70,7 +70,7 @@ public class CNPJ extends AbstractCPRF {
 		this.autenticadorCP = AbstractCPRFValidator.create(strCNPJ);
 
 		if (autenticadorCP.isValido()) {
-			init(strCNPJ);
+			init(autenticadorCP.getCodigoDoCadastro());
 		} else {
 			throw new CNPJException(new IllegalArgumentException(
 					"O cadastro de pessoa [ " + strCNPJ + " ] não é válido."));
@@ -89,7 +89,7 @@ public class CNPJ extends AbstractCPRF {
 				this.autenticadorCP = AbstractCPRFValidator.create(strCNPJ);
 
 				if (autenticadorCP.isValido())
-					init(strCNPJ);
+					init(autenticadorCP.getCodigoDoCadastro());
 				else
 					throw new IllegalArgumentException(
 							"O cadastro de pessoa [ " + strCNPJ

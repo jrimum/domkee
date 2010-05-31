@@ -67,7 +67,7 @@ public class CPF extends AbstractCPRF {
 		this.autenticadorCP = AbstractCPRFValidator.create(strCPF);
 
 		if (autenticadorCP.isValido()) {
-			init(strCPF);
+			init(autenticadorCP.getCodigoDoCadastro());
 		} else {
 			throw new CPFException(new IllegalArgumentException(
 					"O cadastro de pessoa [ " + strCPF + " ] não é válido."));
@@ -86,7 +86,7 @@ public class CPF extends AbstractCPRF {
 				this.autenticadorCP = AbstractCPRFValidator.create(strCPF);
 
 				if (autenticadorCP.isValido())
-					init(strCPF);
+					init(autenticadorCP.getCodigoDoCadastro());
 				else
 					throw new IllegalArgumentException(
 							"O cadastro de pessoa [ " + strCPF

@@ -9,7 +9,7 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
  */
 public enum TipoProduto {
 
-	ARRECADACAO(8, "Arredacão");
+	ARRECADACAO(8, "Arredação");
 		
 	private Integer codigo;
 	private String nome;

@@ -2,7 +2,7 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
 
 public enum TipoSeguimento {
 
-	PREFEITURA(1, "Prefeitura"),
+	PREFEITURA(1, "Prefeituras"),
 	
 	SANEAMENTO(2, "Saneamento"),
 	
