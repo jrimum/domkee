@@ -1,6 +1,6 @@
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
 
-public enum IdentificacaoSeguimento {
+public enum TipoSeguimento {
 
 	PREFEITURA(1, "Prefeitura"),
 	
@@ -27,7 +27,7 @@ public enum IdentificacaoSeguimento {
 	 * @param codigo
 	 * @param nome
 	 */
-	private IdentificacaoSeguimento(Integer codigo, String nome) {
+	private TipoSeguimento(Integer codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}

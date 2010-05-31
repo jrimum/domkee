@@ -7,7 +7,7 @@ package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
  * @author misael
  *
  */
-public enum IdentificacaoProduto {
+public enum TipoProduto {
 
 	ARRECADACAO(8, "Arredacão");
 		
@@ -18,7 +18,7 @@ public enum IdentificacaoProduto {
 	 * @param codigo
 	 * @param nome
 	 */
-	private IdentificacaoProduto(Integer codigo, String nome) {
+	private TipoProduto(Integer codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}

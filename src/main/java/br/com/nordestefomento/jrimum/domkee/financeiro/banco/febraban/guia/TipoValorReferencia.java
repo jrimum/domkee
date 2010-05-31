@@ -10,7 +10,7 @@ import br.com.nordestefomento.jrimum.vallia.digitoverificador.TipoDeModulo;
  * @author misael
  *
  */
-public enum IdentificacaoValorReferencia {
+public enum TipoValorReferencia {
 
 	
 	VALOR_COBRADO_EM_REAL_COM_DV_MODULO_10(6, new Modulo(TipoDeModulo.MODULO10)),
@@ -30,7 +30,7 @@ public enum IdentificacaoValorReferencia {
 	 * @param codigo
 	 * @param nome
 	 */
-	private IdentificacaoValorReferencia(Integer codigo, Modulo modulo) {
+	private TipoValorReferencia(Integer codigo, Modulo modulo) {
 		this.codigo = codigo;
 		this.modulo = modulo;
 	}

@@ -19,22 +19,22 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	 * 
 	 */
 	private static final long serialVersionUID = 8761667660640466620L;
-	private IdentificacaoSeguimento identificacaoSeguimento;
+	private TipoSeguimento tipoSeguimento;
 	
 	/**
 	 * @param nome
 	 * @param cadastroDePessoa
 	 */
-	public OrgaoRecebedor(String nome, CNPJ cnpj, IdentificacaoSeguimento tipoSeguimento) {
+	public OrgaoRecebedor(String nome, CNPJ cnpj, TipoSeguimento tipoSeguimento) {
 		super(nome, cnpj);
-		setIdentificacaoSeguimento(tipoSeguimento);
+		setTipoSeguimento(tipoSeguimento);
 	}
 
 	/**
 	 * @param nome
 	 * @param cadastroDePessoa
 	 */
-	public OrgaoRecebedor(String nome, String cnpj, IdentificacaoSeguimento tipoSeguimento) {
+	public OrgaoRecebedor(String nome, String cnpj, TipoSeguimento tipoSeguimento) {
 		super();
 		
 		setNome(nome);
@@ -42,29 +42,29 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 		CNPJ cNPJ = new CNPJ(cnpj);
 		setCNPJ(cNPJ);
 		
-		setIdentificacaoSeguimento(tipoSeguimento);
+		setTipoSeguimento(tipoSeguimento);
 	}
 
 	/**
 	 * @param nome
 	 */
-	public OrgaoRecebedor(String nome, IdentificacaoSeguimento tipoSeguimento) {
+	public OrgaoRecebedor(String nome, TipoSeguimento tipoSeguimento) {
 		super(nome);
-		setIdentificacaoSeguimento(tipoSeguimento);
+		setTipoSeguimento(tipoSeguimento);
 	}
 	
 	/**
 	 * @return the tipoSeguimento
 	 */
-	public IdentificacaoSeguimento getIdentificacaoSeguimento() {
-		return identificacaoSeguimento;
+	public TipoSeguimento getTipoSeguimento() {
+		return tipoSeguimento;
 	}
 
 	/**
 	 * @param tipoSeguimento the tipoSeguimento to set
 	 */
-	public void setIdentificacaoSeguimento(IdentificacaoSeguimento tipoSeguimento) {
-		this.identificacaoSeguimento = tipoSeguimento;
+	public void setTipoSeguimento(TipoSeguimento tipoSeguimento) {
+		this.tipoSeguimento = tipoSeguimento;
 	}	
 	
 	/**

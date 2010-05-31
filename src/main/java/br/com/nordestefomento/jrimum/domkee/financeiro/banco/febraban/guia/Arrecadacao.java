@@ -21,7 +21,7 @@ public class Arrecadacao implements Serializable {
 	private static final long serialVersionUID = -466289033349771721L;
 
 	
-	private static IdentificacaoProduto identificacaoProduto = IdentificacaoProduto.ARRECADACAO;
+	private static TipoProduto tipoProduto = TipoProduto.ARRECADACAO;
 	
 	private String titulo;
 	
@@ -48,9 +48,9 @@ public class Arrecadacao implements Serializable {
 	private BigDecimal valor;
 
 	/**
-	 * @see #setIdentificacaoValorReferencia(IdentificacaoValorReferencia identificacaoValorReferencia)
+	 * @see #setTipoValorReferencia(TipoValorReferencia tipoValorReferencia)
 	 */
-	private IdentificacaoValorReferencia identificacaoValorReferencia;
+	private TipoValorReferencia tipoValorReferencia;
 	
 	/**
 	 * @see #setDesconto(BigDecimal)
@@ -248,23 +248,23 @@ public class Arrecadacao implements Serializable {
 	/**
 	 * @return the identificacaoproduto
 	 */
-	public static final IdentificacaoProduto getIdentificacaoProduto() {
-		return identificacaoProduto;
+	public static final TipoProduto getTipoProduto() {
+		return tipoProduto;
 	}	
 
 	/**
-	 * @return the identificacaoValorReferencia
+	 * @return the tipoValorReferencia
 	 */
-	public IdentificacaoValorReferencia getIdentificacaoValorReferencia() {
-		return identificacaoValorReferencia;
+	public TipoValorReferencia getTipoValorReferencia() {
+		return tipoValorReferencia;
 	}
 
 	/**
-	 * @param identificacaoValorReferencia the identificacaoValorReferencia to set
+	 * @param tipoValorReferencia the tipoValorReferencia to set
 	 */
-	public void setIdentificacaoValorReferencia(
-			IdentificacaoValorReferencia identificacaoValorReferencia) {
-		this.identificacaoValorReferencia = identificacaoValorReferencia;
+	public void setTipoValorReferencia(
+			TipoValorReferencia tipoValorReferencia) {
+		this.tipoValorReferencia = tipoValorReferencia;
 	}
 	
 }
