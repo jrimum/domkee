@@ -3,6 +3,8 @@
  */
 package br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.guia;
 
+import java.awt.Image;
+
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
 
 /**
@@ -10,6 +12,9 @@ import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
  *
  */
 public class OrgaoRecebedor extends EntidadeDeCobranca {
+
+	private Image imgLogo;	
+	
 	/**
 	 * 
 	 */
@@ -76,5 +81,19 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	 */
 	public void setCNPJ(CNPJ cnpj) {
 		pessoa.setCPRF(cnpj);
+	}
+	
+	/**
+	 * @return the imgLogo
+	 */
+	public Image getImgLogo() {
+		return imgLogo;
+	}
+
+	/**
+	 * @param imgLogo the imgLogo to set
+	 */
+	public void setImgLogo(Image imgLogo) {
+		this.imgLogo = imgLogo;
 	}	
 }
