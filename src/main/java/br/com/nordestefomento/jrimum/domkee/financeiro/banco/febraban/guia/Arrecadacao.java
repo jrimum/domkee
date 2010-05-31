@@ -20,8 +20,7 @@ public class Arrecadacao implements Serializable {
 	 */
 	private static final long serialVersionUID = -466289033349771721L;
 
-	
-	private static TipoProduto tipoProduto = TipoProduto.ARRECADACAO;
+	public static final TipoProduto TIPO_PRODUTO = TipoProduto.ARRECADACAO;
 	
 	private String titulo;
 	
@@ -243,13 +242,6 @@ public class Arrecadacao implements Serializable {
 	 */
 	public void setContribuinte(Contribuinte contribuinte) {
 		this.contribuinte = contribuinte;
-	}
-
-	/**
-	 * @return the identificacaoproduto
-	 */
-	public static final TipoProduto getTipoProduto() {
-		return tipoProduto;
 	}	
 
 	/**
