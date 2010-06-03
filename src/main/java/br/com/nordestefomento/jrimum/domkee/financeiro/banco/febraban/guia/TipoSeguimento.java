@@ -46,4 +46,19 @@ public enum TipoSeguimento {
 		return nome;
 	}
 	
+	
+	public TipoSeguimento findByCodigo(Integer codigo) {
+		TipoSeguimento tipoSeguimentoRetorno = null;
+		
+		TipoSeguimento[] tipoSeguimentoArray = TipoSeguimento.values();
+		for (int i = 0; i < tipoSeguimentoArray.length; i++) {
+			if (tipoSeguimentoArray[i].codigo == codigo) {
+				tipoSeguimentoRetorno = tipoSeguimentoArray[i];
+				break;
+			}
+				
+		}
+		
+		return tipoSeguimentoRetorno;
+	}
 }

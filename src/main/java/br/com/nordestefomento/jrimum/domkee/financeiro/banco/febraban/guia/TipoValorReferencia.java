@@ -48,5 +48,20 @@ public enum TipoValorReferencia {
 	public Modulo getModulo() {
 		return modulo;
 	}	
+	
+	public TipoValorReferencia findByCodigo(Integer codigo) {
+		TipoValorReferencia tipoValorReferenciaRetorno = null;
+		
+		TipoValorReferencia[] tipoValorReferenciaArray = TipoValorReferencia.values();
+		for (int i = 0; i < tipoValorReferenciaArray.length; i++) {
+			if (tipoValorReferenciaArray[i].codigo == codigo) {
+				tipoValorReferenciaRetorno = tipoValorReferenciaArray[i];
+				break;
+			}
+				
+		}
+		
+		return tipoValorReferenciaRetorno;
+	}	
 
 }

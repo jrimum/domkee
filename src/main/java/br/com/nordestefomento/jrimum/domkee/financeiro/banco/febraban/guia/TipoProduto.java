@@ -37,4 +37,19 @@ public enum TipoProduto {
 		return nome;
 	}	
 	
+	public TipoProduto findByCodigo(Integer codigo) {
+		TipoProduto tipoProdutoRetorno = null;
+		
+		TipoProduto[] tipoProdutoArray = TipoProduto.values();
+		for (int i = 0; i < tipoProdutoArray.length; i++) {
+			if (tipoProdutoArray[i].codigo == codigo) {
+				tipoProdutoRetorno = tipoProdutoArray[i];
+				break;
+			}
+				
+		}
+		
+		return tipoProdutoRetorno;
+	}	
+	
 }
