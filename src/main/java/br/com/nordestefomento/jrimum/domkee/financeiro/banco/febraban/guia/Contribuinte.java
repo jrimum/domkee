@@ -16,6 +16,15 @@ public class Contribuinte extends EntidadeDeCobranca {
 	 */
 	private static final long serialVersionUID = 3267851061149256619L;
 
+	
+	/**
+	 * 
+	 */
+	public Contribuinte() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	/**
 	 * @param nome
 	 * @param cpf

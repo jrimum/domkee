@@ -47,12 +47,12 @@ public enum TipoSeguimento {
 	}
 	
 	
-	public TipoSeguimento findByCodigo(Integer codigo) {
+	public static TipoSeguimento findByCodigo(Integer codigo) {
 		TipoSeguimento tipoSeguimentoRetorno = null;
 		
 		TipoSeguimento[] tipoSeguimentoArray = TipoSeguimento.values();
 		for (int i = 0; i < tipoSeguimentoArray.length; i++) {
-			if (tipoSeguimentoArray[i].codigo == codigo) {
+			if (tipoSeguimentoArray[i].codigo.equals(codigo)) {
 				tipoSeguimentoRetorno = tipoSeguimentoArray[i];
 				break;
 			}

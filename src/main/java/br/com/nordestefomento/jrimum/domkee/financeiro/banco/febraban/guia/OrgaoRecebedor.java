@@ -22,6 +22,14 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	private TipoSeguimento tipoSeguimento;
 	
 	/**
+	 * 
+	 */
+	public OrgaoRecebedor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}	
+	
+	/**
 	 * @param nome
 	 * @param cadastroDePessoa
 	 */

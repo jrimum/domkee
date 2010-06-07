@@ -49,12 +49,12 @@ public enum TipoValorReferencia {
 		return modulo;
 	}	
 	
-	public TipoValorReferencia findByCodigo(Integer codigo) {
+	public static TipoValorReferencia findByCodigo(Integer codigo) {
 		TipoValorReferencia tipoValorReferenciaRetorno = null;
 		
 		TipoValorReferencia[] tipoValorReferenciaArray = TipoValorReferencia.values();
 		for (int i = 0; i < tipoValorReferenciaArray.length; i++) {
-			if (tipoValorReferenciaArray[i].codigo == codigo) {
+			if (tipoValorReferenciaArray[i].codigo.equals(codigo)) {
 				tipoValorReferenciaRetorno = tipoValorReferenciaArray[i];
 				break;
 			}
