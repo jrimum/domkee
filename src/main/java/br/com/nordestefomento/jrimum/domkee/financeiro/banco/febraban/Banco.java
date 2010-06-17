@@ -81,6 +81,7 @@ public class Banco implements br.com.nordestefomento.jrimum.domkee.financeiro.ba
 	 */
 	public Banco() {
 		super();
+		pessoaJuridica = new PessoaJuridica();
 	}
 	
 	
