@@ -42,7 +42,7 @@ import org.jrimum.utilix.ObjectUtil;
  * @author   <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
  * @author   Misael Barreto 
  * @author   Rômulo Augusto
- * @author   <a href="http://www.nordeste-fomento.com.br">Nordeste Fomento Mercantil</a>
+ * @author   <a href="http://www.nordestefomento.com.br">Nordeste Fomento Mercantil</a>
  * @author Samuel
  * 
  * @since   0.2
