@@ -48,8 +48,8 @@ import org.junit.Test;
  * 
  * @author Gabriel Guimarães
  * @author Gilmar P.S.L
- * @author Misael Barreto
- * @author Rômulo Augusto
+ * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @since JRimum 1.0
  * 

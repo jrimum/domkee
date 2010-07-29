@@ -50,7 +50,7 @@ import java.io.Serializable;
  *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * </p>
  * 
- * @author Rômulo Augusto
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @version 0.2
  */

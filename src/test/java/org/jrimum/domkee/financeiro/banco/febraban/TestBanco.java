@@ -37,7 +37,7 @@ import org.junit.Test;
 /**
  * Classe de teste para a classe Banco.
  *  
- * @author Rômulo Augusto
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @version 0.2
  * 
