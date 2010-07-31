@@ -29,7 +29,7 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
-import org.jrimum.utilix.Filler;
+import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 

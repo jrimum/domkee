@@ -30,8 +30,8 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import org.jrimum.utilix.Filler;
 import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.digitoverificador.CodigoDeCompensacaoBancosBACENDV;
 
 /**
