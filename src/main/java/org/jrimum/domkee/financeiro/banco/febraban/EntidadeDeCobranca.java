@@ -28,7 +28,7 @@
  */
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import static org.jrimum.utilix.ObjectUtil.isNotNull;
+import static org.jrimum.utilix.Objects.isNotNull;
 
 import java.io.Serializable;
 import java.util.Collection;

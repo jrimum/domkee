@@ -30,7 +30,7 @@
 
 package org.jrimum.domkee.comum.pessoa.contato;
 
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 /**
@@ -73,6 +73,6 @@ public class Email {
 	
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

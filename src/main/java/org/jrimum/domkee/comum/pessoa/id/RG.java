@@ -34,7 +34,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import org.jrimum.domkee.financeiro.banco.PessoaFisica;
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 
@@ -122,6 +122,6 @@ public class RG implements Serializable {
 	
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

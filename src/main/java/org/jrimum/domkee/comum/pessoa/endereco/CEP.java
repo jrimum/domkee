@@ -30,7 +30,7 @@
 
 package org.jrimum.domkee.comum.pessoa.endereco;
 
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 /**
@@ -107,6 +107,6 @@ public class CEP {
 
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

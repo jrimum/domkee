@@ -33,7 +33,7 @@ import java.util.Collection;
 
 import org.jrimum.domkee.financeiro.banco.Banco;
 import org.jrimum.domkee.financeiro.banco.Pessoa;
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 // TODO Verificar a necessidade de se criar uma família de classes de
@@ -200,6 +200,6 @@ public class ContaBancaria {
 
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

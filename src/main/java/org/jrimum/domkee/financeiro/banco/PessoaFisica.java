@@ -29,8 +29,8 @@
 
 package org.jrimum.domkee.financeiro.banco;
 
-import static org.jrimum.utilix.ObjectUtil.isNotNull;
-import static org.jrimum.utilix.ObjectUtil.isNull;
+import static org.jrimum.utilix.Objects.isNotNull;
+import static org.jrimum.utilix.Objects.isNull;
 
 import java.util.Collection;
 

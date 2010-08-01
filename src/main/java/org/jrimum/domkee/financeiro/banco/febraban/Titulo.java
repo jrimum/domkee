@@ -29,7 +29,7 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import static org.jrimum.utilix.ObjectUtil.isNotNull;
+import static org.jrimum.utilix.Objects.isNotNull;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -37,7 +37,7 @@ import java.util.Date;
 
 import org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap;
 import org.jrimum.utilix.DateUtil;
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 /**
@@ -652,6 +652,6 @@ public final class Titulo {
 
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

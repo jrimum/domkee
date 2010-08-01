@@ -30,7 +30,7 @@
 package org.jrimum.domkee.financeiro.banco.febraban;
 
 import org.apache.commons.lang.StringUtils;
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 /**
@@ -111,6 +111,6 @@ public final class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia
 	
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

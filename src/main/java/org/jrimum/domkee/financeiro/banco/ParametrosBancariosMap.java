@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 /**
  * <p>
@@ -124,7 +124,7 @@ public final class ParametrosBancariosMap {
 
 	public boolean contemComNome(String nome) {
 
-		ObjectUtil.checkNotNull(nome);
+		Objects.checkNotNull(nome);
 
 		return dadosMap.containsKey(nome);
 	}
@@ -149,7 +149,7 @@ public final class ParametrosBancariosMap {
 
 	public boolean contemComValor(Object valor) {
 
-		ObjectUtil.checkNotNull(valor);
+		Objects.checkNotNull(valor);
 
 		return dadosMap.containsValue(valor);
 	}
@@ -178,7 +178,7 @@ public final class ParametrosBancariosMap {
 	@SuppressWarnings("unchecked")
 	public <V> V getValor(String nome) {
 
-		ObjectUtil.checkNotNull(nome);
+		Objects.checkNotNull(nome);
 
 		return (V) dadosMap.get(nome);
 	}
@@ -280,8 +280,8 @@ public final class ParametrosBancariosMap {
 
 	public ParametrosBancariosMap adicione(String nome, Object valor) {
 
-		ObjectUtil.checkNotNull(nome);
-		ObjectUtil.checkNotNull(valor);
+		Objects.checkNotNull(nome);
+		Objects.checkNotNull(valor);
 
 		getInstance();
 
@@ -313,7 +313,7 @@ public final class ParametrosBancariosMap {
 
 	public ParametrosBancariosMap adicione(ParametrosBancariosMap dados) {
 
-		ObjectUtil.checkNotNull(dados);
+		Objects.checkNotNull(dados);
 
 		this.dadosMap.putAll(dados.dadosMap);
 
@@ -348,7 +348,7 @@ public final class ParametrosBancariosMap {
 	@SuppressWarnings("unchecked")
 	public <V> V remova(String nome) {
 
-		ObjectUtil.checkNotNull(nome);
+		Objects.checkNotNull(nome);
 
 		return (V) dadosMap.remove(nome);
 	}

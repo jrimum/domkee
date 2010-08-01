@@ -29,8 +29,8 @@
 
 package org.jrimum.domkee.financeiro.banco;
 
-import static org.jrimum.utilix.ObjectUtil.isNotNull;
-import static org.jrimum.utilix.ObjectUtil.isNull;
+import static org.jrimum.utilix.Objects.isNotNull;
+import static org.jrimum.utilix.Objects.isNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,7 +39,7 @@ import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 
 
@@ -261,6 +261,6 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

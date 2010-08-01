@@ -31,7 +31,7 @@ package org.jrimum.domkee.comum.pessoa.contato;
 
 import java.io.Serializable;
 
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 
 /**
  * 
@@ -109,6 +109,6 @@ public class NumeroDeTelefone implements Serializable {
 
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }

@@ -30,7 +30,7 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import org.jrimum.utilix.ObjectUtil;
+import org.jrimum.utilix.Objects;
 import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.digitoverificador.CodigoDeCompensacaoBancosBACENDV;
 
@@ -129,6 +129,6 @@ public class CodigoDeCompensacaoBACEN {
 
 	@Override
 	public String toString() {
-		return ObjectUtil.toString(this);
+		return Objects.toString(this);
 	}
 }
