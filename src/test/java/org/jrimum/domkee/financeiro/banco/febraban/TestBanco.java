@@ -31,7 +31,6 @@ package org.jrimum.domkee.financeiro.banco.febraban;
 
 import junit.framework.Assert;
 
-import org.jrimum.domkee.financeiro.banco.febraban.Banco;
 import org.junit.Test;
 
 /**

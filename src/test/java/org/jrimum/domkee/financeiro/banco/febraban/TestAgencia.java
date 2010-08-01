@@ -29,7 +29,6 @@
  */
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import org.jrimum.domkee.financeiro.banco.febraban.Agencia;
 import org.junit.Test;
 
 /**
