@@ -36,7 +36,6 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap;
-import org.jrimum.utilix.DateUtil;
 import org.jrimum.utilix.Objects;
 
 
@@ -322,10 +321,6 @@ public final class Titulo {
 		this.dataDoDocumento = dataDoDocumento;
 	}
 
-	public void setDataDoDocumento(String dataDoDocumento) {
-		setDataDoDocumento(DateUtil.parse(dataDoDocumento));
-	}
-
 	/**
 	 * @see #setDataDoVencimento(Date)
 	 * 
@@ -346,10 +341,6 @@ public final class Titulo {
 	 */
 	public void setDataDoVencimento(Date dataDoVencimento) {
 		this.dataDoVencimento = dataDoVencimento;
-	}
-
-	public void setDataDoVencimento(String dataDoVencimento) {
-		setDataDoVencimento(DateUtil.parse(dataDoVencimento));
 	}
 
 	/**
