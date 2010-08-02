@@ -75,11 +75,6 @@ import org.jrimum.utilix.Objects;
 public final class Titulo {
 
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7417116706701988529L;
-
-	/**
 	 * @see #setNumeroDoDocumento(String)
 	 */
 	private String numeroDoDocumento;
@@ -108,6 +103,26 @@ public final class Titulo {
 	 * @see #setDesconto(BigDecimal)
 	 */
 	private BigDecimal desconto;
+	
+	/**
+	 * @see #setMora(BigDecimal)
+	 */
+	private BigDecimal mora;
+	
+	/**
+	 * @see #setDeducao(BigDecimal)
+	 */
+	private BigDecimal deducao;
+	
+	/**
+	 * @see #setAcrecimo(BigDecimal)
+	 */
+	private BigDecimal acrecimo;
+	
+	/**
+	 * @see #setValorCobrado(BigDecimal)
+	 */
+	private BigDecimal valorCobrado;
 
 	/**
 	 * @see org.jrimum.domkee.financeiro.banco.febraban.TipoDeTitulo
@@ -369,7 +384,7 @@ public final class Titulo {
 	 * 
 	 * @return the enumMoeda
 	 */
-	public TipoDeMoeda getEnumMoeda() {
+	public TipoDeMoeda getTipoDeMoeda() {
 		return tipoDeMoeda;
 	}
 
@@ -379,7 +394,7 @@ public final class Titulo {
 	 * @param tipoDeMoeda
 	 *            the enumMoeda to set
 	 */
-	public void setEnumMoeda(TipoDeMoeda tipoDeMoeda) {
+	public void setTipoDeMoeda(TipoDeMoeda tipoDeMoeda) {
 		this.tipoDeMoeda = tipoDeMoeda;
 	}
 
@@ -581,7 +596,7 @@ public final class Titulo {
 
 	/**
 	 * <p>
-	 * Atribui um valor de desconto ao valor original do título expresso em
+	 * Atribui um valor de descontos/abatimentos ao valor original do título expresso em
 	 * moeda corrente e arredondanda em duas casas decimais para baixo.
 	 * </p>
 	 * <p>
@@ -597,6 +612,124 @@ public final class Titulo {
 			desconto = desconto.setScale(2, RoundingMode.DOWN);
 		}
 		this.desconto = desconto;
+	}
+
+	/**
+	 * @see #setMora(BigDecimal)
+	 * 
+	 * @return the mora
+	 */
+	protected BigDecimal getMora() {
+		return mora;
+	}
+
+	/**
+	 * <p>
+	 * Atribui um valor de mora/multa ao título expresso em moeda corrente e
+	 * arredondanda em duas casas decimais para baixo.
+	 * </p>
+	 * <p>
+	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
+	 * </p>
+	 * 
+	 * @param mora
+	 *            the mora to set
+	 */
+	protected void setMora(BigDecimal mora) {
+		if (mora != null) {
+			mora = mora.setScale(2, RoundingMode.DOWN);
+		}
+		this.mora = mora;
+	}
+
+	/**
+	 * @see #setDeducao(BigDecimal)
+	 * 
+	 * @return the deducao
+	 */
+	protected BigDecimal getDeducao() {
+		return deducao;
+	}
+
+	/**
+	 * <p>
+	 * Atribui um valor para outras deduções ao título expresso em moeda
+	 * corrente e arredondanda em duas casas decimais para baixo.
+	 * </p>
+	 * <p>
+	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
+	 * </p>
+	 * 
+	 * @param mora
+	 *            the mora to set
+	 */
+	protected void setDeducao(BigDecimal deducao) {
+		if (deducao != null) {
+			deducao = deducao.setScale(2, RoundingMode.DOWN);
+		}
+		this.deducao = deducao;
+	}
+	
+	/**
+	 * @see #setAcrecimo(BigDecimal)
+	 * 
+	 * @return the acrecimo
+	 */
+	protected BigDecimal getAcrecimo() {
+		
+		return acrecimo;
+	}
+	
+	/**
+	 * <p>
+	 * Atribui um valor para outros acrécimos ao título expresso em moeda
+	 * corrente e arredondanda em duas casas decimais para baixo.
+	 * </p>
+	 * <p>
+	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
+	 * </p>
+	 * 
+	 * @param mora
+	 *            the mora to set
+	 */
+	protected void setAcrecimo(BigDecimal acrecimo) {
+		if (acrecimo != null) {
+			acrecimo = acrecimo.setScale(2, RoundingMode.DOWN);
+		}
+		this.acrecimo = acrecimo;
+	}
+
+	/**
+	 * @see #setValorCobrado(BigDecimal)
+	 * 
+	 * @return the valorCobrado
+	 */
+	protected BigDecimal getValorCobrado() {
+		return valorCobrado;
+	}
+
+	/**
+	 * <p>
+	 * Atribui um "valor cobrardo" ao título expresso em moeda corrente e
+	 * arredondanda em duas casas decimais para baixo.
+	 * </p>
+	 * <p>
+	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
+	 * </p>
+	 * 
+	 * <p>
+	 * Note que o valor cobrado não é o valor de face do título e sim um valor
+	 * resultante de deduções ou acrécimos.
+	 * </p>
+	 * 
+	 * @param mora
+	 *            the mora to set
+	 */
+	protected void setValorCobrado(BigDecimal valorCobrado) {
+		if (valorCobrado != null) {
+			valorCobrado = valorCobrado.setScale(2, RoundingMode.DOWN);
+		}
+		this.valorCobrado = valorCobrado;
 	}
 
 	/**
