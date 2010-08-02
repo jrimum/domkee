@@ -619,7 +619,7 @@ public final class Titulo {
 	 * 
 	 * @return the mora
 	 */
-	protected BigDecimal getMora() {
+	public BigDecimal getMora() {
 		return mora;
 	}
 
@@ -635,7 +635,7 @@ public final class Titulo {
 	 * @param mora
 	 *            the mora to set
 	 */
-	protected void setMora(BigDecimal mora) {
+	public void setMora(BigDecimal mora) {
 		if (mora != null) {
 			mora = mora.setScale(2, RoundingMode.DOWN);
 		}
@@ -647,7 +647,7 @@ public final class Titulo {
 	 * 
 	 * @return the deducao
 	 */
-	protected BigDecimal getDeducao() {
+	public BigDecimal getDeducao() {
 		return deducao;
 	}
 
@@ -663,7 +663,7 @@ public final class Titulo {
 	 * @param mora
 	 *            the mora to set
 	 */
-	protected void setDeducao(BigDecimal deducao) {
+	public void setDeducao(BigDecimal deducao) {
 		if (deducao != null) {
 			deducao = deducao.setScale(2, RoundingMode.DOWN);
 		}
@@ -675,7 +675,7 @@ public final class Titulo {
 	 * 
 	 * @return the acrecimo
 	 */
-	protected BigDecimal getAcrecimo() {
+	public BigDecimal getAcrecimo() {
 		
 		return acrecimo;
 	}
@@ -692,7 +692,7 @@ public final class Titulo {
 	 * @param mora
 	 *            the mora to set
 	 */
-	protected void setAcrecimo(BigDecimal acrecimo) {
+	public void setAcrecimo(BigDecimal acrecimo) {
 		if (acrecimo != null) {
 			acrecimo = acrecimo.setScale(2, RoundingMode.DOWN);
 		}
@@ -704,7 +704,7 @@ public final class Titulo {
 	 * 
 	 * @return the valorCobrado
 	 */
-	protected BigDecimal getValorCobrado() {
+	public BigDecimal getValorCobrado() {
 		return valorCobrado;
 	}
 
@@ -725,7 +725,7 @@ public final class Titulo {
 	 * @param mora
 	 *            the mora to set
 	 */
-	protected void setValorCobrado(BigDecimal valorCobrado) {
+	public void setValorCobrado(BigDecimal valorCobrado) {
 		if (valorCobrado != null) {
 			valorCobrado = valorCobrado.setScale(2, RoundingMode.DOWN);
 		}
