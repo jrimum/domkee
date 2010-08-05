@@ -91,11 +91,11 @@ public class Carteira {
 
 
 	/**
-	 * @param nome
 	 * @param codigo
 	 * @param cobranca
+	 * @param nome
 	 */
-	public Carteira(String nome, Integer codigo, TipoDeCobranca cobranca) {
+	public Carteira(Integer codigo, TipoDeCobranca cobranca, String nome) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
