@@ -50,10 +50,10 @@ import org.jrimum.utilix.Objects;
  *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * </p>
  * 
- * @author Romulo
+ * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * @author Gilmar
- * @author Misael
- * @author Samuel
+ * <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
+ * @author <a href="mailto:samuelvalerio@gmail.com">Samuel Valério</a>
  * 
  * @since 0.2
  * 

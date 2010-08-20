@@ -49,8 +49,8 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  * 
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
- * @author Misael
- * @author Romulo
+ * <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
+ * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @since 0.2
  * 

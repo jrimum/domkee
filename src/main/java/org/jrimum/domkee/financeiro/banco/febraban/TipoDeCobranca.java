@@ -48,7 +48,7 @@ import java.io.Serializable;
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
  * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
- * @author Samuel Valerio
+ * @author <a href="mailto:samuelvalerio@gmail.com">Samuel Valério</a> Valerio
  * 
  * @since 0.2
  * 

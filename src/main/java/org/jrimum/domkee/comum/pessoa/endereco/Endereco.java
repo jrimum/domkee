@@ -43,7 +43,7 @@ import org.jrimum.utilix.Objects;
  * @author   Misael Barreto 
  * @author   Rômulo Augusto
  * @author   <a href="http://www.nordestefomento.com.br">Nordeste Fomento Mercantil</a>
- * @author Samuel
+ * @author <a href="mailto:samuelvalerio@gmail.com">Samuel Valério</a>
  * 
  * @since   0.2
  * @version   0.2

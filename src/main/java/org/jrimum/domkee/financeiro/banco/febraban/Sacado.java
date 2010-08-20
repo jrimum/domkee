@@ -40,7 +40,7 @@ import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
  * </p>
  * 
- * @author Rômulo
+ * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @since 0.2
  * 

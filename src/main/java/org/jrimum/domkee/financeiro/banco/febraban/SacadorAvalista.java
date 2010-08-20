@@ -40,7 +40,7 @@ import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * Cedente original do Título.
  * </p>
  * 
- * @author Rômulo
+ * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @since 0.2
  * 

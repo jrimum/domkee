@@ -41,8 +41,8 @@ import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 
 /**
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
- * @author Misael
- * @author Romulo
+ * <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
+ * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @see org.jrimum.domkee.financeiro.banco.Pessoa
  * 
