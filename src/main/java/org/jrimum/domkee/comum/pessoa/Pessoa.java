@@ -40,7 +40,6 @@ import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 
 
 /**
- * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author Misael
  * @author Romulo
