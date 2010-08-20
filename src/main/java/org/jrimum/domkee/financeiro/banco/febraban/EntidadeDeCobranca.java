@@ -43,7 +43,7 @@ import org.jrimum.domkee.financeiro.banco.Pessoa;
  * Supertipo para as entidades de cobrança (Sacado, Cedente, SacadorAvalista). Encapsula
  * a composição com o objeto Pessoa deixando apenas as particularidades de cada entidade nos subtipos.
  * 
- * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  *
  * @since 0.2
  * 

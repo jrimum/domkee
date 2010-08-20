@@ -50,9 +50,9 @@ import org.jrimum.utilix.Objects;
  *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
  * </p>
  * 
- * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
- * @author Gilmar
- * <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a> 
+ * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
  * @author <a href="mailto:samuelvalerio@gmail.com">Samuel Valério</a>
  * 
  * @since 0.2

@@ -39,7 +39,7 @@ import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
  * Cliente que entrega os títulos ao Banco para serem cobrados.
  * </p>
  * 
- * <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @since 0.2
  * 

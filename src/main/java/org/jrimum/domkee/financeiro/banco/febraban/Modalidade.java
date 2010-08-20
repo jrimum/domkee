@@ -35,7 +35,7 @@ import org.jrimum.utilix.Objects;
 
 
 /**
- * <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
+ * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
  *
  */
 public class Modalidade {
