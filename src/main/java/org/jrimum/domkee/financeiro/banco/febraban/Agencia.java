@@ -29,6 +29,8 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
+import static org.apache.commons.lang.StringUtils.EMPTY;
+
 import org.apache.commons.lang.StringUtils;
 import org.jrimum.utilix.Objects;
 
@@ -45,13 +47,8 @@ import org.jrimum.utilix.Objects;
  * </ul>
  * </p>
  * 
- * <p>
- *  Para ver o conceito de negócio, consulte o 
- *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
- * </p>
- * 
- * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a> 
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
  * @author <a href="mailto:samuelvalerio@gmail.com">Samuel Valério</a>
  * 
@@ -70,15 +67,22 @@ public final class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia
 
 	private final String digitoVerificador;
 	
+	public Agencia(Integer codigo) {
+
+		this.codigo = codigo;
+		verifyCodigo();
+		this.digitoVerificador = EMPTY;
+	}
+	
 	public Agencia(Integer codigo, String digito) {
 
 		this.codigo = codigo;
+		verifyCodigo();
 		this.digitoVerificador = digito;
-		
-		verify();
+		verifyDv();
 	}
 	
-	public void verify() {
+	public void verifyCodigo() {
 
 		if (codigo < 0 ) {
 			throw new IllegalArgumentException("O código da agência deve ser um inteiro natural (incluindo zero)");
@@ -87,6 +91,9 @@ public final class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia
 		if (String.valueOf(codigo).length() > 5) {
 			throw new IllegalArgumentException("O código da agência deve possuir de 1 a 5 dígitos");
 		}
+	}
+	
+	public void verifyDv(){
 		
 		if (StringUtils.isBlank(digitoVerificador)) {
 			throw new IllegalArgumentException("O dígito verificador da agência não pode ser null ou apenas espaços em branco");
