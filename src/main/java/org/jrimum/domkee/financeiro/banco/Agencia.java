@@ -45,18 +45,20 @@ import java.io.Serializable;
  * </ul>
  * </p>
  * 
- * <p>
- *  Para ver o conceito de negócio, consulte o 
- *  <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario">glossário</a>.
- * </p>
- * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a> 
  * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
  * @version 0.2
  */
-public interface Agencia<Codigo, Digito> extends Serializable {
+public interface Agencia<C, D> extends Serializable {
 
-	public Codigo getCodigo();
+	/**
+	 * @return
+	 */
+	C getCodigo();
 	
-	public Digito getDigitoVerificador();
+	/**
+	 * @return
+	 */
+	D getDigitoVerificador();
 }

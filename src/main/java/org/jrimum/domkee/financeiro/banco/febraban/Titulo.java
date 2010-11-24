@@ -55,10 +55,6 @@ import org.jrimum.utilix.Objects;
  * <li>Nota de Crédito Rural</li>
  * <li>E outras espécies pagáveis através da rede bancária.</li>
  * 
- * Para visualizar o conceito de negócio consulte o <a
- * href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"
- * >glossário</a>.
- * 
  * @see TipoDeTitulo
  * 
  * 

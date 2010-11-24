@@ -154,8 +154,7 @@ public class Carteira {
 	
 	/**
 	 * <p>
-	 * Define o tipo de cobrança da carteira (Registrada ou não-registrada), 
-	 * em caso de dúvida veja o <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>
+	 * Define o tipo de cobrança da carteira (Registrada ou não-registrada). 
 	 * </p>
 	 * 
 	 * @param cobranca
