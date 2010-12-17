@@ -29,6 +29,8 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
+import static java.lang.String.format;
+
 import java.io.Serializable;
 
 /**
@@ -144,6 +146,8 @@ public enum TipoDeTitulo implements Serializable {
 	 * 
 	 * @param codigo
 	 * @param sigla
+	 * 
+	 * @since 0.2
 	 */
 	private TipoDeTitulo(int codigo, String sigla) {
 		this.codigo = codigo;
@@ -158,6 +162,8 @@ public enum TipoDeTitulo implements Serializable {
 	 * </p>
 	 * 
 	 * @return sigla ou descrição completa.
+	 * 
+	 * @since 0.2
 	 */
 	public String getSigla(){
 
@@ -171,9 +177,38 @@ public enum TipoDeTitulo implements Serializable {
 	 * </p>
 	 * 
 	 * @return código FEBRABAN
+	 * 
+	 * @since 0.2
 	 */
 	public int getCodigo() {
 		
 		return codigo;
 	}
+
+	/**
+	 * <p>
+	 * Retorna uma instância que com o código do tipo de título correspondente.
+	 * Caso não exista um tipo associado a código determinado uma {@code
+	 * IllegalArgumentException} será lançada.
+	 * </p>
+	 * 
+	 * @param codigo
+	 *            - Código do tipo de título procurado
+	 * @return tipo de título correspondente ao código
+	 * 
+	 * @since 0.2
+	 */
+	public static TipoDeTitulo valueOf(int codigo){
+		
+		for(TipoDeTitulo t : TipoDeTitulo.values()){
+			
+			if(t.getCodigo() == codigo){
+				
+				return t;
+			}
+		}
+
+		throw new IllegalArgumentException(format("Nenhuma constante enum %s com código igual a %s!", TipoDeTitulo.class, codigo));
+	}
+	
 }

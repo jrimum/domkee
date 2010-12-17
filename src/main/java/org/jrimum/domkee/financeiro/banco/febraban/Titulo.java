@@ -55,10 +55,6 @@ import org.jrimum.utilix.Objects;
  * <li>Nota de Crédito Rural</li>
  * <li>E outras espécies pagáveis através da rede bancária.</li>
  * 
- * Para visualizar o conceito de negócio consulte o <a
- * href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"
- * >glossário</a>.
- * 
  * @see TipoDeTitulo
  * 
  * 
@@ -213,7 +209,7 @@ public final class Titulo {
 	 * @param contaBancaria
 	 * @param sacado
 	 * @param cedente
-	 * @throws JRimumException
+	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente) {
 		this.setContaBancaria(contaBancaria);
@@ -230,7 +226,7 @@ public final class Titulo {
 	 * @param sacado
 	 * @param cedente
 	 * @param sacadorAvalista
-	 * @throws JRimumException
+	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente, SacadorAvalista sacadorAvalista) {
 		this(contaBancaria, sacado, cedente);
@@ -247,7 +243,7 @@ public final class Titulo {
 	 * @param sacado
 	 * @param cedente
 	 * @param parametrosBancariosMap
-	 * @throws JRimumException
+	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
 			ParametrosBancariosMap parametrosBancariosMap) {
@@ -268,7 +264,7 @@ public final class Titulo {
 	 * @param cedente
 	 * @param parametrosBancariosMap
 	 * @param sacadorAvalista
-	 * @throws JRimumException
+	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
 			ParametrosBancariosMap parametrosBancariosMap, SacadorAvalista sacadorAvalista) {

@@ -53,8 +53,6 @@ import org.jrimum.utilix.Objects;
  * <li>Sacador</li>
  * <li>Sacador Avalista</li>
  * </ul>
- * Veja as definições de cada papel em 
- * <a href="http://jrimum.nordestefomento.com.br/wprojeto/wiki/Glossario"> glossário</a>.
  * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
