@@ -187,7 +187,7 @@ public enum TipoDeTitulo implements Serializable {
 
 	/**
 	 * <p>
-	 * Retorna uma instância que com o código do tipo de título correspondente.
+	 * Retorna uma instância que corresponde com o código do tipo de título.
 	 * Caso não exista um tipo associado a código determinado uma {@code
 	 * IllegalArgumentException} será lançada.
 	 * </p>
