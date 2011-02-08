@@ -30,6 +30,10 @@
 
 package org.jrimum.domkee.comum.pessoa.endereco;
 
+import static java.lang.String.format;
+
+import org.jrimum.utilix.text.Strings;
+
 
 /**
  * <p>
@@ -108,5 +112,28 @@ public enum UnidadeFederativa {
 	 */
 	public String getCapital() {
 		return capital;
+	}
+	
+	/**
+	 * <p>
+	 * Retorna uma instância que corresponde com a sigla informada, ao contrário
+	 * do método {@link UnidadeFederativa#valueOf(String)}, este não diferencia
+	 * maiúsculas de minúsculas. Caso não exista um tipo associado a sigla ou
+	 * seja informada uma string vazia, uma {@code IllegalArgumentException}
+	 * será lançada.
+	 * </p>
+	 * 
+	 * @param sigla
+	 *            - Sigla correspondente a um estado
+	 * @return UnidadeFederativa
+	 * 
+	 * @since 0.2
+	 */
+	public static UnidadeFederativa valueOfSigla(String sigla) {
+
+		Strings.checkNotBlank(sigla, format(
+				"Não existe Unidade Federativa com sigla vazia \"%s\"", sigla));
+
+		return valueOf(sigla.toUpperCase());
 	}
 }
