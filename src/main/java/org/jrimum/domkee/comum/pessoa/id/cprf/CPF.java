@@ -70,7 +70,7 @@ public class CPF extends AbstractCPRF {
 			init(strCPF);
 		} else {
 			throw new CPFException(new IllegalArgumentException(
-					"O cadastro de pessoa [ " + strCPF + " ] não é válido."));
+					"O cadastro de pessoa [ \"" + strCPF + "\" ] não é válido."));
 		}
 	}
 
@@ -89,8 +89,8 @@ public class CPF extends AbstractCPRF {
 					init(strCPF);
 				else
 					throw new IllegalArgumentException(
-							"O cadastro de pessoa [ " + strCPF
-									+ " ] não é válido.");
+							"O cadastro de pessoa [ \"" + strCPF
+									+ "\" ] não é válido.");
 
 			}
 
@@ -113,11 +113,20 @@ public class CPF extends AbstractCPRF {
 			codigoFormatado.insert(11, '-');
 
 			this.setCodigoFormatado(codigoFormatado.toString());
-			this.setCodigo(Long.parseLong(strCPF));
+			
+			this.setCodigo(Long.parseLong(removeFormatacao(strCPF)));
 
 		} catch (Exception e) {
 			throw new CPFException(e);
 		}
 	}
+	
+	private String removeFormatacao(String codigo) {
 
+		codigo = codigo.replace(".", "");
+		codigo = codigo.replace("-", "");
+
+		return codigo;
+	}
+	
 }

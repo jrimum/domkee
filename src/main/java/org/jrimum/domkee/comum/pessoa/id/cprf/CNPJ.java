@@ -43,7 +43,7 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  * </p>
  * 
  * <p>
- * O formatador do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador
+ * O formato do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador
  * do número.
  * </p>
  * 
@@ -73,7 +73,7 @@ public class CNPJ extends AbstractCPRF {
 			init(strCNPJ);
 		} else {
 			throw new CNPJException(new IllegalArgumentException(
-					"O cadastro de pessoa [ " + strCNPJ + " ] não é válido."));
+					"O cadastro de pessoa [ \"" + strCNPJ + "\" ] não é válido."));
 		}
 	}
 
@@ -92,8 +92,8 @@ public class CNPJ extends AbstractCPRF {
 					init(strCNPJ);
 				else
 					throw new IllegalArgumentException(
-							"O cadastro de pessoa [ " + strCNPJ
-									+ " ] não é válido.");
+							"O cadastro de pessoa [ \"" + strCNPJ
+									+ "\" ] não é válido.");
 
 			}
 
@@ -118,11 +118,20 @@ public class CNPJ extends AbstractCPRF {
 			codigoFormatado.insert(15, '-');
 
 			this.setCodigoFormatado(codigoFormatado.toString());
-			this.setCodigo(Long.parseLong(strCNPJ));
+			this.setCodigo(Long.parseLong(removeFormatacao(strCNPJ)));
 
 		} catch (Exception e) {
 			throw new CNPJException(e);
 		}
+	}
+
+	private String removeFormatacao(String codigo) {
+
+		codigo = codigo.replace(".", "");
+		codigo = codigo.replace("/", "");
+		codigo = codigo.replace("-", "");
+
+		return codigo;
 	}
 
 }
