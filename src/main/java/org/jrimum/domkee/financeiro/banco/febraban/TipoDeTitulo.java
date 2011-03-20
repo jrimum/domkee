@@ -200,7 +200,7 @@ public enum TipoDeTitulo implements Serializable {
 	 */
 	public static TipoDeTitulo valueOf(int codigo){
 		
-		for(TipoDeTitulo t : TipoDeTitulo.values()){
+		for(TipoDeTitulo t : values()){
 			
 			if(t.getCodigo() == codigo){
 				
