@@ -28,8 +28,6 @@
  */
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import static org.jrimum.utilix.Objects.isNotNull;
-
 import java.io.Serializable;
 import java.util.Collection;
 
@@ -112,7 +110,20 @@ public class EntidadeDeCobranca implements Serializable {
 	 * @see ContaBancaria
 	 */
 	public boolean hasContaBancaria(){
-		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
+		return pessoa.hasContaBancaria();
+	}
+	
+	/**
+	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
+	 * {@linkplain #getContasBancarias()}, caso exista alguma conta, ou null, caso
+	 * não exista {@linkplain #contasBancarias}.
+	 * 
+	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
+	 *         null.
+	 */
+	public ContaBancaria getNextContaBancaria(){
+		
+		return pessoa.getNextContaBancaria();
 	}
 	
 	/**
@@ -139,6 +150,19 @@ public class EntidadeDeCobranca implements Serializable {
 	}
 	
 	/**
+	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
+	 * {@linkplain #getEnderecos()}, caso exista algum endereço, ou null, caso
+	 * não exista {@linkplain #enderecos}.
+	 * 
+	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
+	 *         null.
+	 */
+	public Endereco getNextEndereco(){
+		
+		return pessoa.getNextEndereco(); 
+	}
+	
+	/**
 	 * @see Endereco
 	 * @see Collection
 	 */
@@ -161,6 +185,19 @@ public class EntidadeDeCobranca implements Serializable {
 		pessoa.addTelefone(telefone);
 	}
 
+	/**
+	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
+	 * {@linkplain #getTelefones()}, caso exista algum telefone, ou null, caso
+	 * não exista {@linkplain #telefones}.
+	 * 
+	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
+	 *         null.
+	 */
+	public NumeroDeTelefone getNextTelefone(){
+		
+		return pessoa.getNextTelefone(); 
+	}
+	
 	/**
 	 * @see NumeroDeTelefone
 	 * @see Collection

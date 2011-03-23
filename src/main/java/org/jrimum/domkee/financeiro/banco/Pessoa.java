@@ -29,7 +29,7 @@
 
 package org.jrimum.domkee.financeiro.banco;
 
-import static org.jrimum.utilix.Objects.isNotNull;
+import static org.jrimum.utilix.Collections.hasElement;
 import static org.jrimum.utilix.Objects.isNull;
 
 import java.util.ArrayList;
@@ -117,8 +117,10 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	 */
 	public void addContaBancaria(ContaBancaria contaBancaria) {
 		
-		if(isNull(contasBancarias))
+		if(isNull(contasBancarias)){
+			
 			contasBancarias = new ArrayList<ContaBancaria>();
+		}
 		
 		contasBancarias.add(contaBancaria);
 	}
@@ -130,7 +132,8 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	 */
 	
 	public boolean hasContaBancaria(){
-		return (isNotNull(getContasBancarias()) && !getContasBancarias().isEmpty());
+		
+		return hasElement(getContasBancarias());
 	}
 	
 	/**
@@ -138,8 +141,10 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	 */
 	public void addEndereco(Endereco endereco) {
 
-		if(isNull(enderecos))
+		if(isNull(enderecos)){
+			
 			enderecos = new ArrayList<Endereco>();
+		}
 		
 		enderecos.add(endereco);
 	}
@@ -149,8 +154,10 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	 */
 	public void addTelefone(NumeroDeTelefone telefone) {
 		
-		if(isNull(telefones))
+		if(isNull(telefones)){
+			
 			telefones = new ArrayList<NumeroDeTelefone>();
+		}
 		
 		telefones.add(telefone);
 	}
@@ -163,15 +170,50 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 		
 		return cprf;
 	}
+	
+	/**
+	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
+	 * {@linkplain #getContasBancarias()}, caso exista alguma conta, ou null, caso
+	 * não exista {@linkplain #contasBancarias}.
+	 * 
+	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
+	 *         null.
+	 */
+	public ContaBancaria getNextContaBancaria(){
+		
+		if(hasElement(getContasBancarias())){
+		
+			return getContasBancarias().iterator().next();
+		}
+		
+		return null; 
+	}
 
 	/**
 	 * @see ContaBancaria
 	 * @see Collection
 	 */
-	
 	public Collection<ContaBancaria> getContasBancarias() {
 
 		return contasBancarias;
+	}
+	
+	/**
+	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
+	 * {@linkplain #getEnderecos()}, caso exista algum endereço, ou null, caso
+	 * não exista {@linkplain #enderecos}.
+	 * 
+	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
+	 *         null.
+	 */
+	public Endereco getNextEndereco(){
+		
+		if(hasElement(getEnderecos())){
+		
+			return getEnderecos().iterator().next();
+		}
+		
+		return null; 
 	}
 
 	/**
@@ -186,6 +228,24 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	public String getNome() {
 
 		return nome;
+	}
+	
+	/**
+	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
+	 * {@linkplain #getTelefones()}, caso exista algum telefone, ou null, caso
+	 * não exista {@linkplain #telefones}.
+	 * 
+	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
+	 *         null.
+	 */
+	public NumeroDeTelefone getNextTelefone(){
+		
+		if(hasElement(getTelefones())){
+		
+			return getTelefones().iterator().next();
+		}
+		
+		return null; 
 	}
 
 	/**
