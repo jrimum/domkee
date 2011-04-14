@@ -12,8 +12,7 @@ public enum TipoSeguimento {
 	
 	ORGAOS_GOVERNAMENTAIS(5, "Órgãos Governamentais"),
 	
-	CARNES_E_ASSEMELHADOS_OU_DEMAIS(6, "Carnês e Assemelhados ou demais. " +
-			"Empresas / Orgãos serão identificadas através do CNPJ"),
+	CARNES_E_ASSEMELHADOS_OU_DEMAIS(6, "Carnês e Assemelhados ou demais"),
 	
 	MULTAS_DE_TRANSITO(7, "Multas de trânsito"),
 	
@@ -21,15 +20,15 @@ public enum TipoSeguimento {
 	
 	
 	private Integer codigo;
-	private String nome;
+	private String descricao;
 	
 	/**
 	 * @param codigo
-	 * @param nome
+	 * @param descricao
 	 */
-	private TipoSeguimento(Integer codigo, String nome) {
+	private TipoSeguimento(Integer codigo, String descricao) {
 		this.codigo = codigo;
-		this.nome = nome;
+		this.descricao = descricao;
 	}
 
 	/**
@@ -42,10 +41,9 @@ public enum TipoSeguimento {
 	/**
 	 * @return the nome
 	 */
-	public String getNome() {
-		return nome;
-	}
-	
+	public String getDescricao() {
+		return descricao;
+	}	
 	
 	public static TipoSeguimento findByCodigo(Integer codigo) {
 		TipoSeguimento tipoSeguimentoRetorno = null;

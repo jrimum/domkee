@@ -7,6 +7,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static br.com.nordestefomento.jrimum.utilix.ObjectUtil.isNotNull;
+
+import br.com.nordestefomento.jrimum.JRimumException;
 import br.com.nordestefomento.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 
 /**
@@ -79,15 +82,23 @@ public class Arrecadacao implements Serializable {
 	
 
 	/**
+	 * @param orgaoRecebedor
+	 * @param contribuinte
+	 */
+	public Arrecadacao(OrgaoRecebedor orgaoRecebedor, Contribuinte contribuinte) {
+		this.setOrgaoRecebedor(orgaoRecebedor);
+		this.setContribuinte(contribuinte);
+	}
+
+	/**
 	 * @param convenio
 	 * @param orgaoRecebedor
 	 * @param contribuinte
 	 */
-	public Arrecadacao(Convenio convenio, OrgaoRecebedor orgaoRecebedor,
-			Contribuinte contribuinte) {
-		this.convenio = convenio;
-		this.orgaoRecebedor = orgaoRecebedor;
-		this.contribuinte = contribuinte;
+	public Arrecadacao(OrgaoRecebedor orgaoRecebedor, Contribuinte contribuinte, Convenio convenio) {
+		this.setOrgaoRecebedor(orgaoRecebedor);
+		this.setContribuinte(contribuinte);
+		this.setConvenio(convenio);
 	}
 
 	/**
@@ -213,7 +224,12 @@ public class Arrecadacao implements Serializable {
 	 * @param convenio the convenio to set
 	 */
 	public void setConvenio(Convenio convenio) {
-		this.convenio = convenio;
+		if (isNotNull(convenio)) {
+			this.convenio = convenio;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+			"Convênio não pode ser nulo!"));			
+		}		
 	}
 
 	/**
@@ -227,7 +243,12 @@ public class Arrecadacao implements Serializable {
 	 * @param orgaoRecebedor the orgaoRecebedor to set
 	 */
 	public void setOrgaoRecebedor(OrgaoRecebedor orgaoRecebedor) {
-		this.orgaoRecebedor = orgaoRecebedor;
+		if (isNotNull(orgaoRecebedor)) {
+			this.orgaoRecebedor = orgaoRecebedor;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+			"Órgão recebedor não pode ser nulo!"));			
+		}		
 	}
 
 	/**
@@ -241,7 +262,12 @@ public class Arrecadacao implements Serializable {
 	 * @param contribuinte the contribuinte to set
 	 */
 	public void setContribuinte(Contribuinte contribuinte) {
-		this.contribuinte = contribuinte;
+		if (isNotNull(contribuinte)) {
+			this.contribuinte = contribuinte;
+		} else {
+			throw new JRimumException(new IllegalArgumentException(
+			"Contribuinte não pode ser nulo!"));			
+		}	
 	}	
 
 	/**

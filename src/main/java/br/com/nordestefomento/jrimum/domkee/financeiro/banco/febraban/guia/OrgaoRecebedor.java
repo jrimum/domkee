@@ -8,59 +8,66 @@ import java.awt.Image;
 import br.com.nordestefomento.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
 
 /**
- * @author misael
- *
+ * <p>
+ * É a representação da entidade Órgão/Empresa que irá receber o pagamento 
+ * efetuado pelo Contribuinte. 
+ * </p>
+ * 
+ * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
+ * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a> 
+ * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
+ * 
+ * @since 0.3
+ * 
+ * @version 0.3
  */
 public class OrgaoRecebedor extends EntidadeDeCobranca {
-
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8761667661640466629L;
+	
+	private TipoSeguimento tipoSeguimento;
+	private CodigoDeIdentificacaoFebraban codigoDeIdentificacaoFebraban;
 	private Image imgLogo;	
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8761667660640466620L;
-	private TipoSeguimento tipoSeguimento;
-	
-	/**
-	 * 
-	 */
-	public OrgaoRecebedor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}	
 	
 	/**
 	 * @param nome
-	 * @param cadastroDePessoa
-	 */
-	public OrgaoRecebedor(String nome, CNPJ cnpj, TipoSeguimento tipoSeguimento) {
-		super(nome, cnpj);
-		setTipoSeguimento(tipoSeguimento);
-	}
-
-	/**
-	 * @param nome
-	 * @param cadastroDePessoa
-	 */
-	public OrgaoRecebedor(String nome, String cnpj, TipoSeguimento tipoSeguimento) {
-		super();
-		
-		setNome(nome);
-		
-		CNPJ cNPJ = new CNPJ(cnpj);
-		setCNPJ(cNPJ);
-		
-		setTipoSeguimento(tipoSeguimento);
-	}
-
-	/**
-	 * @param nome
+	 * @param tipoSeguimento
 	 */
 	public OrgaoRecebedor(String nome, TipoSeguimento tipoSeguimento) {
 		super(nome);
 		setTipoSeguimento(tipoSeguimento);
-	}
+	}	
 	
+	/**
+	 * @param nome
+	 * @param tipoSeguimento
+	 * @param codigoDeIdentificacaoFebraban
+	 * @param imgLogo
+	 */
+	public OrgaoRecebedor(String nome, TipoSeguimento tipoSeguimento, CNPJ cnpj, CodigoDeIdentificacaoFebraban codigoDeIdentificacaoFebraban, Image imgLogo) {
+		super(nome, cnpj);
+		setTipoSeguimento(tipoSeguimento);
+		setCodigoDeIdentificacaoFebraban(codigoDeIdentificacaoFebraban);
+		setImgLogo(imgLogo);
+	}
+
+	/**
+	 * @param nome
+	 * @param tipoSeguimento
+	 * @param codigoDeIdentificacaoFebraban
+	 * @param imgLogo
+	 */
+	public OrgaoRecebedor(String nome, TipoSeguimento tipoSeguimento, String cnpj, CodigoDeIdentificacaoFebraban codigoDeIdentificacaoFebraban, Image imgLogo) {
+		super(nome, new CNPJ(cnpj));
+		setTipoSeguimento(tipoSeguimento);
+		setCodigoDeIdentificacaoFebraban(codigoDeIdentificacaoFebraban);
+		setImgLogo(imgLogo);
+	}
+
 	/**
 	 * @return the tipoSeguimento
 	 */
@@ -92,6 +99,15 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	}
 	
 	/**
+	 * @param abstractCNPJ
+	 * @see # setCNPJ(CNPJ cnpj)
+	 */
+	public void setCNPJ(String cnpj) {
+		setCNPJ(new CNPJ(cnpj));
+	}
+		
+	
+	/**
 	 * @return the imgLogo
 	 */
 	public Image getImgLogo() {
@@ -103,5 +119,15 @@ public class OrgaoRecebedor extends EntidadeDeCobranca {
 	 */
 	public void setImgLogo(Image imgLogo) {
 		this.imgLogo = imgLogo;
+	}
+
+	public CodigoDeIdentificacaoFebraban getCodigoDeIdentificacaoFebraban() {
+		return codigoDeIdentificacaoFebraban;
+	}
+
+	public void setCodigoDeIdentificacaoFebraban(
+			CodigoDeIdentificacaoFebraban codigoDeIdentificacaoFebraban) {
+		this.codigoDeIdentificacaoFebraban = codigoDeIdentificacaoFebraban;
 	}	
+	
 }
