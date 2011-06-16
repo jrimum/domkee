@@ -29,6 +29,9 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
+import static org.apache.commons.lang.StringUtils.isNumeric;
+
+import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
@@ -64,19 +67,7 @@ public class CNPJ extends AbstractCPRF {
 	 * 
 	 */
 	private static final long serialVersionUID = -3217977741182481194L;
-
-	public CNPJ(String strCNPJ) {
-
-		this.autenticadorCP = AbstractCPRFValidator.create(strCNPJ);
-
-		if (autenticadorCP.isValido()) {
-			init(strCNPJ);
-		} else {
-			throw new CNPJException(new IllegalArgumentException(
-					"O cadastro de pessoa [ \"" + strCNPJ + "\" ] não é válido."));
-		}
-	}
-
+	
 	public CNPJ(Long numCNPJ) {
 
 		try {
@@ -84,17 +75,16 @@ public class CNPJ extends AbstractCPRF {
 			if (AbstractCPRFValidator.isParametrosValidos(
 					String.valueOf(numCNPJ), TipoDeCPRF.CNPJ)) {
 
-				String strCNPJ = Filler.ZERO_LEFT.fill(numCNPJ, 14);
+				this.autenticadorCP = AbstractCPRFValidator.create(Filler.ZERO_LEFT.fill(numCNPJ, 14));
 
-				this.autenticadorCP = AbstractCPRFValidator.create(strCNPJ);
-
-				if (autenticadorCP.isValido())
-					init(strCNPJ);
-				else
-					throw new IllegalArgumentException(
-							"O cadastro de pessoa [ \"" + strCNPJ
-									+ "\" ] não é válido.");
-
+				if (autenticadorCP.isValido()){
+					
+					initFromNumber(numCNPJ);
+					
+				}else{
+					
+					Exceptions.throwIllegalArgumentException("O cadastro de pessoa [ \"" + numCNPJ+ "\" ] não é válido.");
+				}
 			}
 
 		} catch (Exception e) {
@@ -104,28 +94,76 @@ public class CNPJ extends AbstractCPRF {
 
 	}
 
-	private void init(String strCNPJ) {
+	public CNPJ(String strCNPJ) {
+
+		this.autenticadorCP = AbstractCPRFValidator.create(strCNPJ);
+
+		if (autenticadorCP.isValido()) {
+			
+			if(isNumeric(strCNPJ)){
+				
+				initFromNotFormattedString(strCNPJ);
+				
+			}else{
+				
+				initFromFormattedString(strCNPJ);
+				
+			}
+			
+		} else {
+			throw new CNPJException(new IllegalArgumentException(
+					"O cadastro de pessoa [ \"" + strCNPJ + "\" ] não é válido."));
+		}
+	}
+
+	private void initFromNumber(Long numCNPJ) {
 
 		try {
 
-			StringBuilder codigoFormatado = null;
-
-			codigoFormatado = new StringBuilder(strCNPJ);
-
-			codigoFormatado.insert(2, '.');
-			codigoFormatado.insert(6, '.');
-			codigoFormatado.insert(10, '/');
-			codigoFormatado.insert(15, '-');
-
-			this.setCodigoFormatado(codigoFormatado.toString());
-			this.setCodigo(Long.parseLong(removeFormatacao(strCNPJ)));
+			this.setCodigoFormatado(format(Filler.ZERO_LEFT.fill(numCNPJ, 14)));
+			this.setCodigo(numCNPJ);
 
 		} catch (Exception e) {
 			throw new CNPJException(e);
 		}
 	}
+	private void initFromFormattedString(String strCNPJ) {
+		
+		try {
+			
+			this.setCodigoFormatado(strCNPJ);
+			this.setCodigo(Long.parseLong(removeFormat(strCNPJ)));
+			
+		} catch (Exception e) {
+			throw new CNPJException(e);
+		}
+	}
+	
+	private void initFromNotFormattedString(String strCNPJ) {
+		
+		try {
+			
+			this.setCodigoFormatado(format(strCNPJ));
+			this.setCodigo(Long.parseLong(strCNPJ));
+			
+		} catch (Exception e) {
+			throw new CNPJException(e);
+		}
+	}
 
-	private String removeFormatacao(String codigo) {
+	private String format(String strCNPJ) {
+		
+		StringBuilder codigoFormatado = new StringBuilder(strCNPJ);
+		
+		codigoFormatado.insert(2, '.');
+		codigoFormatado.insert(6, '.');
+		codigoFormatado.insert(10, '/');
+		codigoFormatado.insert(15, '-');
+		
+		return codigoFormatado.toString();
+	}
+
+	private String removeFormat(String codigo) {
 
 		codigo = codigo.replace(".", "");
 		codigo = codigo.replace("/", "");
@@ -133,5 +171,5 @@ public class CNPJ extends AbstractCPRF {
 
 		return codigo;
 	}
-
+	
 }
