@@ -28,7 +28,7 @@
  */
 
 
-package org.jrimum.domkee.type;
+package org.jrimum.domkee.comum.pessoa.id.cprf;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -36,7 +36,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 import org.junit.Test;
 

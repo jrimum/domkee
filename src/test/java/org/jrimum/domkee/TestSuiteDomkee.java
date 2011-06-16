@@ -30,11 +30,9 @@
 
 package org.jrimum.domkee;
 
-import org.jrimum.domkee.type.TestAbstractCPRF;
-import org.jrimum.domkee.type.TestCNPJ;
-import org.jrimum.domkee.type.TestCPF;
-import org.jrimum.domkee.type.TestTipoDeMoeda;
-import org.jrimum.domkee.type.TestTipoDeTitulo;
+import org.jrimum.domkee.comum.pessoa.id.cprf.TestAbstractCPRF;
+import org.jrimum.domkee.comum.pessoa.id.cprf.TestCNPJ;
+import org.jrimum.domkee.comum.pessoa.id.cprf.TestCPF;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -46,8 +44,6 @@ import org.junit.runners.Suite;
 			TestAbstractCPRF.class,
 			TestCNPJ.class,
 			TestCPF.class,
-			TestTipoDeMoeda.class,
-			TestTipoDeTitulo.class
 		}
 )
 public class TestSuiteDomkee {
