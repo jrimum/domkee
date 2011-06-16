@@ -36,6 +36,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 import org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap;
+import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
 
 
@@ -460,7 +461,7 @@ public final class Titulo {
 		if (isNotNull(contaBancaria)) {
 			this.contaBancaria = contaBancaria;
 		} else {
-			throw new IllegalArgumentException("ContaBancaria não pode ser nula!");
+			Exceptions.throwIllegalArgumentException("ContaBancaria não pode ser nula!");
 		}
 	}
 
@@ -485,7 +486,7 @@ public final class Titulo {
 		if (isNotNull(cedente)) {
 			this.cedente = cedente;
 		} else {
-			throw new IllegalArgumentException("Cedente não pode ser nulo!");
+			Exceptions.throwIllegalArgumentException("Cedente não pode ser nulo!");
 		}
 	}
 
@@ -511,7 +512,7 @@ public final class Titulo {
 		if (isNotNull(sacado)) {
 			this.sacado = sacado;
 		} else {
-			throw new IllegalArgumentException("Sacado não pode ser nulo!");
+			Exceptions.throwIllegalArgumentException("Sacado não pode ser nulo!");
 		}
 	}
 
@@ -536,7 +537,7 @@ public final class Titulo {
 		if (isNotNull(sacadorAvalista)) {
 			this.sacadorAvalista = sacadorAvalista;
 		} else {
-			throw new IllegalArgumentException("SacadorAvalista não pode ser nulo!");
+			Exceptions.throwIllegalArgumentException("SacadorAvalista não pode ser nulo!");
 		}
 	}
 

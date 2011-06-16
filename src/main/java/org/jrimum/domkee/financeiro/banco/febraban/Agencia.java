@@ -32,6 +32,7 @@ package org.jrimum.domkee.financeiro.banco.febraban;
 import static org.apache.commons.lang.StringUtils.EMPTY;
 
 import org.apache.commons.lang.StringUtils;
+import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
 
 
@@ -85,26 +86,26 @@ public final class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia
 	public void verifyCodigo() {
 
 		if (codigo < 0 ) {
-			throw new IllegalArgumentException("O código da agência deve ser um inteiro natural (incluindo zero)");
+			Exceptions.throwIllegalArgumentException("O código da agência deve ser um inteiro natural (incluindo zero)");
 		}
 		
 		if (String.valueOf(codigo).length() > 5) {
-			throw new IllegalArgumentException("O código da agência deve possuir de 1 a 5 dígitos");
+			Exceptions.throwIllegalArgumentException("O código da agência deve possuir de 1 a 5 dígitos");
 		}
 	}
 	
 	public void verifyDv(){
 		
 		if (StringUtils.isBlank(digitoVerificador)) {
-			throw new IllegalArgumentException("O dígito verificador da agência não pode ser null ou apenas espaços em branco");
+			Exceptions.throwIllegalArgumentException("O dígito verificador da agência não pode ser null ou apenas espaços em branco");
 		}
 		
 		if (digitoVerificador.length() > 1) {
-			throw new IllegalArgumentException("O dígito verificador da agência deve possuir apenas um dígito");
+			Exceptions.throwIllegalArgumentException("O dígito verificador da agência deve possuir apenas um dígito");
 		}
 			
 		if (!StringUtils.isAlphanumeric(digitoVerificador)) {
-			throw new IllegalArgumentException("O dígito verificador da agência deve ser letra ou dígito");
+			Exceptions.throwIllegalArgumentException("O dígito verificador da agência deve ser letra ou dígito");
 		}
 	}
 

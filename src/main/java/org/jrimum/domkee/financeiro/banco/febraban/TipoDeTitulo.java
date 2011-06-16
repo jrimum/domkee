@@ -33,6 +33,8 @@ import static java.lang.String.format;
 
 import java.io.Serializable;
 
+import org.jrimum.utilix.Exceptions;
+
 /**
  * 
  * <p>
@@ -208,7 +210,7 @@ public enum TipoDeTitulo implements Serializable {
 			}
 		}
 
-		throw new IllegalArgumentException(format("Nenhuma constante enum %s com código igual a %s!", TipoDeTitulo.class, codigo));
+		return Exceptions.throwIllegalArgumentException(format("Nenhuma constante enum %s com código igual a %s!", TipoDeTitulo.class, codigo));
 	}
 	
 }
