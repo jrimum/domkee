@@ -29,6 +29,7 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
+import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
@@ -157,7 +158,7 @@ public abstract class AbstractCPRF {
 
 		} else {
 
-			throw new IllegalArgumentException(
+			Exceptions.throwIllegalArgumentException(
 					"O cadastro de pessoa [ \""+cadastroDePessoa+"\" ] não é válido.");
 		}
 
@@ -189,6 +190,7 @@ public abstract class AbstractCPRF {
 	}
 
 	public String getCodigoFormatado() {
+		
 		return codigoFormatado;
 	}
 
