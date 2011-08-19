@@ -72,6 +72,23 @@ import org.jrimum.utilix.Objects;
 public final class ParametrosBancariosMap {
 
 	private Map<String, Object> dadosMap;
+	
+	/**
+	 * <p>
+	 * Verifica se o {@code ParametrosBancariosMap} passado por parâmetro
+	 * <strong>não</strong> é <code>null</code> e possui elementos.
+	 * </p>
+	 * 
+	 * @param params
+	 *            - Instância de {@code ParametrosBancariosMap} testada.
+	 * @return {@code params != null && params.isNaoVazio()}
+	 * 
+	 * @since 0.2
+	 */
+	public static boolean hasElement(ParametrosBancariosMap params){
+		
+		return params != null && params.isNaoVazio();
+	}
 
 	/**
 	 * <p>
