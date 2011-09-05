@@ -176,31 +176,23 @@ public final class Titulo {
 	 * 
 	 * @version 0.2
 	 */
-	public enum EnumAceite {
-
-		A, N;
-
-		boolean isAceite() {
-
-			boolean isAceite = true;
-
-			switch (this) {
-
-			case N:
-				isAceite = false;
-				break;
-			}
-
-			return isAceite;
-		}
+	public enum Aceite {
+		/**
+		 * 'A' = Título Aceite.
+		 */
+		A, 
+		/**
+		 * 'N' = Título Não Aceite.
+		 */
+		N;
 	}
 
 	/**
-	 * @see #setAceite(org.jrimum.domkee.financeiro.banco.febraban.Titulo.EnumAceite)
+	 * @see #setAceite(org.jrimum.domkee.financeiro.banco.febraban.Titulo.Aceite)
 	 * 
-	 * @see EnumAceite
+	 * @see Aceite
 	 */
-	private EnumAceite aceite;
+	private Aceite aceite;
 
 	/**
 	 * <p>
@@ -292,11 +284,11 @@ public final class Titulo {
 	}
 
 	/**
-	 * @see #setAceite(org.jrimum.domkee.financeiro.banco.febraban.Titulo.EnumAceite)
+	 * @see #setAceite(org.jrimum.domkee.financeiro.banco.febraban.Titulo.Aceite)
 	 * 
 	 * @return the aceite
 	 */
-	public EnumAceite getAceite() {
+	public Aceite getAceite() {
 		return aceite;
 	}
 
@@ -308,7 +300,7 @@ public final class Titulo {
 	 * @param aceite
 	 *            the aceite to set
 	 */
-	public void setAceite(EnumAceite aceite) {
+	public void setAceite(Aceite aceite) {
 		this.aceite = aceite;
 	}
 
