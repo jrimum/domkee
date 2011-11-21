@@ -33,7 +33,7 @@ import java.util.Collection;
 
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
-import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
 import org.jrimum.domkee.financeiro.banco.Pessoa;
 
 
@@ -67,7 +67,7 @@ public class EntidadeDeCobranca implements Serializable {
 		pessoa = new Pessoa(nome, cadastroDePessoa);
 	}
 	
-	public EntidadeDeCobranca(String nome, AbstractCPRF cadastroDePessoa) {
+	public EntidadeDeCobranca(String nome, CPRF cadastroDePessoa) {
 		pessoa = new Pessoa(nome, cadastroDePessoa);
 	}
 	
@@ -84,17 +84,17 @@ public class EntidadeDeCobranca implements Serializable {
 	}
 	
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
-	public AbstractCPRF getCPRF() {
+	public CPRF getCPRF() {
 		return pessoa.getCPRF();
 	}
 	
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
-	public void setCPRF(AbstractCPRF abstractCPRF) {
-		pessoa.setCPRF(abstractCPRF);
+	public void setCPRF(CPRF cprf) {
+		pessoa.setCPRF(cprf);
 	}
 	
 	/**

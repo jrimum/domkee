@@ -29,7 +29,7 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
 
 /**
  * <p>
@@ -61,7 +61,7 @@ public class Sacado extends EntidadeDeCobranca {
 		super(nome, cadastroDePessoa);
 	}
 	
-	public Sacado(String nome, AbstractCPRF cadastroDePessoa) {
+	public Sacado(String nome, CPRF cadastroDePessoa) {
 		super(nome, cadastroDePessoa);
 	}
 	

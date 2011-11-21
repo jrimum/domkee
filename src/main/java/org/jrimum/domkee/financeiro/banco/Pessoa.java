@@ -38,6 +38,7 @@ import java.util.Collection;
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
 import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 import org.jrimum.utilix.Objects;
 
@@ -74,9 +75,9 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	private String nome;
 	
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
-	private AbstractCPRF cprf;
+	private CPRF cprf;
 	
 	/**
 	 * @see NumeroDeTelefone
@@ -106,7 +107,7 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 		this.cprf = AbstractCPRF.create(cadastroDePessoa);
 	}
 	
-	public Pessoa(String nome, AbstractCPRF cadastroDePessoa) {
+	public Pessoa(String nome, CPRF cadastroDePessoa) {
 		
 		this.nome = nome;
 		this.cprf = cadastroDePessoa;
@@ -163,10 +164,10 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	}
 
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
 	
-	public AbstractCPRF getCPRF() {
+	public CPRF getCPRF() {
 		
 		return cprf;
 	}
@@ -258,11 +259,11 @@ public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	}
 
 	/**
-	 * @see AbstractCPRF
+	 * @see CPRF
 	 */
-	public void setCPRF(AbstractCPRF abstractCPRF) {
+	public void setCPRF(CPRF cprf) {
 		
-		this.cprf = abstractCPRF;
+		this.cprf = cprf;
 	}
 
 	/**

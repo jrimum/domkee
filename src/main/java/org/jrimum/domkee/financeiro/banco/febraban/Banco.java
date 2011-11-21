@@ -39,8 +39,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.log4j.Logger;
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
-import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
 import org.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
+import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
 import org.jrimum.domkee.financeiro.banco.Pessoa;
 import org.jrimum.domkee.financeiro.banco.PessoaJuridica;
 
@@ -260,7 +260,7 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	 * @see org.jrimum.domkee.comum.pessoa.Pessoa#getCPRF()
 	 */
 	
-	public AbstractCPRF getCPRF() {
+	public CPRF getCPRF() {
 		
 		return pessoaJuridica.getCPRF();
 	}
@@ -310,12 +310,12 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	}
 
 	/**
-	 * @see org.jrimum.domkee.comum.pessoa.Pessoa#setCPRF(org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF)
+	 * @see org.jrimum.domkee.comum.pessoa.Pessoa#setCPRF(org.jrimum.domkee.comum.pessoa.id.cprf.CPRF)
 	 */
 	
-	public void setCPRF(AbstractCPRF abstractCPRF) {
+	public void setCPRF(CPRF cprf) {
 		
-		pessoaJuridica.setCPRF(abstractCPRF);
+		pessoaJuridica.setCPRF(cprf);
 	}
 
 
@@ -445,4 +445,5 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 		
 		return tb.toString();
 	}
+
 }

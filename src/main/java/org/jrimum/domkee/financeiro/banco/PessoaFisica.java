@@ -43,7 +43,7 @@ import org.jrimum.domkee.comum.pessoa.id.RG;
  * </p>
  * 
  * @see Pessoa
- * @see org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF
+ * @see org.jrimum.domkee.comum.pessoa.id.cprf.CPRF
  * @see org.jrimum.domkee.comum.pessoa.id.cprf.CPF
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>

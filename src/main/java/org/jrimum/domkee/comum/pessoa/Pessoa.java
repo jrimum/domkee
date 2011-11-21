@@ -35,7 +35,7 @@ import java.util.Collection;
 
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
-import org.jrimum.domkee.comum.pessoa.id.cprf.AbstractCPRF;
+import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
 import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 
 
@@ -56,9 +56,9 @@ public interface Pessoa extends Serializable {
 
 	public void setNome(String nome);
 
-	public AbstractCPRF getCPRF();
+	public CPRF getCPRF();
 
-	public void setCPRF(AbstractCPRF cprf);
+	public void setCPRF(CPRF cprf);
 
 	public Collection<NumeroDeTelefone> getTelefones();
 
