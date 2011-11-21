@@ -31,188 +31,316 @@
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 import org.junit.Test;
 
 
 /**
+ * Teste da classe {@linkplain AbstractCPRF} e base para as sublcasses {@linkplain CPF} e {@linkplain CNPJ}.
  * 
- * Teste da classe <code>AbstractCPRF</code>.
- * 
- * 
- * @author Gabriel Guimarães
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a> 
- * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>
- * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
- * @since JRimum 1.0
+ * @since 0.2
  * 
- * @version 1.0
+ * @version 0.2
  */
-public class TestAbstractCPRF{
-
-	@Test
-	public void testGetInstanceLong() {
-		
-		//cnpj:00.000.208/0001-00 BRB - BANCO DE BRASILIA S.A.
-		
-		AbstractCPRF abstractCPRF = AbstractCPRF.create(208000100L , TipoDeCPRF.CNPJ);
-		
-		assertNotNull(abstractCPRF);
-		
-		assertFalse(abstractCPRF.isFisica());
-		assertTrue(abstractCPRF.isJuridica());
-		
-		abstractCPRF = AbstractCPRF.create(22233366638L , TipoDeCPRF.CPF);
-		
-		assertNotNull(abstractCPRF);
-		
-		assertFalse(abstractCPRF.isJuridica());
-		assertTrue(abstractCPRF.isFisica());
+public abstract class TestAbstractCPRF{
 	
+	private TipoDeCPRF tipo;
+	private String cprfStringFormatada;
+	private String cprfStringFormatadaErr;
+	private String cprfString;
+	private String cprfStringErr;
+	private Long cprfLong;
+	private Long cprfLongErr;
+	private Long cprfRaizLong;
+	private Long cprfRaizLongErr;
+	private String cprfRaizFormatada;
+	private String cprfRaizFormatadaErr;
+	private Integer cprfDv;
+	private Integer cprfDvErr;
+	
+	private CPRF cprf;
+	private CPRF cprfOutro;
 		
-		try {
-			
-			Long nulo = null;
-			
-			AbstractCPRF.create(nulo, null);
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-			
-			System.out.println(iaex.getMessage());
-		}
-		
-		try {
-			
-			Long nulo = null;
-			
-			AbstractCPRF.create(nulo, TipoDeCPRF.CPF);
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-			System.out.println(iaex.getMessage());
-		}
-		
-		try {
-			
-			AbstractCPRF.create(12L, null);
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-			System.out.println(iaex.getMessage());
-		}
-		
-		try {
-			
-			AbstractCPRF.create(123L, TipoDeCPRF.CPF);
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-			System.out.println(iaex.getMessage());
-			
-		}
-		
-		try {
-			
-			AbstractCPRF.create(112223330001L, TipoDeCPRF.CNPJ);
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-			System.out.println(iaex.getMessage());
-		}
-		
+	@Test
+	public final void testCreateLongTipoDeCPRF() {
+		assertNotNull(AbstractCPRF.create(cprfLong, tipo));
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public final void testDoNotCreateLongTipoDeCPRF() {
+		assertNotNull(AbstractCPRF.create(cprfLongErr, tipo));
 	}
 
 	@Test
-	public void testGetInstanceString() {
-		
-		assertNotNull(AbstractCPRF.create("22233366638"));
-		assertNotNull(AbstractCPRF.create("222.333.666-38"));
-		
-		assertNotNull(AbstractCPRF.create("11222333000181"));
-		assertNotNull(AbstractCPRF.create("11.222.333/0001-81"));
-		
-		try {
-			
-			AbstractCPRF.create("abc123");
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-		}
-		
-		try {
-			
-			AbstractCPRF.create("222333666");
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-		}
-		
-		try {		
-			
-			AbstractCPRF.create("112223330001");
-			
-			fail("IllegalArgumentException esperado não ocorreu.");
-			assertTrue(false);
-			
-		} catch(IllegalArgumentException iaex) {
-		
-			assertTrue(true);
-		}
+	public void testCreateStringTipoDeCPRF() {
+		assertNotNull(AbstractCPRF.create(cprfString, tipo));
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void testDoNotCreateStringTipoDeCPRF() {
+		assertNotNull(AbstractCPRF.create(cprfStringErr, tipo));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testDoNotCreateStringFormatadaTipoDeCPRF() {
+		assertNotNull(AbstractCPRF.create(cprfStringFormatada, tipo));
 	}
 
 	@Test
-	public void testGetCodigoFormatado() {
-		
-		assertTrue(AbstractCPRF.create("22233366638").getCodigoFormatado().equals("222.333.666-38"));
-		assertTrue(AbstractCPRF.create("222.333.666-38").getCodigoFormatado().equals("222.333.666-38"));
-		
-		assertTrue(AbstractCPRF.create("11222333000181").getCodigoFormatado().equals("11.222.333/0001-81"));
-		assertTrue(AbstractCPRF.create("11.222.333/0001-81").getCodigoFormatado().equals("11.222.333/0001-81"));
+	public void testCreateString() {
+		assertNotNull(AbstractCPRF.create(cprfString));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testDoNotCreateString() {
+		assertNotNull(AbstractCPRF.create(cprfStringErr));
+	}
+
+	@Test
+	public void testCreateStringFormatada() {
+		assertNotNull(AbstractCPRF.create(cprfStringFormatada));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testDoNotCreateStringFormatada() {
+		assertNotNull(AbstractCPRF.create(cprfStringFormatadaErr));
+	}
+
+	@Test
+	public void testIsFisica() {
+		assertTipo();
+	}
+
+	@Test
+	public void testIsJuridica() {
+		assertTipo();
 	}
 
 	@Test
 	public void testGetCodigo() {
-		
-		assertEquals(AbstractCPRF.create("22233366638").getCodigo().longValue(), 22233366638L);
-		assertEquals(AbstractCPRF.create("222.333.666-38").getCodigo().longValue(), 22233366638L);
-		
-		assertEquals(AbstractCPRF.create("11222333000181").getCodigo().longValue(), 11222333000181L);
-		assertEquals(AbstractCPRF.create("11.222.333/0001-81").getCodigo().longValue(), 11222333000181L);
+		assertEquals(cprfLong, cprf.getCodigo());
 	}
 
+	@Test
+	public void testGetCodigoComZeros() {
+		
+		int tamanho = -1;
+		
+		if(cprf.isFisica()){			
+			tamanho = 11;
+		}else{
+			tamanho = 14;
+		}
+
+		assertEquals(Filler.ZERO_LEFT.fill(cprfLong, tamanho), cprf.getCodigoComZeros());
+		assertTrue(!cprf.getCodigoComZeros().equals(Filler.ZERO_LEFT.fill(cprfLongErr, tamanho)));
+	}
+
+	@Test
+	public void testGetCodigoFormatado() {
+		assertEquals(cprfStringFormatada, cprf.getCodigoFormatado());
+		assertTrue(!cprf.getCodigoFormatado().equals(cprfStringFormatadaErr));
+	}
+
+	@Test
+	public void testGetRaiz() {
+		assertEquals(cprfRaizLong, cprf.getRaiz());
+		assertTrue(cprf.getRaiz().longValue() == cprfRaizLong.longValue());
+		assertTrue(!cprf.getRaiz().equals(cprfLongErr));
+	}
+
+	@Test
+	public void testGetRaizComZeros() {
+		
+		int tamanho = -1;
+		
+		if(cprf.isFisica()){			
+			tamanho = 9;
+		}else{
+			tamanho = 8;
+		}
+		
+		assertEquals(Filler.ZERO_LEFT.fill(cprfRaizLong, tamanho), cprf.getRaizComZeros());
+		assertTrue(!cprf.getRaizComZeros().equals(Filler.ZERO_LEFT.fill(cprfRaizLongErr,tamanho)));
+	}
+
+	@Test
+	public void testGetRaizFormatada() {
+		assertEquals(cprfRaizFormatada, cprf.getRaizFormatada());
+		assertTrue(!cprf.getRaizComZeros().equals(cprfRaizFormatadaErr));
+	}
+
+	@Test
+	public void testGetDv() {
+		assertEquals(cprfDv, cprf.getDv());
+		assertTrue(!cprf.getDv().equals(cprfDvErr));
+	}
+
+	@Test
+	public void testGetDvComZeros() {
+		assertEquals(Filler.ZERO_LEFT.fill(cprf.getDv(),2), cprf.getDvComZeros());
+		assertTrue(!cprf.getDvComZeros().equals(Filler.ZERO_LEFT.fill(cprfDvErr,2)));
+	}
+
+	@Test
+	public void testCompareTo() {
+		int c1 = this.cprf.compareTo(this.cprfOutro);
+		int c2 = this.cprfOutro.compareTo(this.cprf);
+		assertTrue(c1 != c2);
+		assertTrue(cprf.compareTo(AbstractCPRF.create(cprf.getCodigoFormatado())) == 0);
+	}
+
+	@Test
+	public void testEqualsObject() {
+		assertEquals(cprf, AbstractCPRF.create(cprf.getCodigoFormatado()));
+		assertTrue(!cprf.equals(cprfOutro));
+	}
+	
+	@Test
+	public void testHashCode() {
+		assertEquals(cprf.hashCode(), AbstractCPRF.create(cprf.getCodigoFormatado()).hashCode());
+		assertTrue(cprf.hashCode() != cprfOutro.hashCode());
+	}
+
+	@Test
+	public void testToString() {
+		
+		assertEquals(cprfStringFormatada, cprf.getCodigoFormatado());
+		assertTrue(!cprf.getCodigoFormatado().equals(cprfStringFormatadaErr));
+	}
+	/*
+	 * HELPERS
+	 */
+	
+	private void assertTipo(){
+		
+		if(tipo.equals(TipoDeCPRF.CPF)){
+			assertTrue(cprf.isFisica());
+			assertTrue(!cprf.isJuridica());
+		}else{
+			
+			if(tipo.equals(TipoDeCPRF.CNPJ)){
+				assertTrue(cprf.isJuridica());
+				assertTrue(!cprf.isFisica());
+			}else{
+				fail("TIPO NÃO PREVISTO PELO PROGRAMA!");				
+			}
+		}
+	}
+	
+	/*
+	 * DEFINERS 
+	 */
+	
+	/**
+	 * @param tipo the tipo to set
+	 */
+	public final void setTipo(TipoDeCPRF tipo) {
+		this.tipo = tipo;
+	}
+
+	/**
+	 * @param cprfStringFormatada the cprfStringFormatada to set
+	 */
+	public final void setCprfStringFormatada(String cprfStringFormatada) {
+		this.cprfStringFormatada = cprfStringFormatada;
+	}
+
+	/**
+	 * @param cprfStringFormatadaErr the cprfStringFormatadaErr to set
+	 */
+	public final void setCprfStringFormatadaErr(String cprfStringFormatadaErr) {
+		this.cprfStringFormatadaErr = cprfStringFormatadaErr;
+	}
+
+	/**
+	 * @param cprfString the cprfString to set
+	 */
+	public final void setCprfString(String cprfString) {
+		this.cprfString = cprfString;
+	}
+
+	/**
+	 * @param cprfStringErr the cprfStringErr to set
+	 */
+	public final void setCprfStringErr(String cprfStringErr) {
+		this.cprfStringErr = cprfStringErr;
+	}
+
+	/**
+	 * @param cprfLong the cprfLong to set
+	 */
+	public final void setCprfLong(Long cprfLong) {
+		this.cprfLong = cprfLong;
+	}
+
+	/**
+	 * @param cprfLongErr the cprfLongErr to set
+	 */
+	public final void setCprfLongErr(Long cprfLongErr) {
+		this.cprfLongErr = cprfLongErr;
+	}
+
+	/**
+	 * @param cprfRaizLong the cprfRaizLong to set
+	 */
+	public final void setCprfRaizLong(Long cprfRaizLong) {
+		this.cprfRaizLong = cprfRaizLong;
+	}
+
+	/**
+	 * @param cprfRaizLongErr the cprfRaizLongErr to set
+	 */
+	public final void setCprfRaizLongErr(Long cprfRaizLongErr) {
+		this.cprfRaizLongErr = cprfRaizLongErr;
+	}
+
+	/**
+	 * @param cprfRaizFormatada the cprfRaizFormatado to set
+	 */
+	public final void setCprfRaizFormatada(String cprfRaizFormatada) {
+		this.cprfRaizFormatada = cprfRaizFormatada;
+	}
+
+	/**
+	 * @param cprfRaizFormatadaErr the cprfRaizFormatadoErr to set
+	 */
+	public final void setCprfRaizFormatadaErr(String cprfRaizFormatadaErr) {
+		this.cprfRaizFormatadaErr = cprfRaizFormatadaErr;
+	}
+
+	/**
+	 * @param cprfDv the cprfDv to set
+	 */
+	public final void setCprfDv(Integer cprfDv) {
+		this.cprfDv = cprfDv;
+	}
+
+	/**
+	 * @param cprfDvErr the cprfDvErr to set
+	 */
+	public final void setCprfDvErr(Integer cprfDvErr) {
+		this.cprfDvErr = cprfDvErr;
+	}
+
+	/**
+	 * @param cprf the cprf to set
+	 */
+	public final void setCprf(CPRF cprf) {
+		this.cprf = cprf;
+	}
+	
+	/**
+	 * @param cprfOutro the cprfOutro to set
+	 */
+	public final void setCprfOutro(CPRF cprfOutro) {
+		this.cprfOutro = cprfOutro;
+	}
 }

@@ -29,6 +29,8 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
+import static org.apache.commons.lang.StringUtils.EMPTY;
+
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator;
@@ -57,7 +59,7 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  * @version 0.2
  */
 	
-public abstract class AbstractCPRF { 
+public abstract class AbstractCPRF implements CPRF{ 
 
 	/**
 	 * 
@@ -80,23 +82,31 @@ public abstract class AbstractCPRF {
 	protected AbstractCPRFValidator autenticadorCP;
 
 	/**
+	 * Cria um {@linkplain CPRF} através de um long e seu
+	 * {@linkplain TipoDeCPRF}.
+	 * 
 	 * @param cadastroDePessoa
 	 * @param tipoDeCadastro
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF create(Long cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static <C extends AbstractCPRF> C create(Long cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 
 		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 	}
 
 	/**
+	 * Cria um {@linkplain CPRF} através de uma string não formatada e seu
+	 * {@linkplain TipoDeCPRF}.
+	 * 
 	 * @param cadastroDePessoa
+	 *            não formatado
 	 * @param tipoDeCadastro
+	 *            tipo
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
-	public static AbstractCPRF create(String cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
+	public static <C extends AbstractCPRF> C create(String cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
 		
@@ -117,25 +127,24 @@ public abstract class AbstractCPRF {
 					break switch_Cadastro;
 
 				}
-
 			}
-
 		}
 		
 		return create(codigo);
 	}
 	
 	/**
-	 * Recupera uma instância de um cadastro de pessoa.
+	 * Cria um {@linkplain CPRF} através de uma string formatada ou não.
 	 * 
-	 * @param cadastroDePessoa -
-	 *            identificador do cadastro de pessoa.
+	 * @param cadastroDePessoa
+	 *            - identificador do cadastro de pessoa formatado ou não.
 	 * @return uma instância de AbstractCPRF.
-	 * @throws IllegalArgumentException -
-	 *             caso o parâmetro não esteja em um formatador válido de cadastro
-	 *             de pessoa.
+	 * @throws IllegalArgumentException
+	 *             - caso o parâmetro não esteja em um formatador válido de
+	 *             cadastro de pessoa.
 	 */
-	public static AbstractCPRF create(String cadastroDePessoa)
+	@SuppressWarnings("unchecked")
+	public static <C extends AbstractCPRF> C create(String cadastroDePessoa)
 			throws IllegalArgumentException {
 
 		AbstractCPRF cp = null;
@@ -162,7 +171,7 @@ public abstract class AbstractCPRF {
 					"O cadastro de pessoa [ \""+cadastroDePessoa+"\" ] não é válido.");
 		}
 
-		return cp;
+		return (C) cp;
 	}
 	
 	/**
@@ -188,14 +197,127 @@ public abstract class AbstractCPRF {
 
 		this.codigo = codigo;
 	}
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public String getCodigoComZeros() {
+		
+		if(isFisica()){
+			return Filler.ZERO_LEFT.fill(getCodigo(), 11);
+		}else{			
+			return Filler.ZERO_LEFT.fill(getCodigo(), 14);
+		}
+	}
 
 	public String getCodigoFormatado() {
 		
 		return codigoFormatado;
 	}
+	
+	public Long getRaiz(){
+		
+		if(isFisica()){
+			return Long.valueOf(codigoFormatado.split("-")[0].replaceAll("\\.", EMPTY));
+		}else{
+			return Long.valueOf(codigoFormatado.split("/")[0].replaceAll("\\.", EMPTY));
+		}
+	}
+	
+	public String getRaizComZeros(){
+		
+		if(isFisica()){
+			return Filler.ZERO_LEFT.fill(getRaiz(), 9);
+		}else{			
+			return Filler.ZERO_LEFT.fill(getRaiz(), 8);
+		}
+	}
+	
+	public String getRaizFormatada(){
+		
+		if(isFisica()){
+			return codigoFormatado.split("-")[0];
+		}else{
+			return codigoFormatado.split("/")[0];
+		}
+	}
 
-	public Long getCodigo() {
-		return codigo;
+	public Integer getDv(){
+		
+		return Integer.valueOf(codigoFormatado.split("-")[1]);
+	}
+
+	public String getDvComZeros(){
+		
+		return codigoFormatado.split("-")[1];
+	}
+	
+	/**
+	 * Realizado através da ordem natural do {@linkplain #getCodigo()}.
+	 * 
+	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	 */
+	public int compareTo(Object other) {
+
+		if(other != null){
+			if(other instanceof AbstractCPRF){
+				AbstractCPRF cprf = (AbstractCPRF) other;
+				if(this.autenticadorCP.getTipoDeCadastro().equals(cprf.autenticadorCP.getTipoDeCadastro())){				
+					return this.codigo.compareTo(cprf.codigo);
+				}else{
+					return this.autenticadorCP.getTipoDeCadastro().compareTo(cprf.autenticadorCP.getTipoDeCadastro());
+				}
+			}else{
+				return -1;
+			}
+		}else{
+			return 1;
+		}
+	}
+
+	/**
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result
+				+ ((codigoFormatado == null) ? 0 : codigoFormatado.hashCode());
+		return result;
+	}
+
+	/**
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof AbstractCPRF)) {
+			return false;
+		}
+		AbstractCPRF other = (AbstractCPRF) obj;
+		if (codigo == null) {
+			if (other.codigo != null) {
+				return false;
+			}
+		} else if (!codigo.equals(other.codigo)) {
+			return false;
+		}
+		if (codigoFormatado == null) {
+			if (other.codigoFormatado != null) {
+				return false;
+			}
+		} else if (!codigoFormatado.equals(other.codigoFormatado)) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -206,4 +328,5 @@ public abstract class AbstractCPRF {
 		
 		return getCodigoFormatado();
 	}
+	
 }

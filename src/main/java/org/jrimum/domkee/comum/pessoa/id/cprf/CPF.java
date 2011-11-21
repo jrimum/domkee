@@ -166,5 +166,5 @@ public class CPF extends AbstractCPRF {
 
 		return codigo;
 	}
-	
+
 }

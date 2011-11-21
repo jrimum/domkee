@@ -29,76 +29,82 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
-import static org.junit.Assert.assertEquals;
-
+import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Teste da classe CPF.
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * 
- * @since 2.0
+ * @since 0.2
  * 
- * @version 2.0
+ * @version 0.2
  */
-public class TestCPF {
-
-	private static final Long NUM_CPF_TESTE = 22222222222L;
-	private static final String STR_NOT_FORMATTED_CPF_TESTE = "22222222222";
-	private static final String STR_FORMATTED_CPF_TESTE = "222.222.222-22";
-
-	private CPF cpf;
-
+public class TestCPF extends TestAbstractCPRF{
+	
+	/*
+	 * CPF: 070.680.938-68 | LUIZ INACIO LULA DA SILVA
+	 */
+	private final String cpfLulaStrFmt = "070.680.938-68"; 	
+	private final String cpfLulaStr = "07068093868"; 	
+	private final Long cpfLula = 7068093868L; 	
+	
 	@Before
 	public void setUp() {
-		cpf = null;
-	}
-
-	@Test
-	public void testNewInstanceWithLong() {
-
-		cpf = new CPF(NUM_CPF_TESTE);
-
-		assertEquals(STR_FORMATTED_CPF_TESTE, cpf.getCodigoFormatado());
-		assertEquals(NUM_CPF_TESTE, cpf.getCodigo());
-	}
-
-	@Test
-	public void testNewInstanceWithNotFormattedString() {
-
-		cpf = new CPF(STR_NOT_FORMATTED_CPF_TESTE);
-
-		assertEquals(STR_FORMATTED_CPF_TESTE, cpf.getCodigoFormatado());
-		assertEquals(NUM_CPF_TESTE, cpf.getCodigo());
-	}
-
-	@Test
-	public void testNewInstanceWithFormattedString() {
-
-		cpf = new CPF(STR_FORMATTED_CPF_TESTE);
-
-		assertEquals(STR_FORMATTED_CPF_TESTE, cpf.getCodigoFormatado());
-		assertEquals(NUM_CPF_TESTE, cpf.getCodigo());
+		
+		setTipo(TipoDeCPRF.CPF);
+		setCprfLong(cpfLula);
+		setCprfLongErr(7068093867L);
+		setCprfString(cpfLulaStr);
+		setCprfStringErr("07068093867");
+		setCprfStringFormatada(cpfLulaStrFmt);
+		setCprfStringFormatadaErr("070.680.938-67");
+		setCprfRaizLong(70680938L);
+		setCprfRaizLongErr(70680936L);
+		setCprfRaizFormatada("070.680.938");
+		setCprfRaizFormatadaErr("070.680.936");
+		setCprfDv(68);
+		setCprfDvErr(67);
+		setCprf(new CPF(cpfLulaStrFmt));
+		 //FICTICIO
+		setCprfOutro(new CPF("222.222.222-22"));
 	}
 	
-	@Test(expected=IllegalArgumentException.class)
-	public void testThrowExceptionForWrongFormat(){
-		
-		new CPF("222.222.222/22");
+	/**
+	 * Test method for {@link org.jrimum.domkee.comum.pessoa.id.cprf.CPF#CPF(java.lang.Long)}.
+	 */
+	@Test
+	public void testCPFLong() {
+		CPF cpf = new CPF(cpfLula);
+		assertConsistent(cpf);
 	}
 
-	@Test(expected=CPFException.class)
-	public void testThrowExceptionForWrongInputString(){
-		
-		new CPF("222.222.222-21");
+	/**
+	 * Test method for {@link org.jrimum.domkee.comum.pessoa.id.cprf.CPF#CPF(java.lang.String)}.
+	 */
+	@Test
+	public void testCPFStringWithZeros() {
+		CPF cpf = new CPF(cpfLulaStr);
+		assertConsistent(cpf);
 	}
 
-	@Test(expected=CPFException.class)
-	public void testThrowExceptionForWrongInputLong(){
-		
-		new CPF(22222222221L);
+	/**
+	 * Test method for {@link org.jrimum.domkee.comum.pessoa.id.cprf.CPF#CPF(java.lang.String)}.
+	 */
+	@Test
+	public void testCPFStringWithFormat() {
+		CPF cpf = new CPF(cpfLulaStrFmt);
+		assertConsistent(cpf);
 	}
 
+	private void assertConsistent(CPF cpf) {
+		
+		assertNotNull(cpf);
+		assertEquals(cpfLula, cpf.getCodigo());
+		assertEquals(cpfLulaStr, cpf.getCodigoComZeros());
+		assertEquals(cpfLulaStrFmt, cpf.getCodigoFormatado());
+	}
 }

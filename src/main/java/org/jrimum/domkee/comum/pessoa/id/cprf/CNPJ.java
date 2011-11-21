@@ -32,7 +32,9 @@ package org.jrimum.domkee.comum.pessoa.id.cprf;
 import static org.apache.commons.lang.StringUtils.isNumeric;
 
 import org.jrimum.utilix.Exceptions;
+import org.jrimum.utilix.Objects;
 import org.jrimum.utilix.text.Filler;
+import org.jrimum.utilix.text.Strings;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 
@@ -114,6 +116,36 @@ public class CNPJ extends AbstractCPRF {
 			throw new CNPJException(new IllegalArgumentException(
 					"O cadastro de pessoa [ \"" + strCNPJ + "\" ] não é válido."));
 		}
+	}
+	
+	public boolean isMatriz(){
+		
+		return getSufixoFormatado().equals("0001");
+	}
+	
+	public boolean isSufixoEquals(String sufixoFormatado){
+		
+		Strings.checkNotNumeric(sufixoFormatado, String.format("O sufixo [%s] deve ser um número natural diferente de zero!", sufixoFormatado));
+		
+		return isSufixoEquals(Integer.valueOf(sufixoFormatado));
+	}
+
+	public boolean isSufixoEquals(Integer sufixo){
+		
+		Objects.checkNotNull(sufixo,"Sufixo nulo!");
+		Objects.checkArgument(sufixo > 0, String.format("O sufixo [%s] deve ser um número natural diferente de zero!", sufixo));
+		
+		return getSufixo().equals(sufixo);
+	}
+	
+	public Integer getSufixo(){
+		
+		return Integer.valueOf(getSufixoFormatado());
+	}
+	
+	public String getSufixoFormatado(){
+		
+		return getCodigoFormatado().split("-")[0].split("/")[1];
 	}
 
 	private void initFromNumber(Long numCNPJ) {
