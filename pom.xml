@@ -154,4 +154,12 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+		<distributionManagement>
+		<snapshotRepository>
+			<id>org.jrimum.snapshots</id>
+			<url>http://jrimum.org/maven/content/repositories/org.jrimum.snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 </project>
