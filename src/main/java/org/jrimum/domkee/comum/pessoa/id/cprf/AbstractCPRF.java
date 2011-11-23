@@ -90,9 +90,10 @@ public abstract class AbstractCPRF implements CPRF{
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
+	@SuppressWarnings("unchecked")
 	public static <C extends AbstractCPRF> C create(Long cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 
-		return create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
+		return (C) create(String.valueOf(cadastroDePessoa),tipoDeCadastro);
 	}
 
 	/**
@@ -106,6 +107,7 @@ public abstract class AbstractCPRF implements CPRF{
 	 * @return AbstractCPRF (CPF ou CNPJ)
 	 * @throws IllegalArgumentException
 	 */
+	@SuppressWarnings("unchecked")
 	public static <C extends AbstractCPRF> C create(String cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
 		
 		String codigo = null;
@@ -130,7 +132,7 @@ public abstract class AbstractCPRF implements CPRF{
 			}
 		}
 		
-		return create(codigo);
+		return (C) create(codigo);
 	}
 	
 	/**
