@@ -19,20 +19,17 @@
 	</licenses>
 
 	<organization>
-		<name>Grupo JRimum</name>
-		<url>http://www.jrimum.org/</url>
+		<name>Projeto JRimum</name>
+		<url>http://www.jrimum.org</url>
 	</organization>
 
 	<issueManagement>
-		<system>TRAC</system>
-		<url>http://www.jrimum.org/utilix</url>
+		<system>GitHub</system>
+		<url>http://github.com/jrimum/domkee/issues</url>
 	</issueManagement>
 
 	<scm>
-		<connection>scm:svn:http://www.jrimum.org/svn/domkee</connection>
-		<developerConnection>scm:svn:http://www.jrimum.org/svn/domkee</developerConnection>
-		<tag>HEAD</tag>
-		<url>http://www.jrimum.org/svn/domkee</url>
+		<url>http://github.com/jrimum/domkee</url>
 	</scm>
 	
 	<developers>
