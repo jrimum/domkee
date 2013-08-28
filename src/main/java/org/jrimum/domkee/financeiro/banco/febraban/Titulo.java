@@ -720,6 +720,22 @@ public final class Titulo {
 		}
 		this.valorCobrado = valorCobrado;
 	}
+	
+	/**
+	 * <p>
+	 * Indica se existe parâmetros bancários no título.
+	 * </p>
+	 * 
+	 * @return parametrosBancarios
+	 * 
+	 * @see #getParametrosBancarios()
+	 * 
+	 * @since 0.2
+	 */
+
+	public boolean hasParametrosBancarios() {
+		return ParametrosBancariosMap.hasElement(getParametrosBancarios());
+	}
 
 	/**
 	 * <p>
