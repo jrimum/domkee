@@ -61,11 +61,6 @@ import org.jrimum.domkee.financeiro.banco.PessoaJuridica;
 	
 public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6156550582890687779L;
-	
 	private static Logger log = Logger.getLogger(Banco.class);
 
 	private CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN;

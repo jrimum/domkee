@@ -65,11 +65,6 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  */
 public class CNPJ extends AbstractCPRF {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3217977741182481194L;
-	
 	public CNPJ(Long numCNPJ) {
 
 		try {

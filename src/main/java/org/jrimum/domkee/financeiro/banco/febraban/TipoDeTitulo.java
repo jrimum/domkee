@@ -31,8 +31,6 @@ package org.jrimum.domkee.financeiro.banco.febraban;
 
 import static java.lang.String.format;
 
-import java.io.Serializable;
-
 import org.jrimum.utilix.Exceptions;
 
 /**
@@ -91,7 +89,7 @@ import org.jrimum.utilix.Exceptions;
  * @version 0.2
  */
 
-public enum TipoDeTitulo implements Serializable {
+public enum TipoDeTitulo{
 
 	CH_CHEQUE(1,"CH"),
 	DM_DUPLICATA_MERCANTIL(2,"DM"), 

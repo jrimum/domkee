@@ -28,7 +28,6 @@
  */
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
@@ -47,12 +46,7 @@ import org.jrimum.domkee.financeiro.banco.Pessoa;
  * 
  * @version 0.2
  */
-public class EntidadeDeCobranca implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8688239859531751244L;
+public class EntidadeDeCobranca{
 
 	/**
 	 * Utilizado como composição

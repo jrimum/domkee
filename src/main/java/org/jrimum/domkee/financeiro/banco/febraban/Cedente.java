@@ -47,11 +47,6 @@ import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
  */
 public class Cedente extends EntidadeDeCobranca {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -9195475982518392674L;
-
 	public Cedente(String nome) {
 		super(nome);
 	}

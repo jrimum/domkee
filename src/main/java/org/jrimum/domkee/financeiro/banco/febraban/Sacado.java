@@ -48,11 +48,6 @@ import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
  */
 public class Sacado extends EntidadeDeCobranca {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2508919801939225018L;
-	
 	public Sacado(String nome) {
 		super(nome);
 	}

@@ -30,7 +30,6 @@
 
 package org.jrimum.domkee.comum.pessoa;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
@@ -50,7 +49,7 @@ import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
  * 
  * @version 0.2
  */
-public interface Pessoa extends Serializable {
+public interface Pessoa{
 
 	public String getNome();
 

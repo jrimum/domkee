@@ -51,11 +51,6 @@ package org.jrimum.domkee.financeiro.banco;
  */
 public class PessoaJuridica extends Pessoa implements org.jrimum.domkee.comum.pessoa.PessoaJuridica {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2028330457824238140L;
-	
 	private Long inscricaoEstadual;
 	
 	private Long inscricaoMunicipal;
