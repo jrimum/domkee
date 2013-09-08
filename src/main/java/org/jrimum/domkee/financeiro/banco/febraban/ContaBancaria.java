@@ -36,9 +36,6 @@ import org.jrimum.domkee.financeiro.banco.Pessoa;
 import org.jrimum.utilix.Objects;
 
 
-// TODO Verificar a necessidade de se criar uma família de classes de
-// ContaBancaria, uma para cada banco, e seus respectivos autenticadores.
-
 /**
  * 
  * <p>
@@ -56,8 +53,6 @@ import org.jrimum.utilix.Objects;
  * @see Banco
  */
 public class ContaBancaria {
-
-	private static final long serialVersionUID = 3409504109013559999L;
 
 	/**
 	 * @see Banco

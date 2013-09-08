@@ -48,11 +48,6 @@ import org.jrimum.vallia.digitoverificador.CodigoDeCompensacaoBancosBACENDV;
  */
 public class CodigoDeCompensacaoBACEN {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6989699931272805790L;
-
 	private static final CodigoDeCompensacaoBancosBACENDV dv4Compensacao = new CodigoDeCompensacaoBancosBACENDV();
 	
 	private Integer codigo;

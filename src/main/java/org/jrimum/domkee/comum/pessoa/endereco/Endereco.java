@@ -50,8 +50,6 @@ import org.jrimum.utilix.Objects;
  */
 public class Endereco {
 
-	private static final long serialVersionUID = -2971929602328106185L;
-	
 	/**
 	 * @see Logradouro
 	 */

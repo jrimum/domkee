@@ -60,11 +60,6 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  */
 public class CPF extends AbstractCPRF {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5910970842832308496L;
-
 	public CPF(Long numCPF) {
 
 		try {

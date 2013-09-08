@@ -64,11 +64,6 @@ public abstract class AbstractCPRF implements CPRF{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 659667618386631640L;
-
-	/**
-	 * 
-	 */
 	private String codigoFormatado;
 
 	/**
