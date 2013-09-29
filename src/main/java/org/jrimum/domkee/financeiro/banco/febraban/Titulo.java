@@ -35,6 +35,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Date;
 
+import org.jrimum.domkee.financeiro.banco.ParametroBancario;
 import org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap;
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
@@ -157,7 +158,7 @@ public final class Titulo {
 	private SacadorAvalista sacadorAvalista;
 
 	/**
-	 *@see #setParametrosBancarios(ParametrosBancariosMap)
+	 *@see #setParametrosBancarios(ParametrosBancariosMap<?>)
 	 */
 	private ParametrosBancariosMap parametrosBancariosMap;
 
@@ -748,7 +749,6 @@ public final class Titulo {
 	 * 
 	 * @since 0.2
 	 */
-
 	public ParametrosBancariosMap getParametrosBancarios() {
 		return parametrosBancariosMap;
 	}
@@ -775,7 +775,7 @@ public final class Titulo {
 	 * @since 0.2
 	 */
 
-	public void setParametrosBancarios(ParametrosBancariosMap parametrosBancariosMap) {
+	public <P extends ParametroBancario<?>> void setParametrosBancarios(ParametrosBancariosMap parametrosBancariosMap) {
 		this.parametrosBancariosMap = parametrosBancariosMap;
 	}
 
