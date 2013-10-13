@@ -30,9 +30,9 @@
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
 import static org.apache.commons.lang.StringUtils.isNumeric;
+import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 
 import org.jrimum.utilix.Exceptions;
-import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 
@@ -67,7 +67,7 @@ public class CPF extends AbstractCPRF {
 			if (AbstractCPRFValidator.isParametrosValidos(String.valueOf(numCPF),
 					TipoDeCPRF.CPF)) {
 
-				this.autenticadorCP = AbstractCPRFValidator.create(Filler.ZERO_LEFT.fill(numCPF, 11));
+				this.autenticadorCP = AbstractCPRFValidator.create(fillWithZeroLeft(numCPF, 11));
 
 				if (autenticadorCP.isValido()){
 					
@@ -112,7 +112,7 @@ public class CPF extends AbstractCPRF {
 
 		try {
 
-			this.setCodigoFormatado(format(Filler.ZERO_LEFT.fill(numCPF, 11)));
+			this.setCodigoFormatado(format(fillWithZeroLeft(numCPF, 11)));
 			this.setCodigo(numCPF);
 
 		} catch (Exception e) {

@@ -30,12 +30,12 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
+import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 import org.junit.Test;
 
@@ -139,8 +139,8 @@ public abstract class TestAbstractCPRF{
 			tamanho = 14;
 		}
 
-		assertEquals(Filler.ZERO_LEFT.fill(cprfLong, tamanho), cprf.getCodigoComZeros());
-		assertTrue(!cprf.getCodigoComZeros().equals(Filler.ZERO_LEFT.fill(cprfLongErr, tamanho)));
+		assertEquals(fillWithZeroLeft(cprfLong, tamanho), cprf.getCodigoComZeros());
+		assertTrue(!cprf.getCodigoComZeros().equals(fillWithZeroLeft(cprfLongErr, tamanho)));
 	}
 
 	@Test
@@ -167,8 +167,8 @@ public abstract class TestAbstractCPRF{
 			tamanho = 8;
 		}
 		
-		assertEquals(Filler.ZERO_LEFT.fill(cprfRaizLong, tamanho), cprf.getRaizComZeros());
-		assertTrue(!cprf.getRaizComZeros().equals(Filler.ZERO_LEFT.fill(cprfRaizLongErr,tamanho)));
+		assertEquals(fillWithZeroLeft(cprfRaizLong, tamanho), cprf.getRaizComZeros());
+		assertTrue(!cprf.getRaizComZeros().equals(fillWithZeroLeft(cprfRaizLongErr,tamanho)));
 	}
 
 	@Test
@@ -185,8 +185,8 @@ public abstract class TestAbstractCPRF{
 
 	@Test
 	public void testGetDvComZeros() {
-		assertEquals(Filler.ZERO_LEFT.fill(cprf.getDv(),2), cprf.getDvComZeros());
-		assertTrue(!cprf.getDvComZeros().equals(Filler.ZERO_LEFT.fill(cprfDvErr,2)));
+		assertEquals(fillWithZeroLeft(cprf.getDv(),2), cprf.getDvComZeros());
+		assertTrue(!cprf.getDvComZeros().equals(fillWithZeroLeft(cprfDvErr,2)));
 	}
 
 	@Test

@@ -30,11 +30,12 @@
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
 import static org.apache.commons.lang.StringUtils.EMPTY;
+import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 
 import org.jrimum.utilix.Exceptions;
-import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
+
 
 
 /**
@@ -113,14 +114,14 @@ public abstract class AbstractCPRF implements CPRF{
 
 				if (tipoDeCadastro == TipoDeCPRF.CPF) {
 
-					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 11);
+					codigo = fillWithZeroLeft(cadastroDePessoa, 11);
 					break switch_Cadastro;
 
 				}
 
 				if (tipoDeCadastro == TipoDeCPRF.CNPJ) {
 
-					codigo = Filler.ZERO_LEFT.fill(cadastroDePessoa, 14);
+					codigo = fillWithZeroLeft(cadastroDePessoa, 14);
 					break switch_Cadastro;
 
 				}
@@ -201,9 +202,9 @@ public abstract class AbstractCPRF implements CPRF{
 	public String getCodigoComZeros() {
 		
 		if(isFisica()){
-			return Filler.ZERO_LEFT.fill(getCodigo(), 11);
+			return fillWithZeroLeft(getCodigo(), 11);
 		}else{			
-			return Filler.ZERO_LEFT.fill(getCodigo(), 14);
+			return fillWithZeroLeft(getCodigo(), 14);
 		}
 	}
 
@@ -224,9 +225,9 @@ public abstract class AbstractCPRF implements CPRF{
 	public String getRaizComZeros(){
 		
 		if(isFisica()){
-			return Filler.ZERO_LEFT.fill(getRaiz(), 9);
+			return fillWithZeroLeft(getRaiz(), 9);
 		}else{			
-			return Filler.ZERO_LEFT.fill(getRaiz(), 8);
+			return fillWithZeroLeft(getRaiz(), 8);
 		}
 	}
 	

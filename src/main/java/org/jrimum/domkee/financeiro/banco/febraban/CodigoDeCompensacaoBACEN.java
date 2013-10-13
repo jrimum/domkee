@@ -30,8 +30,9 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
+import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
+
 import org.jrimum.utilix.Objects;
-import org.jrimum.utilix.text.Filler;
 import org.jrimum.vallia.digitoverificador.CodigoDeCompensacaoBancosBACENDV;
 
 /**
@@ -83,7 +84,7 @@ public class CodigoDeCompensacaoBACEN {
 	 * @return the codigo formatado ex: "001"
 	 */
 	public String getCodigoFormatado() {
-		return Filler.ZERO_LEFT.fill(getCodigo(), 3);
+		return fillWithZeroLeft(getCodigo(), 3);
 	}
 	
 	/**
