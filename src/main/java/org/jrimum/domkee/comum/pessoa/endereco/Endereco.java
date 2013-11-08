@@ -51,12 +51,12 @@ import org.jrimum.utilix.Objects;
 public class Endereco {
 
 	/**
-	 * @see Logradouro
+	 * Nome da rua, avenida, etc.
 	 */
 	private String logradouro;
 	
 	/**
-	 * Número que identifica o estabelecimento na rua.
+	 * Número que identifica o lugar no logradouro (ex: número da casa).
 	 */
 	private String numero;
 	
@@ -71,7 +71,7 @@ public class Endereco {
 	private String bairro;
 	
 	/**
-	 * @see Localidade
+	 * Cidade, município, etc.
 	 */
 	private String localidade;
 	

@@ -66,8 +66,7 @@ public class EntidadeDeCobranca{
 	}
 	
 	/**
-	 * Nome do sacado
-	 * @return
+	 * @return Nome da entidade
 	 */
 	public String getNome() {
 		return pessoa.getNome();
@@ -108,12 +107,7 @@ public class EntidadeDeCobranca{
 	}
 	
 	/**
-	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
-	 * {@linkplain #getContasBancarias()}, caso exista alguma conta, ou null, caso
-	 * não exista {@linkplain #contasBancarias}.
-	 * 
-	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
-	 *         null.
+	 * @return A próxima conta bancária
 	 */
 	public ContaBancaria getNextContaBancaria(){
 		
@@ -144,12 +138,7 @@ public class EntidadeDeCobranca{
 	}
 	
 	/**
-	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
-	 * {@linkplain #getEnderecos()}, caso exista algum endereço, ou null, caso
-	 * não exista {@linkplain #enderecos}.
-	 * 
-	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
-	 *         null.
+	 * @return O próximo endereço da entidade.
 	 */
 	public Endereco getNextEndereco(){
 		
@@ -180,12 +169,7 @@ public class EntidadeDeCobranca{
 	}
 
 	/**
-	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
-	 * {@linkplain #getTelefones()}, caso exista algum telefone, ou null, caso
-	 * não exista {@linkplain #telefones}.
-	 * 
-	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
-	 *         null.
+	 * @return O próximo telefone da entidade.
 	 */
 	public NumeroDeTelefone getNextTelefone(){
 		

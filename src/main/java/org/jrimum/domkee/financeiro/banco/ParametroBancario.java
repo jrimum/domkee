@@ -30,7 +30,7 @@
 package org.jrimum.domkee.financeiro.banco;
 
 /**
- * Key de um {@linkplain ParametroBancarioMap} na qual sua representacao é uma
+ * Key de um {@link ParametrosBancariosMap} na qual sua representacao é uma
  * nome em uma Enumeração.
  * 
  * 

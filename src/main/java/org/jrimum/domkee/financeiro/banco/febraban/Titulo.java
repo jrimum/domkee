@@ -158,7 +158,7 @@ public final class Titulo {
 	private SacadorAvalista sacadorAvalista;
 
 	/**
-	 *@see #setParametrosBancarios(ParametrosBancariosMap<?>)
+	 * @see #setParametrosBancarios(ParametrosBancariosMap)
 	 */
 	private ParametrosBancariosMap parametrosBancariosMap;
 
@@ -623,7 +623,6 @@ public final class Titulo {
 	 * </p>
 	 * 
 	 * @param mora
-	 *            the mora to set
 	 */
 	public void setMora(BigDecimal mora) {
 		if (mora != null) {
@@ -650,8 +649,7 @@ public final class Titulo {
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
 	 * 
-	 * @param mora
-	 *            the mora to set
+	 * @param deducao
 	 */
 	public void setDeducao(BigDecimal deducao) {
 		if (deducao != null) {
@@ -679,8 +677,7 @@ public final class Titulo {
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
 	 * 
-	 * @param mora
-	 *            the mora to set
+	 * @param acrecimo
 	 */
 	public void setAcrecimo(BigDecimal acrecimo) {
 		if (acrecimo != null) {
@@ -712,8 +709,7 @@ public final class Titulo {
 	 * resultante de deduções ou acrécimos.
 	 * </p>
 	 * 
-	 * @param mora
-	 *            the mora to set
+	 * @param valorCobrado
 	 */
 	public void setValorCobrado(BigDecimal valorCobrado) {
 		if (valorCobrado != null) {
@@ -766,11 +762,8 @@ public final class Titulo {
 	 * </p>
 	 * 
 	 * @see org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap
-	 * @see br.com.nordestefomento.jrimum.bopepo.campolivre.CampoLivre
-	 * @see br.com.nordestefomento.jrimum.bopepo.BancoSuportado
 	 * 
 	 * @param parametrosBancariosMap
-	 * 
 	 * 
 	 * @since 0.2
 	 */

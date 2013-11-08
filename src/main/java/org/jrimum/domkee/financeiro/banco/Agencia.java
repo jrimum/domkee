@@ -52,12 +52,12 @@ package org.jrimum.domkee.financeiro.banco;
 public interface Agencia<C, D>{
 
 	/**
-	 * @return
+	 * @return Número da agência
 	 */
 	C getCodigo();
 	
 	/**
-	 * @return
+	 * @return Dígito verificador
 	 */
 	D getDigitoVerificador();
 }
