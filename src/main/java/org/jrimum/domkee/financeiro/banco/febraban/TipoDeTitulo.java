@@ -115,13 +115,13 @@ public enum TipoDeTitulo{
 	PC_PARCELA_DE_CONSORCIO(22,"PC"), 
 	NF_NOTA_FISCAL(23,"NF"), 
 	DD_DOCUMENTO_DE_DIVIDA(24,"DD"), 
-	CEDULA_DE_PRODUTO_RURAL(25,"Cédula de Produto Rural"), 
-	WARRANT(26,"Warrant"), 
-	DIVIDA_ATIVA_DE_ESTADO(27,"Dívida Ativa de Estado"), 
-	DIVIDA_ATIVA_DE_MUNICIPIO(28,"Dívida Ativa de Município"), 
-	DIVIDA_ATIVA_DA_UNIAO(29,"Dívida Ativa da União"), 
-	COTA_CONDOMINIAL(30,"Cota Condominial"), 
-	OUTROS(99,"Outros");
+	CEDULA_DE_PRODUTO_RURAL(25,"CPR"), 
+	WARRANT(26,"W"), 
+	DIVIDA_ATIVA_DE_ESTADO(27,"DAE"), 
+	DIVIDA_ATIVA_DE_MUNICIPIO(28,"DAM"), 
+	DIVIDA_ATIVA_DA_UNIAO(29,"DAU"), 
+	COTA_CONDOMINIAL(30,"CC"), 
+	OUTROS(99,"O");
 
 	/**
 	 * <p>
