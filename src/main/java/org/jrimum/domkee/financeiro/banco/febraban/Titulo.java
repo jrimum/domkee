@@ -70,7 +70,7 @@ import org.jrimum.utilix.Objects;
  * 
  * @version 0.2
  */
-public final class Titulo {
+public class Titulo {
 
 	/**
 	 * @see #setNumeroDoDocumento(String)

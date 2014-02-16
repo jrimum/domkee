@@ -57,7 +57,7 @@ import org.jrimum.utilix.Objects;
  * 
  * @version 0.2
  */
-public final class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia<Integer, String> {
+public class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia<Integer, String> {
 
 	private final Integer codigo;
 
