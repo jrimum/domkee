@@ -95,7 +95,7 @@ public final class ParametrosBancariosMap {
 	 * 
 	 * @since 0.2
 	 */
-	public ParametrosBancariosMap(ParametroBancario<?> nome, Integer valor) {
+	public ParametrosBancariosMap(ParametroBancario<?> nome, Number valor) {
 
 		adicione(nome, valor);
 	}
