@@ -184,13 +184,31 @@ public enum TipoDeTitulo{
 		
 		return codigo;
 	}
+	
+	/**
+	 * Retorna uma instância que corresponde com a sigla do tipo de título.
+	 * Caso não exista um tipo associado a sigla determinada uma {@code
+	 * IllegalArgumentException} será lançada.
+	 * 
+	 * @param sigla
+	 *            - Sigla do tipo de título procurado
+	 * @return tipo de título correspondente a sigla
+	 * 
+	 * @since 0.2
+	 */
+	public static TipoDeTitulo valueOfSigla(String sigla){
+		for(TipoDeTitulo t : values()){
+			if(t.getSigla().equals(sigla)){
+				return t;
+			}
+		}
+		return Exceptions.throwIllegalArgumentException(format("Nenhuma constante enum %s com sigla igual a %s!", TipoDeTitulo.class, sigla));
+	}
 
 	/**
-	 * <p>
 	 * Retorna uma instância que corresponde com o código do tipo de título.
-	 * Caso não exista um tipo associado a código determinado uma {@code
+	 * Caso não exista um tipo associado ao código determinado uma {@code
 	 * IllegalArgumentException} será lançada.
-	 * </p>
 	 * 
 	 * @param codigo
 	 *            - Código do tipo de título procurado
@@ -199,15 +217,11 @@ public enum TipoDeTitulo{
 	 * @since 0.2
 	 */
 	public static TipoDeTitulo valueOf(int codigo){
-		
 		for(TipoDeTitulo t : values()){
-			
 			if(t.getCodigo() == codigo){
-				
 				return t;
 			}
 		}
-
 		return Exceptions.throwIllegalArgumentException(format("Nenhuma constante enum %s com código igual a %s!", TipoDeTitulo.class, codigo));
 	}
 	
