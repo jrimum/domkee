@@ -29,7 +29,9 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import junit.framework.Assert;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -43,14 +45,14 @@ import org.junit.Test;
  * @since 0.2
  */
 public class TestBanco {
-
+	
 	@Test
 	public void testIsCodigoDeCompensacaoOKNaoNulo() {
 		
-		Assert.assertTrue(Banco.isCodigoDeCompensacaoOK("001"));
+		assertTrue(Banco.isCodigoDeCompensacaoOK("001"));
 		
-		Assert.assertFalse(Banco.isCodigoDeCompensacaoOK(null));
-		Assert.assertFalse(Banco.isCodigoDeCompensacaoOK("ABC"));
-		Assert.assertFalse(Banco.isCodigoDeCompensacaoOK("0011"));
+		assertFalse(Banco.isCodigoDeCompensacaoOK(null));
+		assertFalse(Banco.isCodigoDeCompensacaoOK("ABC"));
+		assertFalse(Banco.isCodigoDeCompensacaoOK("0011"));
 	}
 }
