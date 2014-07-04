@@ -57,13 +57,8 @@ import org.jrimum.utilix.Objects;
  * 
  * @version 0.2
  */
-public final class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia<Integer, String> {
+public class Agencia implements org.jrimum.domkee.financeiro.banco.Agencia<Integer, String> {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3512980818455792739L;
-	
 	private final Integer codigo;
 
 	private final String digitoVerificador;

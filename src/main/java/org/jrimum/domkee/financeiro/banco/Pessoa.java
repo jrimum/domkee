@@ -67,11 +67,6 @@ import org.jrimum.utilix.Objects;
  */
 public class Pessoa implements org.jrimum.domkee.comum.pessoa.Pessoa {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6969495818430633867L;
-	
 	private String nome;
 	
 	/**

@@ -31,8 +31,6 @@ package org.jrimum.domkee.financeiro.banco.febraban;
 
 import static java.lang.String.format;
 
-import java.io.Serializable;
-
 import org.jrimum.utilix.Exceptions;
 
 /**
@@ -91,7 +89,7 @@ import org.jrimum.utilix.Exceptions;
  * @version 0.2
  */
 
-public enum TipoDeTitulo implements Serializable {
+public enum TipoDeTitulo{
 
 	CH_CHEQUE(1,"CH"),
 	DM_DUPLICATA_MERCANTIL(2,"DM"), 
@@ -117,13 +115,13 @@ public enum TipoDeTitulo implements Serializable {
 	PC_PARCELA_DE_CONSORCIO(22,"PC"), 
 	NF_NOTA_FISCAL(23,"NF"), 
 	DD_DOCUMENTO_DE_DIVIDA(24,"DD"), 
-	CEDULA_DE_PRODUTO_RURAL(25,"Cédula de Produto Rural"), 
-	WARRANT(26,"Warrant"), 
-	DIVIDA_ATIVA_DE_ESTADO(27,"Dívida Ativa de Estado"), 
-	DIVIDA_ATIVA_DE_MUNICIPIO(28,"Dívida Ativa de Município"), 
-	DIVIDA_ATIVA_DA_UNIAO(29,"Dívida Ativa da União"), 
-	COTA_CONDOMINIAL(30,"Cota Condominial"), 
-	OUTROS(99,"Outros");
+	CEDULA_DE_PRODUTO_RURAL(25,"CPR"), 
+	WARRANT(26,"W"), 
+	DIVIDA_ATIVA_DE_ESTADO(27,"DAE"), 
+	DIVIDA_ATIVA_DE_MUNICIPIO(28,"DAM"), 
+	DIVIDA_ATIVA_DA_UNIAO(29,"DAU"), 
+	COTA_CONDOMINIAL(30,"CC"), 
+	OUTROS(99,"O");
 
 	/**
 	 * <p>
@@ -186,13 +184,31 @@ public enum TipoDeTitulo implements Serializable {
 		
 		return codigo;
 	}
+	
+	/**
+	 * Retorna uma instância que corresponde com a sigla do tipo de título.
+	 * Caso não exista um tipo associado a sigla determinada uma {@code
+	 * IllegalArgumentException} será lançada.
+	 * 
+	 * @param sigla
+	 *            - Sigla do tipo de título procurado
+	 * @return tipo de título correspondente a sigla
+	 * 
+	 * @since 0.2
+	 */
+	public static TipoDeTitulo valueOfSigla(String sigla){
+		for(TipoDeTitulo t : values()){
+			if(t.getSigla().equals(sigla)){
+				return t;
+			}
+		}
+		return Exceptions.throwIllegalArgumentException(format("Nenhuma constante enum %s com sigla igual a %s!", TipoDeTitulo.class, sigla));
+	}
 
 	/**
-	 * <p>
 	 * Retorna uma instância que corresponde com o código do tipo de título.
-	 * Caso não exista um tipo associado a código determinado uma {@code
+	 * Caso não exista um tipo associado ao código determinado uma {@code
 	 * IllegalArgumentException} será lançada.
-	 * </p>
 	 * 
 	 * @param codigo
 	 *            - Código do tipo de título procurado
@@ -201,15 +217,11 @@ public enum TipoDeTitulo implements Serializable {
 	 * @since 0.2
 	 */
 	public static TipoDeTitulo valueOf(int codigo){
-		
 		for(TipoDeTitulo t : values()){
-			
 			if(t.getCodigo() == codigo){
-				
 				return t;
 			}
 		}
-
 		return Exceptions.throwIllegalArgumentException(format("Nenhuma constante enum %s com código igual a %s!", TipoDeTitulo.class, codigo));
 	}
 	

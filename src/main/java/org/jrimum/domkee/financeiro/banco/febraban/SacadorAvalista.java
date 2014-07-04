@@ -48,11 +48,6 @@ import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
  */
 public class SacadorAvalista extends EntidadeDeCobranca {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6730172100461560481L;
-
 	public SacadorAvalista(String nome) {
 		super(nome);
 	}

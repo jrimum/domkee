@@ -50,8 +50,6 @@ import org.jrimum.utilix.Objects;
  */
 public class CEP {
 
-	private static final long serialVersionUID = -3573397075779771290L;
-
 	/**
 	 * Primeiros cinco dígitos.
 	 * Exemplo: Para o CEP 59.020-300 o prefixo é o 59020.

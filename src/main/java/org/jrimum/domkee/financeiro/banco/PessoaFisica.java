@@ -58,11 +58,6 @@ import org.jrimum.domkee.comum.pessoa.id.RG;
 public class PessoaFisica extends Pessoa implements
 		org.jrimum.domkee.comum.pessoa.PessoaFisica {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5722593135877031688L;
-
 	private org.jrimum.domkee.comum.pessoa.PessoaFisica conjuge;
 
 	private String estadoCivil;

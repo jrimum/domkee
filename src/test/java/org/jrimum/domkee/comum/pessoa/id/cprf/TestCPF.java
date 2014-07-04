@@ -29,10 +29,12 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * Teste da classe CPF.

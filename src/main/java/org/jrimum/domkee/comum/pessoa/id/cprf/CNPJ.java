@@ -30,10 +30,10 @@
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
 import static org.apache.commons.lang.StringUtils.isNumeric;
+import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
-import org.jrimum.utilix.text.Filler;
 import org.jrimum.utilix.text.Strings;
 import org.jrimum.vallia.AbstractCPRFValidator;
 import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
@@ -65,11 +65,6 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  */
 public class CNPJ extends AbstractCPRF {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3217977741182481194L;
-	
 	public CNPJ(Long numCNPJ) {
 
 		try {
@@ -77,7 +72,7 @@ public class CNPJ extends AbstractCPRF {
 			if (AbstractCPRFValidator.isParametrosValidos(
 					String.valueOf(numCNPJ), TipoDeCPRF.CNPJ)) {
 
-				this.autenticadorCP = AbstractCPRFValidator.create(Filler.ZERO_LEFT.fill(numCNPJ, 14));
+				this.autenticadorCP = AbstractCPRFValidator.create(fillWithZeroLeft(numCNPJ, 14));
 
 				if (autenticadorCP.isValido()){
 					
@@ -152,7 +147,7 @@ public class CNPJ extends AbstractCPRF {
 
 		try {
 
-			this.setCodigoFormatado(format(Filler.ZERO_LEFT.fill(numCNPJ, 14)));
+			this.setCodigoFormatado(format(fillWithZeroLeft(numCNPJ, 14)));
 			this.setCodigo(numCNPJ);
 
 		} catch (Exception e) {

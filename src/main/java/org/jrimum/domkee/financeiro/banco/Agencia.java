@@ -29,7 +29,6 @@
  */
 package org.jrimum.domkee.financeiro.banco;
 
-import java.io.Serializable;
 
 /**
  * 
@@ -50,15 +49,15 @@ import java.io.Serializable;
  * 
  * @version 0.2
  */
-public interface Agencia<C, D> extends Serializable {
+public interface Agencia<C, D>{
 
 	/**
-	 * @return
+	 * @return Número da agência
 	 */
 	C getCodigo();
 	
 	/**
-	 * @return
+	 * @return Dígito verificador
 	 */
 	D getDigitoVerificador();
 }

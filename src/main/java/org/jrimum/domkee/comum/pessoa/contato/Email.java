@@ -50,11 +50,6 @@ import org.jrimum.utilix.Objects;
  */
 public class Email {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 639359687849797249L;
-		
 	private String email;
 
 	public Email() {}

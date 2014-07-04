@@ -31,7 +31,6 @@
 	
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import java.io.Serializable;
 
 
 /**
@@ -55,7 +54,7 @@ import java.io.Serializable;
  * @version 0.2
  */
 
-public enum TipoDeCobranca implements Serializable {
+public enum TipoDeCobranca{
 	/**
 	 * <p>Tipo onde os títulos emitidos são sempre registrados no banco antes de seu vencimento ou pagamento.</p>
 	 */

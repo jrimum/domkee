@@ -28,7 +28,6 @@
  */
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
@@ -47,12 +46,7 @@ import org.jrimum.domkee.financeiro.banco.Pessoa;
  * 
  * @version 0.2
  */
-public class EntidadeDeCobranca implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8688239859531751244L;
+public class EntidadeDeCobranca{
 
 	/**
 	 * Utilizado como composição
@@ -72,8 +66,7 @@ public class EntidadeDeCobranca implements Serializable {
 	}
 	
 	/**
-	 * Nome do sacado
-	 * @return
+	 * @return Nome da entidade
 	 */
 	public String getNome() {
 		return pessoa.getNome();
@@ -114,12 +107,7 @@ public class EntidadeDeCobranca implements Serializable {
 	}
 	
 	/**
-	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
-	 * {@linkplain #getContasBancarias()}, caso exista alguma conta, ou null, caso
-	 * não exista {@linkplain #contasBancarias}.
-	 * 
-	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
-	 *         null.
+	 * @return A próxima conta bancária
 	 */
 	public ContaBancaria getNextContaBancaria(){
 		
@@ -150,12 +138,7 @@ public class EntidadeDeCobranca implements Serializable {
 	}
 	
 	/**
-	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
-	 * {@linkplain #getEnderecos()}, caso exista algum endereço, ou null, caso
-	 * não exista {@linkplain #enderecos}.
-	 * 
-	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
-	 *         null.
+	 * @return O próximo endereço da entidade.
 	 */
 	public Endereco getNextEndereco(){
 		
@@ -186,12 +169,7 @@ public class EntidadeDeCobranca implements Serializable {
 	}
 
 	/**
-	 * Retorna o resultado de uma chamada a {@code iterator.next()} de
-	 * {@linkplain #getTelefones()}, caso exista algum telefone, ou null, caso
-	 * não exista {@linkplain #telefones}.
-	 * 
-	 * @return Chamada a {@code iterator.next()}, caso exista algum endereço ou
-	 *         null.
+	 * @return O próximo telefone da entidade.
 	 */
 	public NumeroDeTelefone getNextTelefone(){
 		

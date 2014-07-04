@@ -29,6 +29,10 @@
 
 package org.jrimum.domkee.financeiro.banco.hsbc;
 
+import static java.lang.String.format;
+
+import org.jrimum.utilix.Exceptions;
+
 /**
  * 
  * <p>
@@ -61,43 +65,28 @@ package org.jrimum.domkee.financeiro.banco.hsbc;
  */
 
 public enum TipoIdentificadorCNR {
-
+	
 	/**
-	 * 
-	 * <p>
 	 * Identificador do <strong>"tipo 4"</strong> que vincula “vencimento”,
 	 * “código do cedente” e “código do documento”.
-	 * </p>
-	 * 
-	 * @author <a href=http://gilmatryx.googlepages.com/>Gilmar P.S.L.</a>
 	 * 
 	 * @since 0.2
-	 * 
-	 * @version 0.2
 	 */
-
 	COM_VENCIMENTO {
 		/**
 		 * @see org.jrimum.domkee.financeiro.banco.hsbc.TipoIdentificadorCNR#getConstante()
 		 */
 		@Override
 		public int getConstante() {
-			return 4;
+			return VALOR_COM_VENCIMENTO;
 		}
 	},
 
 	/**
-	 * 
-	 * <p>
 	 * Identificador do <strong>"tipo 5"</strong> que vincula “código do
 	 * cedente” e “código do documento”.
-	 * </p>
-	 * 
-	 * @author <a href=http://gilmatryx.googlepages.com/>Gilmar P.S.L.</a>
 	 * 
 	 * @since 0.2
-	 * 
-	 * @version 0.2
 	 */
 	SEM_VENCIMENTO {
 		/**
@@ -105,9 +94,12 @@ public enum TipoIdentificadorCNR {
 		 */
 		@Override
 		public int getConstante() {
-			return 5;
+			return VALOR_SEM_VENCIMENTO;
 		}
 	};
+	
+	private static final int VALOR_SEM_VENCIMENTO = 5;
+	private static final int VALOR_COM_VENCIMENTO = 4;
 
 	/**
 	 * <p>
@@ -118,6 +110,23 @@ public enum TipoIdentificadorCNR {
 	 * 
 	 * @since 0.2
 	 */
-
 	public abstract int getConstante();
+	
+
+	public static TipoIdentificadorCNR valueOf(int valor) {
+		switch (valor) {
+
+		case VALOR_SEM_VENCIMENTO:
+
+			return SEM_VENCIMENTO;
+
+		case VALOR_COM_VENCIMENTO:
+
+			return COM_VENCIMENTO;
+
+		default:
+			return Exceptions.throwIllegalStateException(format(
+					"Tipo de identificador CNR \"%d\" desconhecido!", valor));
+		}
+	}
 }

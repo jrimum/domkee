@@ -54,8 +54,6 @@ import org.jrimum.utilix.Objects;
  */
 public class NumeroDaConta {
 
-	private static final long serialVersionUID = 7807160258460502276L;
-
 	private Integer codigoDaConta = 0;
 
 	private String digitoDaConta = "";

@@ -32,16 +32,15 @@ package org.jrimum.domkee.financeiro.banco;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.jrimum.utilix.Objects;
 
 /**
- * <p>
  * Mapa de parâmetros com dados bancário para condições específicas de
  * determinados bancos ou implementações. <strong>PARÂMETROS NULOS NÃO SÃO
  * PERMITIDOS.</strong>
- * </p>
  * 
  * <p>
  * Mais dados bancários podem ser necessários a um título para gerar um boleto,
@@ -71,13 +70,40 @@ import org.jrimum.utilix.Objects;
  */
 public final class ParametrosBancariosMap {
 
-	private Map<String, Object> dadosMap;
+	private Map<ParametroBancario<?>, Number> dadosMap;
 	
 	/**
-	 * <p>
+	 * Instancia um mapa sem parâmetros.
+	 * 
+	 * @since 0.2
+	 */
+	public ParametrosBancariosMap() {
+		getInstance();
+	}
+
+	/**
+	 * Instancia o mapa com um mapeamento já especificado. Nomes e valores nulos
+	 * não são permitidos, o nome deve ser único.
+	 * 
+	 * @param nome
+	 *            do parâmetro a ser associado
+	 * @param valor
+	 *            do parâmetro a ser associado
+	 * 
+	 * @throws IllegalArgumentException
+	 *             se nome ou valor == NULL
+	 * 
+	 * @since 0.2
+	 */
+	public ParametrosBancariosMap(ParametroBancario<?> nome, Number valor) {
+
+		adicione(nome, valor);
+	}
+	
+	/**
 	 * Verifica se o {@code ParametrosBancariosMap} passado por parâmetro
 	 * <strong>não</strong> é <code>null</code> e possui elementos.
-	 * </p>
+	 * 
 	 * 
 	 * @param params
 	 *            - Instância de {@code ParametrosBancariosMap} testada.
@@ -91,42 +117,8 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
-	 * Instancia um mapa sem parâmetros.
-	 * </p>
-	 * 
-	 * @since 0.2
-	 */
-	public ParametrosBancariosMap() {
-		getInstance();
-	}
-
-	/**
-	 * <p>
-	 * Instancia o mapa com um mapeamento já especificado. Nomes e valores nulos
-	 * não são permitidos, o nome deve ser único.
-	 * </p>
-	 * 
-	 * @param nome
-	 *            do parâmetro a ser associado
-	 * @param valor
-	 *            do parâmetro a ser associado
-	 * 
-	 * @throws NullPointerException
-	 *             se nome ou valor == NULL
-	 * 
-	 * @since 0.2
-	 */
-	public ParametrosBancariosMap(String nome, Object valor) {
-
-		adicione(nome, valor);
-	}
-
-	/**
-	 * <p>
-	 * Indica se o mapa contém um mapeamento para o nome de parâmetros
+	 * Indica se o mapa contém um mapeamento para o nome de parâmetro
 	 * especificado.
-	 * </p>
 	 * 
 	 * @param nome
 	 *            do parâmetro cuja existência no mapa será testada.
@@ -138,8 +130,7 @@ public final class ParametrosBancariosMap {
 	 * 
 	 * @since 0.2
 	 */
-
-	public boolean contemComNome(String nome) {
+	public boolean contemComNome(ParametroBancario<?> nome) {
 
 		Objects.checkNotNull(nome);
 
@@ -147,10 +138,7 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
-	 * Indica se o mapa contém uma ou mais associações de parâmetros ao valor
-	 * especificado
-	 * </p>
+	 * Indica se o mapa contém o valor especificado.
 	 * 
 	 * @param valor
 	 *            cuja existência no mapa será testada
@@ -158,13 +146,12 @@ public final class ParametrosBancariosMap {
 	 * @return true se o mapa contém uma ou mais associações de parâmetros ao
 	 *         valor especificado
 	 * 
-	 * @throws NullPointerException
+	 * @throws IllegalArgumentException
 	 *             se valor == NULL
 	 * 
 	 * @since 0.2
 	 */
-
-	public boolean contemComValor(Object valor) {
+	public <V extends Number> boolean contemComValor(V valor) {
 
 		Objects.checkNotNull(valor);
 
@@ -172,11 +159,9 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
 	 * Retorna o valor para o qual o parâmetro bancário especificada está
 	 * mapeado, ou nulo, se este mapa contém não contém nenhum mapeamento para
 	 * tal parâmetro. Nomes nulos não são permitidos.
-	 * </p>
 	 * 
 	 * @param <V>
 	 *            Tipo de retorno genérico do valor contido no mapa com nome
@@ -186,14 +171,13 @@ public final class ParametrosBancariosMap {
 	 * @return o valor associado com o parâmetro bancário especificado, ou nulo
 	 *         se não houver nenhum mapeamento para o mesmo
 	 * 
-	 * @throws NullPointerException
+	 * @throws IllegalArgumentException
 	 *             se nome == NULL
 	 * 
 	 * @since 0.2
 	 */
-
 	@SuppressWarnings("unchecked")
-	public <V> V getValor(String nome) {
+	public <V extends Number> V getValor(ParametroBancario<?> nome) {
 
 		Objects.checkNotNull(nome);
 
@@ -201,87 +185,69 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
 	 * Indica se o mapa não contém associações (parâmetro,valor)
-	 * </p>
 	 * 
 	 * @return true se vazio
 	 * 
 	 * @since 0.2
 	 */
-
 	public boolean isVazio() {
 
 		return dadosMap.isEmpty();
 	}
 
 	/**
-	 * <p>
 	 * Indica se o mapa contém alguma associação (parâmetro,valor)
-	 * </p>
 	 * 
 	 * @return !isVazio()
 	 * 
 	 * @since 0.2
 	 */
-
 	public boolean isNaoVazio() {
 
 		return !isVazio();
 	}
 
 	/**
-	 * <p>
 	 * Retorna um conjuto de nomes de parâmetro do mapa.
-	 * </p>
 	 * 
 	 * @return conjuto de nomes de parâmetro do mapa.
 	 * 
 	 * @since 0.2
 	 */
-
-	public Set<String> nomes() {
+	public Set<ParametroBancario<?>> nomes() {
 
 		return dadosMap.keySet();
 	}
 
 	/**
-	 * <p>
 	 * Retorna uma coleção com os valores contidos no mapa.
-	 * </p>
 	 * 
 	 * @return coleção de valores do mapa.
 	 * 
 	 * @since 0.2
 	 */
-
-	public Collection<?> valores() {
+	public Collection<? extends Number> valores() {
 
 		return dadosMap.values();
 	}
 
 	/**
-	 * <p>
 	 * Retorna um conjuto de entradas (parâmetro,valor) do mapa. Assim qualquer
 	 * modificação nestes valores também reflete no mapa de parâmetros
 	 * bancários.
-	 * </p>
 	 * 
 	 * @return conjunto dos mapeamentos contidos.
 	 * 
 	 * @since 0.2
 	 */
-
-	public Set<java.util.Map.Entry<String, Object>> entradas() {
-
+	public Set<Entry<ParametroBancario<?>,Number>> entradas() {
 		return dadosMap.entrySet();
 	}
 
 	/**
-	 * <p>
 	 * Associa o valor especificado a um nome de parâmetro também especificado
 	 * que deve ser único neste mapa. Nomes e valores nulos não são permitidos.
-	 * </p>
 	 * 
 	 * @param nome
 	 *            do parâmetro a ser associado
@@ -294,8 +260,7 @@ public final class ParametrosBancariosMap {
 	 * 
 	 * @since 0.2
 	 */
-
-	public ParametrosBancariosMap adicione(String nome, Object valor) {
+	public ParametrosBancariosMap adicione(ParametroBancario<?> nome, Number valor) {
 
 		Objects.checkNotNull(nome);
 		Objects.checkNotNull(valor);
@@ -308,10 +273,8 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
-	 * Adiciona todos os bancários de um outro mapeamento neste mapeamento.
+	 * Adiciona todos os dados bancários de um outro mapeamento neste mapeamento.
 	 * Parâmetros nulos não são permitidos.
-	 * </p>
 	 * 
 	 * <p>
 	 * O efeito desta chamada é equivalente a de adiciona("parametro", Valor)
@@ -327,7 +290,6 @@ public final class ParametrosBancariosMap {
 	 * 
 	 * @since 0.2
 	 */
-
 	public ParametrosBancariosMap adicione(ParametrosBancariosMap dados) {
 
 		Objects.checkNotNull(dados);
@@ -338,11 +300,9 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
-	 * Retorna o valor para o qual este mapeamento anteriormente estava
-	 * associado ao nome do parâmetro bancário, ou nulo se o mapa não continha
-	 * nenhum mapeamento. Nomes nulos não são permitidos.
-	 * </p>
+	 * Retorna o valor removido associado ao nome do parâmetro bancário
+	 * informado, ou nulo se o mapa não contiver nenhum mapeamento. Nomes nulos
+	 * não são permitidos.
 	 * 
 	 * <p>
 	 * Um retorno nulo indica necessariamente que não existia nenhum mapeamento
@@ -361,9 +321,8 @@ public final class ParametrosBancariosMap {
 	 * 
 	 * @since 0.2
 	 */
-
 	@SuppressWarnings("unchecked")
-	public <V> V remova(String nome) {
+	public <V extends Number> V remova(ParametroBancario<?> nome) {
 
 		Objects.checkNotNull(nome);
 
@@ -371,47 +330,34 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * <p>
 	 * Remove todos os os parâmetros desta instância.
-	 * </p>
-	 * 
 	 * 
 	 * @since 0.2
 	 */
-
 	public void limpe() {
 
 		dadosMap.clear();
 	}
 
 	/**
-	 * <p>
-	 * Retorna o número de parâmetros contidos na instância.
-	 * </p>
-	 * 
-	 * @return
+	 * @return retorna o número de parâmetros contidos na instância.
 	 * 
 	 * @since 0.2
 	 */
-
 	public int quantidade() {
 
 		return dadosMap.size();
 	}
 
 	/**
-	 * <p>
 	 * Instancia um HashMap<String,Object> para uso da deste map bancário.
-	 * </p>
-	 * 
 	 * 
 	 * @since 0.2
 	 */
-
 	private void getInstance() {
 
 		if (dadosMap == null) {
-			dadosMap = new HashMap<String, Object>();
+			dadosMap = new HashMap<ParametroBancario<?>, Number>();
 		}
 	}
 

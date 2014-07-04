@@ -1,5 +1,5 @@
 /*
- * Copyright 2008 JRimum Project
+ * Copyright 2013 JRimum Project
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  * 
- * Created at: Jan 26, 2010 - 1:27:20 PM
+ * Created at: 20/09/2013 - 18:28:00
  * 
  * ================================================================================
  * 
@@ -23,41 +23,22 @@
  * TIPO, sejam expressas ou tácitas. Veja a LICENÇA para a redação específica a
  * reger permissões e limitações sob esta LICENÇA.
  * 
- * Criado em: Jan 26, 2010 - 1:27:20 PM
+ * Criado em: 20/09/2013 - 18:28:00
  * 
  */
 
-package org.jrimum.domkee.financeiro.banco.febraban;
-
-import org.jrimum.domkee.comum.pessoa.id.cprf.CPRF;
+package org.jrimum.domkee.financeiro.banco;
 
 /**
- * <p>
- * Representa um Sacado no modelo de negócio financeiro, que é 
- * aquele que emite um título de crédito a favor de alguém.
- * </p>
- * <p>
- * Pessoa física ou jurídica a que se destina a cobrança do compromisso, é o cliente do Cedente.
- * </p>
+ * Key de um {@link ParametrosBancariosMap} na qual sua representacao é uma
+ * nome em uma Enumeração.
  * 
- * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * 
- * @since 0.2
+ * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * 
- * @version 0.2
+ * @param <P>
+ *            Enum usado como key do parâmetro bancário.
  */
-public class Sacado extends EntidadeDeCobranca {
+public interface ParametroBancario<P extends Enum<P>> {
 
-	public Sacado(String nome) {
-		super(nome);
-	}
-	
-	public Sacado(String nome, String cadastroDePessoa) {
-		super(nome, cadastroDePessoa);
-	}
-	
-	public Sacado(String nome, CPRF cadastroDePessoa) {
-		super(nome, cadastroDePessoa);
-	}
-	
 }

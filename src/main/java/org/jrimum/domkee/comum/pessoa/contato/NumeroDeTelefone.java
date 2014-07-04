@@ -29,8 +29,6 @@
 
 package org.jrimum.domkee.comum.pessoa.contato;
 
-import java.io.Serializable;
-
 import org.jrimum.utilix.Objects;
 
 /**
@@ -48,12 +46,7 @@ import org.jrimum.utilix.Objects;
  * 
  * @version 0.2
  */
-public class NumeroDeTelefone implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8948441953189653213L;
+public class NumeroDeTelefone{
 
 	private int ddi;
 

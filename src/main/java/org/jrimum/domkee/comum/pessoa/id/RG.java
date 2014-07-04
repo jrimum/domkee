@@ -30,7 +30,6 @@
 
 package org.jrimum.domkee.comum.pessoa.id;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import org.jrimum.domkee.financeiro.banco.PessoaFisica;
@@ -53,13 +52,8 @@ import org.jrimum.utilix.Objects;
  * 
  * @version 0.2
  */
-public class RG implements Serializable {
+public class RG{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3472263281659641113L;
-	
 	private long numero;
 	
 	private String orgaoExpedidor;
