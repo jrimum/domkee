@@ -88,7 +88,12 @@ public class ContaBancaria {
 	 * @see Modalidade
 	 */
 	private Modalidade modalidade;
-	
+		
+	/**
+	 * Numero de Digitos do Convênio. Utilizado para geração do campo livre 
+	 * do Banco do Brasil, ele pode assumir dois valores 6 ou 7
+	 */
+	private Integer numeroDigConvenio;
 	
 	public ContaBancaria() {}
 	
@@ -197,4 +202,18 @@ public class ContaBancaria {
 	public String toString() {
 		return Objects.toString(this);
 	}
+
+	public Integer getNumeroDigConvenio() {
+		return numeroDigConvenio;
+	}
+
+	/**
+	 * Numero de Digitos do Convênio. Utilizado para geração do campo livre 
+	 * do Banco do Brasil, ele pode assumir dois valores 6 ou 7
+	 */
+	public void setNumeroDigConvenio(Integer numeroDigConvenio) {
+		this.numeroDigConvenio = numeroDigConvenio;
+	}
+
+	
 }
