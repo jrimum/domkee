@@ -46,36 +46,36 @@ import org.junit.Test;
  * 
  * @version 2.0
  */
-public class TestCNPJ extends TestAbstractCPRF{
+public class TestCNPJ15 extends TestAbstractCPRF{
 
 	/*
-	 * CNPJ: 60.746.948/0001-12 | BANCO BRADESCO
+	 * CNPJ: 874.328.742/0005-77 | CNPJ Aleatório 1
 	 */
-	private final String cnpjBradescoFilialStrFmt = "60.746.948/0005-46"; 	
-	private final String cnpjBradescoStrFmt = "60.746.948/0001-12"; 	
-	private final String cnpjBradescoStr = "60746948000112"; 	
-	private final Long cnpjBradesco = 60746948000112L; 	
+	private final String cnpfEmpresa1FilialStrFmt = "874.328.742/0005-77"; 	
+	private final String cnpfEmpresa1StrFmt = "874.328.742/0001-43"; 	
+	private final String cnpfEmpresa1Str = "874328742000143"; 	
+	private final Long cnpfEmpresa1 = 874328742000143L; 	
 	
 	@Before
 	public void setUp() {
-		setTamanhoCPRF(14);
-		setRaizCPRF(8);
+		setTamanhoCPRF(15);
+		setRaizCPRF(9);
 		setTipo(TipoDeCPRF.CNPJ);
-		setCprfLong(cnpjBradesco);
-		setCprfLongErr(60746948000113L);
-		setCprfString(cnpjBradescoStr);
-		setCprfStringErr("60746948000113");
-		setCprfStringFormatada(cnpjBradescoStrFmt);
-		setCprfStringFormatadaErr("60.746.948/0001-13");
-		setCprfRaizLong(60746948L);
-		setCprfRaizLongErr(60746941L);
-		setCprfRaizFormatada("60.746.948");
-		setCprfRaizFormatadaErr("60.746.941");
-		setCprfDv(12);
-		setCprfDvErr(13);
-		setCprf(new CNPJ(cnpjBradescoStrFmt));
-		 //BANCO DO NORDESTE
-		setCprfOutro(new CNPJ("07.237.373/0001-20"));
+		setCprfLong(cnpfEmpresa1);
+		setCprfLongErr(874328742000144L);
+		setCprfString(cnpfEmpresa1Str);
+		setCprfStringErr("874328742000144");
+		setCprfStringFormatada(cnpfEmpresa1StrFmt);
+		setCprfStringFormatadaErr("874.328.742/0005-78");
+		setCprfRaizLong(874328742L);
+		setCprfRaizLongErr(874328743L);
+		setCprfRaizFormatada("874.328.742");
+		setCprfRaizFormatadaErr("874.328.743");
+		setCprfDv(43);
+		setCprfDvErr(44);
+		setCprf(new CNPJ(cnpfEmpresa1StrFmt));
+		 //CNPJ Aleatório 2
+		setCprfOutro(new CNPJ("983.987.432/0001-76"));
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testCNPJLong() {
-		CNPJ cnpj = new CNPJ(cnpjBradesco);
+		CNPJ cnpj = new CNPJ(cnpfEmpresa1);
 		assertConsistent(cnpj);
 	}
 
@@ -92,7 +92,7 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testCNPJStringWithZeros() {
-		CNPJ cnpj = new CNPJ(cnpjBradescoStr);
+		CNPJ cnpj = new CNPJ(cnpfEmpresa1Str);
 		assertConsistent(cnpj);
 	}
 
@@ -101,7 +101,7 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testCNPJStringWithFormat() {
-		CNPJ cnpj = new CNPJ(cnpjBradescoStrFmt);
+		CNPJ cnpj = new CNPJ(cnpfEmpresa1StrFmt);
 		assertConsistent(cnpj);
 	}
 	
@@ -110,7 +110,7 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testGetSufixo() {
-		assertEquals(Integer.valueOf(1), new CNPJ(cnpjBradescoStrFmt).getSufixo());
+		assertEquals(Integer.valueOf(1), new CNPJ(cnpfEmpresa1StrFmt).getSufixo());
 		
 	}
 
@@ -119,7 +119,7 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testGetSufixoFormatado() {
-		assertEquals("0001", new CNPJ(cnpjBradescoStrFmt).getSufixoFormatado());
+		assertEquals("0001", new CNPJ(cnpfEmpresa1StrFmt).getSufixoFormatado());
 	}
 
 	/**
@@ -127,8 +127,8 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testIsMatriz() {
-		assertTrue(new CNPJ(cnpjBradescoStrFmt).isMatriz());
-		assertTrue(!new CNPJ(cnpjBradescoFilialStrFmt).isMatriz());
+		assertTrue(new CNPJ(cnpfEmpresa1StrFmt).isMatriz());
+		assertTrue(!new CNPJ(cnpfEmpresa1FilialStrFmt).isMatriz());
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class TestCNPJ extends TestAbstractCPRF{
 	@Test
 	public void testIsSufixoEqualsString() {
 		
-		assertTrue(new CNPJ(cnpjBradescoStrFmt).isSufixoEquals("0001"));
-		assertTrue(!new CNPJ(cnpjBradescoFilialStrFmt).isSufixoEquals("0001"));
+		assertTrue(new CNPJ(cnpfEmpresa1StrFmt).isSufixoEquals("0001"));
+		assertTrue(!new CNPJ(cnpfEmpresa1FilialStrFmt).isSufixoEquals("0001"));
 	}
 
 	/**
@@ -146,15 +146,15 @@ public class TestCNPJ extends TestAbstractCPRF{
 	 */
 	@Test
 	public void testIsSufixoEqualsInteger() {
-		assertTrue(new CNPJ(cnpjBradescoFilialStrFmt).isSufixoEquals(5));
-		assertTrue(!new CNPJ(cnpjBradescoStrFmt).isSufixoEquals(5));
+		assertTrue(new CNPJ(cnpfEmpresa1FilialStrFmt).isSufixoEquals(5));
+		assertTrue(!new CNPJ(cnpfEmpresa1StrFmt).isSufixoEquals(5));
 	}
 
 	private void assertConsistent(CNPJ cnpj) {
 		
 		assertNotNull(cnpj);
-		assertEquals(cnpjBradesco, cnpj.getCodigo());
-		assertEquals(cnpjBradescoStr, cnpj.getCodigoComZeros());
-		assertEquals(cnpjBradescoStrFmt, cnpj.getCodigoFormatado());
+		assertEquals(cnpfEmpresa1, cnpj.getCodigo());
+		assertEquals(cnpfEmpresa1Str, cnpj.getCodigoComZeros());
+		assertEquals(cnpfEmpresa1StrFmt, cnpj.getCodigoFormatado());
 	}
 }

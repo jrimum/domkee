@@ -64,10 +64,11 @@ public abstract class TestAbstractCPRF{
 	private String cprfRaizFormatadaErr;
 	private Integer cprfDv;
 	private Integer cprfDvErr;
-	
 	private CPRF cprf;
 	private CPRF cprfOutro;
-		
+	private int tamanhoCPRF;
+	private int raizCPRF;
+	
 	@Test
 	public final void testCreateLongTipoDeCPRF() {
 		assertNotNull(AbstractCPRF.create(cprfLong, tipo));
@@ -130,17 +131,8 @@ public abstract class TestAbstractCPRF{
 
 	@Test
 	public void testGetCodigoComZeros() {
-		
-		int tamanho = -1;
-		
-		if(cprf.isFisica()){			
-			tamanho = 11;
-		}else{
-			tamanho = 14;
-		}
-
-		assertEquals(fillWithZeroLeft(cprfLong, tamanho), cprf.getCodigoComZeros());
-		assertTrue(!cprf.getCodigoComZeros().equals(fillWithZeroLeft(cprfLongErr, tamanho)));
+		assertEquals(fillWithZeroLeft(cprfLong, tamanhoCPRF), cprf.getCodigoComZeros());
+		assertTrue(!cprf.getCodigoComZeros().equals(fillWithZeroLeft(cprfLongErr, tamanhoCPRF)));
 	}
 
 	@Test
@@ -158,17 +150,8 @@ public abstract class TestAbstractCPRF{
 
 	@Test
 	public void testGetRaizComZeros() {
-		
-		int tamanho = -1;
-		
-		if(cprf.isFisica()){			
-			tamanho = 9;
-		}else{
-			tamanho = 8;
-		}
-		
-		assertEquals(fillWithZeroLeft(cprfRaizLong, tamanho), cprf.getRaizComZeros());
-		assertTrue(!cprf.getRaizComZeros().equals(fillWithZeroLeft(cprfRaizLongErr,tamanho)));
+		assertEquals(fillWithZeroLeft(cprfRaizLong, raizCPRF), cprf.getRaizComZeros());
+		assertTrue(!cprf.getRaizComZeros().equals(fillWithZeroLeft(cprfRaizLongErr,raizCPRF)));
 	}
 
 	@Test
@@ -343,4 +326,15 @@ public abstract class TestAbstractCPRF{
 	public final void setCprfOutro(CPRF cprfOutro) {
 		this.cprfOutro = cprfOutro;
 	}
+
+	
+	public void setTamanhoCPRF(int tamanhoCPRF) {
+		this.tamanhoCPRF = tamanhoCPRF;
+	}
+
+	
+	public void setRaizCPRF(int raizCPRF) {
+		this.raizCPRF = raizCPRF;
+	}
+	
 }

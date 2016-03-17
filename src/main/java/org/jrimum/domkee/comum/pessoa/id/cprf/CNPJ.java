@@ -29,9 +29,9 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
-import static org.apache.commons.lang.StringUtils.isNumeric;
 import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 
+import org.apache.commons.lang.StringUtils;
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
 import org.jrimum.utilix.text.Strings;
@@ -48,8 +48,8 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  * </p>
  * 
  * <p>
- * O formato do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador
- * do número.
+ * O formato do CNPJ é "##.###.###/####-XX", onde XX é o dígito verificador do
+ * número.
  * </p>
  * 
  * 
@@ -58,145 +58,105 @@ import org.jrimum.vallia.AbstractCPRFValidator.TipoDeCPRF;
  * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>
  * @author <a href="http://www.nordestefomento.com.br">Nordeste Fomento
  *         Mercantil</a>
- * 
+ * 		
  * @since 0.2
- * 
+ * 		
  * @version 0.2
  */
 public class CNPJ extends AbstractCPRF {
-
-	public CNPJ(Long numCNPJ) {
-
-		try {
-
-			if (AbstractCPRFValidator.isParametrosValidos(
-					String.valueOf(numCNPJ), TipoDeCPRF.CNPJ)) {
-
-				this.autenticadorCP = AbstractCPRFValidator.create(fillWithZeroLeft(numCNPJ, 14));
-
-				if (autenticadorCP.isValido()){
-					
-					initFromNumber(numCNPJ);
-					
-				}else{
-					
-					Exceptions.throwIllegalArgumentException("O cadastro de pessoa [ \"" + numCNPJ+ "\" ] não é válido.");
-				}
-			}
-
-		} catch (Exception e) {
-			if (!(e instanceof CNPJException))
-				throw new CNPJException(e);
-		}
-
-	}
-
+	
+	private static final String PATTERN_CNPJ_15 = "###.###.###/####-##";
+	
+	private static final String PATTERN_CNPJ_14 = "##.###.###/####-##";
+	
 	public CNPJ(String strCNPJ) {
-
-		this.autenticadorCP = AbstractCPRFValidator.create(strCNPJ);
-
-		if (autenticadorCP.isValido()) {
-			
-			if(isNumeric(strCNPJ)){
+		process(strCNPJ);
+	}
+	
+	public CNPJ(Long numCNPJ) {
+		process(String.valueOf(numCNPJ));
+	}
+	
+	private void process(String strCNPJ) {
+		String cnpj = removeFormat(strCNPJ);
+		
+		if (StringUtils.isBlank(strCNPJ)) {
+			Exceptions.throwIllegalArgumentException(
+					"O cadastro de pessoa [ \"" + strCNPJ + "\" ] não pode ser nulo ou em branco.");
+		}
+		
+		if (strCNPJ.length() < 14) {
+			cnpj = fillWithZeroLeft(strCNPJ, 14);
+		}
+		
+		if (AbstractCPRFValidator.isParametrosValidos(cnpj, TipoDeCPRF.CNPJ)) {
+			this.autenticadorCP = AbstractCPRFValidator.create(cnpj);
+			if (autenticadorCP.isValido()) {
+				if (cnpj.length() == 14) {
+					this.setCodigoFormatado(format(PATTERN_CNPJ_14, cnpj));
+				} else if (cnpj.length() == 15){
+					this.setCodigoFormatado(format(PATTERN_CNPJ_15, cnpj));
+				}else {
+					this.setCodigoFormatado(cnpj);
+				}
+				this.setCodigo(Long.parseLong(cnpj));
 				
-				initFromNotFormattedString(strCNPJ);
-				
-			}else{
-				
-				initFromFormattedString(strCNPJ);
-				
+			} else {
+				throw new CNPJException(
+						new IllegalArgumentException("O cadastro de pessoa [ \"" + strCNPJ + "\" ] não é válido."));
 			}
-			
-		} else {
-			throw new CNPJException(new IllegalArgumentException(
-					"O cadastro de pessoa [ \"" + strCNPJ + "\" ] não é válido."));
 		}
 	}
 	
-	public boolean isMatriz(){
+	public boolean isMatriz() {
 		
 		return getSufixoFormatado().equals("0001");
 	}
 	
-	public boolean isSufixoEquals(String sufixoFormatado){
+	public boolean isSufixoEquals(String sufixoFormatado) {
 		
-		Strings.checkNotNumeric(sufixoFormatado, String.format("O sufixo [%s] deve ser um número natural diferente de zero!", sufixoFormatado));
-		
+		Strings.checkNotNumeric(sufixoFormatado,
+				String.format("O sufixo [%s] deve ser um número natural diferente de zero!", sufixoFormatado));
+				
 		return isSufixoEquals(Integer.valueOf(sufixoFormatado));
 	}
-
-	public boolean isSufixoEquals(Integer sufixo){
+	
+	public boolean isSufixoEquals(Integer sufixo) {
 		
-		Objects.checkNotNull(sufixo,"Sufixo nulo!");
-		Objects.checkArgument(sufixo > 0, String.format("O sufixo [%s] deve ser um número natural diferente de zero!", sufixo));
-		
+		Objects.checkNotNull(sufixo, "Sufixo nulo!");
+		Objects.checkArgument(sufixo > 0,
+				String.format("O sufixo [%s] deve ser um número natural diferente de zero!", sufixo));
+				
 		return getSufixo().equals(sufixo);
 	}
 	
-	public Integer getSufixo(){
+	public Integer getSufixo() {
 		
 		return Integer.valueOf(getSufixoFormatado());
 	}
 	
-	public String getSufixoFormatado(){
+	public String getSufixoFormatado() {
 		
 		return getCodigoFormatado().split("-")[0].split("/")[1];
 	}
-
-	private void initFromNumber(Long numCNPJ) {
-
-		try {
-
-			this.setCodigoFormatado(format(fillWithZeroLeft(numCNPJ, 14)));
-			this.setCodigo(numCNPJ);
-
-		} catch (Exception e) {
-			throw new CNPJException(e);
+	
+	public final static String removeFormat(final String valor) {
+		if (valor == null) {
+			return null;
 		}
-	}
-	private void initFromFormattedString(String strCNPJ) {
-		
-		try {
-			
-			this.setCodigoFormatado(strCNPJ);
-			this.setCodigo(Long.parseLong(removeFormat(strCNPJ)));
-			
-		} catch (Exception e) {
-			throw new CNPJException(e);
-		}
+		return valor.replaceAll("[^0-9]", "").trim();
 	}
 	
-	private void initFromNotFormattedString(String strCNPJ) {
-		
-		try {
-			
-			this.setCodigoFormatado(format(strCNPJ));
-			this.setCodigo(Long.parseLong(strCNPJ));
-			
-		} catch (Exception e) {
-			throw new CNPJException(e);
+	private String format(String pattern, final Object valor) {
+		final char[] val = valor.toString().toCharArray();
+		for (final char var : val) {
+			if (pattern.contains("#")) {
+				pattern = pattern.replaceFirst("#", String.valueOf(var));
+			} else {
+				pattern += var;
+			}
 		}
-	}
-
-	private String format(String strCNPJ) {
-		
-		StringBuilder codigoFormatado = new StringBuilder(strCNPJ);
-		
-		codigoFormatado.insert(2, '.');
-		codigoFormatado.insert(6, '.');
-		codigoFormatado.insert(10, '/');
-		codigoFormatado.insert(15, '-');
-		
-		return codigoFormatado.toString();
-	}
-
-	private String removeFormat(String codigo) {
-
-		codigo = codigo.replace(".", "");
-		codigo = codigo.replace("/", "");
-		codigo = codigo.replace("-", "");
-
-		return codigo;
+		return pattern;
 	}
 	
 }
