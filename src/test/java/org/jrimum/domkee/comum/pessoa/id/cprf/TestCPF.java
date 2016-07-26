@@ -56,7 +56,8 @@ public class TestCPF extends TestAbstractCPRF{
 	
 	@Before
 	public void setUp() {
-		
+		setTamanhoCPRF(11);
+		setRaizCPRF(9);
 		setTipo(TipoDeCPRF.CPF);
 		setCprfLong(cpfLula);
 		setCprfLongErr(7068093867L);
