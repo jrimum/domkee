@@ -34,8 +34,8 @@ import static org.jrimum.utilix.Objects.isNotNull;
 import java.awt.Image;
 import java.util.Collection;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.log4j.Logger;
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
@@ -80,8 +80,8 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	
 	
 	/**
-	 * @param codigoDeCompensacaoBACEN
-	 * @param instituicao
+	 * @param codigoDeCompensacaoBACEN Código de compensação bancária
+	 * @param instituicao Nome da instituição bancária
 	 */
 	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao) {
 		super();
@@ -94,9 +94,9 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	}
 
 	/**
-	 * @param codigoDeCompensacaoBACEN
-	 * @param instituicao
-	 * @param cnpj
+	 * @param codigoDeCompensacaoBACEN Código de compensação bancária
+	 * @param instituicao Nome da instituição bancária
+	 * @param cnpj Número do CNPJ da instituição bancária
 	 */
 	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj) {
 		super();
@@ -111,10 +111,10 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	}
 
 	/**
-	 * @param codigoDeCompensacaoBACEN
-	 * @param instituicao
-	 * @param cnpj
-	 * @param segmento
+	 * @param codigoDeCompensacaoBACEN Código de compensação no BACEN
+	 * @param instituicao Nome da instituição bancária
+	 * @param cnpj CNPJ da instituição bancária
+	 * @param segmento segmento da instituição bancária
 	 */
 	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj, String segmento) {
 		
@@ -130,11 +130,11 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	}
 
 	/**
-	 * @param codigoDeCompensacaoBACEN
-	 * @param instituicao
-	 * @param cnpj
-	 * @param segmento
-	 * @param imgLogo
+	 * @param codigoDeCompensacaoBACEN Código de compensação no BACEN
+	 * @param instituicao Nome da instituição bancária
+	 * @param cnpj CNPJ da instituição bancária
+	 * @param segmento segmento da instituição bancária
+	 * @param imgLogo Logo da instituição bancária
 	 */
 	public Banco(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN, String instituicao, CNPJ cnpj,	String segmento, Image imgLogo) {
 		
@@ -151,18 +151,16 @@ public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	/**
 	 * <p>
 	 * Verifica se o código passado está ok em relação as regras:
+	 * </p>
 	 * <ol>
 	 * <li>Não nulo</li>
 	 * <li>Numérico</li>
 	 * <li>Com 3 digitos</li>
 	 * </ol>
-	 * </p>
 	 * 
 	 * @param codigo - Código de compensação BACEN do banco
 	 * 
-	 * @return se ok
-	 * 
-	 * @throws IllegalArgumentException
+	 * @return True ou False
 	 * 
 	 * @since 0.2
 	 * 

@@ -54,7 +54,7 @@ import org.jrimum.utilix.Objects;
  * <li>Nosso número;</li>
  * <li>Código do banco;</li>
  * <li>Data de vencimento;</li>
- * <li>Agência/Código do cedente</li>;
+ * <li>Agência/Código do cedente;</li>
  * <li>Código da carteira;</li>
  * <li>Código da moeda;</li>
  * </ul>
@@ -142,6 +142,7 @@ public final class ParametrosBancariosMap {
 	 * 
 	 * @param valor
 	 *            cuja existência no mapa será testada
+	 * @param <V> Tipo Genérico para classe que extende Number
 	 * 
 	 * @return true se o mapa contém uma ou mais associações de parâmetros ao
 	 *         valor especificado
@@ -350,7 +351,7 @@ public final class ParametrosBancariosMap {
 	}
 
 	/**
-	 * Instancia um HashMap<String,Object> para uso da deste map bancário.
+	 * Instancia um HashMap&lt;String,Object&gt; para uso da deste map bancário.
 	 * 
 	 * @since 0.2
 	 */

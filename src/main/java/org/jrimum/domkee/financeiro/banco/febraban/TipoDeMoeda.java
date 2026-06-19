@@ -30,7 +30,7 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * <p>
@@ -70,7 +70,7 @@ public enum TipoDeMoeda {
 	private int codigo;
 	
 	/**
-	 * @param codigo
+	 * @param codigo Código da Moeda
 	 */
 	private TipoDeMoeda(int codigo) {
 		this.codigo = codigo;

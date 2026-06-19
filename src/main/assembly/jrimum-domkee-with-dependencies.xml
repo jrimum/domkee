@@ -14,7 +14,7 @@
 			<unpack>true</unpack>
 			<scope>runtime</scope>
 			<excludes>
-				<exclude>commons-lang:commons-lang</exclude>
+				<exclude>org.apache.commons:commons-lang3</exclude>
 				<exclude>log4j:log4j</exclude>
 			</excludes>
 		</dependencySet>

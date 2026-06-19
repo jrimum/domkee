@@ -99,12 +99,14 @@ public class ContaBancaria {
 	
 	/**
 	 * @see Carteira
+	 * @return Informações da carteira
 	 */
 	public Carteira getCarteira() {
 		return carteira;
 	}
 
 	/**
+	 * @param carteira Informações da carteira
 	 * @see Carteira
 	 */
 	public void setCarteira(Carteira carteira) {
@@ -113,12 +115,14 @@ public class ContaBancaria {
 
 	/**
 	 * @see Banco
+	 * @return Informações do banco
 	 */
 	public Banco getBanco() {
 		return banco;
 	}
 	
 	/**
+	 * @param banco Informações de banco
 	 * @see Banco
 	 */
 	public void setBanco(Banco banco) {
@@ -128,12 +132,14 @@ public class ContaBancaria {
 	/**
 	 * @see Pessoa
 	 * @see Collection
+	 * @return Lista de pessoas
 	 */
 	public Collection<Pessoa> getTitulares() {
 		return titulares;
 	}
 
 	/**
+	 * @param titulares Lista de Pessoas
 	 * @see Pessoa
 	 * @see Collection
 	 */
@@ -144,12 +150,14 @@ public class ContaBancaria {
 	/**
 	 * @see Titulo
 	 * @see Collection
+	 * @return Lista de títulos bancários
 	 */
 	public Collection<Titulo> getTitulos() {
 		return titulos;
 	}
 
 	/**
+	 * @param titulos Lista de títulos bancários
 	 * @see Titulo
 	 * @see Collection
 	 */
@@ -159,12 +167,14 @@ public class ContaBancaria {
 
 	/**
 	 * @see Agencia
+	 * @return Informações de agência bancária
 	 */
 	public Agencia getAgencia() {
 		return agencia;
 	}
 
 	/**
+	 * @param agencia Informações da Agência bancária
 	 * @see Agencia
 	 */
 	public void setAgencia(Agencia agencia) {
@@ -173,12 +183,14 @@ public class ContaBancaria {
 
 	/**
 	 * @see NumeroDaConta
+	 * @return Número da conta bancária
 	 */
 	public NumeroDaConta getNumeroDaConta() {
 		return numeroDaConta;
 	}
 
 	/**
+	 * @param numeroDaConta Número da conta bancária
 	 * @see NumeroDaConta
 	 */
 	public void setNumeroDaConta(NumeroDaConta numeroDaConta) {

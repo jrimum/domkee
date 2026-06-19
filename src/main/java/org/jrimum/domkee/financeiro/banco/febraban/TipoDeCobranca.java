@@ -36,13 +36,12 @@ package org.jrimum.domkee.financeiro.banco.febraban;
 /**
  * 
  * <p>
- * Representação dos tipos básicos de cobrança:<br />
+ * Representação dos tipos básicos de cobrança:<br>
+ * </p>
  * <ul>
  * <li>Registrada (ou com registro)</li>
  * <li>Não Registrada (ou sem registro)</li>
  * </ul>
- * </p>
- * 
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a>
  * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>

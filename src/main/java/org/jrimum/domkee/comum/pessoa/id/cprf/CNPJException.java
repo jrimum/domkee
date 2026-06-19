@@ -64,8 +64,8 @@ public class CNPJException extends RuntimeException {
 	}
 
 	/**
-	 * @param message
-	 * @param cause
+	 * @param message Mensagem de exceção
+	 * @param cause Stack trace do erro
 	 */
 	public CNPJException(String message, Throwable cause) {
 		super(message, cause);
@@ -73,7 +73,7 @@ public class CNPJException extends RuntimeException {
 	}
 
 	/**
-	 * @param message
+	 * @param message Mensagem de exceção
 	 */
 	public CNPJException(String message) {
 		super(message);
@@ -81,7 +81,7 @@ public class CNPJException extends RuntimeException {
 	}
 
 	/**
-	 * @param cause
+	 * @param cause Stack trace do erro
 	 */
 	public CNPJException(Throwable cause) {
 		super(cause);

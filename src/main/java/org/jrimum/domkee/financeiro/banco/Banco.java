@@ -89,32 +89,34 @@ public interface Banco extends PessoaJuridica {
 	Image getImgLogo();
 	
 	
-	/**	 * <p>
+	/**
+	 * <p>
 	 * Código de compensação <a href="http://www.bcb.gov.br/">BACEN</a>
-	 * </p>>
+	 * </p>
 	 * 
-	 * @param codigoDeCompensacaoBACEN
+	 * @param codigoDeCompensacaoBACEN Código de compensação para bancos supervisionados pelo BACEN
 	 * 
 	 * @since 0.2
 	 */
 		
 	void setCodigoDeCompensacaoBACEN(CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN);
 	
-	/**	 * <p>
+	/**
+	 * <p>
 	 * Segmento registrado no <a href="http://www.bcb.gov.br/">BACEN</a>.
 	 * </p>
 	 * 
 	 * <p>
-	 * Exemplos: 
+	 * Exemplos:
+	 * </p>
 	 * <ul>
 	 * <li>Banco Comercial Estrangeiro - Filial no país</li>
 	 * <li>Banco Múltiplo</li>
 	 * <li>Banco Comercial</li>
 	 * <li>Banco Múltiplo Cooperativo</li>
 	 * </ul>
-	 * </p>>
 	 * 
-	 * @param segmento
+	 * @param segmento Tipo de segmento do banco
 	 * 
 	 * @since 0.2 
 	 */
@@ -124,9 +126,9 @@ public interface Banco extends PessoaJuridica {
 	/**
 	  <p>
 	 * Imagem da logo-marca do banco.
-	 * </p>>
+	 * </p>
 	 * 
-	 * @param imgLogo
+	 * @param imgLogo Imagem da logo marca
 	 * 
 	 * @since 0.2 
 	 */

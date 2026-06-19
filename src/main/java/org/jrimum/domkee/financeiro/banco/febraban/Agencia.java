@@ -29,9 +29,9 @@
 
 package org.jrimum.domkee.financeiro.banco.febraban;
 
-import static org.apache.commons.lang.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
 
@@ -39,14 +39,14 @@ import org.jrimum.utilix.Objects;
 /**
  * <p>
  * Esta classe segue o padrão especificado pela FEBRABAN:
- * <br/>
+ * <br>
  * Invariantes:
+ * </p>
  * <ul>
  * <li>Código: deve ser um inteiro natural (incluindo zero) entre 1 e 5 dígitos</li>
  * <li>Dígito Verificador: alpha-numérico sendo um inteiro natural (incluindo zero)
  * ou caracter não vazio (' ') com um dígito.</li>
  * </ul>
- * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L.</a> 
  * @author <a href="mailto:romulomail@gmail.com">Rômulo Augusto</a>

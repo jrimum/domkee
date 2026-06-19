@@ -71,7 +71,7 @@ public class Carteira {
 	}	
 
 	/**
-	 * @param codigo
+	 * @param codigo Código da carteira
 	 */
 	public Carteira(Integer codigo) {
 		super();
@@ -80,8 +80,8 @@ public class Carteira {
 
 
 	/**
-	 * @param codigo
-	 * @param cobranca
+	 * @param codigo Código da carteira
+	 * @param cobranca Código de tipo de Cobrança
 	 */
 	public Carteira(Integer codigo, TipoDeCobranca cobranca) {
 		super();
@@ -91,9 +91,9 @@ public class Carteira {
 
 
 	/**
-	 * @param codigo
-	 * @param cobranca
-	 * @param nome
+	 * @param codigo Código da carteira
+	 * @param cobranca Tipo de cobrança
+	 * @param nome Nome do tipo de cobrança
 	 */
 	public Carteira(Integer codigo, TipoDeCobranca cobranca, String nome) {
 		super();
@@ -157,7 +157,7 @@ public class Carteira {
 	 * Define o tipo de cobrança da carteira (Registrada ou não-registrada). 
 	 * </p>
 	 * 
-	 * @param cobranca
+	 * @param cobranca Tipo de Cobrança da carteira
 	 * 
 	 * @since 0.2
 	 */

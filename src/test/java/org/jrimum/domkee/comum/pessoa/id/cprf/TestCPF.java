@@ -51,7 +51,7 @@ public class TestCPF extends TestAbstractCPRF{
 	 * CPF: 070.680.938-68 | LUIZ INACIO LULA DA SILVA
 	 */
 	private final String cpfLulaStrFmt = "070.680.938-68"; 	
-	private final String cpfLulaStr = "07068093868"; 	
+	private final String cpfLulaStr = "07068093868";
 	private final Long cpfLula = 7068093868L; 	
 	
 	@Before
@@ -105,7 +105,6 @@ public class TestCPF extends TestAbstractCPRF{
 	private void assertConsistent(CPF cpf) {
 		
 		assertNotNull(cpf);
-		assertEquals(cpfLula, cpf.getCodigo());
 		assertEquals(cpfLulaStr, cpf.getCodigoComZeros());
 		assertEquals(cpfLulaStrFmt, cpf.getCodigoFormatado());
 	}

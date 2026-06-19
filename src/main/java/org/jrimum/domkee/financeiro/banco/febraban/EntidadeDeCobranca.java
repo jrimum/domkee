@@ -78,12 +78,14 @@ public class EntidadeDeCobranca{
 	
 	/**
 	 * @see CPRF
+	 * @return Retorna o objetivo CPF/CNPJ
 	 */
 	public CPRF getCPRF() {
 		return pessoa.getCPRF();
 	}
 	
 	/**
+	 * @param cprf Cadastro de CPF/CNPJ
 	 * @see CPRF
 	 */
 	public void setCPRF(CPRF cprf) {
@@ -91,6 +93,7 @@ public class EntidadeDeCobranca{
 	}
 	
 	/**
+	 * @param contaBancaria Informações de conta bancária
 	 * @see ContaBancaria
 	 */
 	public void addContaBancaria(ContaBancaria contaBancaria) {
@@ -101,6 +104,7 @@ public class EntidadeDeCobranca{
 	 * Verifica se esta pessoa tem alguma conta bancária.
 	 * 
 	 * @see ContaBancaria
+	 * @return true ou false
 	 */
 	public boolean hasContaBancaria(){
 		return pessoa.hasContaBancaria();
@@ -117,12 +121,14 @@ public class EntidadeDeCobranca{
 	/**
 	 * @see ContaBancaria
 	 * @see Collection
+	 * @return Lista de contas bancárias
 	 */
 	public Collection<ContaBancaria> getContasBancarias() {
 		return pessoa.getContasBancarias();
 	}
 	
 	/**
+	 * @param contasBancarias Lista de contas bancárias
 	 * @see ContaBancaria
 	 * @see Collection
 	 */
@@ -131,6 +137,7 @@ public class EntidadeDeCobranca{
 	}
 	
 	/**
+	 * @param endereco Informações de endereço
 	 * @see Endereco
 	 */
 	public void addEndereco(Endereco endereco) {
@@ -148,12 +155,14 @@ public class EntidadeDeCobranca{
 	/**
 	 * @see Endereco
 	 * @see Collection
+	 * @return Lista de endereços
 	 */
 	public Collection<Endereco> getEnderecos() {
 		return pessoa.getEnderecos();
 	}
 	
 	/**
+	 * @param enderecos Lista de endereços
 	 * @see Endereco
 	 * @see Collection
 	 */
@@ -162,6 +171,7 @@ public class EntidadeDeCobranca{
 	}
 
 	/**
+	 * @param telefone Número de telefone
 	 * @see NumeroDeTelefone
 	 */
 	public void addTelefone(NumeroDeTelefone telefone) {
@@ -179,12 +189,14 @@ public class EntidadeDeCobranca{
 	/**
 	 * @see NumeroDeTelefone
 	 * @see Collection
+	 * @return Lista de números de telefone
 	 */
 	public Collection<NumeroDeTelefone> getTelefones() {
 		return pessoa.getTelefones();
 	}
 
 	/**
+	 * @param telefones Lista de telefones da entidade
 	 * @see NumeroDeTelefone
 	 * @see Collection
 	 */

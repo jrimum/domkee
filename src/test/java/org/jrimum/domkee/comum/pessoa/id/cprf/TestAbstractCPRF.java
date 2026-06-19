@@ -125,7 +125,15 @@ public abstract class TestAbstractCPRF{
 
 	@Test
 	public void testGetCodigo() {
-		assertEquals(cprfLong, cprf.getCodigo());
+		int tamanho = -1;
+
+		if(cprf.isFisica()){			
+			tamanho = 11;
+		}else{
+			tamanho = 14;
+		}
+
+		assertEquals(fillWithZeroLeft(cprfLong.toString(), tamanho), cprf.getCodigo());
 	}
 
 	@Test

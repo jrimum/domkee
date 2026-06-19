@@ -44,7 +44,7 @@ import org.jrimum.utilix.Objects;
 /**
  * Representa um título em cobrança, tais como:
  * 
- * <br />
+ * <br>
  * 
  * <ul>
  * <li>Cheque</li>
@@ -56,6 +56,7 @@ import org.jrimum.utilix.Objects;
  * <li>Nota de Crédito Industrial</li>
  * <li>Nota de Crédito Rural</li>
  * <li>E outras espécies pagáveis através da rede bancária.</li>
+ * </ul>
  * 
  * @see TipoDeTitulo
  * 
@@ -200,9 +201,9 @@ public class Titulo {
 	 * Cria uma instância de título.
 	 * </p>
 	 * 
-	 * @param contaBancaria
-	 * @param sacado
-	 * @param cedente
+	 * @param contaBancaria Informações da conta bancária
+	 * @param sacado Informações do sacado
+	 * @param cedente Informações do cedente
 	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente) {
@@ -216,10 +217,10 @@ public class Titulo {
 	 * Cria uma instância de título com sacador avalista.
 	 * </p>
 	 * 
-	 * @param contaBancaria
-	 * @param sacado
-	 * @param cedente
-	 * @param sacadorAvalista
+	 * @param contaBancaria Informações da Conta Bancária
+	 * @param sacado Informações do Sacado
+	 * @param cedente Informações do cedente
+	 * @param sacadorAvalista Informações do sacador avalista
 	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente, SacadorAvalista sacadorAvalista) {
@@ -233,10 +234,10 @@ public class Titulo {
 	 * mesmo.
 	 * </p>
 	 * 
-	 * @param contaBancaria
-	 * @param sacado
-	 * @param cedente
-	 * @param parametrosBancariosMap
+	 * @param contaBancaria Informações da conta Bancária
+	 * @param sacado Informações do sacado
+	 * @param cedente Informações do cedente
+	 * @param parametrosBancariosMap Parâmetros bancários
 	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
@@ -253,11 +254,11 @@ public class Titulo {
 	 * dados bancários além do título.
 	 * </p>
 	 * 
-	 * @param contaBancaria
-	 * @param sacado
-	 * @param cedente
-	 * @param parametrosBancariosMap
-	 * @param sacadorAvalista
+	 * @param contaBancaria Informações da Conta Bancária
+	 * @param sacado Informações do Sacado
+	 * @param cedente Informações do cedente
+	 * @param parametrosBancariosMap Parametros bancários
+	 * @param sacadorAvalista Informações do sacador avalista
 	 * 
 	 */
 	public Titulo(ContaBancaria contaBancaria, Sacado sacado, Cedente cedente,
@@ -622,7 +623,7 @@ public class Titulo {
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
 	 * 
-	 * @param mora
+	 * @param mora Valor de mora em moeda corrente
 	 */
 	public void setMora(BigDecimal mora) {
 		if (mora != null) {
@@ -649,7 +650,7 @@ public class Titulo {
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
 	 * 
-	 * @param deducao
+	 * @param deducao Valor de dedução em moeda corrente
 	 */
 	public void setDeducao(BigDecimal deducao) {
 		if (deducao != null) {
@@ -677,7 +678,7 @@ public class Titulo {
 	 * Exemplo: Para o valor 12,349 ele definirá o valor para 12,34.
 	 * </p>
 	 * 
-	 * @param acrecimo
+	 * @param acrecimo Valor de acrescimento em moeda corrente
 	 */
 	public void setAcrecimo(BigDecimal acrecimo) {
 		if (acrecimo != null) {
@@ -709,7 +710,7 @@ public class Titulo {
 	 * resultante de deduções ou acrécimos.
 	 * </p>
 	 * 
-	 * @param valorCobrado
+	 * @param valorCobrado Valor bruto
 	 */
 	public void setValorCobrado(BigDecimal valorCobrado) {
 		if (valorCobrado != null) {
@@ -763,8 +764,8 @@ public class Titulo {
 	 * 
 	 * @see org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap
 	 * 
-	 * @param parametrosBancariosMap
-	 * 
+	 * @param parametrosBancariosMap Parâmetros bancários
+	 * @param <P> Tipo de parâmetro bancário
 	 * @since 0.2
 	 */
 

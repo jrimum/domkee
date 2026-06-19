@@ -37,11 +37,11 @@ import org.jrimum.utilix.Objects;
  * 
  * <p>
  * Identifica uma conta bancária e assume os sinônimos:
+ * </p>
  * <ul>
  * <li>Código do cedente</li>
  * <li>Convênio</li>
  * </ul>
- * </p>
  * 
  * @author <a href="http://gilmatryx.googlepages.com">Gilmar P.S.L.</a>
  * @author <a href="mailto:misaelbarreto@gmail.com">Misael Barreto</a>

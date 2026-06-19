@@ -56,7 +56,7 @@ public class CodigoDeCompensacaoBACEN {
 	private Integer digito;
 
 	/**
-	 * @param codigo
+	 * @param codigo Código de compensação bancária BACEN
 	 */
 	public CodigoDeCompensacaoBACEN(Integer codigo) {
 		super();
@@ -65,7 +65,7 @@ public class CodigoDeCompensacaoBACEN {
 	}
 
 	/**
-	 * @param codigo
+	 * @param codigo Código de compensação bancária do BACEN
 	 */
 	public CodigoDeCompensacaoBACEN(String codigo) {
 		super();

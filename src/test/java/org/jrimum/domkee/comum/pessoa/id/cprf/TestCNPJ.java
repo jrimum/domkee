@@ -54,13 +54,14 @@ public class TestCNPJ extends TestAbstractCPRF{
 	private final String cnpjBradescoFilialStrFmt = "60.746.948/0005-46"; 	
 	private final String cnpjBradescoStrFmt = "60.746.948/0001-12"; 	
 	private final String cnpjBradescoStr = "60746948000112"; 	
-	private final Long cnpjBradesco = 60746948000112L; 	
+	private final String cnpjBradesco = "60746948000112"; 	
 	
 	@Before
 	public void setUp() {
 		
 		setTipo(TipoDeCPRF.CNPJ);
-		setCprfLong(cnpjBradesco);
+		setCprfString(cnpjBradesco);
+		setCprfLong(60746948000112L);
 		setCprfLongErr(60746948000113L);
 		setCprfString(cnpjBradescoStr);
 		setCprfStringErr("60746948000113");

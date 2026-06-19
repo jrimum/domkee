@@ -41,8 +41,6 @@ import org.jrimum.utilix.Exceptions;
  * título de cobrança. Domínio:
  * </p>
  * 
- * <p>
- * 
  * <ul>
  * <li> '01' = CH Cheque</li>
  * <li> '02' = DM Duplicata Mercantil</li>
@@ -76,7 +74,6 @@ import org.jrimum.utilix.Exceptions;
  * <li> ‘30’ = Cota Condominial</li>
  * <li> '99' = Outros</li>
  * </ul>
- * </p>
  * 
  * 
  * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
@@ -144,8 +141,8 @@ public enum TipoDeTitulo{
 	 * Instancia os tipos de a cordo com os valores passados.
 	 * </p>
 	 * 
-	 * @param codigo
-	 * @param sigla
+	 * @param codigo Valor número do tipo de título
+	 * @param sigla Sigla do Título
 	 * 
 	 * @since 0.2
 	 */

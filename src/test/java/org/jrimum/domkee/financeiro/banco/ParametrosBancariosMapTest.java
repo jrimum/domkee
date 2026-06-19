@@ -86,7 +86,7 @@ public class ParametrosBancariosMapTest {
 		Set<ParametroBancario<?>> nomes = parametrosBancariosMap.nomes();
 		
 		assertEquals(ParamBancTest.P1, nomes.iterator().next());
-		assertEquals(V1, parametrosBancariosMap.getValor(ParamBancTest.P1));
+		assertEquals(V1, parametrosBancariosMap.getValor(ParamBancTest.P1).intValue());
 		assertFalse(parametrosBancariosMap.isVazio());
 		assertTrue(parametrosBancariosMap.isNaoVazio());
 	}

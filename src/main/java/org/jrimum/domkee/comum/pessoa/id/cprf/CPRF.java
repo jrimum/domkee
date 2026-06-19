@@ -41,7 +41,7 @@ public interface CPRF extends Comparable<Object>{
 
 	public boolean isJuridica();
 
-	public Long getCodigo();
+	public String getCodigo();
 
 	public String getCodigoComZeros();
 	

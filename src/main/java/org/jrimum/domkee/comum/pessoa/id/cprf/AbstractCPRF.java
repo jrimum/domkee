@@ -29,7 +29,7 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
-import static org.apache.commons.lang.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 
 import org.jrimum.utilix.Exceptions;
@@ -70,7 +70,7 @@ public abstract class AbstractCPRF implements CPRF{
 	/**
 	 * 
 	 */
-	private Long codigo;
+	private String codigo;
 
 	/**
 	 * 
@@ -81,10 +81,16 @@ public abstract class AbstractCPRF implements CPRF{
 	 * Cria um {@linkplain CPRF} através de um long e seu
 	 * {@linkplain TipoDeCPRF}.
 	 * 
-	 * @param cadastroDePessoa
-	 * @param tipoDeCadastro
+	 * @param cadastroDePessoa Número do CPF ou CNPJ
+	 * @param tipoDeCadastro Se o tipo de cadastro é CPF ou CNPJ
+	 * @param <C> Tipo de CPF ou CNPJ
+	 * @see TipoDeCPRF
+	 * @see CPF
+	 * @see CNPJ
+	 * @see AbstractCPRFValidator
+	 * @see AbstractCPRFValidator#isParametrosValidos(String, TipoDeCPRF)
 	 * @return AbstractCPRF (CPF ou CNPJ)
-	 * @throws IllegalArgumentException
+	 * @throws IllegalArgumentException Se o número for de um tamanho incorreto ou de um tipo que não existe
 	 */
 	@SuppressWarnings("unchecked")
 	public static <C extends AbstractCPRF> C create(Long cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
@@ -100,8 +106,9 @@ public abstract class AbstractCPRF implements CPRF{
 	 *            não formatado
 	 * @param tipoDeCadastro
 	 *            tipo
+	 * @param <C> Tipo de CPF ou CNPJ
 	 * @return AbstractCPRF (CPF ou CNPJ)
-	 * @throws IllegalArgumentException
+	 * @throws IllegalArgumentException Se o tipo de cadastro for de um tamanho incorreto ou tipo inválido
 	 */
 	@SuppressWarnings("unchecked")
 	public static <C extends AbstractCPRF> C create(String cadastroDePessoa, TipoDeCPRF tipoDeCadastro) throws IllegalArgumentException {
@@ -136,6 +143,7 @@ public abstract class AbstractCPRF implements CPRF{
 	 * 
 	 * @param cadastroDePessoa
 	 *            - identificador do cadastro de pessoa formatado ou não.
+	 * @param <C> Tipo de CPF ou CNPJ
 	 * @return uma instância de AbstractCPRF.
 	 * @throws IllegalArgumentException
 	 *             - caso o parâmetro não esteja em um formatador válido de
@@ -191,11 +199,11 @@ public abstract class AbstractCPRF implements CPRF{
 		this.codigoFormatado = codigoFormatado;
 	}
 
-	protected void setCodigo(Long codigo) {
+	protected void setCodigo(String codigo) {
 
 		this.codigo = codigo;
 	}
-	public Long getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 

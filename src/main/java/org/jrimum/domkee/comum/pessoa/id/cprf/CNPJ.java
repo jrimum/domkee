@@ -29,7 +29,7 @@
 
 package org.jrimum.domkee.comum.pessoa.id.cprf;
 
-import static org.apache.commons.lang.StringUtils.isNumeric;
+import static org.apache.commons.lang3.StringUtils.isNumeric;
 import static org.jrimum.utilix.text.Strings.fillWithZeroLeft;
 
 import org.jrimum.utilix.Exceptions;
@@ -148,7 +148,7 @@ public class CNPJ extends AbstractCPRF {
 		try {
 
 			this.setCodigoFormatado(format(fillWithZeroLeft(numCNPJ, 14)));
-			this.setCodigo(numCNPJ);
+			this.setCodigo(numCNPJ.toString());
 
 		} catch (Exception e) {
 			throw new CNPJException(e);
@@ -159,7 +159,7 @@ public class CNPJ extends AbstractCPRF {
 		try {
 			
 			this.setCodigoFormatado(strCNPJ);
-			this.setCodigo(Long.parseLong(removeFormat(strCNPJ)));
+			this.setCodigo(removeFormat(strCNPJ));
 			
 		} catch (Exception e) {
 			throw new CNPJException(e);
@@ -171,7 +171,7 @@ public class CNPJ extends AbstractCPRF {
 		try {
 			
 			this.setCodigoFormatado(format(strCNPJ));
-			this.setCodigo(Long.parseLong(strCNPJ));
+			this.setCodigo(strCNPJ);
 			
 		} catch (Exception e) {
 			throw new CNPJException(e);
